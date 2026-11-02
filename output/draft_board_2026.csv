@@ -1,0 +1,586 @@
+my_rank,rank_dur,player,position,team_2026,proj_ppg,floor_ppg,ceil_ppg,proj_games,proj_total,vor_pg,vor_season,adp,mrank,adp_sigma,adp_shift,times_drafted,safe_until,rookie_info,off_2026,team_ctx,td_dep,status,status_note,note,bye,avail_pk3,avail_pk22,avail_pk27,avail_pk46,avail_pk51,avail_pk70,avail_pk75,avail_pk94,avail_pk99,avail_pk118,avail_pk123,avail_pk142,avail_pk147,avail_pk166,avail_pk171
+1,1,Bijan Robinson,RB,ATL,19.72,13.66,22.3,15.5,306.0,9.97,154.5,1.7,1.0,0.4941999999999999,0.2,1134.0,0,,OFF= +2,"OL 4.0/5+ · new PC Kevin Stefanski, RB16",,,,,11.0,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2,2,Puka Nacua,WR,LA,19.74,14.14,21.14,14.6,288.0,9.73,142.1,3.1,3.0,0.4941999999999999,0.2,238.0,3,,OFF-- -14 spike/yds-backed,,,legal,"ADDED Aug 13 2026 and it is the highest-stakes row in this file: he is the board's #2 OVERALL player and the user picks 3rd. Sued in Mar 2026 for assault and battery (alleged bite + antisemitic remark); his attorney denies it, NO criminal charges filed, and he spent time in a rehab facility earlier in 2026. The NFL personal conduct policy permits suspension WITHOUT charges. Schefter (Aug 11 2026): a suspension is 'within the realm of options', specifically Week 1 vs SF; analysts expect any ban to be SHORT. `legal` NOT `rehab`/`out` -- same treatment as Jacobs and Rice, so proj_games is deliberately UNCHANGED at 14.6: the length is unknown and inventing one would be worse than flagging it. ⚠️ WHY IT DECIDES PICK 3: spike_weeks.py shows Nacua leads Chase by 19.0 season points, and ONE missed Nacua game costs 19.74 -- so a 1-game suspension is a dead heat and 2+ games hands it to Chase. This is the ONLY Nacua-vs-Chase argument that moves the answer; the weekly-ceiling argument does not. ⚠️ RESOLVES: no announced date. RE-CHECK AT THE AUG 29-30 SWEEP, and again the morning of the draft ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. 'Re-check at the Aug 29-30 sweep' is dead; only the DRAFT-MORNING check survives, and there is still no announced resolution date for the suspension. This remains the single highest-stakes unknown on the board because it decides pick 3.",,11.0,0.73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+3,3,Ja'Marr Chase,WR,CIN,17.7,13.96,20.82,15.2,269.0,7.69,116.9,3.9,4.0,0.7417555310023026,0.28,1517.0,3,,OFF= -3,,,,,,6.0,0.94,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+4,5,Christian McCaffrey,RB,SF,17.21,12.27,20.07,14.5,249.0,7.46,108.2,6.4,6.0,1.360522250875002,0.46,1222.0,3,,OFF= -2,OL 4.0/5,,,,,8.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+5,4,Amon-Ra St. Brown,WR,DET,17.41,13.11,20.47,15.2,265.0,7.4,112.5,6.6,7.0,1.1590840795075616,0.37,908.0,3,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,6.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+6,6,De'Von Achane,RB,MIA,16.89,13.7,20.46,15.1,255.0,7.14,107.8,10.1,9.0,1.8219048369237545,0.54,631.0,3,,OFF+ +4 rebound,"OL 2.5/5+ · new PC Bobby Slowik, RB22",,,,,6.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+7,12,Jonathan Taylor,RB,IND,16.39,13.33,19.92,14.6,239.0,6.64,96.9,7.5,8.0,1.576509737444572,0.48,1354.0,3,,OFF- -7 spike,OL 4.5/5,p87 (-2.1 PPG hist),,,,13.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+8,10,Drake London,WR,ATL,16.63,11.87,17.21,14.9,248.0,6.62,98.6,10.3,10.0,1.5793752539730161,0.46,237.0,3,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,11.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+9,7,Jahmyr Gibbs,RB,DET,16.35,13.9,19.98,16.0,262.0,6.6,105.6,1.8,2.0,0.5648,0.23,1329.0,0,,OFF- -5 elite,"OL 4.0/5 · new PC Drew Petzing, RB20",,,,,6.0,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+10,8,Jaxon Smith-Njigba,WR,SEA,16.49,13.16,19.85,15.5,256.0,6.48,100.4,5.4,5.0,0.8816570352154346,0.31,778.0,3,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,11.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+11,11,Trey McBride,TE,ARI,15.28,12.16,15.99,15.9,243.0,6.18,98.3,31.7,33.0,10.179512750899207,1.77,884.0,27,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,14.0,1.0,0.87,0.74,0.11,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+12,9,Derrick Henry,RB,BAL,15.84,11.08,18.7,16.3,258.0,6.09,99.3,17.1,17.0,3.04882699941759,0.77,735.0,3,,OFF= +0 rebound,"OL 3.0/5- · NEW PC (1st time, Ben Johnson tree)",p89 (-2.1 PPG hist),,,,13.0,1.0,0.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+13,13,James Cook,RB,BUF,15.58,12.61,16.69,16.0,249.0,5.83,93.3,13.1,13.0,3.383559932191421,0.91,1896.0,3,,OFF-- -8 elite,OL 4.5/5-,,,,,7.0,1.0,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+14,22,Jeremiyah Love,RB,ARI,15.21,10.27,18.96,12.8,195.0,5.46,69.9,28.8,29.0,6.91992452008804,1.28,623.0,27,R1 pick 3,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",,,,,14.0,1.0,0.88,0.67,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+15,14,Nico Collins,WR,HOU,15.45,11.5,17.86,15.1,233.0,5.44,82.1,22.2,23.0,4.1881507961759254,0.88,635.0,22,,OFF+ +5,,,,,,8.0,1.0,0.6,0.17,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+16,21,Cam Skattebo,RB,NYG,14.96,9.15,16.32,13.6,203.0,5.21,70.9,34.1,36.0,7.285806364297852,1.23,462.0,27,,OFF- -4,"OL 3.0/5+ · new PC Matt Nagy, RB12",,,,,8.0,1.0,0.97,0.87,0.07,0.02,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+17,17,Kyren Williams,RB,LA,14.93,11.93,17.2,14.8,221.0,5.18,76.7,32.4,34.0,7.163400603294047,1.23,974.0,27,,OFF-- -14 spike/yds-backed,OL 4.5/5-,,,,,11.0,1.0,0.95,0.82,0.04,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+18,16,George Pickens,WR,DAL,15.11,10.98,17.07,15.2,230.0,5.1,77.5,19.9,19.0,3.2321645179435086,0.77,488.0,3,,OFF- -5 yds-backed,,,,,,14.0,1.0,0.34,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+19,24,Rashee Rice,WR,KC,15.1,10.9,17.9,13.6,205.0,5.09,69.2,14.2,15.0,2.739201023819271,0.71,221.0,3,,OFF= +2,,,legal,"LARGELY RESOLVED as of Aug 12 2026 and the note is kept only because the NFL has not formally closed it. Rapoport, that same day: 'I don't expect from my understanding anything new there disciplinary-wise' -- Rice already served 30 days in jail for the probation violation, and the league separately found no personal-conduct violation arising from the civil DV suit. ⚠️ The two real caveats sit elsewhere and both survive: his 18.8 PPG is an 8-game number, and his QB is nine months off a torn ACL+LCL ⚠️⚠️ SWEEP AUG 14 2026 -- NOW EFFECTIVELY CLOSED, AND THE TARGET STRENGTHENS. Rapoport: no further league action expected, because the 30 days served WAS the discipline for the probation violation (THC positive in May, released mid-June). The NFL separately closed the civil-DV matter earlier in 2026 with NO discipline. Reporting now reads that he should be available for the FULL 2026 campaign. ⇒ Combined with the fact that the Aug 7-14 re-pull ALREADY contains the Aug 12 clearance and his ADP still moved 11.4 -> 12.8 (CHEAPER), the stale-price thesis has survived both tests. The two unpriced football caveats are untouched and still the real risk: 18.76 PPG is an EIGHT-GAME number, and Mahomes is ~9 months off a torn ACL+LCL.",,5.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+20,15,Chris Olave,WR,NO,15.04,10.69,16.2,15.5,233.0,5.03,78.0,21.5,22.0,3.945615124209177,0.86,332.0,22,,OFF+ +8,,,healthy,"LABEL DEFERRED AUG 13 2026 pending a health confirmation closer to the season. Two independent, qualitatively different tails and NEITHER is in the model: (1) a BLOOD CLOT IN HIS LUNG -- hospitalised, shut down winter 2025-26, still NOT fully cleared going into minicamp, missed all spring team drills; (2) two concussions limited him to 8 games in 2024 and he MULLED RETIREMENT. Currently FULL GO with no restrictions per GM Mickey Loomis, and he took first full-team reps after signing 4yr/$132M ($90M gtd); he did walk off with a trainer on camp day 6, which resolved. ⚠️ Recorded as `healthy` deliberately: NO numeric effect. The 2025 log is a clean 16 games at 16.75 PPG because the clot came AFTER the season, so the board sees nothing. ⚠️ The measured base rate (Aug 13 study) is that a WEEK-1 injury-report flag costs -1.31 games and drops 14+ games from 61%% to 46%%, but barely touches PPG (85%% vs 89%% retained) -- so his Week 1 practice report is the trigger, not August noise. A pulmonary embolism is also NOT the reference class that base rate is built from. ⚠️⚠️ SWEEP AUG 14 2026 -- KYLAN'S DEFERRED LABEL CAN NOW BE SETTLED, AND IT SETTLES CLEAN. GM Mickey Loomis said before camp that Olave is FULLY CLEARED and has 'the green light to do everything' in practice. He returned to team drills on camp day 3 and signed the 4yr/$132M extension ($90M gtd). The blood clot cost him Week 18 2025 and limited him in spring; that limitation is now lifted. ⇒ The `healthy` label stands and is now EVIDENCED rather than deferred. Keep the numeric no-op -- the 2025 log is already a clean 16 games at 16.75 PPG. The Aug 13 study still applies: a WEEK 1 injury-report flag is the trigger to watch, not August noise.",,8.0,1.0,0.54,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+21,18,CeeDee Lamb,WR,DAL,14.98,11.88,17.74,15.0,225.0,4.97,74.6,10.8,11.0,2.025261238477115,0.57,967.0,3,,OFF- -5 yds-backed,,,,,,14.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+22,19,Josh Jacobs,RB,GB,14.67,9.62,16.18,14.7,216.0,4.92,72.3,30.0,31.0,7.479998689489221,1.34,492.0,27,,OFF= +0,OL 2.0/5-,p91 (-2.1 PPG hist),legal,"TWO INDEPENDENT LIVE RISKS as of Aug 12 2026. LEGAL: arrested May 26 2026 on five domestic-abuse counts including felony strangulation; the Brown County DA is still investigating and has filed nothing. NFL: Schefter reported Aug 11 that a suspension is still under review REGARDLESS of whether charges are filed -- 'it's also possible that the Green Bay Packers are going to lose Josh Jacobs'. He is NOT on the commissioner's exempt list, which points toward Wk1. INJURY (new, not previously tracked): has not practised since Aug 6 with a groin, out at least through the first preseason week, team says it is not serious",,11.0,1.0,0.89,0.72,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+23,25,Davante Adams,WR,LA,14.78,11.13,16.61,14.5,214.0,4.77,69.2,41.2,42.0,7.526003805098541,1.23,553.0,27,,OFF-- -14 spike/yds-backed,,p99 (-0.5 PPG hist),,,,11.0,1.0,1.0,0.98,0.32,0.13,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+24,20,Justin Jefferson,WR,MIN,14.65,10.53,16.97,15.5,227.0,4.64,71.9,13.0,12.0,3.004195680150886,0.83,1097.0,3,,OFF+ +7,,,,,,6.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+25,23,Brock Bowers,TE,LV,13.69,10.98,16.01,15.1,207.0,4.59,69.3,38.0,40.0,13.340660102525295,2.19,1986.0,27,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,13.0,1.0,0.91,0.84,0.33,0.21,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+26,27,Chase Brown,RB,CIN,14.29,11.55,16.59,14.9,213.0,4.54,67.6,13.3,14.0,3.0161775732633425,0.8,1406.0,3,,OFF= -3,OL 3.0/5,,,,,6.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+27,26,Ashton Jeanty,RB,LV,14.21,9.42,16.76,15.4,219.0,4.46,68.7,14.9,16.0,3.450181602220125,0.88,1063.0,3,,OFF+ +9,"OL 2.5/5++ · new PC Klint Kubiak, RB14",,,,,13.0,1.0,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+28,34,Malik Nabers,WR,NYG,14.27,8.77,18.16,12.3,176.0,4.26,52.4,28.4,27.0,6.0687873977462585,1.17,1429.0,27,,OFF- -4,"new PC Matt Nagy, RB12",,rehab,"RE-VERIFIED AUG 14 2026 -- status HELD at `rehab`, and the answer to 'is he healthy entering Week 1' is NOT YET. He is NOT cleared. Injury is an ACL **and full lateral meniscus** tear (Wk4 2025 vs LAC); the meniscus needed a full REPAIR, not a trim, and he had a SECOND procedure in spring 2026 to remove scar tissue causing joint stiffness. Reporting describes the recovery as 'not linear'. WHERE HE ACTUALLY IS (Thu Aug 13 2026, two independent reports): he took his FIRST real team-drill reps of camp, in a RED NO-CONTACT JERSEY, no pads, catching a handful of passes from Dart/Winston/Allen, running routes and reacting to the defence. Harbaugh: 'It's a big step to get into team drills' and called it 'a milestone'. Before that it was individual drills only for most of camp; the earlier West Virginia session was described as 'like a glorified walkthrough'. ⚠️ HE HAS STILL NOT DONE FULL-SPEED 11-ON-11 AND HAS NOT TAKEN CONTACT. Harbaugh's stated NEXT milestone is increased 11-on-11 work; timeline given as 'soon'. GOOD: he was NEVER placed on PUP -- the July reporting that predicted he would open camp on PUP was wrong. That matters a lot: there is NO four-game minimum on him, unlike Kittle. He can play the moment he is cleared. ⚠️⚠️ THE FACT THAT DECIDES THE DRAFT: Week 1 is SEPT 13 vs Dallas, which is 13 DAYS AFTER THE AUG 31 DRAFT. So this will NOT be resolved on draft day. Do not plan to check it on draft morning -- it will still read 'trending, not cleared'. Price the uncertainty instead. ⚠️ EVEN IF HE PLAYS WK1, reporting says he is in a MULTI-GAME RAMP-UP, so early-season volume is a second, separate risk from availability -- proj_games 12.3 prices the games but NOT the ramped snap share. MARKET VIEW, for calibration: analysts call him the highest boom potential of anyone available in round 3 (18.2 PPG as a rookie behind worse QB play, career-best 37.7 PPR game) but 'a shaky pick at his current mid-round-3 ADP', easier to stomach if he slips to round 4-5. ⇒ AT KYLAN'S PICK 27 THIS TILTS TO DAVANTE ADAMS: 4.73 VOR/g vs Nabers 4.22, 14.5 games vs 12.3, 98% available vs 86%, and no ramp risk. Nabers is the upside play, Adams is the better expected value. RE-CHECK AT THE AUG 29-30 SWEEP: has he done full-speed 11-on-11, and has he taken contact? Those two, not 'is he trending', are the real signals ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. This row already said the question would NOT resolve before an Aug 31 draft; an earlier draft only widens that gap. Do not plan any check. Price the uncertainty and take Adams at 27 per the existing note. ⚠️⚠️ SWEEP AUG 14 2026 -- THE ONE CONCRETE DATE IN THIS FILE, AND IT MAY LAND BEFORE THE DRAFT. Reporting now gives AUG 17 as the EARLIEST possible date he can join 7-on-7 and 11-on-11 periods. the draft is ~Aug 17-20, so unlike everything else here THIS ONE MIGHT ACTUALLY RESOLVE IN TIME. Aug 13 (Washington Post): took part in team drills in a RED NON-CONTACT jersey, Harbaugh called it 'a big step'; still not fully cleared, still no contact. ⇒ CHECK ON DRAFT MORNING WHETHER HE HAS DONE FULL-SPEED 11-ON-11. If yes, the ramp risk shrinks sharply and he moves back toward Adams at 27. If he is still in a red jersey, hold the existing call (Adams over Nabers at 27).",,8.0,1.0,0.89,0.66,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+29,28,Saquon Barkley,RB,PHI,13.89,10.79,17.58,15.1,210.0,4.14,62.5,20.1,20.0,4.45831562414593,1.03,2018.0,3,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,10.0,1.0,0.42,0.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+30,32,Kenneth Walker III,RB,KC,13.59,9.31,16.07,14.0,190.0,3.84,53.8,24.0,24.0,5.541213492051129,1.14,1908.0,22,,OFF= +2,OL 3.0/5,,,,,5.0,1.0,0.71,0.37,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+31,30,Brian Thomas Jr.,WR,JAX,13.84,8.28,16.99,14.9,206.0,3.83,57.1,73.9,74.0,17.184631099908206,2.48,1014.0,75,,OFF- -7,,,,,,7.0,1.0,1.0,1.0,0.96,0.93,0.64,0.53,0.15,0.09,0.01,0.0,0.0,0.0,0.0,0.0
+32,31,Tee Higgins,WR,CIN,13.77,10.59,15.31,14.8,204.0,3.76,55.6,36.6,37.0,7.328499419482066,1.23,732.0,27,,OFF= -3,,p93 (-0.5 PPG hist),,,,6.0,1.0,0.98,0.93,0.13,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+33,35,A.J. Brown,WR,NE,13.65,9.35,14.97,14.4,197.0,3.64,52.4,17.5,18.0,3.3452665635498358,0.83,871.0,3,,OFF-- -11 spike/yds-backed,,,,,,11.0,1.0,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+34,29,Breece Hall,RB,NYJ,13.37,10.0,16.1,15.9,213.0,3.62,57.6,28.9,30.0,5.164740440014544,0.94,363.0,27,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,13.0,1.0,0.94,0.71,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+35,33,Zay Flowers,WR,BAL,13.59,9.34,15.87,15.0,204.0,3.58,53.7,24.9,25.0,4.538209581775643,0.91,285.0,22,,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,13.0,1.0,0.8,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+36,36,DeVonta Smith,WR,PHI,12.89,8.77,15.13,15.7,202.0,2.88,45.2,28.7,28.0,5.132268190350767,0.97,958.0,27,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,10.0,1.0,0.93,0.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+37,42,Jadarian Price,RB,SEA,12.62,7.24,15.35,12.8,162.0,2.87,36.7,80.2,81.0,28.288024045804963,3.99,2013.0,75,R1 pick 32,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",,,,,11.0,1.0,0.99,0.98,0.91,0.88,0.69,0.63,0.36,0.3,0.12,0.09,0.02,0.01,0.0,0.0
+38,37,Travis Etienne,RB,NO,12.57,8.92,13.12,15.2,191.0,2.82,42.9,41.5,43.0,9.145553213527899,1.48,457.0,27,,OFF+ +8,OL 3.0/5+,,,,,8.0,1.0,0.99,0.96,0.37,0.19,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+39,38,Trevor Lawrence,QB,JAX,19.99,15.61,21.6,15.2,304.0,2.78,42.3,92.2,94.0,25.771208364458598,1.91,797.0,94,,OFF- -7,OL 4.0/5,p90 (-1.6 PPG hist),,,,7.0,1.0,1.0,1.0,0.97,0.95,0.83,0.77,0.5,0.42,0.18,0.13,0.03,0.02,0.0,0.0
+40,39,Harold Fannin Jr.,TE,CLE,11.84,8.83,15.12,15.2,180.0,2.74,41.6,79.1,79.0,18.273116963689944,2.59,160.0,75,,OFF+ +9,"new PC Todd Monken, RB10",,,,,11.0,1.0,1.0,1.0,0.97,0.95,0.74,0.64,0.25,0.17,0.02,0.01,0.0,0.0,0.0,0.0
+41,40,Jameson Williams,WR,DET,12.74,8.41,15.18,15.2,194.0,2.73,41.5,44.0,44.0,7.421782149838559,1.2,368.0,27,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,6.0,1.0,1.0,0.99,0.46,0.22,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+42,41,Ladd McConkey,WR,LAC,12.55,8.74,14.85,14.5,182.0,2.54,36.8,40.2,41.0,9.752406542158612,1.6,1587.0,27,,OFF+ +4,"new PC Mike McDaniel, RB3",,,,,7.0,1.0,0.98,0.94,0.33,0.17,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+43,43,Tetairoa McMillan,WR,CAR,12.23,7.62,14.98,15.2,186.0,2.22,33.7,33.6,35.0,6.568244435045579,1.11,577.0,27,,OFF+ +3,,,,,,5.0,1.0,0.97,0.88,0.04,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+44,45,Emeka Egbuka,WR,TB,12.17,7.18,15.47,15.0,183.0,2.16,32.4,37.0,38.0,8.741226666885614,1.45,1854.0,27,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,10.0,1.0,0.97,0.9,0.19,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+45,44,Kyle Pitts,TE,ATL,11.2,8.87,14.57,15.5,174.0,2.1,32.6,77.5,78.0,16.613662856213402,2.37,313.0,75,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,11.0,1.0,1.0,1.0,0.98,0.96,0.72,0.62,0.2,0.12,0.01,0.0,0.0,0.0,0.0,0.0
+46,46,Josh Allen,QB,BUF,19.25,14.79,21.56,15.4,296.0,2.04,31.4,30.6,32.0,12.936532413584274,2.28,1245.0,27,,OFF-- -8 elite,OL 4.5/5-,p94 (-1.6 PPG hist),,,,7.0,0.99,0.8,0.68,0.16,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+47,47,Michael Wilson,WR,ARI,12.03,8.44,13.92,15.4,185.0,2.02,31.1,81.5,83.0,19.108372807505642,2.68,916.0,75,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,14.0,1.0,1.0,1.0,0.98,0.96,0.77,0.68,0.3,0.22,0.04,0.02,0.0,0.0,0.0,0.0
+48,63,George Kittle,TE,SF,11.06,8.02,13.44,10.8,119.0,1.96,21.2,114.8,119.0,39.221,0.0,585.0,99,,OFF= -2,,,rehab,"Achilles torn Jan 11 2026 in the playoff win over PHI, surgery 3 days later. The tear was HIGH on the tendon, which is the best-case variant and a shorter recovery. Still on active/PUP but did his most strenuous camp work to date in the Aug 10 session (routes, catching); CBS's Zenitz reports a 'high level of confidence' he plays Wk1, and SF opens LATE -- Sept 10 in Melbourne -- which buys ~2 extra weeks. TRENDING USABLE, NOT STASH. ⚠️ RE-CHECK AT CUTDOWN: still on active/PUP then = Reserve/PUP = first 4 games gone (Aug 12 2026) ⚠️⚠️ UPDATED AUG 14 2026 -- THE DRAFT MOVED TO ~AUG 17-20, SO THE AUG 30 CUTDOWN NOW FALLS AFTER IT. This row's entire plan was 'check the cutdown, then decide', and that check is no longer available. He is an unresolvable 4-game binary at draft time. Fannin is the same TE plateau window with no binary at all.",,8.0,1.0,0.99,0.99,0.96,0.95,0.87,0.84,0.7,0.66,0.47,0.42,0.24,0.21,0.1,0.08
+49,64,Chris Godwin Jr.,WR,TB,11.94,7.17,12.88,10.4,124.0,1.93,20.1,84.2,87.0,20.769743820979944,2.49,881.0,75,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,healthy,"RE-VERIFIED Aug 12 2026. HC Todd Bowles: 'I think he is healthy right now.' Strong camp, full offseason of training, lining up all over the formation in a new offense, scoring in practice. Confirms again that the original injury flag was WRONG. ⚠️ The AVOID is an age-30/slot-role judgement and is now WEAKER for it -- revisit the stance rather than leaving it to stand on a medical premise that never existed",,10.0,1.0,1.0,1.0,0.97,0.96,0.79,0.71,0.36,0.28,0.07,0.04,0.0,0.0,0.0,0.0
+50,49,Omarion Hampton,RB,LAC,11.65,8.67,14.72,15.4,179.0,1.9,29.3,20.7,21.0,4.983137115588691,1.11,1764.0,3,,OFF+ +4,"OL 3.0/5++ · new PC Mike McDaniel, RB3",,recovered,"RE-VERIFIED Aug 12 2026 -- the knee/ankle is a non-issue. Full pads Aug 4; OC Mike McDaniel says he has shown 'as much, if not the most growth, of any player'. ⚠️ BUT THE WORKLOAD PREMISE IS NOW THE PROBLEM, NOT THE HEALTH: McDaniel said Aug 6 that Hampton, Kimani Vidal AND Keaton Mitchell will all play 'probably every game', split by opponent and hot hand. That is a three-man committee, and the board already fades him 29 ranks below his ADP -- a fade in the cohort the backtest says to trust",,7.0,1.0,0.48,0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+51,48,Javonte Williams,RB,DAL,11.64,7.98,12.51,15.9,185.0,1.89,30.1,37.4,39.0,8.2722182336182,1.37,1061.0,27,,OFF- -5 yds-backed,OL 4.0/5,,,,,14.0,1.0,0.98,0.92,0.19,0.07,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+52,51,Bucky Irving,RB,TB,11.61,7.24,15.86,14.7,171.0,1.86,27.3,45.2,45.0,8.698649142282894,1.4,482.0,46,,OFF+ +3 rebound,"OL 4.0/5++ · new PC Zac Robinson, RB2",,,,,10.0,1.0,1.0,0.99,0.53,0.31,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+53,50,Colston Loveland,TE,CHI,10.96,7.92,13.85,15.2,167.0,1.86,28.3,57.9,57.0,16.74805645931798,2.56,1275.0,51,,OFF- -5,,,,,,10.0,1.0,0.99,0.98,0.81,0.71,0.28,0.19,0.02,0.01,0.0,0.0,0.0,0.0,0.0,0.0
+54,60,Tyreek Hill,WR,,11.87,7.08,15.52,12.3,146.0,1.86,22.9,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+55,56,Rome Odunze,WR,CHI,11.81,6.23,14.02,13.2,156.0,1.8,23.8,49.0,49.0,9.211075896299084,1.45,750.0,46,,OFF- -5,,p87 (-0.5 PPG hist),,,,10.0,1.0,1.0,0.99,0.69,0.48,0.02,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+56,61,Mike Evans,WR,SF,11.78,6.55,14.05,12.4,146.0,1.77,21.9,54.9,54.0,13.073249327081388,2.02,1004.0,51,,OFF= -2,,,,,,8.0,1.0,1.0,0.99,0.8,0.67,0.16,0.08,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+57,52,Wan'Dale Robinson,WR,TEN,11.78,7.15,14.34,15.1,178.0,1.77,26.7,81.7,84.0,21.81528578045364,3.05,509.0,75,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,9.0,1.0,1.0,1.0,0.96,0.94,0.75,0.67,0.34,0.26,0.06,0.04,0.0,0.0,0.0,0.0
+58,55,Stefon Diggs,WR,,11.7,8.63,13.99,14.3,167.0,1.69,24.2,93.5,96.0,20.636630410128042,1.27,875.0,94,,,,,,,,7.0,1.0,1.0,1.0,0.99,0.98,0.88,0.83,0.51,0.42,0.13,0.09,0.01,0.01,0.0,0.0
+59,53,Alec Pierce,WR,IND,11.62,8.02,12.99,15.1,175.0,1.61,24.3,58.4,59.0,12.739065479118773,1.94,302.0,51,,OFF- -7 spike,,,,,,13.0,1.0,1.0,1.0,0.87,0.77,0.22,0.12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+60,54,Tyler Warren,TE,IND,10.64,7.76,13.0,15.8,168.0,1.54,24.3,64.7,64.0,18.267545794806793,2.74,1374.0,51,,OFF- -7 spike,,,,,,13.0,1.0,0.99,0.99,0.88,0.82,0.44,0.34,0.07,0.04,0.0,0.0,0.0,0.0,0.0,0.0
+61,59,Travis Kelce,TE,KC,10.63,7.52,11.3,15.2,162.0,1.53,23.3,108.3,111.0,44.60849999999999,0.0,239.0,99,,OFF= +2,,,,,,5.0,0.99,0.97,0.97,0.92,0.9,0.8,0.77,0.63,0.58,0.41,0.37,0.22,0.19,0.1,0.08
+62,65,Carnell Tate,WR,TEN,11.52,8.93,16.06,12.8,147.0,1.51,19.3,74.8,77.0,16.55995238522972,2.37,1284.0,75,R1 pick 4,OFF+ +10,"new PC Brian Daboll, RB23",,,,,9.0,1.0,1.0,1.0,0.97,0.94,0.67,0.55,0.15,0.09,0.01,0.0,0.0,0.0,0.0,0.0
+63,57,D'Andre Swift,RB,CHI,11.26,8.27,13.89,15.7,177.0,1.51,23.7,46.0,47.0,8.238564580550536,1.31,647.0,46,,OFF- -5,OL 4.5/5-,,,,,10.0,1.0,1.0,0.99,0.56,0.33,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+64,58,Bo Nix,QB,DEN,18.66,14.71,21.79,16.3,304.0,1.45,23.6,118.1,125.0,26.5065,0.0,522.0,118,,OFF= -2,OL 5.0/5,,recovered,"ADDED Aug 14 2026 -- THE EXACT KITTLE FAILURE MODE, and it was missed. Nix FRACTURED HIS RIGHT ANKLE on the penultimate play of the Jan 17 2026 divisional-round win over Buffalo, i.e. in the POSTSEASON, so his 2025 regular-season log is a clean 17 games and the model sees NO injury at all: qb_context_2026.json still reads 'missed 0 of 34 starts 2023-2025, tier low, miss_rate 0.0' and proj_games is 16.3, the HIGHEST of any QB on the board. That durability record excludes the injury in question. SURGERY the following week; a SECOND surgery in April 2026 to remove BONE SPURS / 'decompress the ankle' -- Nix called that one elective, said he was ahead of schedule and could likely have played through it. GOOD NEWS, and it is most of the story: medically cleared to open camp, FULL participation with the first team, the SAME number of camp snaps as last summer, no restrictions. Aug 1 2026: 'I feel great, feel normal. Nothing's holding me back.' On running specifically -- 'Absolutely not [it won't limit scrambling]. I'm going to roll. I'm going to be as athletic as I can be.' Payton calls his mobility 'one of his superpowers'. Held out of the Aug preseason OPENER as precaution, scheduled to play the final two exhibitions -- a normal veteran ramp, not a setback. WHY THE ROW EXISTS ANYWAY: Sean Payton, quoting the operating surgeon, said doctors found 'a condition that was predisposed' and that 'this was going to happen sooner than later'. That is a structural recurrence claim from the head coach, not a media narrative, and NOTHING on record says the April bone-spur removal corrected it -- Nix framed the spurs as a separate post-injury irritation. `recovered` is chosen deliberately and is a PURE NO-OP for him: phase2 only rewrites seasons at or under INJURY_SEASON_GAMES and Nix has none (17 and 17). So this is ANNOTATION ONLY, the Jacobs/Rice/Nacua treatment -- the recurrence risk is real but has no length, and putting a decimal point on it would be worse than flagging it. RUSHING, measured from weekly logs since the user asked: rushing is ~21% of his fantasy points and that share was FLAT 2024->2025 (21.1% -> 21.5%); carries slid 5.41 -> 4.88/g and rush yards 25.3 -> 20.9/g BEFORE the fracture, so that decline is not injury-driven. His 2025 rushing was strongest at the END (7/4/9/8 carries in wks 15-18) -- no in-season physical limitation visible. RE-CHECK AT THE AUG 29-30 SWEEP: whether he plays the final two preseason games as planned, and whether he runs in them. ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. The trigger here was the final two preseason games; VERIFY THE 2026 PRESEASON SCHEDULE AGAINST THE DRAFT DATE, because they may now fall after it. If so this recurrence risk is simply unresolved and he is drafted on camp reporting alone, which is still fine at ADP 120 for +1.45 VOR/g. ⚠️⚠️ SWEEP AUG 14 2026 -- TRIGGER CONFIRMED SCHEDULED, BUT IT FALLS AFTER THE DRAFT. Payton confirmed Aug 12-13 that Nix SITS the preseason opener at Atlanta and WILL PLAY the final two exhibitions, vs GREEN BAY and MINNESOTA. His first appearance is at home at Empower Field on NATURAL GRASS, which reads as deliberate handling of the ankle. Those two games fall roughly Aug 21-22 and Aug 28-29, i.e. AFTER a ~Aug 17-20 draft, so THE 'DOES HE PLAY AND RUN' CHECK WILL NOT RESOLVE FOR YOU. Everything else re-confirms: practising fully since camp opened with NO restrictions, same camp snap count as last summer, says he feels 'completely normal' and does not expect the ankle to make him hesitant to run. ⇒ DRAFT HIM ON THE CAMP REPORTING. At ADP 120 for +1.45 VOR/g and 84% availability at pick 94, that is a fine basis; the recurrence claim from Payton's surgeon quote stays unpriced and unresolved.",,10.0,1.0,1.0,1.0,1.0,0.99,0.97,0.95,0.82,0.76,0.5,0.43,0.18,0.14,0.04,0.02
+65,70,Alvin Kamara,RB,NO,11.19,5.78,14.83,11.1,124.0,1.44,16.0,142.9,152.0,40.513999999999996,0.0,334.0,142,,OFF+ +8,OL 3.0/5+,,,,,8.0,1.0,1.0,1.0,0.99,0.99,0.96,0.95,0.89,0.86,0.73,0.69,0.51,0.46,0.28,0.24
+66,62,Drake Maye,QB,NE,18.57,14.35,22.68,16.1,299.0,1.36,21.9,50.2,50.0,11.968533758339005,1.88,357.0,51,,OFF-- -11 spike/yds-backed,OL 3.0/5,,,,,11.0,1.0,0.99,0.98,0.69,0.54,0.07,0.03,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+67,68,DK Metcalf,WR,PIT,11.3,8.16,13.63,12.6,142.0,1.29,16.3,65.2,67.0,14.055485808767726,2.08,665.0,51,,OFF= -2,"new PC Mike McCarthy, RB27",,,,,9.0,1.0,1.0,1.0,0.93,0.88,0.42,0.29,0.03,0.01,0.0,0.0,0.0,0.0,0.0,0.0
+68,66,Terry McLaurin,WR,WAS,11.12,6.79,13.44,15.3,170.0,1.11,17.0,45.7,46.0,8.381035564793672,1.34,647.0,46,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,recovered,"RE-VERIFIED Aug 12 2026. Described Aug 3 as 'hold-in and injury free' -- full participation, and NO contract dispute this year, unlike 2025. Now in his third straight season with Jayden Daniels, which he called a first for him. The 2025 absence (7 games, the most of his career) traced to the camp holdout rather than a chronic issue",,7.0,1.0,1.0,0.99,0.55,0.32,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+69,67,Justin Herbert,QB,LAC,18.31,14.79,20.39,15.5,284.0,1.1,17.0,105.2,108.0,29.307999999999996,0.0,1153.0,99,,OFF+ +4,"OL 3.0/5++ · new PC Mike McDaniel, RB3",,,,,7.0,1.0,1.0,1.0,0.98,0.97,0.89,0.85,0.65,0.58,0.33,0.27,0.1,0.08,0.02,0.01
+70,71,Quentin Johnston,WR,LAC,11.09,7.28,13.89,14.6,162.0,1.08,15.8,93.2,95.0,17.43437566527272,1.18,665.0,94,,OFF+ +4,"new PC Mike McDaniel, RB3",p91 (-0.5 PPG hist),,,,7.0,1.0,1.0,1.0,1.0,0.99,0.92,0.87,0.51,0.4,0.09,0.05,0.0,0.0,0.0,0.0
+71,69,RJ Harvey,RB,DEN,10.81,8.33,14.46,15.3,165.0,1.06,16.2,83.4,85.0,18.607195992181655,2.48,490.0,75,,OFF= -2,OL 5.0/5,p90 (-2.1 PPG hist),,,,10.0,1.0,1.0,1.0,0.98,0.97,0.8,0.72,0.33,0.24,0.04,0.02,0.0,0.0,0.0,0.0
+72,73,Quinshon Judkins,RB,CLE,10.81,5.45,14.2,14.5,157.0,1.06,15.4,51.4,52.0,10.41747212694119,1.62,858.0,51,,OFF+ +9,"OL 2.0/5+ · new PC Todd Monken, RB10",,,,,11.0,1.0,1.0,0.99,0.75,0.58,0.05,0.02,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+73,74,Michael Pittman,WR,PIT,11.07,7.48,11.55,14.3,158.0,1.06,15.2,73.5,73.0,15.35368872493432,2.22,664.0,75,,OFF= -2,"new PC Mike McCarthy, RB27",,,,,9.0,1.0,1.0,1.0,0.97,0.95,0.65,0.52,0.12,0.06,0.0,0.0,0.0,0.0,0.0,0.0
+74,72,Garrett Wilson,WR,NYJ,11.03,7.9,15.47,15.2,168.0,1.02,15.5,27.8,26.0,4.639320278853015,0.91,272.0,27,,OFF+ +8,"new PC Frank Reich, RB6",,recovered,RE-VERIFIED Aug 12 2026. Full practice participation with no restrictions; HC Aaron Glenn: 'Garrett's feeling good. He looks good.' In the Aug 6-7 sessions not a single ball thrown his way hit the ground. The knee (IR after Wk10 2025) is behind him,,13.0,1.0,0.93,0.64,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+75,75,Troy Franklin,WR,DEN,10.84,5.55,13.17,14.8,160.0,0.83,12.3,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+76,76,Marvin Harrison Jr.,WR,ARI,10.79,5.57,14.27,13.9,150.0,0.78,10.8,65.1,66.0,14.38400566516679,2.14,834.0,51,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,14.0,1.0,1.0,1.0,0.93,0.87,0.42,0.29,0.03,0.01,0.0,0.0,0.0,0.0,0.0,0.0
+77,77,DJ Moore,WR,BUF,10.61,7.24,12.51,16.0,170.0,0.6,9.6,50.7,51.0,11.105599737325209,1.74,1536.0,51,,OFF-- -8 elite,,p88 (-0.5 PPG hist),,,,7.0,1.0,1.0,0.99,0.72,0.55,0.06,0.02,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+78,81,Jordyn Tyson,WR,NO,10.55,6.45,13.22,12.8,135.0,0.54,6.9,94.1,98.0,22.00764092105904,1.08,702.0,94,R1 pick 8,OFF+ +8,,,,,,8.0,1.0,1.0,1.0,0.99,0.98,0.87,0.82,0.52,0.43,0.15,0.1,0.02,0.01,0.0,0.0
+79,80,Parker Washington,WR,JAX,10.53,7.77,13.38,14.6,154.0,0.52,7.6,67.1,69.0,16.10333023106419,2.37,1365.0,51,,OFF- -7,,,,,,7.0,1.0,1.0,1.0,0.93,0.87,0.49,0.37,0.06,0.03,0.0,0.0,0.0,0.0,0.0,0.0
+80,79,Juwan Johnson,TE,NO,9.6,7.36,11.49,15.4,148.0,0.5,7.7,154.3,179.0,50.42699999999999,0.0,57.0,147,,OFF+ +8,,,,,,8.0,1.0,1.0,0.99,0.98,0.98,0.95,0.94,0.88,0.86,0.76,0.73,0.6,0.56,0.41,0.37
+81,78,TreVeyon Henderson,RB,NE,10.25,6.45,14.63,15.9,163.0,0.5,8.0,59.1,60.0,12.592532140968899,1.91,592.0,51,,OFF-- -11 spike/yds-backed,OL 3.0/5,,,,,11.0,1.0,1.0,1.0,0.88,0.79,0.24,0.13,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+82,82,Deebo Samuel Sr.,WR,,10.49,7.87,12.48,13.8,145.0,0.48,6.6,108.9,113.0,24.997999999999998,0.0,421.0,99,,,,,,,,8.0,1.0,1.0,1.0,0.99,0.99,0.94,0.91,0.72,0.65,0.36,0.29,0.09,0.06,0.01,0.01
+83,83,Keenan Allen,WR,,10.48,8.39,13.57,13.9,146.0,0.47,6.5,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+84,84,Jaxson Dart,QB,NYG,17.6,12.39,20.74,15.6,275.0,0.39,6.1,110.3,114.0,33.187,0.0,374.0,99,,OFF- -4,"OL 3.0/5+ · new PC Matt Nagy, RB12",,,,,8.0,1.0,1.0,0.99,0.97,0.96,0.89,0.86,0.69,0.63,0.41,0.35,0.17,0.13,0.05,0.03
+85,85,Courtland Sutton,WR,DEN,10.38,8.23,12.62,15.2,158.0,0.37,5.6,60.4,61.0,11.878474627787305,1.8,442.0,51,,OFF= -2,,,,,,10.0,1.0,1.0,1.0,0.91,0.83,0.26,0.14,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+86,86,Kenyon Sadiq,TE,NYJ,9.44,6.94,12.72,12.8,121.0,0.34,4.4,168.7,236.0,40.083,0.0,28.0,166,R1 pick 16,OFF+ +8,"new PC Frank Reich, RB6",,,,,13.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.9,0.87,0.75,0.71,0.53,0.48
+87,88,Jakobi Meyers,WR,JAX,10.3,8.06,12.33,12.5,129.0,0.29,3.6,83.5,86.0,21.121308255678855,2.67,276.0,75,,OFF- -7,,,,,,7.0,1.0,1.0,1.0,0.97,0.95,0.78,0.7,0.36,0.27,0.07,0.04,0.0,0.0,0.0,0.0
+88,87,Lamar Jackson,QB,BAL,17.48,13.18,20.04,14.3,250.0,0.27,3.9,55.5,55.0,13.674844310101648,2.11,637.0,51,,OFF= +0 rebound,"OL 3.0/5- · NEW PC (1st time, Ben Johnson tree)",,,,,13.0,1.0,1.0,0.99,0.8,0.69,0.18,0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+89,90,Baker Mayfield,QB,TB,17.42,13.62,20.49,14.8,258.0,0.21,3.1,129.8,134.0,20.0415,0.0,352.0,123,,OFF+ +3 rebound,"OL 4.0/5++ · new PC Zac Robinson, RB2",,,,,10.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.96,0.94,0.72,0.63,0.27,0.2,0.04,0.02
+90,93,Brock Purdy,QB,SF,17.42,14.2,19.84,11.4,199.0,0.21,2.4,87.5,89.0,27.91541669938895,2.97,195.0,75,,OFF= -2,OL 4.0/5,,,,,8.0,1.0,0.99,0.99,0.94,0.92,0.77,0.71,0.45,0.38,0.16,0.12,0.03,0.02,0.0,0.0
+91,89,Jared Goff,QB,DET,17.4,14.03,19.51,16.7,291.0,0.19,3.2,105.8,109.0,27.152999999999995,0.0,417.0,99,,OFF- -5 elite,"OL 4.0/5 · new PC Drew Petzing, RB20",,,,,6.0,1.0,1.0,1.0,0.99,0.98,0.91,0.87,0.67,0.6,0.33,0.26,0.09,0.06,0.01,0.01
+92,92,Hunter Henry,TE,NE,9.27,7.76,10.54,14.7,136.0,0.17,2.5,157.6,191.0,37.7125,0.0,76.0,147,,OFF-- -11 spike/yds-backed,,,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.95,0.94,0.85,0.82,0.66,0.61,0.41,0.36
+93,91,Joe Burrow,QB,CIN,17.37,11.81,19.65,16.3,283.0,0.16,2.6,56.0,56.0,13.908609999845732,2.14,570.0,51,,OFF= -3,OL 3.0/5,,recovered,"RE-VERIFIED Aug 12 2026. 'The foot feels great' -- nearly a year removed from the turf-toe surgery, back at camp in full force, still playing with the protective plate in the shoe. No restrictions reported",,6.0,1.0,1.0,0.99,0.81,0.7,0.2,0.11,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+94,94,Jaylen Waddle,WR,DEN,10.05,5.83,13.34,14.6,147.0,0.04,0.6,46.1,48.0,10.25214234114696,1.62,1319.0,46,,OFF= -2,,,,,,10.0,1.0,0.99,0.98,0.57,0.37,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+95,95,Jalen Hurts,QB,PHI,17.23,14.42,20.32,15.8,272.0,0.02,0.3,79.2,80.0,21.35203762220889,3.02,585.0,75,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,10.0,1.0,1.0,1.0,0.96,0.93,0.72,0.63,0.29,0.22,0.05,0.03,0.0,0.0,0.0,0.0
+96,96,Sam LaPorta,TE,DET,9.11,6.47,11.98,15.4,140.0,0.01,0.2,88.4,90.0,27.7837225018383,2.78,536.0,75,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,6.0,1.0,0.99,0.99,0.95,0.93,0.78,0.72,0.46,0.39,0.17,0.13,0.03,0.02,0.0,0.0
+97,97,Jayden Daniels,QB,WAS,17.21,10.07,20.72,9.3,160.0,0.0,0.0,72.0,72.0,19.026590653015894,2.76,491.0,70,,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,7.0,1.0,1.0,0.99,0.93,0.89,0.6,0.49,0.16,0.1,0.01,0.01,0.0,0.0,0.0,0.0
+98,98,Jordan Addison,WR,MIN,10.01,5.18,13.35,15.3,153.0,0.0,0.0,100.5,103.0,19.055567843643406,0.35,438.0,99,,OFF+ +7,,,,,,6.0,1.0,1.0,1.0,1.0,1.0,0.95,0.91,0.64,0.54,0.18,0.12,0.02,0.01,0.0,0.0
+99,99,Dallas Goedert,TE,PHI,9.1,7.49,11.07,11.6,106.0,0.0,0.0,115.5,122.0,40.2985,0.0,270.0,99,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",p92 (-0.9 PPG hist),,,,10.0,1.0,0.99,0.99,0.96,0.95,0.87,0.84,0.7,0.66,0.48,0.43,0.26,0.22,0.11,0.08
+100,100,Tyrone Tracy Jr.,RB,NYG,9.75,7.25,13.24,13.5,132.0,0.0,0.0,151.4,170.0,35.5575,0.0,236.0,147,,OFF- -4,"OL 3.0/5+ · new PC Matt Nagy, RB12",,,,,8.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.95,0.93,0.83,0.79,0.6,0.55,0.34,0.29
+101,101,KC Concepcion,WR,CLE,9.99,4.94,14.18,12.8,128.0,-0.02,-0.3,126.7,130.0,22.842999999999996,0.0,620.0,123,R1 pick 24,OFF+ +9,"new PC Todd Monken, RB10",,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.92,0.89,0.65,0.56,0.25,0.19,0.04,0.03
+102,102,Patrick Mahomes,QB,KC,17.17,14.82,21.53,14.7,252.0,-0.04,-0.6,99.0,102.0,25.847805269764265,0.63,620.0,99,,OFF= +2,OL 3.0/5,,recovered,"NOT PREVIOUSLY ON THIS FILE, and it is precisely the Kittle failure mode this file exists to catch: he tore his ACL **and LCL** in Wk15 2025, late enough that the season logs look nearly full and the model applied no penalty whatsoever. Surgery followed. He has since been FULLY CLEARED to participate in training camp (Andy Reid) and is reported on track for Wk1 vs Denver, ~9 months post-op. Numerically this row is near-neutral -- his 2025 games sit above the injury-season threshold, so `recovered` has little to discount -- and that is the point: the VALUE IS THE FLAG, and it carries to every KC pass catcher on the board (Rice ADP 11, Kelce 100, Worthy 104)",,5.0,1.0,1.0,1.0,0.98,0.97,0.87,0.83,0.59,0.51,0.24,0.18,0.05,0.03,0.01,0.0
+103,103,Zach Charbonnet,RB,SEA,9.69,7.27,12.7,14.0,136.0,-0.06,-0.8,139.0,148.0,37.928,0.0,506.0,123,,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",p96 (-2.1 PPG hist),rehab,"ADDED Aug 13 2026 -- he had NO ROW and the board was projecting him 15.7 games, MORE than the back ahead of him. He has been on the PUP list since JUL 22 recovering from an ACL and is reported set to miss the start of the season. Fourth instance of the Pearsall failure mode on this board (injury after/outside the 2025 game log, so the model sees nothing). ⚠️ He is priced at ADP 139.1, so he is draftable as a handcuff by someone who does not know this. `rehab` rather than `out` because the games number is NOT known: reverting to reserve/PUP at the Aug 30 cutdown would cost him the first 4 games, and that is the same binary Kittle carries. ⚠️ This row is also load-bearing for JADARIAN PRICE, whose target rests partly on Charbonnet being unavailable early. ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. The Aug 30 cutdown call lands AFTER the draft, so the confirmation this row promised JADARIAN PRICE never arrives. Price stays a target on the base rate (Walker gone to KC, Charbonnet on PUP since Jul 22 with an ACL) but is now an UNHEDGED bet. ⚠️⚠️ SWEEP AUG 14 2026 -- MATERIALLY WORSE FOR HIM, MATERIALLY BETTER FOR JADARIAN PRICE. New detail: the ACL tore JAN 17 2026 with surgery in FEBRUARY (this row previously had only the Jul 22 PUP date). ESPN's Brady Henderson reports he may not return until 'LATE IN THE SEASON'. SI's Albert Breer is the dissent, saying he could be ready for the Sept 9 opener vs NE. HC Macdonald back in March called a season-opening return 'unlikely' while insisting 'he's not going to miss the whole year'. ⚠️ ALSO NEW, AND IT CUTS AGAINST HIM: under a rule adopted for 2026, a reserve/PUP player cannot even BEGIN a 21-day practice window until after his team's SECOND regular-season game -- so reserve/PUP is now worse than the old four-game floor. ⇒ PRICE'S TARGET NO LONGER RESTS ON A COIN FLIP. The weight of reporting says Charbonnet misses meaningful early season, which is the condition Price's role needs. Still UNCONFIRMED at draft time (cutdown is after), but the base rate moved Price's way.",,11.0,1.0,1.0,1.0,0.99,0.99,0.97,0.95,0.88,0.85,0.71,0.66,0.47,0.42,0.24,0.2
+104,104,Khalil Shakir,WR,BUF,9.93,6.71,12.14,15.2,151.0,-0.08,-1.2,101.3,105.0,18.281117374799436,0.11,239.0,99,,OFF-- -8 elite,,,,,,7.0,1.0,1.0,1.0,1.0,1.0,0.96,0.93,0.66,0.55,0.18,0.12,0.01,0.01,0.0,0.0
+105,105,J.K. Dobbins,RB,DEN,9.62,4.68,13.36,9.8,94.0,-0.13,-1.3,96.6,100.0,25.940263516096852,0.95,676.0,94,,OFF= -2,OL 5.0/5,,,,,10.0,1.0,1.0,1.0,0.98,0.96,0.86,0.81,0.55,0.48,0.22,0.16,0.04,0.03,0.0,0.0
+106,107,David Montgomery,RB,HOU,9.59,6.82,11.34,13.7,131.0,-0.16,-2.2,61.1,62.0,16.26573485892584,2.45,1183.0,51,,OFF+ +5,OL 3.0/5+,,,,,8.0,1.0,0.99,0.99,0.86,0.78,0.35,0.24,0.03,0.01,0.0,0.0,0.0,0.0,0.0,0.0
+107,108,Tucker Kraft,TE,GB,8.94,7.1,11.97,13.6,122.0,-0.16,-2.2,104.0,106.0,42.45349999999999,0.0,905.0,99,,OFF= +0,,,rehab,"2025 ACL. Back at practice running routes and ramping up, eyeing a Wk1 return, but not yet a full participant. Carried no status at all before this sweep (Aug 12 2026)",,11.0,0.99,0.97,0.97,0.91,0.89,0.79,0.75,0.59,0.55,0.37,0.33,0.19,0.16,0.07,0.06
+108,109,Dalton Schultz,TE,HOU,8.91,6.9,10.86,14.7,131.0,-0.19,-2.8,154.8,180.0,65.943,0.0,22.0,147,,OFF+ +5,,,,,,8.0,0.99,0.98,0.97,0.95,0.94,0.9,0.89,0.82,0.8,0.71,0.69,0.58,0.55,0.43,0.4
+109,111,Jaylen Warren,RB,PIT,9.52,7.09,12.36,15.6,149.0,-0.23,-3.6,64.8,65.0,12.798411595414452,1.91,192.0,51,,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,9.0,1.0,1.0,1.0,0.95,0.89,0.4,0.26,0.02,0.01,0.0,0.0,0.0,0.0,0.0,0.0
+110,110,Luther Burden III,WR,CHI,9.78,4.73,13.51,13.4,131.0,-0.23,-3.1,58.4,58.0,14.0039808034333,2.14,1043.0,51,,OFF- -5,,,,,,10.0,1.0,1.0,0.99,0.85,0.75,0.25,0.15,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+111,112,Rico Dowdle,RB,PIT,9.49,5.2,11.54,15.6,148.0,-0.26,-4.1,74.1,75.0,20.01796452487296,2.88,359.0,75,,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,9.0,1.0,1.0,0.99,0.94,0.9,0.64,0.54,0.2,0.14,0.02,0.01,0.0,0.0,0.0,0.0
+112,113,Makai Lemon,WR,PHI,9.54,6.68,12.36,12.8,122.0,-0.47,-6.0,111.5,116.0,20.256999999999998,0.0,586.0,99,R1 pick 20,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,10.0,1.0,1.0,1.0,1.0,1.0,0.98,0.96,0.81,0.73,0.37,0.29,0.07,0.04,0.0,0.0
+113,114,Oronde Gadsden II,TE,LAC,8.62,5.12,11.85,13.8,119.0,-0.48,-6.6,,,,,,171,,OFF+ +4,"new PC Mike McDaniel, RB3",,,,,,,,,,,,,,,,,,,,
+114,115,Caleb Williams,QB,CHI,16.66,13.84,19.62,16.6,277.0,-0.55,-9.1,95.7,99.0,34.575736029639764,1.48,878.0,94,,OFF- -5,OL 4.5/5-,,,,,10.0,1.0,0.99,0.98,0.93,0.91,0.78,0.74,0.54,0.48,0.27,0.23,0.1,0.07,0.02,0.02
+115,116,Chuba Hubbard,RB,CAR,9.05,5.57,12.27,14.2,129.0,-0.7,-9.9,74.4,76.0,15.312368245149232,2.19,242.0,75,,OFF+ +3,OL 3.0/5-,,,,,5.0,1.0,1.0,1.0,0.98,0.95,0.67,0.54,0.13,0.07,0.0,0.0,0.0,0.0,0.0,0.0
+116,117,Tre Tucker,WR,LV,9.31,5.05,12.25,15.3,143.0,-0.7,-10.7,133.0,139.0,21.119,0.0,170.0,123,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,13.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.97,0.95,0.76,0.68,0.33,0.25,0.06,0.04
+117,119,Jake Ferguson,TE,DAL,8.38,6.77,10.8,16.0,134.0,-0.72,-11.5,134.8,141.0,42.238,0.0,397.0,123,,OFF- -5 yds-backed,,,,,,14.0,1.0,1.0,0.99,0.98,0.98,0.94,0.92,0.83,0.8,0.65,0.61,0.43,0.39,0.23,0.2
+118,120,Christian Watson,WR,GB,9.22,6.38,12.49,14.9,137.0,-0.79,-11.8,63.5,63.0,18.212760883946764,2.74,1451.0,51,,OFF= +0,,p88 (-0.5 PPG hist),recovered,"RE-VERIFIED Aug 12 2026. Healthy and practising in full, catching passes from Jordan Love; he was the only available starting WR through a stretch when the rest of the Green Bay room was banged up, which is itself evidence of availability",,11.0,1.0,0.99,0.98,0.87,0.8,0.42,0.32,0.06,0.04,0.0,0.0,0.0,0.0,0.0,0.0
+119,118,Xavier Worthy,WR,KC,9.21,4.44,13.04,14.2,131.0,-0.8,-11.4,106.2,110.0,17.8865,0.0,452.0,99,,OFF= +2,,,,,,5.0,1.0,1.0,1.0,1.0,1.0,0.98,0.96,0.75,0.66,0.25,0.17,0.02,0.01,0.0,0.0
+120,126,Matthew Stafford,QB,LA,16.4,14.3,17.95,16.2,266.0,-0.81,-13.1,81.1,82.0,25.131410795045685,3.53,393.0,75,,OFF-- -14 spike/yds-backed,OL 4.5/5-,p97 (-1.6 PPG hist),,,,11.0,1.0,0.99,0.99,0.94,0.91,0.72,0.65,0.35,0.28,0.09,0.06,0.01,0.01,0.0,0.0
+121,127,Tony Pollard,RB,TEN,8.89,6.74,12.27,15.3,136.0,-0.86,-13.2,67.3,70.0,14.605322353580332,2.14,274.0,51,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,9.0,1.0,1.0,1.0,0.95,0.9,0.48,0.35,0.05,0.02,0.0,0.0,0.0,0.0,0.0,0.0
+122,121,Rhamondre Stevenson,RB,NE,8.87,7.11,12.23,13.5,120.0,-0.88,-11.9,71.3,71.0,14.072328000814046,2.05,404.0,70,,OFF-- -11 spike/yds-backed,OL 3.0/5,,,,,11.0,1.0,1.0,1.0,0.97,0.94,0.59,0.45,0.07,0.03,0.0,0.0,0.0,0.0,0.0,0.0
+123,123,Mason Taylor,TE,NYJ,8.1,4.17,10.88,12.7,103.0,-1.0,-12.7,,,,,,171,,OFF+ +8,"new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+124,128,Omar Cooper,WR,NYJ,8.98,6.58,12.57,12.8,115.0,-1.03,-13.2,162.8,210.0,44.393,0.0,49.0,147,R1 pick 30,OFF+ +8,"new PC Frank Reich, RB6",,,,,13.0,1.0,1.0,1.0,1.0,0.99,0.98,0.98,0.94,0.92,0.84,0.82,0.68,0.64,0.47,0.43
+125,125,De'Zhaun Stribling,WR,SF,8.96,7.96,12.9,12.4,111.0,-1.05,-13.0,150.4,166.0,35.5575,0.0,456.0,147,R2 pick 33,OFF= -2,,,,,,8.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.94,0.93,0.82,0.78,0.59,0.54,0.33,0.28
+126,146,Jayden Reed,WR,GB,8.89,4.69,12.05,16.2,144.0,-1.12,-18.1,93.9,97.0,18.787683000928567,1.04,309.0,94,,OFF= +0,,,recovered,"RE-VERIFIED Aug 12 2026, and the sweep caught something the old note missed: he sprained an ANKLE in 2026 camp and lost practice time, returning to the field Aug 11 ahead of the preseason opener vs Pittsburgh. The 2025 collarbone is behind him. Fresh issue is minor, but he gave up camp reps in a crowded GB room",,11.0,1.0,1.0,1.0,1.0,0.99,0.91,0.86,0.52,0.41,0.11,0.07,0.01,0.0,0.0,0.0
+127,147,Jerry Jeudy,WR,CLE,8.83,4.86,11.92,15.6,138.0,-1.18,-18.4,132.5,138.0,24.7825,0.0,160.0,123,,OFF+ +9,"new PC Todd Monken, RB10",,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.94,0.91,0.72,0.65,0.35,0.28,0.09,0.06
+128,129,Zach Ertz,TE,,7.9,5.32,9.55,11.1,88.0,-1.2,-13.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+129,149,AJ Barner,TE,SEA,7.89,4.94,11.55,15.4,122.0,-1.21,-18.6,161.8,204.0,18.964,0.0,11.0,147,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,11.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.85,0.78,0.41,0.31
+130,145,Dak Prescott,QB,DAL,16.0,13.66,18.42,14.9,238.0,-1.21,-18.0,65.8,68.0,16.622414336673316,2.45,379.0,51,,OFF- -5 yds-backed,OL 4.0/5,,,,,14.0,1.0,1.0,0.99,0.91,0.85,0.46,0.34,0.06,0.03,0.0,0.0,0.0,0.0,0.0,0.0
+131,133,Keon Coleman,WR,BUF,8.76,3.99,11.27,12.4,109.0,-1.25,-15.5,,,,,,171,,OFF-- -8 elite,,,,,,,,,,,,,,,,,,,,,
+132,139,Brenton Strange,TE,JAX,7.83,4.2,9.74,12.9,101.0,-1.27,-16.4,163.5,215.0,33.833499999999994,0.0,92.0,147,,OFF- -7,,,,,,7.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.97,0.91,0.88,0.74,0.69,0.47,0.41
+133,157,Josh Downs,WR,IND,8.69,5.19,11.73,15.1,131.0,-1.32,-19.9,84.3,88.0,18.971704967266003,2.15,826.0,75,,OFF- -7 spike,,,,,,13.0,1.0,1.0,1.0,0.98,0.97,0.81,0.73,0.35,0.25,0.05,0.03,0.0,0.0,0.0,0.0
+134,150,Dalton Kincaid,TE,BUF,7.77,6.38,10.43,14.0,109.0,-1.33,-18.6,152.9,173.0,36.8505,0.0,271.0,147,,OFF-- -8 elite,,,,,,7.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.95,0.93,0.83,0.79,0.62,0.56,0.36,0.31
+135,106,Ricky Pearsall,WR,SF,8.63,4.49,13.61,1.0,9.0,-1.38,-1.4,110.9,115.0,17.24,0.0,31.0,99,,OFF= -2,,,out,"OUT FOR THE 2026 SEASON -- placed on season-ending IR, PCL surgery on the right knee, announced ~Aug 1 2026. He hurt it during 2025 and chose to rehab rather than operate; the swelling returned within days of camp opening. GM Lynch: six-to-twelve month recovery. ⚠️ THIS IS THE ROW THAT PAYS FOR THE SWEEP -- FFC still prices him at ADP 118 in the Aug 1-8 window, a stale price on a man who will not play a snap. SF signed Deebo Samuel to take the roster spot, which is itself an unmodelled change to the 49ers' WR room",,8.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.84,0.75,0.34,0.24,0.04,0.02,0.0,0.0
+136,148,Denzel Boston,WR,CLE,8.53,4.6,11.0,12.4,106.0,-1.48,-18.4,146.5,160.0,35.34199999999999,0.0,216.0,142,R2 pick 39,OFF+ +9,"new PC Todd Monken, RB10",,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.98,0.98,0.93,0.91,0.79,0.75,0.55,0.49,0.29,0.24
+137,188,Romeo Doubs,WR,NE,8.46,5.47,11.34,14.9,126.0,-1.55,-23.1,112.6,118.0,22.1965,0.0,365.0,99,,OFF-- -11 spike/yds-backed,,,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.97,0.95,0.8,0.73,0.4,0.32,0.09,0.06,0.01,0.0
+138,171,Theo Johnson,TE,NYG,7.54,4.81,10.38,13.8,104.0,-1.56,-21.5,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+139,195,Kyle Monangai,RB,CHI,8.18,4.34,13.4,15.0,123.0,-1.57,-23.6,111.5,117.0,32.1095,0.0,715.0,99,,OFF- -5,OL 4.5/5-,,,,,10.0,1.0,1.0,1.0,0.98,0.97,0.9,0.87,0.71,0.65,0.42,0.36,0.17,0.13,0.04,0.03
+140,166,Dylan Sampson,RB,CLE,8.16,3.82,10.99,13.3,109.0,-1.59,-21.1,161.4,203.0,35.988499999999995,0.0,55.0,147,,OFF+ +9,"OL 2.0/5+ · new PC Todd Monken, RB10",,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.89,0.86,0.71,0.66,0.45,0.39
+141,137,Travis Hunter,WR,JAX,8.42,4.13,11.46,10.2,86.0,-1.59,-16.2,159.6,194.0,60.770999999999994,0.0,59.0,147,,OFF- -7,,,,,,7.0,1.0,0.99,0.99,0.97,0.96,0.93,0.92,0.86,0.84,0.75,0.73,0.61,0.58,0.46,0.43
+142,174,Jauan Jennings,WR,MIN,8.41,6.1,10.01,13.9,117.0,-1.6,-22.2,144.8,159.0,25.429,0.0,60.0,142,,OFF+ +7,,p92 (-0.5 PPG hist),,,,6.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.96,0.85,0.8,0.54,0.47,0.2,0.15
+143,239,Kenneth Gainwell,RB,TB,8.05,5.22,11.27,16.3,131.0,-1.7,-27.7,88.6,91.0,21.829013759748747,2.04,511.0,75,,OFF+ +3 rebound,"OL 4.0/5++ · new PC Zac Robinson, RB2",,,,,10.0,1.0,1.0,1.0,0.98,0.97,0.83,0.76,0.44,0.35,0.11,0.07,0.01,0.0,0.0,0.0
+144,178,Woody Marks,RB,HOU,8.0,4.45,12.12,12.8,102.0,-1.75,-22.4,150.4,167.0,33.402499999999996,0.0,146.0,147,,OFF+ +5,OL 3.0/5+,,,,,8.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.95,0.94,0.83,0.79,0.6,0.54,0.32,0.27
+145,182,Germie Bernard,WR,PIT,8.19,4.99,9.98,12.4,102.0,-1.82,-22.6,172.5,250.0,29.092499999999998,0.0,23.0,171,R2 pick 47,OFF= -2,"new PC Mike McCarthy, RB27",,,,,9.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.97,0.96,0.85,0.81,0.59,0.52
+146,249,Rachaad White,RB,WAS,7.89,3.9,10.03,15.7,124.0,-1.86,-29.2,105.0,107.0,25.644499999999997,0.0,488.0,99,,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,7.0,1.0,1.0,1.0,0.99,0.98,0.91,0.88,0.67,0.59,0.31,0.24,0.07,0.05,0.01,0.01
+147,236,Jacory Croskey-Merritt,RB,WAS,7.76,3.12,12.3,13.7,106.0,-1.99,-27.3,115.3,121.0,33.187,0.0,729.0,99,,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",p88 (-2.1 PPG hist),,,,7.0,1.0,1.0,1.0,0.98,0.97,0.91,0.89,0.74,0.69,0.47,0.41,0.21,0.17,0.06,0.05
+148,193,Bhayshul Tuten,RB,JAX,7.74,3.15,10.19,11.7,91.0,-2.01,-23.5,54.2,53.0,10.640269469905881,1.65,877.0,51,,OFF- -7,OL 4.0/5,p98 (-2.1 PPG hist),,,,7.0,1.0,1.0,1.0,0.82,0.68,0.09,0.04,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+149,261,Cade Otton,TE,TB,7.08,4.3,10.57,15.2,108.0,-2.02,-30.7,,,,,,171,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,,,,,,,,,,,,,,,,
+150,197,Darren Waller,TE,,7.06,3.68,10.14,11.6,82.0,-2.04,-23.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+151,280,Gunnar Helm,TE,TEN,6.83,3.84,9.84,14.8,101.0,-2.27,-33.6,,,,,,171,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+152,221,Daniel Jones,QB,IND,14.9,9.62,15.84,11.2,167.0,-2.31,-25.9,153.0,174.0,37.2815,0.0,158.0,147,,OFF- -7 spike,OL 4.5/5,,,,,13.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.94,0.93,0.83,0.79,0.62,0.56,0.36,0.31
+153,233,Jalen Coker,WR,CAR,7.64,3.87,10.95,11.4,87.0,-2.37,-27.0,123.7,129.0,22.412,0.0,283.0,123,,OFF+ +3,,,,,,5.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.91,0.86,0.6,0.51,0.21,0.15,0.03,0.02
+154,224,Matthew Golden,WR,GB,7.57,2.31,9.86,10.8,82.0,-2.44,-26.4,117.3,123.0,24.7825,0.0,595.0,99,,OFF= +0,,,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.97,0.96,0.83,0.77,0.49,0.41,0.16,0.12,0.02,0.02
+155,319,Jayden Higgins,WR,HOU,7.55,3.68,11.72,15.4,116.0,-2.46,-37.9,129.6,133.0,25.429,0.0,396.0,123,,OFF+ +5,,p89 (-0.5 PPG hist),,,,8.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.92,0.89,0.68,0.6,0.31,0.25,0.08,0.05
+156,228,Audric Estimé,RB,NO,7.25,2.75,9.88,10.7,78.0,-2.5,-26.8,,,,,,171,,OFF+ +8,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+157,296,Pat Freiermuth,TE,PIT,6.59,3.81,8.83,14.0,92.0,-2.51,-35.1,190.7,258.0,39.436499999999995,0.0,6.0,171,,OFF= -2,"new PC Mike McCarthy, RB27",,,,,9.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.89,0.87,0.73,0.69
+158,184,Isiah Pacheco,RB,DET,7.22,3.55,9.5,9.0,65.0,-2.53,-22.8,153.9,177.0,41.1605,0.0,190.0,147,,OFF- -5 elite,"OL 4.0/5 · new PC Drew Petzing, RB20",,,,,6.0,1.0,1.0,1.0,1.0,0.99,0.98,0.97,0.93,0.91,0.81,0.77,0.61,0.57,0.38,0.34
+159,331,Elic Ayomanor,WR,TEN,7.47,3.25,10.72,15.3,114.0,-2.54,-38.9,,,,,,171,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+160,203,Jacoby Brissett,QB,ARI,14.67,11.62,15.27,9.5,139.0,-2.54,-24.1,164.5,218.0,33.187,0.0,23.0,147,,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",,,,,14.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.98,0.92,0.89,0.75,0.7,0.48,0.42
+161,309,Blake Corum,RB,LA,7.2,3.66,9.5,14.3,103.0,-2.55,-36.5,122.6,126.0,35.773,0.0,1167.0,123,,OFF-- -14 spike/yds-backed,OL 4.5/5-,,,,,11.0,1.0,1.0,1.0,0.98,0.98,0.93,0.91,0.79,0.75,0.55,0.5,0.29,0.25,0.11,0.09
+162,273,Tyjae Spears,RB,TEN,7.11,3.65,11.23,12.5,89.0,-2.64,-33.0,133.3,140.0,28.6615,0.0,85.0,123,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,9.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.91,0.88,0.7,0.64,0.38,0.32,0.13,0.09
+163,342,Mark Andrews,TE,BAL,6.45,4.9,9.11,15.0,97.0,-2.65,-39.8,136.3,143.0,42.884499999999996,0.0,354.0,123,,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,13.0,1.0,1.0,0.99,0.98,0.98,0.94,0.92,0.84,0.81,0.67,0.62,0.45,0.4,0.24,0.21
+164,177,Kyler Murray,QB,MIN,14.55,9.35,16.91,8.4,122.0,-2.66,-22.3,138.3,147.0,30.816499999999998,0.0,451.0,123,,OFF+ +7,OL 4.0/5+,,,,,6.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.92,0.9,0.74,0.69,0.45,0.39,0.18,0.14
+165,313,Rashid Shaheed,WR,SEA,7.28,4.87,10.34,13.6,99.0,-2.73,-37.1,127.6,131.0,24.997999999999998,0.0,442.0,123,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,11.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.91,0.87,0.65,0.57,0.28,0.22,0.06,0.04
+166,173,Chris Rodriguez Jr.,RB,JAX,6.99,2.5,8.56,7.9,55.0,-2.76,-21.8,160.9,199.0,39.436499999999995,0.0,186.0,147,,OFF- -7,OL 4.0/5,p94 (-2.1 PPG hist),,,,7.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.96,0.94,0.86,0.83,0.68,0.64,0.45,0.4
+167,225,Jonah Coleman,RB,DEN,6.97,1.55,10.86,9.5,66.0,-2.78,-26.4,156.4,188.0,38.57449999999999,0.0,23.0,147,R4 pick 108,OFF= -2,OL 5.0/5,,,,,10.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.95,0.93,0.84,0.81,0.65,0.6,0.4,0.35
+168,340,Jordan Love,QB,GB,14.42,10.15,16.43,14.2,205.0,-2.79,-39.6,144.5,157.0,27.152999999999995,0.0,252.0,142,,OFF= +0,OL 2.0/5-,,,,,11.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.97,0.95,0.84,0.79,0.54,0.46,0.21,0.16
+169,326,Colby Parkinson,TE,LA,6.3,4.42,8.4,13.8,87.0,-2.8,-38.6,,,,,,171,,OFF-- -14 spike/yds-backed,,p93 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+170,363,Adonai Mitchell,WR,NYJ,7.14,2.96,9.24,14.4,103.0,-2.87,-41.3,161.8,205.0,37.7125,0.0,52.0,147,,OFF+ +8,"new PC Frank Reich, RB6",,,,,13.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.96,0.95,0.88,0.85,0.7,0.65,0.46,0.4
+171,353,Evan Engram,TE,DEN,6.21,3.43,9.17,14.1,88.0,-2.89,-40.7,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+172,366,Cole Kmet,TE,CHI,6.19,3.59,9.27,14.3,88.0,-2.91,-41.6,,,,,,171,,OFF- -5,,,,,,,,,,,,,,,,,,,,,
+173,325,Kayshon Boutte,WR,NE,7.09,2.25,9.89,13.2,94.0,-2.92,-38.5,169.7,238.0,39.0055,0.0,44.0,166,,OFF-- -11 spike/yds-backed,,p91 (-0.5 PPG hist),,,,11.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.97,0.97,0.91,0.88,0.76,0.72,0.54,0.49
+174,354,C.J. Stroud,QB,HOU,14.28,8.61,16.89,13.9,199.0,-2.93,-40.7,160.8,198.0,29.307999999999996,0.0,102.0,147,,OFF+ +5,OL 3.0/5+,,,,,8.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.93,0.9,0.74,0.68,0.43,0.36
+175,292,Aaron Jones,RB,MIN,6.79,2.97,10.08,11.7,79.0,-2.96,-34.6,98.2,101.0,26.42739166410062,0.8,384.0,99,,OFF+ +7,OL 4.0/5+,,,,,6.0,1.0,1.0,1.0,0.98,0.97,0.86,0.82,0.58,0.5,0.24,0.18,0.05,0.03,0.01,0.0
+176,320,Jordan Mason,RB,MIN,6.78,2.53,8.97,12.8,87.0,-2.97,-38.0,123.6,128.0,31.2475,0.0,974.0,123,,OFF+ +7,OL 4.0/5+,,,,,6.0,1.0,1.0,1.0,0.99,0.99,0.96,0.94,0.83,0.78,0.57,0.51,0.28,0.23,0.09,0.06
+177,243,Jalen McMillan,WR,TB,7.03,3.49,11.78,9.4,66.0,-2.98,-28.0,143.3,154.0,36.8505,0.0,139.0,142,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,10.0,1.0,1.0,1.0,1.0,0.99,0.98,0.97,0.91,0.89,0.75,0.71,0.51,0.46,0.27,0.23
+178,407,Chig Okonkwo,TE,WAS,6.1,3.15,9.69,15.6,95.0,-3.0,-46.8,162.1,207.0,42.45349999999999,0.0,38.0,147,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,7.0,1.0,1.0,1.0,1.0,1.0,0.98,0.98,0.95,0.93,0.85,0.82,0.68,0.64,0.46,0.42
+179,277,T.J. Hockenson,TE,MIN,6.08,3.85,9.25,11.0,67.0,-3.02,-33.2,167.2,227.0,52.150999999999996,0.0,53.0,166,,OFF+ +7,,,,,,6.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.92,0.9,0.83,0.8,0.69,0.65,0.51,0.47
+180,274,Kimani Vidal,RB,LAC,6.72,2.44,10.72,10.9,73.0,-3.03,-33.0,153.1,175.0,56.2455,0.0,9.0,147,,OFF+ +4,"OL 3.0/5++ · new PC Mike McDaniel, RB3",,,,,7.0,1.0,0.99,0.99,0.97,0.97,0.93,0.92,0.85,0.83,0.73,0.7,0.58,0.54,0.41,0.38
+181,272,Jake Tonges,TE,SF,5.95,3.46,10.1,10.4,62.0,-3.15,-32.8,,,,,,171,,OFF= -2,,p85 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+182,262,Tyler Shough,QB,NO,14.01,6.11,17.08,9.7,136.0,-3.2,-31.0,136.8,145.0,19.825999999999997,0.0,241.0,123,,OFF+ +8,OL 3.0/5+,,,,,8.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.97,0.83,0.76,0.4,0.3,0.07,0.04
+183,386,Tez Johnson,WR,TB,6.69,2.81,9.94,13.3,89.0,-3.32,-44.2,,,,,,171,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",p94 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+184,314,Isaiah Bond,WR,CLE,6.69,2.3,8.54,11.3,76.0,-3.32,-37.5,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+185,457,Chimere Dike,WR,TEN,6.66,3.59,10.94,15.4,103.0,-3.35,-51.6,150.8,168.0,29.738999999999997,0.0,5.0,147,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,9.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.97,0.96,0.86,0.83,0.62,0.55,0.3,0.25
+186,278,Greg Dulcich,TE,MIA,5.71,3.22,7.8,9.8,56.0,-3.39,-33.2,168.8,237.0,44.393,0.0,30.0,166,,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,6.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.95,0.94,0.87,0.85,0.73,0.69,0.53,0.48
+187,355,Terrance Ferguson,TE,LA,5.71,2.96,7.41,12.0,68.0,-3.39,-40.7,,,,,,171,,OFF-- -14 spike/yds-backed,,p91 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+188,159,Joe Flacco,QB,CIN,13.81,7.1,15.1,5.9,82.0,-3.4,-20.1,,,,,,171,,OFF= -3,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+189,427,Devin Singletary,RB,NYG,6.34,3.02,8.69,14.5,92.0,-3.41,-49.4,,,,,,171,,OFF- -4,"OL 3.0/5+ · new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+190,424,DeMario Douglas,WR,NE,6.6,2.74,9.58,14.3,94.0,-3.41,-48.8,,,,,,171,,OFF-- -11 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+191,384,Kareem Hunt,RB,,6.33,3.46,9.4,12.9,82.0,-3.42,-44.1,,,,,,171,,,,p92 (-2.1 PPG hist),,,,,,,,,,,,,,,,,,,
+192,265,Nick Chubb,RB,,6.32,2.12,8.44,9.2,58.0,-3.43,-31.6,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+193,401,Xavier Legette,WR,CAR,6.57,2.84,9.22,13.4,88.0,-3.44,-46.1,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+194,399,Brian Robinson,RB,ATL,6.29,2.94,8.8,13.2,83.0,-3.46,-45.7,164.9,221.0,50.42699999999999,0.0,31.0,147,,OFF= +2,"OL 4.0/5+ · new PC Kevin Stefanski, RB16",,,,,11.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.92,0.9,0.82,0.8,0.68,0.64,0.49,0.45
+195,393,Michael Mayer,TE,LV,5.59,2.85,7.86,12.9,72.0,-3.51,-45.3,,,,,,171,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+196,289,Tank Bigsby,RB,PHI,6.23,2.03,6.6,9.8,61.0,-3.52,-34.5,165.5,223.0,40.94499999999999,0.0,86.0,166,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,10.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.96,0.95,0.88,0.85,0.72,0.67,0.5,0.45
+197,360,Ryan Flournoy,WR,DAL,6.48,2.78,9.44,11.6,75.0,-3.53,-40.9,169.8,239.0,29.092499999999998,0.0,12.0,166,,OFF- -5 yds-backed,,,,,,14.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.96,0.95,0.83,0.78,0.55,0.48
+198,476,Malik Washington,WR,MIA,6.45,2.7,9.09,15.1,97.0,-3.56,-53.8,151.6,171.0,32.75599999999999,0.0,183.0,147,,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,6.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.96,0.95,0.85,0.81,0.62,0.56,0.33,0.28
+199,352,David Njoku,TE,LAC,5.51,3.72,7.61,11.3,62.0,-3.59,-40.6,,,,,,171,,OFF+ +4,"new PC Mike McDaniel, RB3",,,,,,,,,,,,,,,,,,,,
+200,285,Sam Roush,TE,CHI,5.5,2.65,8.87,9.5,52.0,-3.6,-34.2,,,,,,171,R3 pick 69,OFF- -5,,,,,,,,,,,,,,,,,,,,,
+201,286,Oscar Delp,TE,NO,5.5,2.66,6.32,9.5,52.0,-3.6,-34.2,,,,,,171,R3 pick 73,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+202,403,Cooper Kupp,WR,SEA,6.4,3.55,8.99,12.8,82.0,-3.61,-46.2,155.2,182.0,46.11699999999999,0.0,97.0,147,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,11.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.91,0.89,0.79,0.76,0.61,0.57,0.41,0.37
+203,295,Taysom Hill,TE,,5.48,1.89,8.39,9.6,53.0,-3.62,-34.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+204,138,Jaydon Blue,RB,DAL,6.12,2.32,10.36,4.5,28.0,-3.63,-16.3,168.3,231.0,20.472499999999997,0.0,10.0,166,,OFF- -5 yds-backed,OL 4.0/5,,,,,14.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.9,0.85,0.54,0.45
+205,405,Fernando Mendoza,QB,LV,13.57,10.68,17.46,12.8,174.0,-3.64,-46.6,168.6,232.0,39.8675,0.0,14.0,166,R1 pick 1,OFF+ +9,"OL 2.5/5++ · new PC Klint Kubiak, RB14",,,,,13.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.9,0.87,0.75,0.71,0.53,0.48
+206,404,Ja'Tavion Sanders,TE,CAR,5.46,2.23,6.89,12.7,69.0,-3.64,-46.2,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+207,494,Sean Tucker,RB,TB,6.1,1.29,6.96,15.3,93.0,-3.65,-55.8,,,,,,171,,OFF+ +3 rebound,"OL 4.0/5++ · new PC Zac Robinson, RB2",p100 (-2.1 PPG hist),,,,,,,,,,,,,,,,,,,
+208,477,Marvin Mims Jr.,WR,DEN,6.3,2.55,8.85,14.5,91.0,-3.71,-53.8,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+209,322,Mike Gesicki,TE,CIN,5.39,3.18,6.75,10.3,55.0,-3.71,-38.2,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+210,431,Mitchell Evans,TE,CAR,5.37,1.96,5.37,13.4,72.0,-3.73,-50.0,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+211,135,Braelon Allen,RB,NYJ,6.01,2.05,8.09,4.2,25.0,-3.74,-15.7,149.7,164.0,64.219,0.0,14.0,147,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,13.0,0.99,0.98,0.97,0.95,0.94,0.89,0.88,0.81,0.79,0.69,0.66,0.55,0.52,0.4,0.37
+212,469,Ray Davis,RB,BUF,6.0,2.76,8.15,14.2,85.0,-3.75,-53.2,165.7,224.0,41.806999999999995,0.0,17.0,166,,OFF-- -8 elite,OL 4.5/5-,,,,,7.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.96,0.94,0.87,0.85,0.71,0.67,0.5,0.45
+213,487,Aaron Rodgers,QB,PIT,13.45,9.74,14.76,14.6,196.0,-3.76,-54.9,166.8,225.0,67.23599999999999,0.0,18.0,166,,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,9.0,0.99,0.98,0.98,0.96,0.96,0.93,0.91,0.86,0.84,0.77,0.74,0.64,0.62,0.5,0.48
+214,506,Jonnu Smith,TE,,5.34,2.65,7.7,15.4,82.0,-3.76,-57.9,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+215,337,Trey Benson,RB,ARI,5.98,2.3,10.15,10.4,62.0,-3.77,-39.2,,,,,,171,,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+216,299,Jaylen Wright,RB,MIA,5.95,1.51,7.19,9.4,56.0,-3.8,-35.7,,,,,,171,,OFF+ +4 rebound,"OL 2.5/5+ · new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+217,263,Emari Demercado,RB,KC,5.95,2.21,8.43,8.3,49.0,-3.8,-31.5,167.4,229.0,51.073499999999996,0.0,5.0,166,,OFF= +2,OL 3.0/5,,,,,5.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.92,0.91,0.83,0.81,0.69,0.66,0.51,0.47
+218,310,Kaelon Black,RB,SF,5.91,2.1,10.04,9.5,56.0,-3.84,-36.5,155.1,181.0,55.599,0.0,9.0,147,R3 pick 90,OFF= -2,OL 4.0/5,,,,,8.0,1.0,0.99,0.99,0.98,0.97,0.94,0.93,0.86,0.84,0.75,0.72,0.59,0.56,0.42,0.39
+219,497,Brashard Smith,RB,KC,5.9,2.17,9.08,14.7,87.0,-3.85,-56.6,,,,,,171,,OFF= +2,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+220,514,Tyler Allgeier,RB,ARI,5.89,2.2,9.28,15.4,91.0,-3.86,-59.4,163.9,217.0,45.9015,0.0,93.0,147,,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",p93 (-2.1 PPG hist),,,,14.0,1.0,1.0,1.0,0.99,0.99,0.98,0.97,0.94,0.92,0.84,0.81,0.68,0.64,0.48,0.44
+221,472,Andrei Iosivas,WR,CIN,6.15,2.79,8.48,13.8,85.0,-3.86,-53.3,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+222,495,Ollie Gordon II,RB,MIA,5.85,1.45,7.69,14.4,84.0,-3.9,-56.2,,,,,,171,,OFF+ +4 rebound,"OL 2.5/5+ · new PC Bobby Slowik, RB22",p97 (-2.1 PPG hist),,,,,,,,,,,,,,,,,,,
+223,412,Darnell Mooney,WR,NYG,6.07,2.24,8.28,12.0,73.0,-3.94,-47.3,187.6,257.0,20.688,0.0,5.0,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,8.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.85,0.79
+224,402,Isaac TeSlaa,WR,DET,6.07,2.69,9.7,11.7,71.0,-3.94,-46.1,176.9,254.0,53.443999999999996,0.0,17.0,171,,OFF- -5 elite,"new PC Drew Petzing, RB20",p100 (-0.5 PPG hist),,,,6.0,1.0,1.0,1.0,0.99,0.99,0.98,0.97,0.94,0.93,0.86,0.84,0.74,0.71,0.58,0.54
+225,509,Emanuel Wilson,RB,SEA,5.8,1.82,7.39,14.7,85.0,-3.95,-58.1,,,,,,171,,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+226,387,Bam Knight,RB,ARI,5.76,2.16,9.52,11.1,64.0,-3.99,-44.3,,,,,,171,,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",p85 (-2.1 PPG hist),,,,,,,,,,,,,,,,,,,
+227,444,Elijah Arroyo,TE,SEA,5.1,1.88,6.02,12.7,65.0,-4.0,-50.8,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+228,332,Devaughn Vele,WR,NO,5.99,2.78,8.81,9.7,58.0,-4.02,-39.0,,,,,,171,,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+229,440,Dawson Knox,TE,BUF,5.06,3.36,7.3,12.5,63.0,-4.04,-50.5,,,,,,171,,OFF-- -8 elite,,,,,,,,,,,,,,,,,,,,,
+230,330,Mike Washington Jr.,RB,LV,5.67,1.09,8.34,9.5,54.0,-4.08,-38.8,150.1,165.0,41.1605,0.0,17.0,147,R4 pick 122,OFF+ +9,"OL 2.5/5++ · new PC Klint Kubiak, RB14",,,,,13.0,1.0,1.0,1.0,0.99,0.99,0.97,0.97,0.91,0.89,0.78,0.74,0.58,0.53,0.35,0.31
+231,504,Sam Darnold,QB,SEA,13.1,8.92,14.92,14.0,183.0,-4.11,-57.5,143.0,153.0,25.213499999999996,0.0,97.0,142,,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",,,,,11.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.97,0.96,0.84,0.79,0.52,0.44,0.18,0.13
+232,254,Christian Kirk,WR,SF,5.86,2.58,7.72,7.1,42.0,-4.15,-29.5,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+233,410,Marquise Brown,WR,PHI,5.83,3.43,8.86,11.3,66.0,-4.18,-47.2,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+234,482,Tre Harris,WR,LAC,5.82,2.36,8.72,12.9,75.0,-4.19,-54.1,162.9,214.0,45.4705,0.0,12.0,147,,OFF+ +4,"new PC Mike McDaniel, RB3",,,,,7.0,1.0,1.0,1.0,0.99,0.99,0.98,0.97,0.94,0.92,0.84,0.81,0.68,0.64,0.47,0.43
+235,356,Luke Musgrave,TE,GB,4.9,2.63,7.3,9.7,48.0,-4.2,-40.7,,,,,,171,,OFF= +0,,,,,,,,,,,,,,,,,,,,,
+236,242,Tyrell Shavers,WR,BUF,5.78,2.9,9.47,6.6,38.0,-4.23,-27.9,,,,,,171,,OFF-- -8 elite,,,,,,,,,,,,,,,,,,,,,
+237,448,Tommy Tremble,TE,CAR,4.85,2.52,6.45,12.0,58.0,-4.25,-51.0,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+238,411,Tua Tagovailoa,QB,ATL,12.96,8.26,14.39,11.1,144.0,-4.25,-47.2,,,,,,171,,OFF= +2,"OL 4.0/5+ · new PC Kevin Stefanski, RB16",p87 (-1.6 PPG hist),,,,,,,,,,,,,,,,,,,
+239,467,Eli Stowers,TE,PHI,4.85,2.25,7.14,12.4,60.0,-4.25,-52.7,,,,,,171,R2 pick 54,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+240,485,Darnell Washington,TE,PIT,4.84,2.71,6.08,12.8,62.0,-4.26,-54.5,,,,,,171,,OFF= -2,"new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+241,484,Dontayvion Wicks,WR,PHI,5.7,2.29,9.12,12.6,72.0,-4.31,-54.3,172.1,249.0,36.204,0.0,103.0,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,10.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.98,0.93,0.91,0.8,0.76,0.57,0.51
+242,362,Jalen Tolbert,WR,MIA,5.67,1.82,7.84,9.5,54.0,-4.34,-41.2,168.7,235.0,25.429,0.0,6.0,166,,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,6.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.96,0.85,0.8,0.54,0.46
+243,271,Brandin Cooks,WR,,5.66,2.08,7.69,7.5,42.0,-4.35,-32.6,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+244,264,Tanner Koziol,TE,JAX,4.73,2.04,8.21,7.2,34.0,-4.37,-31.5,,,,,,171,R5 pick 164,OFF- -7,,,,,,,,,,,,,,,,,,,,,
+245,142,Carson Wentz,QB,MIN,12.83,7.5,15.85,3.9,50.0,-4.38,-17.1,,,,,,171,,OFF+ +7,OL 4.0/5+,,,,,,,,,,,,,,,,,,,,
+246,307,Tyler Higbee,TE,LA,4.69,2.98,6.83,8.2,38.0,-4.41,-36.2,,,,,,171,,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+247,512,Isaiah Likely,TE,NYG,4.69,2.72,7.74,13.4,63.0,-4.41,-59.1,135.4,142.0,37.7125,0.0,1065.0,123,,OFF- -4,"new PC Matt Nagy, RB12",,,,,8.0,1.0,1.0,1.0,0.99,0.99,0.96,0.95,0.86,0.83,0.68,0.63,0.43,0.38,0.21,0.17
+248,373,Tyquan Thornton,WR,KC,5.58,2.37,7.12,9.6,54.0,-4.43,-42.5,,,,,,171,,OFF= +2,,,,,,,,,,,,,,,,,,,,,
+249,474,Pat Bryant,WR,DEN,5.57,2.68,8.53,12.1,67.0,-4.44,-53.7,147.1,161.0,38.79,0.0,9.0,147,,OFF= -2,,,,,,10.0,1.0,1.0,1.0,1.0,0.99,0.98,0.97,0.91,0.89,0.77,0.73,0.55,0.5,0.31,0.27
+250,408,Noah Fant,TE,NO,4.64,2.34,6.82,10.5,49.0,-4.46,-46.8,,,,,,171,,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+251,179,Kendre Miller,RB,NO,5.27,1.96,7.79,5.0,26.0,-4.48,-22.4,,,,,,171,,OFF+ +8,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+252,458,Samaje Perine,RB,CIN,5.25,2.19,7.16,11.5,60.0,-4.5,-51.8,174.3,252.0,31.678499999999996,0.0,9.0,171,,OFF= -3,OL 3.0/5,,,,,6.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.96,0.95,0.85,0.81,0.6,0.54
+253,507,Ty Simpson,QB,LAR,12.69,9.16,16.48,12.8,162.0,-4.52,-57.9,,,,,,171,R1 pick 13,OFF-- -14 spike/yds-backed,OL 4.5/5-,,,,,,,,,,,,,,,,,,,,
+254,519,Calvin Austin III,WR,NYG,5.49,2.21,7.52,13.4,74.0,-4.52,-60.6,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+255,339,Justin Fields,QB,KC,12.67,7.06,14.13,8.7,110.0,-4.54,-39.5,,,,,,171,,OFF= +2,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+256,305,Cedric Tillman,WR,CLE,5.45,2.43,6.92,7.9,43.0,-4.56,-36.0,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+257,451,Darius Slayton,WR,NYG,5.4,2.52,8.41,11.1,60.0,-4.61,-51.2,171.5,247.0,40.083,0.0,6.0,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,8.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.97,0.96,0.91,0.89,0.77,0.73,0.55,0.5
+258,190,Tutu Atwell,WR,MIA,5.38,1.65,7.54,5.0,27.0,-4.63,-23.2,,,,,,171,,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+259,328,Tanner Hudson,TE,CIN,4.44,2.54,6.62,8.3,37.0,-4.66,-38.7,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+260,364,Michael Carter,RB,TEN,5.04,2.56,9.04,8.8,44.0,-4.71,-41.4,,,,,,171,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+261,284,Josh Cuevas,TE,BAL,4.37,1.45,7.86,7.2,31.0,-4.73,-34.1,,,,,,171,R5 pick 173,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+262,327,Josh Palmer,WR,BUF,5.24,2.22,8.41,8.1,42.0,-4.77,-38.6,,,,,,171,,OFF-- -8 elite,,,,,,,,,,,,,,,,,,,,,
+263,395,Antonio Williams,WR,WAS,5.21,3.04,8.93,9.5,49.0,-4.8,-45.6,167.4,228.0,22.842999999999996,0.0,16.0,166,R3 pick 71,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,7.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.97,0.87,0.81,0.52,0.44
+264,396,Zachariah Branch,WR,ATL,5.21,1.73,8.28,9.5,49.0,-4.8,-45.6,170.9,244.0,15.80908,0.0,11.0,171,R3 pick 79,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,11.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.97,0.93,0.62,0.5
+265,397,Ja'Kobi Lane,WR,BAL,5.21,1.73,8.06,9.5,49.0,-4.8,-45.6,159.2,193.0,32.324999999999996,0.0,32.0,147,R3 pick 80,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,13.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.97,0.9,0.87,0.7,0.65,0.42,0.36
+266,398,Caleb Douglas,WR,MIA,5.21,3.05,8.93,9.5,49.0,-4.8,-45.6,174.7,253.0,58.184999999999995,0.0,26.0,171,R3 pick 75,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,6.0,1.0,1.0,0.99,0.99,0.98,0.96,0.96,0.92,0.9,0.84,0.81,0.71,0.68,0.56,0.53
+267,561,Calvin Ridley,WR,TEN,5.18,2.75,8.11,15.3,79.0,-4.83,-73.9,136.7,144.0,22.627499999999998,0.0,98.0,123,,OFF+ +10,"new PC Brian Daboll, RB23",,recovered,"RE-VERIFIED Aug 12 2026. Full participant, ~9 months clear of the Wk11 fibula, and he restructured his deal to stay on the roster. ⚠️ The FADE stands and is now BETTER supported than when it was written: availability was never his problem (6.8 PPG when playing, age 32), and Tennessee has since added Carnell Tate and Wan'Dale Robinson -- he is competing to retain a role, not guaranteed one",,9.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.97,0.95,0.8,0.73,0.41,0.32,0.1,0.06
+268,551,Jalen Nailor,WR,LV,5.17,1.85,7.54,14.1,73.0,-4.84,-68.2,153.9,178.0,27.7995,0.0,120.0,147,,OFF+ +9,"new PC Klint Kubiak, RB14",p86 (-0.5 PPG hist),,,,13.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.98,0.9,0.87,0.67,0.6,0.33,0.27
+269,170,Raheim Sanders,RB,CLE,4.88,1.97,8.36,4.4,21.0,-4.87,-21.4,,,,,,171,,OFF+ +9,"OL 2.0/5+ · new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+270,226,Jahdae Walker,WR,CHI,5.12,1.85,7.58,5.4,28.0,-4.89,-26.4,,,,,,171,,OFF- -5,,,,,,,,,,,,,,,,,,,,,
+271,300,Keaton Mitchell,RB,LAC,4.86,1.77,8.22,7.3,35.0,-4.89,-35.7,159.9,195.0,65.2965,0.0,62.0,147,,OFF+ +4,"OL 3.0/5++ · new PC Mike McDaniel, RB3",,,,,7.0,0.99,0.98,0.98,0.96,0.95,0.92,0.9,0.84,0.82,0.74,0.71,0.61,0.58,0.46,0.43
+272,297,Jawhar Jordan,RB,HOU,4.86,2.03,9.17,7.2,35.0,-4.89,-35.2,,,,,,171,,OFF+ +5,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+273,428,Luke McCaffrey,WR,WAS,5.11,2.26,6.96,10.1,52.0,-4.9,-49.5,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+274,406,Malachi Fields,WR,NYG,5.1,3.53,9.16,9.5,48.0,-4.91,-46.6,,,,,,171,R3 pick 74,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+275,219,Gabe Davis,WR,,5.1,2.62,7.46,5.2,27.0,-4.91,-25.5,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+276,374,Demarcus Robinson,WR,SF,5.1,2.45,8.23,8.7,44.0,-4.91,-42.7,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+277,422,Rashod Bateman,WR,BAL,5.09,2.63,8.54,9.9,50.0,-4.92,-48.7,147.2,162.0,34.910999999999994,0.0,40.0,147,,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,13.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.94,0.92,0.8,0.76,0.56,0.5,0.3,0.25
+278,526,Max Klare,TE,LAR,4.12,2.15,8.49,12.4,51.0,-4.98,-61.8,,,,,,171,R2 pick 61,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+279,527,Marlin Klein,TE,HOU,4.12,2.15,7.12,12.4,51.0,-4.98,-61.8,,,,,,171,R2 pick 59,OFF+ +5,,,,,,,,,,,,,,,,,,,,,
+280,347,Elijah Moore,WR,PHI,5.0,1.46,7.32,8.0,40.0,-5.01,-40.1,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+281,316,Malik Davis,RB,DAL,4.74,1.75,6.66,7.5,36.0,-5.01,-37.6,,,,,,171,,OFF- -5 yds-backed,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+282,452,Jaylin Lane,WR,WAS,4.99,1.28,6.68,10.2,51.0,-5.02,-51.2,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+283,556,Jaylin Noel,WR,HOU,4.98,1.85,7.66,13.9,69.0,-5.03,-69.9,,,,,,171,,OFF+ +5,,,,,,,,,,,,,,,,,,,,,
+284,169,Roschon Johnson,RB,CHI,4.7,0.84,5.6,4.2,20.0,-5.05,-21.2,,,,,,171,,OFF- -5,OL 4.5/5-,,,,,,,,,,,,,,,,,,,,
+285,541,KaVontae Turpin,WR,DAL,4.95,2.29,7.38,12.9,64.0,-5.06,-65.3,,,,,,171,,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+286,270,Raheem Mostert,RB,,4.69,2.2,8.41,6.4,30.0,-5.06,-32.4,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+287,523,Austin Hooper,TE,ATL,4.01,1.99,5.37,12.0,48.0,-5.09,-61.1,,,,,,171,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+288,558,Xavier Hutchinson,WR,HOU,4.91,1.71,6.61,14.0,69.0,-5.1,-71.4,,,,,,171,,OFF+ +5,,,,,,,,,,,,,,,,,,,,,
+289,554,Tyler Lockett,WR,,4.88,2.05,7.62,13.5,66.0,-5.13,-69.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+290,499,Davis Allen,TE,LA,3.97,2.44,5.54,11.1,44.0,-5.13,-56.9,,,,,,171,,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+291,449,Josh Oliver,TE,MIN,3.95,2.09,5.12,9.9,39.0,-5.15,-51.0,,,,,,171,,OFF+ +7,,p96 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+292,562,Cam Ward,QB,TEN,12.05,7.47,15.57,14.5,175.0,-5.16,-74.8,171.8,248.0,38.143499999999996,0.0,53.0,171,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,9.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.97,0.92,0.9,0.78,0.74,0.56,0.51
+293,572,Ty Johnson,RB,BUF,4.59,2.08,7.29,15.2,70.0,-5.16,-78.4,161.9,206.0,94.1735,0.0,16.0,147,,OFF-- -8 elite,OL 4.5/5-,,,,,7.0,0.95,0.93,0.92,0.89,0.88,0.84,0.82,0.76,0.75,0.68,0.66,0.58,0.56,0.48,0.46
+294,445,Isaiah Williams,WR,NYJ,4.83,1.74,7.07,9.8,47.0,-5.18,-50.8,,,,,,171,,OFF+ +8,"new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+295,423,Justice Hill,RB,BAL,4.57,1.85,7.87,9.4,43.0,-5.18,-48.7,163.8,216.0,33.402499999999996,0.0,20.0,147,,OFF= +0 rebound,"OL 3.0/5- · NEW PC (1st time, Ben Johnson tree)",,,,,13.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.98,0.97,0.91,0.89,0.74,0.69,0.47,0.41
+296,513,Noah Gray,TE,KC,3.91,2.42,5.69,11.4,45.0,-5.19,-59.2,,,,,,171,,OFF= +2,,,,,,,,,,,,,,,,,,,,,
+297,321,Tory Horton,WR,SEA,4.81,2.24,9.04,7.3,35.0,-5.2,-38.0,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+298,555,Isaiah Davis,RB,NYJ,4.53,1.6,7.76,13.3,60.0,-5.22,-69.4,,,,,,171,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+299,531,Jackson Hawes,TE,BUF,3.88,2.36,5.68,12.0,47.0,-5.22,-62.6,,,,,,171,,OFF-- -8 elite,,p88 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+300,318,Kevin Coleman,WR,MIA,4.76,0.86,8.35,7.2,34.0,-5.25,-37.8,,,,,,171,R5 pick 177,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+301,468,Kendrick Bourne,WR,ARI,4.73,1.74,6.85,10.0,47.0,-5.28,-52.8,,,,,,171,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+302,301,Adam Thielen,WR,MIN,4.68,2.29,6.85,6.7,31.0,-5.33,-35.7,,,,,,171,,OFF+ +7,,,,,,,,,,,,,,,,,,,,,
+303,446,Eli Raridon,TE,NE,3.74,1.84,6.96,9.5,35.0,-5.36,-50.9,,,,,,171,R3 pick 95,OFF-- -11 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+304,564,Bryce Young,QB,CAR,11.85,5.37,13.95,14.1,167.0,-5.36,-75.6,171.4,245.0,33.402499999999996,0.0,30.0,171,,OFF+ +3,OL 3.0/5-,,,,,5.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.95,0.93,0.81,0.77,0.56,0.5
+305,413,Sterling Shepard,WR,,4.64,1.81,6.4,8.8,41.0,-5.37,-47.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+306,453,Brenen Thompson,WR,LAC,4.62,1.09,8.85,9.5,44.0,-5.39,-51.2,,,,,,171,R4 pick 105,OFF+ +4,"new PC Mike McDaniel, RB3",,,,,,,,,,,,,,,,,,,,
+307,522,Mack Hollins,WR,NE,4.62,2.87,8.43,11.3,52.0,-5.39,-60.9,,,,,,171,,OFF-- -11 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+308,496,Olamide Zaccheaus,WR,ATL,4.61,1.81,6.66,10.4,48.0,-5.4,-56.2,,,,,,171,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+309,455,Matthew Hibner,TE,BAL,3.7,1.57,4.16,9.5,35.0,-5.4,-51.3,,,,,,171,R4 pick 133,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+310,546,Daniel Bellinger,TE,TEN,3.68,2.36,6.13,12.4,46.0,-5.42,-67.2,,,,,,171,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+311,136,Noah Brown,WR,,4.58,2.11,6.4,2.9,13.0,-5.43,-15.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+312,335,Justin Joly,TE,DEN,3.67,1.8,7.05,7.2,26.0,-5.43,-39.1,,,,,,171,R5 pick 152,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+313,392,Kevin Austin Jr.,WR,NO,4.57,2.28,6.86,8.3,38.0,-5.44,-45.2,,,,,,171,,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+314,383,Dont'e Thornton Jr.,WR,LV,4.56,0.98,6.29,8.0,37.0,-5.45,-43.6,,,,,,171,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+315,473,Devin Neal,RB,NO,4.28,1.95,9.63,9.8,42.0,-5.47,-53.6,,,,,,171,,OFF+ +8,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+316,433,Kalif Raymond,WR,CHI,4.54,2.11,6.44,9.2,42.0,-5.47,-50.3,,,,,,171,,OFF- -5,,,,,,,,,,,,,,,,,,,,,
+317,566,DeAndre Hopkins,WR,,4.53,2.63,7.97,13.9,63.0,-5.48,-76.2,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+318,161,Cam Akers,RB,,4.26,0.48,10.26,3.7,16.0,-5.49,-20.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+319,549,Nate Boerkircher,TE,JAX,3.61,2.1,6.56,12.4,45.0,-5.49,-68.1,,,,,,171,R2 pick 56,OFF- -7,,,,,,,,,,,,,,,,,,,,,
+320,227,Tyler Conklin,TE,DET,3.59,1.43,4.91,4.8,17.0,-5.51,-26.4,,,,,,171,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+321,461,Will Kacmarek,TE,MIA,3.59,1.87,5.34,9.5,34.0,-5.51,-52.3,,,,,,171,R3 pick 87,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+322,281,Jaleel McLaughlin,RB,DEN,4.23,1.92,7.17,6.1,26.0,-5.52,-33.7,,,,,,171,,OFF= -2,OL 5.0/5,,,,,,,,,,,,,,,,,,,,
+323,134,Zay Jones,WR,,4.47,1.84,6.52,2.8,13.0,-5.54,-15.5,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+324,492,Jerome Ford,RB,WAS,4.21,2.07,7.23,10.0,42.0,-5.54,-55.4,,,,,,171,,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+325,371,Ameer Abdullah,RB,JAX,4.19,1.76,5.03,7.6,32.0,-5.56,-42.3,,,,,,171,,OFF- -7,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+326,175,Will Dissly,TE,,3.54,2.01,4.26,4.0,14.0,-5.56,-22.2,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+327,163,Josh Reynolds,WR,,4.44,2.18,7.08,3.7,16.0,-5.57,-20.6,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+328,475,Ben Sinnott,TE,WAS,3.51,1.48,5.1,9.6,34.0,-5.59,-53.7,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+329,500,Jahan Dotson,WR,ATL,4.38,1.33,6.19,10.1,44.0,-5.63,-56.9,,,,,,171,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+330,240,Antonio Gibson,RB,,4.08,1.71,7.04,4.9,20.0,-5.67,-27.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+331,358,Kendrick Law,WR,DET,4.34,0.78,7.01,7.2,31.0,-5.67,-40.8,,,,,,171,R5 pick 168,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+332,459,Jack Bech,WR,LV,4.32,1.13,5.94,9.1,39.0,-5.69,-51.8,,,,,,171,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+333,344,Hunter Long,TE,JAX,3.4,2.15,4.59,7.0,24.0,-5.7,-39.9,,,,,,171,,OFF- -7,,,,,,,,,,,,,,,,,,,,,
+334,463,Van Jefferson,WR,WAS,4.31,1.74,5.09,9.2,40.0,-5.7,-52.4,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+335,247,Jaret Patterson,RB,LAC,4.04,1.94,6.85,5.0,20.0,-5.71,-28.6,,,,,,171,,OFF+ +4,"OL 3.0/5++ · new PC Mike McDaniel, RB3",,,,,,,,,,,,,,,,,,,,
+336,222,Miles Sanders,RB,,4.04,1.71,7.22,4.6,19.0,-5.71,-26.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+337,229,Dameon Pierce,RB,PHI,4.04,1.05,5.44,4.7,19.0,-5.71,-26.8,,,,,,171,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+338,498,Kyle Williams,WR,NE,4.29,1.49,5.67,9.9,42.0,-5.72,-56.6,,,,,,171,,OFF-- -11 spike/yds-backed,,p97 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+339,557,Jeremy Ruckert,TE,NYJ,3.38,1.91,4.95,12.4,42.0,-5.72,-70.9,,,,,,171,,OFF+ +8,"new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+340,186,AJ Dillon,RB,CAR,4.02,1.13,5.69,4.0,16.0,-5.73,-22.9,,,,,,171,,OFF+ +3,OL 3.0/5-,,,,,,,,,,,,,,,,,,,,
+341,574,Elijah Higgins,TE,ARI,3.36,1.72,4.84,13.8,46.0,-5.74,-79.2,,,,,,171,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+342,365,Nicholas Singleton,RB,TEN,3.98,1.69,6.88,7.2,29.0,-5.77,-41.5,,,,,,171,R5 pick 165,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+343,479,Dyami Brown,WR,WAS,4.21,1.67,5.69,9.3,39.0,-5.8,-53.9,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+344,534,Greg Dortch,WR,DET,4.2,1.83,6.08,10.9,46.0,-5.81,-63.3,,,,,,171,,OFF- -5 elite,"new PC Drew Petzing, RB20",p93 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+345,357,Brock Wright,TE,DET,3.28,2.01,3.97,7.0,23.0,-5.82,-40.7,,,,,,171,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+346,545,Geno Smith,QB,NYJ,11.38,7.48,13.03,11.4,130.0,-5.83,-66.5,,,,,,171,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+347,367,Max Bredeson,TE,MIN,3.27,1.63,4.63,7.2,24.0,-5.83,-42.0,,,,,,171,R5 pick 159,OFF+ +7,,,,,,,,,,,,,,,,,,,,,
+348,535,John Metchie III,WR,CAR,4.12,1.9,5.95,10.8,44.0,-5.89,-63.6,122.8,127.0,23.058499999999995,0.0,30.0,123,,OFF+ +3,,,,,,5.0,1.0,1.0,1.0,1.0,1.0,0.99,0.98,0.89,0.85,0.58,0.5,0.2,0.15,0.03,0.02
+349,372,Cyrus Allen,WR,KC,4.12,0.21,7.27,7.2,30.0,-5.89,-42.4,151.2,169.0,55.814499999999995,0.0,11.0,147,R5 pick 176,OFF= +2,,,,,,5.0,1.0,0.99,0.99,0.97,0.96,0.93,0.91,0.85,0.83,0.72,0.69,0.57,0.53,0.4,0.36
+350,187,Allen Lazard,WR,,4.12,1.76,5.16,3.9,16.0,-5.89,-23.0,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+351,164,Jaren Kanak,TE,TEN,3.18,1.26,4.99,3.5,11.0,-5.92,-20.7,,,,,,171,R7 pick 225,OFF+ +10,"new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+352,165,Jack Endries,TE,CIN,3.18,1.26,4.99,3.5,11.0,-5.92,-20.7,,,,,,171,R7 pick 221,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+353,375,Riley Nowakowski,TE,PIT,3.17,1.73,4.24,7.2,23.0,-5.93,-42.7,,,,,,171,R5 pick 169,OFF= -2,"new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+354,376,Joe Royer,TE,CLE,3.17,1.73,4.24,7.2,23.0,-5.93,-42.7,,,,,,171,R5 pick 170,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+355,160,Curtis Samuel,WR,,4.07,1.86,5.59,3.4,14.0,-5.94,-20.2,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+356,377,Emmett Johnson,RB,KC,3.8,1.53,6.11,7.2,27.0,-5.95,-42.8,,,,,,171,R5 pick 161,OFF= +2,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+357,575,Trevor Etienne,RB,CAR,3.77,0.94,6.15,13.4,51.0,-5.98,-80.1,,,,,,171,,OFF+ +3,OL 3.0/5-,,,,,,,,,,,,,,,,,,,,
+358,202,Devontez Walker,WR,BAL,4.02,1.4,6.31,4.0,16.0,-5.99,-24.0,,,,,,171,,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+359,553,Jeremy McNichols,RB,WAS,3.75,1.46,6.62,11.5,43.0,-6.0,-69.0,,,,,,171,,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+360,470,Roman Wilson,WR,PIT,3.97,1.95,6.44,8.8,35.0,-6.04,-53.2,,,,,,171,,OFF= -2,"new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+361,563,JuJu Smith-Schuster,WR,NYG,3.95,1.9,5.64,12.4,49.0,-6.06,-75.1,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+362,205,Darius Cooper,WR,PHI,3.93,1.28,5.18,4.0,16.0,-6.08,-24.3,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+363,421,Tim Patrick,WR,NYJ,3.93,1.51,6.26,8.0,31.0,-6.08,-48.6,,,,,,171,,OFF+ +8,"new PC Frank Reich, RB6",p96 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+364,511,Luke Farrell,TE,SF,2.96,0.96,3.23,9.6,28.0,-6.14,-58.9,,,,,,171,,OFF= -2,,p95 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+365,565,Adam Trautman,TE,DEN,2.95,1.61,4.35,12.3,36.0,-6.15,-75.6,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+366,388,Adam Randall,RB,BAL,3.6,1.12,6.62,7.2,26.0,-6.15,-44.3,,,,,,171,R5 pick 174,OFF= +0 rebound,"OL 3.0/5- · NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+367,192,Foster Moreau,TE,HOU,2.95,1.39,3.3,3.8,11.0,-6.15,-23.4,,,,,,171,,OFF+ +5,,,,,,,,,,,,,,,,,,,,,
+368,489,David Sills,WR,TB,3.83,1.52,5.44,8.9,34.0,-6.18,-55.0,,,,,,171,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",p86 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+369,442,Konata Mumpfield,WR,LA,3.83,1.58,5.47,8.2,31.0,-6.18,-50.7,,,,,,171,,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+370,390,Tyler Johnson,WR,DAL,3.82,1.63,5.94,7.2,28.0,-6.19,-44.6,,,,,,171,,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+371,212,Tanner Conner,TE,NYG,2.9,1.13,4.35,4.0,12.0,-6.2,-24.8,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+372,518,Julian Hill,TE,NE,2.88,1.43,3.57,9.7,28.0,-6.22,-60.3,,,,,,171,,OFF-- -11 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+373,260,Lil'Jordan Humphrey,WR,DEN,3.78,2.16,5.23,4.9,19.0,-6.23,-30.5,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+374,559,Xavier Smith,WR,LA,3.76,1.09,5.2,11.6,44.0,-6.25,-72.5,,,,,,171,,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+375,570,LeQuint Allen Jr.,RB,JAX,3.5,1.72,6.49,12.4,43.0,-6.25,-77.5,,,,,,171,,OFF- -7,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+376,490,John Bates,TE,WAS,2.83,1.26,3.64,8.8,25.0,-6.27,-55.2,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+377,290,Bauer Sharp,TE,TB,2.82,1.19,4.19,5.5,16.0,-6.28,-34.5,,,,,,171,R6 pick 185,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,,,,,,,,,,,,,,,,
+378,505,Drew Sample,TE,CIN,2.82,1.75,3.3,9.2,26.0,-6.28,-57.8,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+379,130,Ray-Ray McCloud,WR,,3.73,1.43,4.86,2.2,8.0,-6.28,-13.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+380,464,John FitzPatrick,TE,,2.77,1.02,3.39,8.3,23.0,-6.33,-52.5,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+381,176,DJ Giddens,RB,IND,3.42,1.3,7.31,3.5,12.0,-6.33,-22.2,,,,,,171,,OFF- -7 spike,OL 4.5/5,,,,,,,,,,,,,,,,,,,,
+382,510,J.J. McCarthy,QB,MIN,10.85,3.62,14.72,9.2,100.0,-6.36,-58.5,,,,,,171,,OFF+ +7,OL 4.0/5+,p100 (-1.6 PPG hist),,,,,,,,,,,,,,,,,,,
+383,419,Grant Calcaterra,TE,PHI,2.74,1.56,3.76,7.5,21.0,-6.36,-47.7,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+384,267,Josh Whyle,TE,GB,2.74,1.65,3.15,5.0,14.0,-6.36,-31.8,,,,,,171,,OFF= +0,,,,,,,,,,,,,,,,,,,,,
+385,508,Zavier Scott,RB,MIN,3.38,1.51,5.94,9.1,31.0,-6.37,-58.0,,,,,,171,,OFF+ +7,OL 4.0/5+,,,,,,,,,,,,,,,,,,,,
+386,293,Mitchell Tinsley,WR,CIN,3.6,1.6,5.64,5.4,19.0,-6.41,-34.6,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+387,266,Nate Adkins,TE,DEN,2.65,1.25,3.65,4.9,13.0,-6.45,-31.6,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+388,381,Kirk Cousins,QB,LV,10.75,3.71,12.52,6.7,72.0,-6.46,-43.3,,,,,,171,,OFF+ +9,"OL 2.5/5++ · new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+389,385,Shedeur Sanders,QB,CLE,10.72,3.86,14.54,6.8,73.0,-6.49,-44.1,,,,,,171,,OFF+ +9,"OL 2.0/5+ · new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+390,185,Zamir White,RB,,3.25,1.11,5.36,3.5,11.0,-6.5,-22.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+391,416,Nick Westbrook-Ikhine,WR,IND,3.5,0.43,5.07,7.3,26.0,-6.51,-47.5,,,,,,171,,OFF- -7 spike,,,,,,,,,,,,,,,,,,,,,
+392,244,Devin Culp,TE,TB,2.59,0.82,4.74,4.3,11.0,-6.51,-28.0,,,,,,171,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,,,,,,,,,,,,,,,,
+393,417,Mo Alie-Cox,TE,IND,2.58,1.47,3.49,7.3,19.0,-6.52,-47.6,,,,,,171,,OFF- -7 spike,,,,,,,,,,,,,,,,,,,,,
+394,409,Seydou Traore,TE,MIA,2.58,1.17,4.49,7.2,19.0,-6.52,-46.9,,,,,,171,R5 pick 180,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+395,462,Chris Moore,WR,,3.47,1.93,5.6,8.0,28.0,-6.54,-52.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+396,529,Elijah Sarratt,WR,BAL,3.47,0.99,7.78,9.5,33.0,-6.54,-62.1,,,,,,171,R4 pick 115,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+397,437,Cade Stover,TE,HOU,2.55,0.81,4.41,7.7,20.0,-6.55,-50.4,,,,,,171,,OFF+ +5,,,,,,,,,,,,,,,,,,,,,
+398,542,Charlie Kolar,TE,LAC,2.54,1.16,3.68,10.0,25.0,-6.56,-65.6,,,,,,171,,OFF+ +4,"new PC Mike McDaniel, RB3",p86 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+399,246,Marcus Mariota,QB,WAS,10.63,4.41,13.38,4.3,46.0,-6.58,-28.3,,,,,,171,,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+400,180,Terrell Jennings,RB,NE,3.17,0.81,6.58,3.4,11.0,-6.58,-22.4,,,,,,171,,OFF-- -11 spike/yds-backed,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+401,140,Isaiah Hodgins,WR,NYG,3.41,2.0,4.46,2.5,9.0,-6.6,-16.5,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+402,189,Seth McGowan,RB,IND,3.15,0.56,6.63,3.5,11.0,-6.6,-23.1,,,,,,171,R7 pick 237,OFF- -7 spike,OL 4.5/5,,,,,,,,,,,,,,,,,,,,
+403,198,Khalil Herbert,RB,,3.14,1.07,5.58,3.6,11.0,-6.61,-23.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+404,483,Savion Williams,WR,GB,3.4,0.87,5.51,8.2,28.0,-6.61,-54.2,,,,,,171,,OFF= +0,,,,,,,,,,,,,,,,,,,,,
+405,532,Chris Bell,WR,MIA,3.4,1.81,7.82,9.5,32.0,-6.61,-62.8,,,,,,171,R3 pick 94,OFF+ +4 rebound,"new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+406,488,Jordan Whittington,WR,LA,3.39,1.04,5.16,8.3,28.0,-6.62,-54.9,,,,,,171,,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+407,343,George Holani,RB,SEA,3.12,1.17,5.97,6.0,19.0,-6.63,-39.8,,,,,,171,,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+408,540,Luke Schoonmaker,TE,DAL,2.46,1.18,4.14,9.8,24.0,-6.64,-65.1,,,,,,171,,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+409,460,Ian Thomas,TE,LV,2.44,1.02,3.76,7.8,19.0,-6.66,-51.9,,,,,,171,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+410,257,Stone Smartt,TE,PHI,2.44,1.18,3.26,4.5,11.0,-6.66,-30.0,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+411,311,Barion Brown,WR,NO,3.35,0.9,5.37,5.5,18.0,-6.66,-36.6,,,,,,171,R6 pick 190,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+412,238,Brenden Bates,TE,CLE,2.41,1.13,4.1,4.1,10.0,-6.69,-27.4,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+413,536,Zavion Thomas,WR,CHI,3.31,1.87,7.75,9.5,31.0,-6.7,-63.6,,,,,,171,R3 pick 89,OFF- -5,,,,,,,,,,,,,,,,,,,,,
+414,132,Casey Washington,WR,ATL,3.3,1.33,5.35,2.3,8.0,-6.71,-15.4,,,,,,171,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+415,312,Kaytron Allen,RB,WAS,3.03,0.73,4.95,5.5,17.0,-6.72,-37.0,,,,,,171,R6 pick 187,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+416,234,Anthony Firkser,TE,WAS,2.36,1.18,3.8,4.0,9.0,-6.74,-27.0,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+417,515,Jimmy Horn Jr.,WR,CAR,3.24,0.98,5.7,8.8,28.0,-6.77,-59.6,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+418,167,Corey Kiner,RB,ARI,2.95,1.5,5.86,3.1,9.0,-6.8,-21.1,,,,,,171,,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+419,200,Carsen Ryan,TE,CLE,2.28,1.26,6.15,3.5,8.0,-6.82,-23.9,,,,,,171,R7 pick 248,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+420,538,Ted Hurst,WR,TB,3.19,1.61,7.82,9.5,30.0,-6.82,-64.8,,,,,,171,R3 pick 84,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,,,,,,,,,,,,,,,,
+421,539,Chris Brazzell II,WR,CAR,3.19,1.61,7.59,9.5,30.0,-6.82,-64.8,,,,,,171,R3 pick 83,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+422,287,Michael Bandy,WR,DEN,3.17,0.75,4.83,5.0,16.0,-6.84,-34.2,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+423,434,Gage Larvadain,WR,CLE,3.12,0.69,4.82,7.3,23.0,-6.89,-50.3,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+424,153,Scott Miller,WR,CHI,3.11,1.22,3.83,2.8,9.0,-6.9,-19.3,,,,,,171,,OFF- -5,,,,,,,,,,,,,,,,,,,,,
+425,443,Hunter Renfrow,WR,,3.07,1.62,4.94,7.3,22.0,-6.94,-50.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+426,530,Connor Heyward,TE,LV,2.16,0.34,4.52,9.0,19.0,-6.94,-62.5,,,,,,171,,OFF+ +9,"new PC Klint Kubiak, RB14",p100 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+427,435,Reggie Virgil,WR,ARI,3.02,0.81,7.18,7.2,22.0,-6.99,-50.3,,,,,,171,R5 pick 143,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+428,438,Arian Smith,WR,NYJ,3.01,0.85,5.18,7.2,22.0,-7.0,-50.4,,,,,,171,,OFF+ +8,"new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+429,199,Treylon Burks,WR,WAS,3.01,1.6,4.2,3.4,10.0,-7.0,-23.8,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+430,430,Malachi Corley,WR,CLE,3.0,0.77,5.13,7.1,21.0,-7.01,-49.8,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+431,369,Brycen Tremayne,WR,CAR,3.0,0.61,5.52,6.0,18.0,-7.01,-42.1,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+432,207,Jam Miller,RB,NE,2.74,0.88,6.86,3.5,10.0,-7.01,-24.5,,,,,,171,R7 pick 245,OFF-- -11 spike/yds-backed,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+433,547,Drew Allar,QB,PIT,10.14,4.28,11.44,9.5,96.0,-7.07,-67.2,,,,,,171,R3 pick 76,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+434,361,Michael Penix Jr.,QB,ATL,10.13,4.36,13.95,5.8,59.0,-7.08,-41.1,,,,,,171,,OFF= +2,"OL 4.0/5+ · new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+435,576,Gunner Olszewski,WR,NYG,2.92,0.27,3.65,11.5,34.0,-7.09,-81.5,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",p90 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+436,204,Jake Browning,QB,TB,10.11,2.29,14.32,3.4,34.0,-7.1,-24.1,,,,,,171,,OFF+ +3 rebound,"OL 4.0/5++ · new PC Zac Robinson, RB2",,,,,,,,,,,,,,,,,,,,
+437,338,Emmanuel Henderson Jr.,WR,SEA,2.89,0.88,5.29,5.5,16.0,-7.12,-39.2,,,,,,171,R6 pick 199,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+438,216,Dallen Bentley,TE,DEN,1.97,1.04,5.73,3.5,7.0,-7.13,-25.0,,,,,,171,R7 pick 256,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+439,235,Dylan Drummond,WR,ATL,2.86,0.9,5.68,3.8,11.0,-7.15,-27.2,,,,,,171,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+440,425,Marquez Valdes-Scantling,WR,DAL,2.84,1.39,4.11,6.8,19.0,-7.17,-48.8,,,,,,171,,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+441,131,Xavier Weaver,WR,ARI,2.84,0.87,5.02,2.1,6.0,-7.17,-15.1,,,,,,171,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+442,493,Jack Stoll,TE,CLE,1.87,1.02,3.19,7.7,14.0,-7.23,-55.7,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+443,552,Carson Beck,QB,ARI,9.97,4.5,14.61,9.5,95.0,-7.24,-68.8,,,,,,171,R3 pick 65,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+444,345,Josh Cameron,WR,JAX,2.76,0.24,5.12,5.5,15.0,-7.25,-39.9,,,,,,171,R6 pick 191,OFF- -7,,,,,,,,,,,,,,,,,,,,,
+445,346,Lewis Bond,WR,HOU,2.75,0.22,4.56,5.5,15.0,-7.26,-39.9,,,,,,171,R6 pick 204,OFF+ +5,,,,,,,,,,,,,,,,,,,,,
+446,248,Ben Yurosek,TE,MIN,1.83,0.44,2.84,4.0,7.0,-7.27,-29.1,,,,,,171,,OFF+ +7,,,,,,,,,,,,,,,,,,,,,
+447,478,Hunter Luepke,RB,DAL,2.48,0.49,3.94,7.4,18.0,-7.27,-53.8,,,,,,171,,OFF- -5 yds-backed,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+448,308,Charlie Woerner,TE,ATL,1.81,0.85,2.28,5.0,9.0,-7.29,-36.4,,,,,,171,,OFF= +2,"new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+449,183,Jamari Thrash,WR,CLE,2.72,0.91,4.59,3.1,8.0,-7.29,-22.6,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+450,571,Tyler Badie,RB,DEN,2.42,0.75,4.07,10.6,26.0,-7.33,-77.7,,,,,,171,,OFF= -2,OL 5.0/5,,,,,,,,,,,,,,,,,,,,
+451,349,Demond Claiborne,RB,MIN,2.41,0.68,5.2,5.5,13.0,-7.34,-40.4,,,,,,171,R6 pick 198,OFF+ +7,OL 4.0/5+,,,,,,,,,,,,,,,,,,,,
+452,350,CJ Williams,WR,JAX,2.67,0.82,5.17,5.5,15.0,-7.34,-40.4,,,,,,171,R6 pick 203,OFF- -7,,,,,,,,,,,,,,,,,,,,,
+453,580,Chris Brooks,RB,GB,2.4,0.72,4.19,12.7,30.0,-7.35,-93.3,,,,,,171,,OFF= +0,OL 2.0/5-,,,,,,,,,,,,,,,,,,,,
+454,447,KeAndre Lambert-Smith,WR,LAC,2.64,1.11,4.89,6.9,18.0,-7.37,-50.9,,,,,,171,,OFF+ +4,"new PC Mike McDaniel, RB3",p98 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+455,256,Efton Chism III,WR,NE,2.61,0.45,3.6,4.0,10.0,-7.4,-29.6,,,,,,171,,OFF-- -11 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+456,415,Mac Jones,QB,SF,9.81,3.92,13.36,6.4,63.0,-7.4,-47.4,,,,,,171,,OFF= -2,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+457,208,Cody White,WR,SEA,2.59,0.66,3.99,3.3,9.0,-7.42,-24.5,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+458,143,Cedrick Wilson Jr.,WR,DET,2.54,0.32,3.97,2.3,6.0,-7.47,-17.2,,,,,,171,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+459,211,Malik Heath,WR,,2.53,0.75,3.67,3.3,8.0,-7.48,-24.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+460,275,Russell Wilson,QB,,9.72,5.4,13.89,4.4,43.0,-7.49,-33.0,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+461,259,Mason Tipton,WR,NO,2.47,0.8,4.56,4.0,10.0,-7.54,-30.2,,,,,,171,,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+462,359,Tahj Brooks,RB,CIN,2.2,0.15,5.14,5.4,12.0,-7.55,-40.8,,,,,,171,,OFF= -3,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+463,379,Spencer Rattler,QB,NO,9.66,3.42,13.27,5.7,55.0,-7.55,-43.0,,,,,,171,,OFF+ +8,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+464,578,Brevyn Spann-Ford,TE,DAL,1.52,0.69,4.49,11.1,17.0,-7.58,-84.1,,,,,,171,,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+465,548,Kylen Granson,TE,TEN,1.52,0.84,3.21,8.9,14.0,-7.58,-67.5,,,,,,171,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+466,579,Kameron Johnson,WR,TB,2.41,0.53,3.93,11.4,28.0,-7.6,-86.6,,,,,,171,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",p95 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+467,206,Dante Pettis,WR,,2.4,0.82,4.08,3.2,8.0,-7.61,-24.4,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+468,351,Andrew Beck,RB,NYJ,2.13,0.62,3.26,5.3,11.0,-7.62,-40.4,,,,,,171,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",p99 (-2.1 PPG hist),,,,,,,,,,,,,,,,,,,
+469,368,Malik Benson,WR,LV,2.37,0.22,5.04,5.5,13.0,-7.64,-42.0,,,,,,171,R6 pick 195,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+470,230,Deion Burks,WR,IND,2.35,1.02,6.58,3.5,8.0,-7.66,-26.8,,,,,,171,R7 pick 254,OFF- -7 spike,,,,,,,,,,,,,,,,,,,,,
+471,370,Blake Whiteheart,TE,CLE,1.43,0.69,3.27,5.5,8.0,-7.67,-42.2,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+472,231,Anthony Smith,WR,DAL,2.33,0.28,3.98,3.5,8.0,-7.68,-26.9,,,,,,171,R7 pick 218,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+473,560,Cade Klubnik,QB,NYJ,9.51,2.5,11.76,9.5,90.0,-7.7,-73.2,,,,,,171,R4 pick 110,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+474,201,Tyler Huntley,QB,BAL,9.51,2.28,12.84,3.1,29.0,-7.7,-23.9,,,,,,171,,OFF= +0 rebound,"OL 3.0/5- · NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+475,517,Will Shipley,RB,PHI,2.04,0.37,4.67,7.8,16.0,-7.71,-60.1,,,,,,171,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+476,420,Quintin Morris,TE,JAX,1.39,1.1,3.57,6.2,9.0,-7.71,-47.8,,,,,,171,,OFF- -7,,p89 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+477,250,James Proche,WR,,2.3,0.66,3.37,3.8,9.0,-7.71,-29.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+478,141,Beaux Collins,WR,NYG,2.27,0.93,4.4,2.2,5.0,-7.74,-17.0,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+479,237,Harrison Bryant,TE,SEA,1.31,0.73,2.21,3.5,5.0,-7.79,-27.3,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+480,389,David Martin-Robinson,TE,TEN,1.3,0.55,3.12,5.7,7.0,-7.8,-44.5,,,,,,171,,OFF+ +10,"new PC Brian Daboll, RB23",p97 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+481,323,Colson Yankoff,TE,WAS,1.3,0.13,3.01,4.9,6.0,-7.8,-38.2,,,,,,171,,OFF= +3 rebound,"NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+482,550,Johnny Mundt,TE,PHI,1.27,0.93,3.13,8.7,11.0,-7.83,-68.1,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+483,465,Rasheen Ali,RB,BAL,1.92,0.7,3.89,6.7,13.0,-7.83,-52.5,,,,,,171,,OFF= +0 rebound,"OL 3.0/5- · NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+484,162,Trayveon Williams,RB,,1.9,0.48,4.02,2.6,5.0,-7.85,-20.4,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+485,533,Kaleb Johnson,RB,PIT,1.87,0.64,5.94,8.0,15.0,-7.88,-63.0,,,,,,171,,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+486,480,Andrew Ogletree,TE,IND,1.18,0.34,2.38,6.8,8.0,-7.92,-53.9,,,,,,171,,OFF- -7 spike,,p99 (-0.9 PPG hist),,,,,,,,,,,,,,,,,,,
+487,122,Braxton Berrios,WR,NYG,2.07,0.98,2.58,1.5,3.0,-7.94,-11.9,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+488,378,Payne Durham,TE,TB,1.15,0.55,2.48,5.4,6.0,-7.95,-42.9,,,,,,171,,OFF+ +3 rebound,"new PC Zac Robinson, RB2",,,,,,,,,,,,,,,,,,,,
+489,158,Tucker Fisk,TE,,1.12,0.82,2.16,2.5,3.0,-7.98,-20.0,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+490,520,Dillon Gabriel,QB,CLE,9.23,2.05,12.96,7.6,70.0,-7.98,-60.6,,,,,,171,,OFF+ +9,"OL 2.0/5+ · new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+491,525,LaJohntay Wester,WR,BAL,2.0,0.11,4.5,7.7,15.0,-8.01,-61.7,,,,,,171,,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+492,220,Durham Smythe,TE,BAL,1.09,0.75,2.59,3.2,3.0,-8.01,-25.6,,,,,,171,,OFF= +0 rebound,"NEW PC (1st time, Ben Johnson tree)",,,,,,,,,,,,,,,,,,,,
+493,282,Nick Kallerup,TE,SEA,1.08,0.26,3.08,4.2,5.0,-8.02,-33.7,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+494,567,Kaden Wetjen,WR,PIT,1.98,0.64,6.26,9.5,19.0,-8.03,-76.3,,,,,,171,R4 pick 121,OFF= -2,"new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+495,348,Eric Saubert,TE,SEA,1.04,0.71,1.92,5.0,5.0,-8.06,-40.3,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+496,418,Tai Felton,WR,MIN,1.94,0.25,3.54,5.9,11.0,-8.07,-47.6,,,,,,171,,OFF+ +7,,,,,,,,,,,,,,,,,,,,,
+497,217,Austin Trammell,WR,JAX,1.94,0.61,3.4,3.1,6.0,-8.07,-25.0,,,,,,171,,OFF- -7,,,,,,,,,,,,,,,,,,,,,
+498,298,Jack Westover,TE,NE,1.02,0.23,2.82,4.4,4.0,-8.08,-35.6,,,,,,171,,OFF-- -11 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+499,521,Cameron Latu,TE,PHI,1.0,0.07,3.48,7.5,8.0,-8.1,-60.8,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+500,568,Colbie Young,WR,CIN,1.89,0.5,6.31,9.5,18.0,-8.12,-77.1,,,,,,171,R4 pick 140,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+501,569,Bryce Lance,WR,NO,1.89,0.51,6.48,9.5,18.0,-8.12,-77.1,,,,,,171,R4 pick 136,OFF+ +8,,,,,,,,,,,,,,,,,,,,,
+502,391,CJ Daniels,WR,LAR,1.88,0.03,4.54,5.5,10.0,-8.13,-44.7,,,,,,171,R6 pick 197,OFF-- -14 spike/yds-backed,,,,,,,,,,,,,,,,,,,,,
+503,196,Ross Dwelley,TE,,0.97,0.89,1.77,2.9,3.0,-8.13,-23.6,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+504,251,Jonathan Mingo,WR,DAL,1.87,0.89,4.11,3.6,7.0,-8.14,-29.3,,,,,,171,,OFF- -5 yds-backed,,,,,,,,,,,,,,,,,,,,,
+505,209,Pharaoh Brown,TE,,0.95,0.4,2.08,3.0,3.0,-8.15,-24.5,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+506,481,Hassan Haskins,RB,,1.58,0.38,4.15,6.6,10.0,-8.17,-53.9,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+507,502,Dare Ogunbowale,RB,,1.56,0.43,3.3,7.0,11.0,-8.19,-57.3,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+508,573,Skyler Bell,WR,BUF,1.76,0.64,6.26,9.5,17.0,-8.25,-78.4,,,,,,171,R4 pick 125,OFF-- -8 elite,,,,,,,,,,,,,,,,,,,,,
+509,501,Anthony Gould,WR,IND,1.75,0.07,3.95,6.9,12.0,-8.26,-57.0,,,,,,171,,OFF- -7 spike,,,,,,,,,,,,,,,,,,,,,
+510,503,Ke'Shawn Williams,WR,CIN,1.71,0.14,4.08,6.9,12.0,-8.3,-57.3,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+511,258,Jalin Hyatt,WR,NYG,1.69,0.69,3.85,3.6,6.0,-8.32,-30.0,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+512,303,Isaac Guerendo,RB,SF,1.41,0.68,3.61,4.3,6.0,-8.34,-35.9,,,,,,171,,OFF= -2,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+513,279,Josiah Deguara,TE,,0.74,0.4,2.31,4.0,3.0,-8.36,-33.4,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+514,154,Davis Mills,QB,HOU,8.84,2.41,12.82,2.3,20.0,-8.37,-19.3,,,,,,171,,OFF+ +5,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+515,380,Ronnie Rivers,RB,LA,1.3,0.25,3.23,5.1,7.0,-8.45,-43.1,,,,,,171,,OFF-- -14 spike/yds-backed,OL 4.5/5-,,,,,,,,,,,,,,,,,,,,
+516,582,Dylan Laube,RB,LV,1.28,0.18,3.33,11.4,15.0,-8.47,-96.6,,,,,,171,,OFF+ +9,"OL 2.5/5++ · new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+517,223,DeeJay Dallas,RB,JAX,1.27,0.46,2.36,3.1,4.0,-8.48,-26.3,,,,,,171,,OFF- -7,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+518,245,Chris Manhertz,TE,NYG,0.6,0.35,0.95,3.3,2.0,-8.5,-28.0,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+519,450,Tyler Goodson,RB,ATL,1.25,0.29,3.02,6.0,7.0,-8.5,-51.0,,,,,,171,,OFF= +2,"OL 4.0/5+ · new PC Kevin Stefanski, RB16",,,,,,,,,,,,,,,,,,,,
+520,315,British Brooks,RB,HOU,1.22,0.15,4.34,4.4,5.0,-8.53,-37.5,,,,,,171,,OFF+ +5,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+521,144,Tyrod Taylor,QB,GB,8.62,2.1,11.73,2.0,17.0,-8.59,-17.2,,,,,,171,,OFF= +0,OL 2.0/5-,,,,,,,,,,,,,,,,,,,,
+522,426,Feleipe Franks,TE,CAR,0.51,-0.04,2.49,5.7,3.0,-8.59,-49.0,,,,,,171,,OFF+ +3,,,,,,,,,,,,,,,,,,,,,
+523,181,Robbie Ouzts,RB,SEA,1.15,0.25,4.08,2.6,3.0,-8.6,-22.4,,,,,,171,,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+524,172,Joe Milton III,QB,DAL,8.6,3.49,13.18,2.5,21.0,-8.61,-21.5,,,,,,171,,OFF- -5 yds-backed,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+525,584,Skyy Moore,WR,GB,1.4,0.5,2.67,11.9,17.0,-8.61,-102.5,,,,,,171,,OFF= +0,,,,,,,,,,,,,,,,,,,,,
+526,152,D'Ernest Johnson,RB,,1.13,0.51,3.66,2.2,2.0,-8.62,-19.0,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+527,382,Nikko Remigio,WR,KC,1.35,0.29,3.5,5.0,7.0,-8.66,-43.3,,,,,,171,,OFF= +2,,,,,,,,,,,,,,,,,,,,,
+528,333,Brayden Willis,TE,SF,0.44,0.01,2.5,4.5,2.0,-8.66,-39.0,,,,,,171,,OFF= -2,,,,,,,,,,,,,,,,,,,,,
+529,486,Tylan Wallace,WR,CLE,1.32,0.41,2.98,6.3,8.0,-8.69,-54.7,,,,,,171,,OFF+ +9,"new PC Todd Monken, RB10",p99 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+530,269,Jalen Brooks,WR,ARI,1.32,0.6,3.46,3.7,5.0,-8.69,-32.2,,,,,,171,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+531,276,Sione Vaki,RB,DET,1.04,0.11,3.26,3.8,4.0,-8.71,-33.1,,,,,,171,,OFF- -5 elite,"OL 4.0/5 · new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+532,441,Ryan Miller,WR,NYG,1.29,0.52,3.25,5.8,7.0,-8.72,-50.6,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+533,302,Evan Hull,RB,HOU,1.02,0.36,4.45,4.1,4.0,-8.73,-35.8,,,,,,171,,OFF+ +5,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+534,491,Ashton Dulin,WR,IND,1.25,0.38,3.87,6.3,8.0,-8.76,-55.2,,,,,,171,,OFF- -7 spike,,,,,,,,,,,,,,,,,,,,,
+535,400,Dareke Young,WR,LV,1.2,0.19,2.51,5.2,6.0,-8.81,-45.8,,,,,,171,,OFF+ +9,"new PC Klint Kubiak, RB14",,,,,,,,,,,,,,,,,,,,
+536,268,Jake Bobo,WR,SEA,1.19,0.54,2.33,3.6,4.0,-8.82,-31.8,,,,,,171,,OFF= -3,"NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+537,429,Mason Kinsey,WR,TEN,1.17,0.27,1.64,5.6,7.0,-8.84,-49.5,,,,,,171,,OFF+ +10,"new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+538,456,Charlie Jones,WR,CIN,1.16,0.27,2.33,5.8,7.0,-8.85,-51.3,,,,,,171,,OFF= -3,,,,,,,,,,,,,,,,,,,,,
+539,544,Kene Nwangwu,RB,NYJ,0.89,0.22,3.38,7.5,7.0,-8.86,-66.4,,,,,,171,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+540,528,Adam Prentice,RB,DEN,0.89,0.02,2.81,7.0,6.0,-8.86,-62.0,,,,,,171,,OFF= -2,OL 5.0/5,,,,,,,,,,,,,,,,,,,,
+541,577,Julius Chestnut,RB,TEN,0.89,0.06,2.46,9.4,8.0,-8.86,-83.3,,,,,,171,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+542,581,Ben Skowronek,WR,PIT,1.11,0.32,2.97,10.5,12.0,-8.9,-93.4,,,,,,171,,OFF= -2,"new PC Mike McCarthy, RB27",p96 (-0.5 PPG hist),,,,,,,,,,,,,,,,,,,
+543,252,Tom Kennedy,WR,DET,1.11,0.05,2.69,3.3,4.0,-8.9,-29.4,,,,,,171,,OFF- -5 elite,"new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+544,215,Mason Rudolph,QB,PIT,8.3,1.33,13.33,2.8,23.0,-8.91,-24.9,,,,,,171,,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+545,151,KhaDarel Hodge,WR,,1.1,0.63,2.35,2.1,2.0,-8.91,-18.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+546,466,Dee Eskridge,WR,,1.09,0.3,2.19,5.9,6.0,-8.92,-52.6,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+547,537,Jacob Saylors,RB,DET,0.81,-0.04,3.44,7.2,6.0,-8.94,-64.4,,,,,,171,,OFF- -5 elite,"OL 4.0/5 · new PC Drew Petzing, RB20",,,,,,,,,,,,,,,,,,,,
+548,241,Joshua Dobbs,QB,,8.25,1.82,12.86,3.1,26.0,-8.96,-27.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+549,317,Deven Thompkins,WR,,1.04,0.35,1.8,4.2,4.0,-8.97,-37.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+550,232,Craig Reynolds,RB,,0.77,-0.03,2.19,3.0,2.0,-8.98,-26.9,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+551,329,Alex Bachman,WR,,1.01,0.17,2.26,4.3,4.0,-9.0,-38.7,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+552,194,Kalel Mullings,RB,TEN,0.72,0.1,3.53,2.6,2.0,-9.03,-23.5,,,,,,171,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+553,583,Devin Duvernay,WR,ARI,0.97,0.38,1.99,11.2,11.0,-9.04,-101.2,,,,,,171,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+554,124,Trent Sherfield,WR,BUF,0.96,0.24,1.96,1.4,1.0,-9.05,-12.7,,,,,,171,,OFF-- -8 elite,,,,,,,,,,,,,,,,,,,,,
+555,288,Malik Willis,QB,MIA,8.15,2.17,12.93,3.8,31.0,-9.06,-34.4,162.5,209.0,25.644499999999997,0.0,173.0,147,,OFF+ +4 rebound,"OL 2.5/5+ · new PC Bobby Slowik, RB22",,,,,6.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.96,0.94,0.79,0.73,0.45,0.37
+556,516,Derius Davis,WR,LAC,0.95,0.46,2.73,6.6,6.0,-9.06,-59.8,,,,,,171,,OFF+ +4,"new PC Mike McDaniel, RB3",,,,,,,,,,,,,,,,,,,,
+557,334,Velus Jones Jr.,RB,SEA,0.68,0.27,2.33,4.3,3.0,-9.07,-39.0,,,,,,171,,OFF= -3,"OL 3.5/5 · NEW PC (1st time, Kyle Shanahan tree)",,,,,,,,,,,,,,,,,,,,
+558,585,Myles Price,WR,MIN,0.94,0.1,3.5,11.8,11.0,-9.07,-107.0,,,,,,171,,OFF+ +7,,,,,,,,,,,,,,,,,,,,,
+559,543,Cole Payton,QB,PHI,8.09,2.27,10.82,7.2,58.0,-9.12,-65.7,,,,,,171,R5 pick 178,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+560,324,Britain Covey,WR,PHI,0.88,0.42,1.58,4.2,4.0,-9.13,-38.3,,,,,,171,,OFF= +1 rebound,"NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+561,432,Taylen Green,QB,CLE,8.08,2.27,9.93,5.5,44.0,-9.13,-50.2,,,,,,171,R6 pick 182,OFF+ +9,"OL 2.0/5+ · new PC Todd Monken, RB10",,,,,,,,,,,,,,,,,,,,
+562,168,Andre Baccellia,WR,,0.84,0.24,1.73,2.3,2.0,-9.17,-21.1,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+563,253,Xavier Gipson,WR,NYG,0.83,0.19,2.32,3.2,3.0,-9.18,-29.4,,,,,,171,,OFF- -4,"new PC Matt Nagy, RB12",,,,,,,,,,,,,,,,,,,,
+564,213,Nyheim Hines,RB,,0.56,0.06,3.14,2.7,2.0,-9.19,-24.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+565,214,Andy Dalton,QB,PHI,8.01,1.11,11.69,2.7,22.0,-9.2,-24.8,,,,,,171,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+566,524,Jamal Agnew,WR,,0.81,0.19,2.42,6.7,5.0,-9.2,-61.6,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+567,255,Simi Fehoko,WR,ARI,0.78,0.2,2.77,3.2,2.0,-9.23,-29.5,,,,,,171,,OFF= +2,"new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+568,191,Mitchell Trubisky,QB,TEN,7.92,1.1,13.27,2.5,20.0,-9.29,-23.2,,,,,,171,,OFF+ +10,"OL 2.0/5 · new PC Brian Daboll, RB23",,,,,,,,,,,,,,,,,,,,
+569,155,Tanner McKee,QB,PHI,7.91,2.02,13.7,2.1,17.0,-9.3,-19.5,,,,,,171,,OFF= +1 rebound,"OL 4.0/5 · NEW PC (1st time, Matt LaFleur tree)",,,,,,,,,,,,,,,,,,,,
+570,454,Travis Homer,RB,PIT,0.44,0.05,1.27,5.5,2.0,-9.31,-51.2,,,,,,171,,OFF= -2,"OL 3.5/5+ · new PC Mike McCarthy, RB27",,,,,,,,,,,,,,,,,,,,
+571,156,DeAndre Carter,WR,,0.6,0.14,1.48,2.1,1.0,-9.41,-19.8,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+572,436,Laquon Treadwell,WR,IND,0.52,-0.04,2.07,5.3,3.0,-9.49,-50.3,,,,,,171,,OFF- -7 spike,,,,,,,,,,,,,,,,,,,,,
+573,336,Quinn Ewers,QB,MIA,7.44,2.43,13.31,4.0,30.0,-9.77,-39.1,,,,,,171,,OFF+ +4 rebound,"OL 2.5/5+ · new PC Bobby Slowik, RB22",,,,,,,,,,,,,,,,,,,,
+574,291,Athan Kaliakmanis,QB,WAS,7.36,1.74,7.64,3.5,26.0,-9.85,-34.5,,,,,,171,R7 pick 223,OFF= +3 rebound,"OL 2.5/5 · NEW PC (1st time, Kliff/Johnson tree)",,,,,,,,,,,,,,,,,,,,
+575,294,Brady Cook,QB,NYJ,7.32,0.44,11.46,3.5,26.0,-9.89,-34.6,,,,,,171,,OFF+ +8,"OL 3.0/5 · new PC Frank Reich, RB6",,,,,,,,,,,,,,,,,,,,
+576,210,Gardner Minshew,QB,ARI,7.0,1.38,10.92,2.4,17.0,-10.21,-24.5,,,,,,171,,OFF= +2,"OL 3.0/5+ · new PC Mike LaFleur, RB21",,,,,,,,,,,,,,,,,,,,
+577,304,Behren Morton,QB,NE,6.94,1.91,8.44,3.5,24.0,-10.27,-35.9,,,,,,171,R7 pick 234,OFF-- -11 spike/yds-backed,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+578,306,Garrett Nussmeier,QB,KC,6.89,2.37,9.38,3.5,24.0,-10.32,-36.1,,,,,,171,R7 pick 249,OFF= +2,OL 3.0/5,,,,,,,,,,,,,,,,,,,,
+579,394,Riley Leonard,QB,IND,6.68,1.35,12.77,4.3,29.0,-10.53,-45.3,,,,,,171,,OFF- -7 spike,OL 4.5/5,,,,,,,,,,,,,,,,,,,,
+580,471,Zach Wilson,QB,NO,6.57,0.98,10.45,5.0,33.0,-10.64,-53.2,,,,,,171,,OFF+ +8,OL 3.0/5+,,,,,,,,,,,,,,,,,,,,
+581,439,Kenny Pickett,QB,CAR,5.49,0.18,9.47,4.3,24.0,-11.72,-50.4,,,,,,171,,OFF+ +3,OL 3.0/5-,,,,,,,,,,,,,,,,,,,,
+582,414,Nick Mullens,QB,JAX,5.09,1.15,10.13,3.9,20.0,-12.12,-47.3,,,,,,171,,OFF- -7,OL 4.0/5,,,,,,,,,,,,,,,,,,,,
+583,218,Cooper Rush,QB,,4.64,0.46,7.79,2.0,9.0,-12.57,-25.1,,,,,,171,,,,,,,,,,,,,,,,,,,,,,,
+584,283,Trey Lance,QB,LAC,3.67,0.76,7.96,2.5,9.0,-13.54,-33.8,,,,,,171,,OFF+ +4,"OL 3.0/5++ · new PC Mike McDaniel, RB3",,,,,,,,,,,,,,,,,,,,
+585,341,Max Brosmer,QB,MIN,1.39,0.23,6.19,2.5,3.0,-15.82,-39.6,,,,,,171,,OFF+ +7,OL 4.0/5+,,,,,,,,,,,,,,,,,,,,

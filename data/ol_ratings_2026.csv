@@ -1,0 +1,51 @@
+# Offensive-line run-block table, transcribed from Joel Smyth's 2026 Draft
+# Guide, page 14 ("Fantasy OL Ranking"), read from the rendered PDF on
+# 2026-08-09. HAND-ENTERED FROM AN IMAGE -- if a number here looks wrong,
+# re-read the page before trusting it over the model.
+#
+# ol_2025      his 2025 measurement: avg rank of 2025 run-block grade and
+#              run-block win rate (1 = best). This is the only column with a
+#              historical referent, so it is the only one that can be checked.
+# direction    his read on off-season change (draft, free agency, injury
+#              returns): +2 = big improvement, -1 = decline, 0 = flat.
+# cohesion     number of starting OL returning in 2026 (0-5).
+# rank_2026    HIS FORWARD-LOOKING PREDICTION of 2026 run blocking, out of 5.
+#              Subjective and unfalsifiable until the season is played.
+# qb_runs      does the team use designed QB runs that help the run game.
+#
+# NOTE on DET: the direction cell is coloured green but carries a down arrow,
+# which contradicts every other row's colour convention. Recorded as 0
+# (ambiguous) rather than guessing.
+team,ol_2025,direction,cohesion,rank_2026,qb_runs
+LA,1,-1,4,4.5,0
+BUF,2,-1,4,4.5,1
+CHI,3,-1,4,4.5,0
+DEN,4,0,5,5.0,1
+IND,5,0,4,4.5,0
+SF,6,0,4,4.0,0
+JAX,7,0,5,4.0,1
+DAL,8,0,5,4.0,0
+MIN,9,1,4,4.0,1
+SEA,10,0,5,3.5,0
+BAL,11,-1,2,3.0,1
+PIT,12,1,3,3.5,0
+NE,13,0,4,3.0,0
+PHI,14,0,5,4.0,1
+DET,15,0,3,4.0,0
+CAR,16,-1,3,3.0,0
+NYJ,17,0,4,3.0,0
+NYG,18,1,4,3.0,1
+CIN,19,0,5,3.0,0
+GB,20,-1,3,2.0,0
+ATL,21,1,4,4.0,0
+KC,22,0,4,3.0,0
+ARI,23,1,2,3.0,0
+WAS,24,0,4,2.5,1
+TEN,25,0,3,2.0,0
+TB,26,2,5,4.0,0
+CLE,27,1,1,2.0,0
+LV,28,2,3,2.5,0
+HOU,29,1,2,3.0,0
+NO,30,1,4,3.0,1
+MIA,31,1,4,2.5,1
+LAC,32,2,2,3.0,0

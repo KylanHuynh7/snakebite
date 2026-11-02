@@ -1,0 +1,205 @@
+{
+ "_meta": {
+  "base_miss3": 0.41,
+  "cost_wr1": -1.3,
+  "cost_other": -0.53,
+  "hist": [
+   2023,
+   2024,
+   2025
+  ],
+  "source": "scripts/qb_dependency.py"
+ },
+ "BUF": {
+  "qb": "Josh Allen",
+  "tier": "low",
+  "why": "missed 2 of 51 starts 2023-2025",
+  "miss_rate": 0.039
+ },
+ "NE": {
+  "qb": "Drake Maye",
+  "tier": "low",
+  "why": "missed 0 of 17 starts 2023-2025",
+  "miss_rate": 0.0
+ },
+ "BAL": {
+  "qb": "Lamar Jackson",
+  "tier": "elevated",
+  "why": "missed 6 of 51 starts 2023-2025",
+  "miss_rate": 0.118
+ },
+ "CIN": {
+  "qb": "Joe Burrow",
+  "tier": "high",
+  "why": "missed 17 of 51 starts 2023-2025",
+  "miss_rate": 0.333
+ },
+ "DAL": {
+  "qb": "Dak Prescott",
+  "tier": "elevated",
+  "why": "missed 11 of 51 starts 2023-2025",
+  "miss_rate": 0.216
+ },
+ "WAS": {
+  "qb": "Jayden Daniels",
+  "tier": "high",
+  "why": "missed 12 of 34 starts 2023-2025",
+  "miss_rate": 0.353
+ },
+ "PHI": {
+  "qb": "Jalen Hurts",
+  "tier": "low",
+  "why": "missed 5 of 51 starts 2023-2025",
+  "miss_rate": 0.098
+ },
+ "SF": {
+  "qb": "Brock Purdy",
+  "tier": "elevated",
+  "why": "missed 11 of 51 starts 2023-2025",
+  "miss_rate": 0.216
+ },
+ "LAR": {
+  "qb": "Matthew Stafford",
+  "tier": "low",
+  "why": "missed 3 of 51 starts 2023-2025",
+  "miss_rate": 0.059
+ },
+ "JAX": {
+  "qb": "Trevor Lawrence",
+  "tier": "elevated",
+  "why": "missed 9 of 51 starts 2023-2025",
+  "miss_rate": 0.176
+ },
+ "KC": {
+  "qb": "Patrick Mahomes",
+  "tier": "low",
+  "why": "missed 5 of 51 starts 2023-2025",
+  "miss_rate": 0.098
+ },
+ "NYG": {
+  "qb": "Jaxson Dart",
+  "tier": "unknown",
+  "why": "no established starting history \u2014 league base rate",
+  "miss_rate": null
+ },
+ "DET": {
+  "qb": "Jared Goff",
+  "tier": "low",
+  "why": "missed 0 of 51 starts 2023-2025",
+  "miss_rate": 0.0
+ },
+ "CHI": {
+  "qb": "Caleb Williams",
+  "tier": "low",
+  "why": "missed 0 of 34 starts 2023-2025",
+  "miss_rate": 0.0
+ },
+ "LAC": {
+  "qb": "Justin Herbert",
+  "tier": "elevated",
+  "why": "missed 6 of 51 starts 2023-2025",
+  "miss_rate": 0.118
+ },
+ "DEN": {
+  "qb": "Bo Nix",
+  "tier": "low",
+  "why": "missed 0 of 34 starts 2023-2025",
+  "miss_rate": 0.0
+ },
+ "TB": {
+  "qb": "Baker Mayfield",
+  "tier": "low",
+  "why": "missed 0 of 51 starts 2023-2025",
+  "miss_rate": 0.0
+ },
+ "NO": {
+  "qb": "Tyler Shough",
+  "tier": "unknown",
+  "why": "no established starting history \u2014 league base rate",
+  "miss_rate": null
+ },
+ "SEA": {
+  "qb": "Sam Darnold",
+  "tier": "low",
+  "why": "missed 0 of 34 starts 2023-2025",
+  "miss_rate": 0.0
+ },
+ "MIN": {
+  "qb": "Kyler Murray",
+  "tier": "high",
+  "why": "missed 12 of 34 starts 2023-2025",
+  "miss_rate": 0.353
+ },
+ "GB": {
+  "qb": "Jordan Love",
+  "tier": "low",
+  "why": "missed 5 of 51 starts 2023-2025",
+  "miss_rate": 0.098
+ },
+ "IND": {
+  "qb": "Daniel Jones",
+  "tier": "high",
+  "why": "missed 24 of 51 starts 2023-2025",
+  "miss_rate": 0.471
+ },
+ "HOU": {
+  "qb": "C.J. Stroud",
+  "tier": "elevated",
+  "why": "missed 7 of 51 starts 2023-2025",
+  "miss_rate": 0.137
+ },
+ "MIA": {
+  "qb": "Malik Willis",
+  "tier": "unknown",
+  "why": "no established starting history \u2014 league base rate",
+  "miss_rate": null
+ },
+ "ARI": {
+  "qb": "Jacoby Brissett",
+  "tier": "high",
+  "why": "missed 11 of 17 starts 2023-2025",
+  "miss_rate": 0.647
+ },
+ "LV": {
+  "qb": "Fernando Mendoza",
+  "tier": "unknown",
+  "why": "no established starting history \u2014 league base rate",
+  "miss_rate": null
+ },
+ "PIT": {
+  "qb": "Aaron Rodgers",
+  "tier": "low",
+  "why": "missed 2 of 34 starts 2023-2025",
+  "miss_rate": 0.059
+ },
+ "TEN": {
+  "qb": "Cam Ward",
+  "tier": "low",
+  "why": "missed 1 of 17 starts 2023-2025",
+  "miss_rate": 0.059
+ },
+ "CAR": {
+  "qb": "Bryce Young",
+  "tier": "elevated",
+  "why": "missed 7 of 51 starts 2023-2025",
+  "miss_rate": 0.137
+ },
+ "NYJ": {
+  "qb": "Geno Smith",
+  "tier": "low",
+  "why": "missed 4 of 51 starts 2023-2025",
+  "miss_rate": 0.078
+ },
+ "ATL": {
+  "qb": "Tua Tagovailoa",
+  "tier": "elevated",
+  "why": "missed 9 of 51 starts 2023-2025",
+  "miss_rate": 0.176
+ },
+ "CLE": {
+  "qb": "Shedeur Sanders",
+  "tier": "unknown",
+  "why": "no established starting history \u2014 league base rate",
+  "miss_rate": null
+ }
+}

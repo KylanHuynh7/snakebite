@@ -1,0 +1,41 @@
+# Demo watchlist -- a NEUTRAL example of the format. Players here are simply the
+# top of the market by ADP at each position; nothing on it is a recommendation.
+#
+# WHY THIS EXISTS. The board's ranking is not a draft order (the end-to-end
+# backtest, scripts/board_backtest.py, showed ADP beats `my_rank` in the top
+# 120). What the model IS good at is saying how likely a specific player is to
+# still be there at YOUR next pick -- league-calibrated against three years of
+# real draft history. So instead of reading a ranking, you name the players you
+# want and the tool answers one question per player, continuously:
+#
+#     "Can I wait a round and still get him?"
+#
+# COLUMNS
+#   player     must match the board name EXACTLY. draft_advise.py prints every
+#              unmatched row with a near-miss suggestion and validate_board.py
+#              asserts they all landed.
+#   priority   1 = must get, 2 = want, 3 = nice to have. Sorting only; no maths.
+#   note       TRIGGER ONLY -- something to watch that the stance does not
+#              already say. Blank is correct and common. Under ~55 characters.
+#
+# TO USE YOUR OWN: copy this file to data/watchlist_private.csv (gitignored).
+# If it exists it is used instead of this one.
+player,priority,note
+Bijan Robinson,1,
+Jahmyr Gibbs,1,
+Puka Nacua,1,
+Ja'Marr Chase,1,
+Jaxon Smith-Njigba,1,
+Christian McCaffrey,1,
+Amon-Ra St. Brown,1,
+Jonathan Taylor,1,
+Drake London,1,
+Josh Allen,2,
+Trey McBride,2,
+Brock Bowers,3,
+Ladd McConkey,3,
+D'Andre Swift,3,
+Drake Maye,3,
+Bhayshul Tuten,3,
+Luther Burden III,3,
+Jaylen Warren,3,

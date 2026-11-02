@@ -1,0 +1,338 @@
+{
+ "generated_from": [
+  2023,
+  2024,
+  2025
+ ],
+ "n_picks": 391,
+ "n_human": 361,
+ "k_prior": 20,
+ "sigma_multiplier": 2.069,
+ "sigma_multiplier_by_year": {
+  "2023": 1.759,
+  "2024": 2.104,
+  "2025": 2.12
+ },
+ "sigma_curve": {
+  "pts": [
+   [
+    3.5,
+    0.706
+   ],
+   [
+    17.7,
+    1.14
+   ],
+   [
+    34.6,
+    1.68
+   ],
+   [
+    64.2,
+    1.904
+   ],
+   [
+    105.9,
+    2.155
+   ]
+  ],
+  "floor": 0.6,
+  "cap": 2.3,
+  "drift": 0.285,
+  "drift_se": 0.122,
+  "drift_n": 241,
+  "drift_full": 84,
+  "drift_zero": 106
+ },
+ "league_pos_share": {
+  "QB": 0.109,
+  "RB": 0.337,
+  "WR": 0.44,
+  "TE": 0.114
+ },
+ "league_pos_share_by_phase": {
+  "early": {
+   "QB": 0.104,
+   "RB": 0.378,
+   "WR": 0.459,
+   "TE": 0.059,
+   "n": 135
+  },
+  "mid": {
+   "QB": 0.112,
+   "RB": 0.299,
+   "WR": 0.448,
+   "TE": 0.142,
+   "n": 134
+  },
+  "late": {
+   "QB": 0.111,
+   "RB": 0.333,
+   "WR": 0.389,
+   "TE": 0.167,
+   "n": 72
+  }
+ },
+ "league_first_qb_frac": 0.345,
+ "managers": {
+  "{00000000-0000-4000-8000-000000000002}": {
+   "team_2026": "Blitz Brigade",
+   "seasons": [
+    2025
+   ],
+   "n_picks": 12,
+   "pos_share_raw": {
+    "QB": 0.167,
+    "RB": 0.167,
+    "WR": 0.417,
+    "TE": 0.25
+   },
+   "pos_share_shrunk": {
+    "QB": 0.13,
+    "RB": 0.273,
+    "WR": 0.431,
+    "TE": 0.165
+   },
+   "mean_z_raw": -0.49,
+   "reach_shrunk": -0.184,
+   "first_qb_frac": 0.177
+  },
+  "{00000000-0000-4000-8000-000000000101}": {
+   "team_2026": null,
+   "seasons": [
+    2023,
+    2024
+   ],
+   "n_picks": 25,
+   "pos_share_raw": {
+    "QB": 0.16,
+    "RB": 0.32,
+    "WR": 0.36,
+    "TE": 0.16
+   },
+   "pos_share_shrunk": {
+    "QB": 0.137,
+    "RB": 0.328,
+    "WR": 0.396,
+    "TE": 0.14
+   },
+   "mean_z_raw": -0.274,
+   "reach_shrunk": -0.152,
+   "first_qb_frac": 0.404
+  },
+  "{00000000-0000-4000-8000-000000000102}": {
+   "team_2026": null,
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 38,
+   "pos_share_raw": {
+    "QB": 0.079,
+    "RB": 0.316,
+    "WR": 0.5,
+    "TE": 0.105
+   },
+   "pos_share_shrunk": {
+    "QB": 0.089,
+    "RB": 0.323,
+    "WR": 0.479,
+    "TE": 0.108
+   },
+   "mean_z_raw": 0.281,
+   "reach_shrunk": 0.182,
+   "first_qb_frac": 0.497
+  },
+  "{00000000-0000-4000-8000-000000000003}": {
+   "team_2026": "End Zone Eagles",
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 38,
+   "pos_share_raw": {
+    "QB": 0.132,
+    "RB": 0.289,
+    "WR": 0.447,
+    "TE": 0.132
+   },
+   "pos_share_shrunk": {
+    "QB": 0.124,
+    "RB": 0.306,
+    "WR": 0.445,
+    "TE": 0.126
+   },
+   "mean_z_raw": 0.384,
+   "reach_shrunk": 0.251,
+   "first_qb_frac": 0.317
+  },
+  "{00000000-0000-4000-8000-000000000010}": {
+   "team_2026": "Waiver Wire Wolves",
+   "seasons": [
+    2024,
+    2025
+   ],
+   "n_picks": 21,
+   "pos_share_raw": {
+    "QB": 0.095,
+    "RB": 0.429,
+    "WR": 0.333,
+    "TE": 0.143
+   },
+   "pos_share_shrunk": {
+    "QB": 0.102,
+    "RB": 0.384,
+    "WR": 0.385,
+    "TE": 0.129
+   },
+   "mean_z_raw": -1.235,
+   "reach_shrunk": -0.632,
+   "first_qb_frac": 0.41
+  },
+  "{00000000-0000-4000-8000-000000000009}": {
+   "team_2026": "Red Zone Rascals",
+   "seasons": [
+    2024,
+    2025
+   ],
+   "n_picks": 26,
+   "pos_share_raw": {
+    "QB": 0.077,
+    "RB": 0.269,
+    "WR": 0.538,
+    "TE": 0.115
+   },
+   "pos_share_shrunk": {
+    "QB": 0.091,
+    "RB": 0.299,
+    "WR": 0.496,
+    "TE": 0.115
+   },
+   "mean_z_raw": -0.223,
+   "reach_shrunk": -0.126,
+   "first_qb_frac": 0.407
+  },
+  "{00000000-0000-4000-8000-000000000007}": {
+   "team_2026": "Sack Exchange",
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 37,
+   "pos_share_raw": {
+    "QB": 0.081,
+    "RB": 0.432,
+    "WR": 0.378,
+    "TE": 0.108
+   },
+   "pos_share_shrunk": {
+    "QB": 0.091,
+    "RB": 0.399,
+    "WR": 0.4,
+    "TE": 0.11
+   },
+   "mean_z_raw": 0.013,
+   "reach_shrunk": 0.009,
+   "first_qb_frac": 0.343
+  },
+  "{00000000-0000-4000-8000-000000000006}": {
+   "team_2026": "Demo Drafter",
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 39,
+   "pos_share_raw": {
+    "QB": 0.128,
+    "RB": 0.333,
+    "WR": 0.436,
+    "TE": 0.103
+   },
+   "pos_share_shrunk": {
+    "QB": 0.122,
+    "RB": 0.335,
+    "WR": 0.437,
+    "TE": 0.107
+   },
+   "mean_z_raw": -0.321,
+   "reach_shrunk": -0.212,
+   "first_qb_frac": 0.563
+  },
+  "{00000000-0000-4000-8000-000000000008}": {
+   "team_2026": "Pocket Presence",
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 30,
+   "pos_share_raw": {
+    "QB": 0.1,
+    "RB": 0.367,
+    "WR": 0.467,
+    "TE": 0.067
+   },
+   "pos_share_shrunk": {
+    "QB": 0.103,
+    "RB": 0.355,
+    "WR": 0.456,
+    "TE": 0.086
+   },
+   "mean_z_raw": -0.413,
+   "reach_shrunk": -0.248,
+   "first_qb_frac": 0.383
+  },
+  "{00000000-0000-4000-8000-000000000005}": {
+   "team_2026": "Hail Mary Hustlers",
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 37,
+   "pos_share_raw": {
+    "QB": 0.081,
+    "RB": 0.324,
+    "WR": 0.486,
+    "TE": 0.108
+   },
+   "pos_share_shrunk": {
+    "QB": 0.091,
+    "RB": 0.329,
+    "WR": 0.47,
+    "TE": 0.11
+   },
+   "mean_z_raw": 0.436,
+   "reach_shrunk": 0.283,
+   "first_qb_frac": 0.257
+  },
+  "{00000000-0000-4000-8000-000000000001}": {
+   "team_2026": "Gridiron Ghosts",
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "n_picks": 38,
+   "pos_share_raw": {
+    "QB": 0.132,
+    "RB": 0.368,
+    "WR": 0.421,
+    "TE": 0.079
+   },
+   "pos_share_shrunk": {
+    "QB": 0.124,
+    "RB": 0.358,
+    "WR": 0.428,
+    "TE": 0.091
+   },
+   "mean_z_raw": 0.477,
+   "reach_shrunk": 0.313,
+   "first_qb_frac": 0.297
+  }
+ }
+}

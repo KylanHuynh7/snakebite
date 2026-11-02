@@ -1,0 +1,506 @@
+overall_rank,player_display_name,position,team_2026,team_2025,age_next,pos_rank,proj_ppg,floor_ppg,ceil_ppg,proj_games,proj_total,vor_pg,ppg_2025,delta_vs_2025,games_2025,td_pt_share,td_dep_pct,td_dep,status,status_note,team_change,on_2026_roster
+1,Bijan Robinson,RB,ATL,ATL,24,1,19.72,13.66,22.3,15.5,306.0,10.13,21.81,-2.09,17,0.18,42.0,,,,0,True
+2,Puka Nacua,WR,LA,LA,25,1,19.74,14.14,21.14,14.6,288.0,7.95,23.44,-3.7,16,0.18,57.0,,legal,"ADDED Aug 13 2026 and it is the highest-stakes row in this file: he is the board's #2 OVERALL player and the user picks 3rd. Sued in Mar 2026 for assault and battery (alleged bite + antisemitic remark); his attorney denies it, NO criminal charges filed, and he spent time in a rehab facility earlier in 2026. The NFL personal conduct policy permits suspension WITHOUT charges. Schefter (Aug 11 2026): a suspension is 'within the realm of options', specifically Week 1 vs SF; analysts expect any ban to be SHORT. `legal` NOT `rehab`/`out` -- same treatment as Jacobs and Rice, so proj_games is deliberately UNCHANGED at 14.6: the length is unknown and inventing one would be worse than flagging it. ⚠️ WHY IT DECIDES PICK 3: spike_weeks.py shows Nacua leads Chase by 19.0 season points, and ONE missed Nacua game costs 19.74 -- so a 1-game suspension is a dead heat and 2+ games hands it to Chase. This is the ONLY Nacua-vs-Chase argument that moves the answer; the weekly-ceiling argument does not. ⚠️ RESOLVES: no announced date. RE-CHECK AT THE AUG 29-30 SWEEP, and again the morning of the draft ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. 'Re-check at the Aug 29-30 sweep' is dead; only the DRAFT-MORNING check survives, and there is still no announced resolution date for the suspension. This remains the single highest-stakes unknown on the board because it decides pick 3.",0,True
+3,Christian McCaffrey,RB,SF,SF,30,2,17.21,12.27,20.07,14.5,249.0,7.61,24.51,-7.3,17,0.24,63.0,,,,0,True
+4,De'Von Achane,RB,MIA,MIA,25,3,16.89,13.7,20.46,15.1,255.0,7.3,20.18,-3.28,16,0.22,56.0,,,,0,True
+5,Jonathan Taylor,RB,IND,IND,27,4,16.39,13.33,19.92,14.6,239.0,6.8,21.31,-4.92,17,0.33,87.0,p87 (-2.1 PPG hist),,,0,True
+6,Jahmyr Gibbs,RB,DET,DET,24,5,16.35,13.9,19.98,16.0,262.0,6.76,21.58,-5.23,17,0.29,75.0,,,,0,True
+7,Trey McBride,TE,ARI,ARI,27,1,15.28,12.16,15.99,15.9,243.0,6.34,18.58,-3.3,17,0.21,53.0,,,,0,True
+8,Derrick Henry,RB,BAL,BAL,32,6,15.84,11.08,18.7,16.3,258.0,6.25,16.44,-0.6,17,0.34,89.0,p89 (-2.1 PPG hist),,,0,True
+9,James Cook,RB,BUF,BUF,27,7,15.58,12.61,16.69,16.0,249.0,5.99,17.78,-2.2,17,0.28,71.0,,,,0,True
+10,Ja'Marr Chase,WR,CIN,CIN,26,2,17.7,13.96,20.82,15.2,269.0,5.92,19.6,-1.9,16,0.15,50.0,,,,0,True
+11,Amon-Ra St. Brown,WR,DET,DET,27,3,17.41,13.11,20.47,15.2,265.0,5.62,19.06,-1.65,17,0.2,75.0,,,,0,True
+12,Cam Skattebo,RB,NYG,NYG,24,8,14.96,9.15,16.32,13.6,203.0,5.36,15.96,-1.01,8,0.33,,,,,0,True
+13,Kyren Williams,RB,LA,LA,26,9,14.93,11.93,17.2,14.8,221.0,5.34,15.49,-0.56,17,0.3,79.0,,,,0,True
+14,Josh Jacobs,RB,GB,GB,28,10,14.67,9.62,16.18,14.7,216.0,5.08,15.81,-1.13,15,0.35,91.0,p91 (-2.1 PPG hist),legal,"TWO INDEPENDENT LIVE RISKS as of Aug 12 2026. LEGAL: arrested May 26 2026 on five domestic-abuse counts including felony strangulation; the Brown County DA is still investigating and has filed nothing. NFL: Schefter reported Aug 11 that a suspension is still under review REGARDLESS of whether charges are filed -- 'it's also possible that the Green Bay Packers are going to lose Josh Jacobs'. He is NOT on the commissioner's exempt list, which points toward Wk1. INJURY (new, not previously tracked): has not practised since Aug 6 with a groin, out at least through the first preseason week, team says it is not serious",0,True
+15,Drake London,WR,ATL,ATL,25,4,16.63,11.87,17.21,14.9,248.0,4.85,16.82,-0.19,12,0.21,78.0,,,,0,True
+16,Brock Bowers,TE,LV,LV,24,2,13.69,10.98,16.01,15.1,207.0,4.76,14.68,-0.99,12,0.24,68.0,,,,0,True
+17,Jaxon Smith-Njigba,WR,SEA,SEA,24,5,16.49,13.16,19.85,15.5,256.0,4.7,21.17,-4.68,17,0.17,54.0,,,,0,True
+18,Chase Brown,RB,CIN,CIN,26,11,14.29,11.55,16.59,14.9,213.0,4.7,16.62,-2.33,17,0.23,61.0,,,,0,True
+19,Ashton Jeanty,RB,LV,LV,23,12,14.21,9.42,16.76,15.4,219.0,4.62,14.42,-0.21,17,0.24,62.0,,,,0,True
+20,Saquon Barkley,RB,PHI,PHI,29,13,13.89,10.79,17.58,15.1,210.0,4.3,14.52,-0.63,16,0.23,60.0,,,,0,True
+21,Kenneth Walker III,RB,KC,SEA,26,14,13.59,9.31,16.07,14.0,190.0,3.99,11.29,2.3,17,0.16,34.0,,,,1,True
+22,Breece Hall,RB,NYJ,NYJ,25,15,13.37,10.0,16.1,15.9,213.0,3.78,12.98,0.39,16,0.16,38.0,,,,0,True
+23,Nico Collins,WR,HOU,HOU,27,6,15.45,11.5,17.86,15.1,233.0,3.66,15.08,0.37,15,0.19,62.0,,,,0,True
+24,George Pickens,WR,DAL,DAL,25,7,15.11,10.98,17.07,15.2,230.0,3.33,17.17,-2.06,17,0.18,60.0,,,,0,True
+25,Rashee Rice,WR,KC,KC,26,8,15.1,10.9,17.9,13.6,205.0,3.31,18.76,-3.67,8,0.24,,,legal,"LARGELY RESOLVED as of Aug 12 2026 and the note is kept only because the NFL has not formally closed it. Rapoport, that same day: 'I don't expect from my understanding anything new there disciplinary-wise' -- Rice already served 30 days in jail for the probation violation, and the league separately found no personal-conduct violation arising from the civil DV suit. ⚠️ The two real caveats sit elsewhere and both survive: his 18.8 PPG is an 8-game number, and his QB is nine months off a torn ACL+LCL ⚠️⚠️ SWEEP AUG 14 2026 -- NOW EFFECTIVELY CLOSED, AND THE TARGET STRENGTHENS. Rapoport: no further league action expected, because the 30 days served WAS the discipline for the probation violation (THC positive in May, released mid-June). The NFL separately closed the civil-DV matter earlier in 2026 with NO discipline. Reporting now reads that he should be available for the FULL 2026 campaign. ⇒ Combined with the fact that the Aug 7-14 re-pull ALREADY contains the Aug 12 clearance and his ADP still moved 11.4 -> 12.8 (CHEAPER), the stale-price thesis has survived both tests. The two unpriced football caveats are untouched and still the real risk: 18.76 PPG is an EIGHT-GAME number, and Mahomes is ~9 months off a torn ACL+LCL.",0,True
+26,Chris Olave,WR,NO,NO,26,9,15.04,10.69,16.2,15.5,233.0,3.26,16.75,-1.71,16,0.2,72.0,,healthy,"LABEL DEFERRED AUG 13 2026 pending a health confirmation closer to the season. Two independent, qualitatively different tails and NEITHER is in the model: (1) a BLOOD CLOT IN HIS LUNG -- hospitalised, shut down winter 2025-26, still NOT fully cleared going into minicamp, missed all spring team drills; (2) two concussions limited him to 8 games in 2024 and he MULLED RETIREMENT. Currently FULL GO with no restrictions per GM Mickey Loomis, and he took first full-team reps after signing 4yr/$132M ($90M gtd); he did walk off with a trainer on camp day 6, which resolved. ⚠️ Recorded as `healthy` deliberately: NO numeric effect. The 2025 log is a clean 16 games at 16.75 PPG because the clot came AFTER the season, so the board sees nothing. ⚠️ The measured base rate (Aug 13 study) is that a WEEK-1 injury-report flag costs -1.31 games and drops 14+ games from 61%% to 46%%, but barely touches PPG (85%% vs 89%% retained) -- so his Week 1 practice report is the trigger, not August noise. A pulmonary embolism is also NOT the reference class that base rate is built from. ⚠️⚠️ SWEEP AUG 14 2026 -- KYLAN'S DEFERRED LABEL CAN NOW BE SETTLED, AND IT SETTLES CLEAN. GM Mickey Loomis said before camp that Olave is FULLY CLEARED and has 'the green light to do everything' in practice. He returned to team drills on camp day 3 and signed the 4yr/$132M extension ($90M gtd). The blood clot cost him Week 18 2025 and limited him in spring; that limitation is now lifted. ⇒ The `healthy` label stands and is now EVIDENCED rather than deferred. Keep the numeric no-op -- the 2025 log is already a clean 16 games at 16.75 PPG. The Aug 13 study still applies: a WEEK 1 injury-report flag is the trigger to watch, not August noise.",0,True
+27,CeeDee Lamb,WR,DAL,DAL,27,10,14.98,11.88,17.74,15.0,225.0,3.2,15.45,-0.47,13,0.09,32.0,,,,0,True
+28,Davante Adams,WR,LA,LA,34,11,14.78,11.13,16.61,14.5,214.0,3.0,15.92,-1.14,14,0.38,99.0,p99 (-0.5 PPG hist),,,0,True
+29,Travis Etienne,RB,NO,JAX,27,16,12.57,8.92,13.12,15.2,191.0,2.98,14.94,-2.36,17,0.31,82.0,,,,1,True
+30,Harold Fannin Jr.,TE,CLE,CLE,22,3,11.84,8.83,15.12,15.2,180.0,2.9,11.65,0.19,16,0.23,59.0,,,,0,True
+31,Justin Jefferson,WR,MIN,MIN,27,12,14.65,10.53,16.97,15.5,227.0,2.87,11.85,2.8,17,0.06,25.0,,,,0,True
+32,Trevor Lawrence,QB,JAX,JAX,27,1,19.99,15.61,21.6,15.2,304.0,2.79,19.89,0.1,17,0.5,90.0,p90 (-1.6 PPG hist),,,0,True
+33,Malik Nabers,WR,NYG,NYG,23,13,14.27,8.77,18.16,12.3,176.0,2.49,14.28,-0.0,4,0.21,,,rehab,"RE-VERIFIED AUG 14 2026 -- status HELD at `rehab`, and the answer to 'is he healthy entering Week 1' is NOT YET. He is NOT cleared. Injury is an ACL **and full lateral meniscus** tear (Wk4 2025 vs LAC); the meniscus needed a full REPAIR, not a trim, and he had a SECOND procedure in spring 2026 to remove scar tissue causing joint stiffness. Reporting describes the recovery as 'not linear'. WHERE HE ACTUALLY IS (Thu Aug 13 2026, two independent reports): he took his FIRST real team-drill reps of camp, in a RED NO-CONTACT JERSEY, no pads, catching a handful of passes from Dart/Winston/Allen, running routes and reacting to the defence. Harbaugh: 'It's a big step to get into team drills' and called it 'a milestone'. Before that it was individual drills only for most of camp; the earlier West Virginia session was described as 'like a glorified walkthrough'. ⚠️ HE HAS STILL NOT DONE FULL-SPEED 11-ON-11 AND HAS NOT TAKEN CONTACT. Harbaugh's stated NEXT milestone is increased 11-on-11 work; timeline given as 'soon'. GOOD: he was NEVER placed on PUP -- the July reporting that predicted he would open camp on PUP was wrong. That matters a lot: there is NO four-game minimum on him, unlike Kittle. He can play the moment he is cleared. ⚠️⚠️ THE FACT THAT DECIDES THE DRAFT: Week 1 is SEPT 13 vs Dallas, which is 13 DAYS AFTER THE AUG 31 DRAFT. So this will NOT be resolved on draft day. Do not plan to check it on draft morning -- it will still read 'trending, not cleared'. Price the uncertainty instead. ⚠️ EVEN IF HE PLAYS WK1, reporting says he is in a MULTI-GAME RAMP-UP, so early-season volume is a second, separate risk from availability -- proj_games 12.3 prices the games but NOT the ramped snap share. MARKET VIEW, for calibration: analysts call him the highest boom potential of anyone available in round 3 (18.2 PPG as a rookie behind worse QB play, career-best 37.7 PPR game) but 'a shaky pick at his current mid-round-3 ADP', easier to stomach if he slips to round 4-5. ⇒ AT KYLAN'S PICK 27 THIS TILTS TO DAVANTE ADAMS: 4.73 VOR/g vs Nabers 4.22, 14.5 games vs 12.3, 98% available vs 86%, and no ramp risk. Nabers is the upside play, Adams is the better expected value. RE-CHECK AT THE AUG 29-30 SWEEP: has he done full-speed 11-on-11, and has he taken contact? Those two, not 'is he trending', are the real signals ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. This row already said the question would NOT resolve before an Aug 31 draft; an earlier draft only widens that gap. Do not plan any check. Price the uncertainty and take Adams at 27 per the existing note. ⚠️⚠️ SWEEP AUG 14 2026 -- THE ONE CONCRETE DATE IN THIS FILE, AND IT MAY LAND BEFORE THE DRAFT. Reporting now gives AUG 17 as the EARLIEST possible date he can join 7-on-7 and 11-on-11 periods. the draft is ~Aug 17-20, so unlike everything else here THIS ONE MIGHT ACTUALLY RESOLVE IN TIME. Aug 13 (Washington Post): took part in team drills in a RED NON-CONTACT jersey, Harbaugh called it 'a big step'; still not fully cleared, still no contact. ⇒ CHECK ON DRAFT MORNING WHETHER HE HAS DONE FULL-SPEED 11-ON-11. If yes, the ramp risk shrinks sharply and he moves back toward Adams at 27. If he is still in a red jersey, hold the existing call (Adams over Nabers at 27).",0,True
+34,Kyle Pitts,TE,ATL,ATL,26,4,11.2,8.87,14.57,15.5,174.0,2.26,12.4,-1.2,17,0.14,34.0,,,,0,True
+35,George Kittle,TE,SF,SF,33,5,11.06,8.02,13.44,10.8,119.0,2.12,14.68,-3.63,11,0.26,78.0,,rehab,"Achilles torn Jan 11 2026 in the playoff win over PHI, surgery 3 days later. The tear was HIGH on the tendon, which is the best-case variant and a shorter recovery. Still on active/PUP but did his most strenuous camp work to date in the Aug 10 session (routes, catching); CBS's Zenitz reports a 'high level of confidence' he plays Wk1, and SF opens LATE -- Sept 10 in Melbourne -- which buys ~2 extra weeks. TRENDING USABLE, NOT STASH. ⚠️ RE-CHECK AT CUTDOWN: still on active/PUP then = Reserve/PUP = first 4 games gone (Aug 12 2026) ⚠️⚠️ UPDATED AUG 14 2026 -- THE DRAFT MOVED TO ~AUG 17-20, SO THE AUG 30 CUTDOWN NOW FALLS AFTER IT. This row's entire plan was 'check the cutdown, then decide', and that check is no longer available. He is an unresolvable 4-game binary at draft time. Fannin is the same TE plateau window with no binary at all.",0,True
+36,Omarion Hampton,RB,LAC,LAC,23,17,11.65,8.67,14.72,15.4,179.0,2.06,15.08,-3.43,9,0.22,,,recovered,"RE-VERIFIED Aug 12 2026 -- the knee/ankle is a non-issue. Full pads Aug 4; OC Mike McDaniel says he has shown 'as much, if not the most growth, of any player'. ⚠️ BUT THE WORKLOAD PREMISE IS NOW THE PROBLEM, NOT THE HEALTH: McDaniel said Aug 6 that Hampton, Kimani Vidal AND Keaton Mitchell will all play 'probably every game', split by opponent and hot hand. That is a three-man committee, and the board already fades him 29 ranks below his ADP -- a fade in the cohort the backtest says to trust",0,True
+37,Brian Thomas Jr.,WR,JAX,JAX,24,14,13.84,8.28,16.99,14.9,206.0,2.06,9.91,3.93,14,0.13,43.0,,,,0,True
+38,Javonte Williams,RB,DAL,DAL,26,18,11.64,7.98,12.51,15.9,185.0,2.05,15.18,-3.53,16,0.32,84.0,,,,0,True
+39,Josh Allen,QB,BUF,BUF,30,2,19.25,14.79,21.56,15.4,296.0,2.04,22.79,-3.54,16,0.5,94.0,p94 (-1.6 PPG hist),,,0,True
+40,Bucky Irving,RB,TB,TB,24,19,11.61,7.24,15.86,14.7,171.0,2.02,13.85,-2.24,10,0.17,40.0,,,,0,True
+41,Colston Loveland,TE,CHI,CHI,22,6,10.96,7.92,13.85,15.2,167.0,2.02,10.32,0.64,16,0.22,57.0,,,,0,True
+42,Tee Higgins,WR,CIN,CIN,27,15,13.77,10.59,15.31,14.8,204.0,1.99,14.11,-0.33,15,0.31,93.0,p93 (-0.5 PPG hist),,,0,True
+43,A.J. Brown,WR,NE,PHI,29,16,13.65,9.35,14.97,14.4,197.0,1.87,14.69,-1.04,15,0.19,66.0,,,,1,True
+44,Zay Flowers,WR,BAL,BAL,26,17,13.59,9.34,15.87,15.0,204.0,1.81,14.31,-0.72,17,0.15,49.0,,,,0,True
+45,Tyler Warren,TE,IND,IND,24,7,10.64,7.76,13.0,15.8,168.0,1.7,11.09,-0.45,17,0.16,39.0,,,,0,True
+46,Travis Kelce,TE,KC,KC,37,8,10.63,7.52,11.3,15.2,162.0,1.69,11.36,-0.73,17,0.16,38.0,,,,0,True
+47,D'Andre Swift,RB,CHI,CHI,27,20,11.26,8.27,13.89,15.7,177.0,1.67,14.29,-3.03,16,0.26,67.0,,,,0,True
+48,Alvin Kamara,RB,NO,NO,31,21,11.19,5.78,14.83,11.1,124.0,1.6,9.15,2.04,11,0.06,19.0,,,,0,True
+49,Bo Nix,QB,DEN,DEN,26,3,18.66,14.71,21.79,16.3,304.0,1.46,17.93,0.73,17,0.43,48.0,,recovered,"ADDED Aug 14 2026 -- THE EXACT KITTLE FAILURE MODE, and it was missed. Nix FRACTURED HIS RIGHT ANKLE on the penultimate play of the Jan 17 2026 divisional-round win over Buffalo, i.e. in the POSTSEASON, so his 2025 regular-season log is a clean 17 games and the model sees NO injury at all: qb_context_2026.json still reads 'missed 0 of 34 starts 2023-2025, tier low, miss_rate 0.0' and proj_games is 16.3, the HIGHEST of any QB on the board. That durability record excludes the injury in question. SURGERY the following week; a SECOND surgery in April 2026 to remove BONE SPURS / 'decompress the ankle' -- Nix called that one elective, said he was ahead of schedule and could likely have played through it. GOOD NEWS, and it is most of the story: medically cleared to open camp, FULL participation with the first team, the SAME number of camp snaps as last summer, no restrictions. Aug 1 2026: 'I feel great, feel normal. Nothing's holding me back.' On running specifically -- 'Absolutely not [it won't limit scrambling]. I'm going to roll. I'm going to be as athletic as I can be.' Payton calls his mobility 'one of his superpowers'. Held out of the Aug preseason OPENER as precaution, scheduled to play the final two exhibitions -- a normal veteran ramp, not a setback. WHY THE ROW EXISTS ANYWAY: Sean Payton, quoting the operating surgeon, said doctors found 'a condition that was predisposed' and that 'this was going to happen sooner than later'. That is a structural recurrence claim from the head coach, not a media narrative, and NOTHING on record says the April bone-spur removal corrected it -- Nix framed the spurs as a separate post-injury irritation. `recovered` is chosen deliberately and is a PURE NO-OP for him: phase2 only rewrites seasons at or under INJURY_SEASON_GAMES and Nix has none (17 and 17). So this is ANNOTATION ONLY, the Jacobs/Rice/Nacua treatment -- the recurrence risk is real but has no length, and putting a decimal point on it would be worse than flagging it. RUSHING, measured from weekly logs since the user asked: rushing is ~21% of his fantasy points and that share was FLAT 2024->2025 (21.1% -> 21.5%); carries slid 5.41 -> 4.88/g and rush yards 25.3 -> 20.9/g BEFORE the fracture, so that decline is not injury-driven. His 2025 rushing was strongest at the END (7/4/9/8 carries in wks 15-18) -- no in-season physical limitation visible. RE-CHECK AT THE AUG 29-30 SWEEP: whether he plays the final two preseason games as planned, and whether he runs in them. ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. The trigger here was the final two preseason games; VERIFY THE 2026 PRESEASON SCHEDULE AGAINST THE DRAFT DATE, because they may now fall after it. If so this recurrence risk is simply unresolved and he is drafted on camp reporting alone, which is still fine at ADP 120 for +1.45 VOR/g. ⚠️⚠️ SWEEP AUG 14 2026 -- TRIGGER CONFIRMED SCHEDULED, BUT IT FALLS AFTER THE DRAFT. Payton confirmed Aug 12-13 that Nix SITS the preseason opener at Atlanta and WILL PLAY the final two exhibitions, vs GREEN BAY and MINNESOTA. His first appearance is at home at Empower Field on NATURAL GRASS, which reads as deliberate handling of the ankle. Those two games fall roughly Aug 21-22 and Aug 28-29, i.e. AFTER a ~Aug 17-20 draft, so THE 'DOES HE PLAY AND RUN' CHECK WILL NOT RESOLVE FOR YOU. Everything else re-confirms: practising fully since camp opened with NO restrictions, same camp snap count as last summer, says he feels 'completely normal' and does not expect the ankle to make him hesitant to run. ⇒ DRAFT HIM ON THE CAMP REPORTING. At ADP 120 for +1.45 VOR/g and 84% availability at pick 94, that is a fine basis; the recurrence claim from Payton's surgeon quote stays unpriced and unresolved.",0,True
+50,Drake Maye,QB,NE,NE,24,4,18.57,14.35,22.68,16.1,299.0,1.36,20.7,-2.14,17,0.42,39.0,,,,0,True
+51,Quinshon Judkins,RB,CLE,CLE,23,22,10.81,5.45,14.2,14.5,157.0,1.22,12.13,-1.32,14,0.25,64.0,,,,0,True
+52,RJ Harvey,RB,DEN,DEN,25,23,10.81,8.33,14.46,15.3,165.0,1.22,12.15,-1.35,17,0.35,90.0,p90 (-2.1 PPG hist),,,0,True
+53,Justin Herbert,QB,LAC,LAC,28,5,18.31,14.79,20.39,15.5,284.0,1.11,17.93,0.38,16,0.4,26.0,,,,0,True
+54,DeVonta Smith,WR,PHI,PHI,28,18,12.89,8.77,15.13,15.7,202.0,1.1,11.87,1.01,17,0.12,40.0,,,,0,True
+55,Jameson Williams,WR,DET,DET,25,19,12.74,8.41,15.18,15.2,194.0,0.96,12.94,-0.19,17,0.19,67.0,,,,0,True
+56,Ladd McConkey,WR,LAC,LAC,25,20,12.55,8.74,14.85,14.5,182.0,0.77,11.31,1.25,16,0.2,70.0,,,,0,True
+57,TreVeyon Henderson,RB,NE,NE,24,24,10.25,6.45,14.63,15.9,163.0,0.66,12.13,-1.88,17,0.29,74.0,,,,0,True
+58,Juwan Johnson,TE,NO,NO,30,9,9.6,7.36,11.49,15.4,148.0,0.66,10.58,-0.98,17,0.1,24.0,,,,0,True
+59,Tetairoa McMillan,WR,CAR,CAR,23,21,12.23,7.62,14.98,15.2,186.0,0.45,12.55,-0.32,17,0.2,70.0,,,,0,True
+60,Jaxson Dart,QB,NYG,NYG,23,6,17.6,12.39,20.74,15.6,275.0,0.39,17.26,0.34,14,0.47,77.0,,,,0,True
+61,Emeka Egbuka,WR,TB,TB,24,22,12.17,7.18,15.47,15.0,183.0,0.39,11.51,0.66,17,0.18,59.0,,,,0,True
+62,Hunter Henry,TE,NE,NE,32,10,9.27,7.76,10.54,14.7,136.0,0.33,10.52,-1.25,17,0.23,64.0,,,,0,True
+63,Lamar Jackson,QB,BAL,BAL,29,7,17.48,13.18,20.04,14.3,250.0,0.28,16.53,0.95,13,0.45,61.0,,,,0,True
+64,Michael Wilson,WR,ARI,ARI,26,23,12.03,8.44,13.92,15.4,185.0,0.25,12.98,-0.94,17,0.19,65.0,,,,0,True
+65,Baker Mayfield,QB,TB,TB,31,8,17.42,13.62,20.49,14.8,258.0,0.22,16.0,1.43,17,0.4,29.0,,,,0,True
+66,Brock Purdy,QB,SF,SF,27,9,17.42,14.2,19.84,11.4,199.0,0.22,19.71,-2.29,9,0.55,,,,,0,True
+67,Jared Goff,QB,DET,DET,32,10,17.4,14.03,19.51,16.7,291.0,0.2,17.47,-0.07,17,0.46,71.0,,,,0,True
+68,Sam LaPorta,TE,DET,DET,25,11,9.11,6.47,11.98,15.4,140.0,0.17,11.88,-2.77,9,0.17,,,,,0,True
+69,Joe Burrow,QB,CIN,CIN,30,11,17.37,11.81,19.65,16.3,283.0,0.17,16.81,0.57,8,0.51,,,recovered,"RE-VERIFIED Aug 12 2026. 'The foot feels great' -- nearly a year removed from the turf-toe surgery, back at camp in full force, still playing with the protective plate in the shoe. No restrictions reported",0,True
+70,Dallas Goedert,TE,PHI,PHI,31,12,9.1,7.49,11.07,11.6,106.0,0.16,12.34,-3.24,15,0.36,92.0,p92 (-0.9 PPG hist),,,0,True
+71,Chris Godwin Jr.,WR,TB,TB,30,24,11.94,7.17,12.88,10.4,124.0,0.16,9.22,2.72,9,0.14,,,healthy,"RE-VERIFIED Aug 12 2026. HC Todd Bowles: 'I think he is healthy right now.' Strong camp, full offseason of training, lining up all over the formation in a new offense, scoring in practice. Confirms again that the original injury flag was WRONG. ⚠️ The AVOID is an age-30/slot-role judgement and is now WEAKER for it -- revisit the stance rather than leaving it to stand on a medical premise that never existed",0,True
+72,Tyrone Tracy Jr.,RB,NYG,NYG,27,25,9.75,7.25,13.24,13.5,132.0,0.16,10.72,-0.97,15,0.15,30.0,,,,0,True
+73,Zach Charbonnet,RB,SEA,SEA,25,26,9.69,7.27,12.7,14.0,136.0,0.1,11.34,-1.65,16,0.4,96.0,p96 (-2.1 PPG hist),rehab,"ADDED Aug 13 2026 -- he had NO ROW and the board was projecting him 15.7 games, MORE than the back ahead of him. He has been on the PUP list since JUL 22 recovering from an ACL and is reported set to miss the start of the season. Fourth instance of the Pearsall failure mode on this board (injury after/outside the 2025 game log, so the model sees nothing). ⚠️ He is priced at ADP 139.1, so he is draftable as a handcuff by someone who does not know this. `rehab` rather than `out` because the games number is NOT known: reverting to reserve/PUP at the Aug 30 cutdown would cost him the first 4 games, and that is the same binary Kittle carries. ⚠️ This row is also load-bearing for JADARIAN PRICE, whose target rests partly on Charbonnet being unavailable early. ⚠️⚠️ UPDATED AUG 14 2026 -- DRAFT MOVED TO ~AUG 17-20. The Aug 30 cutdown call lands AFTER the draft, so the confirmation this row promised JADARIAN PRICE never arrives. Price stays a target on the base rate (Walker gone to KC, Charbonnet on PUP since Jul 22 with an ACL) but is now an UNHEDGED bet. ⚠️⚠️ SWEEP AUG 14 2026 -- MATERIALLY WORSE FOR HIM, MATERIALLY BETTER FOR JADARIAN PRICE. New detail: the ACL tore JAN 17 2026 with surgery in FEBRUARY (this row previously had only the Jul 22 PUP date). ESPN's Brady Henderson reports he may not return until 'LATE IN THE SEASON'. SI's Albert Breer is the dissent, saying he could be ready for the Sept 9 opener vs NE. HC Macdonald back in March called a season-opening return 'unlikely' while insisting 'he's not going to miss the whole year'. ⚠️ ALSO NEW, AND IT CUTS AGAINST HIM: under a rule adopted for 2026, a reserve/PUP player cannot even BEGIN a 21-day practice window until after his team's SECOND regular-season game -- so reserve/PUP is now worse than the old four-game floor. ⇒ PRICE'S TARGET NO LONGER RESTS ON A COIN FLIP. The weight of reporting says Charbonnet misses meaningful early season, which is the condition Price's role needs. Still UNCONFIRMED at draft time (cutdown is after), but the base rate moved Price's way.",0,True
+74,Tyreek Hill,WR,,MIA,32,25,11.87,7.08,15.52,12.3,146.0,0.09,13.38,-1.5,4,0.11,,,,,0,False
+75,Jalen Hurts,QB,PHI,PHI,28,12,17.23,14.42,20.32,15.8,272.0,0.03,18.82,-1.58,16,0.49,84.0,,,,0,True
+76,Rome Odunze,WR,CHI,CHI,24,26,11.81,6.23,14.02,13.2,156.0,0.03,12.18,-0.36,12,0.25,87.0,p87 (-0.5 PPG hist),,,0,True
+77,J.K. Dobbins,RB,DEN,DEN,28,27,9.62,4.68,13.36,9.8,94.0,0.02,11.59,-1.97,10,0.21,53.0,,,,0,True
+78,Tucker Kraft,TE,GB,GB,26,13,8.94,7.1,11.97,13.6,122.0,0.0,14.65,-5.71,8,0.31,,,rehab,"2025 ACL. Back at practice running routes and ramping up, eyeing a Wk1 return, but not yet a full participant. Carried no status at all before this sweep (Aug 12 2026)",0,True
+79,Wan'Dale Robinson,WR,TEN,NYG,25,28,11.78,7.15,14.34,15.1,178.0,0.0,13.62,-1.84,16,0.11,38.0,,,,1,True
+80,Jayden Daniels,QB,WAS,WAS,26,13,17.21,10.07,20.72,9.3,160.0,0.0,16.33,0.88,7,0.39,,,,,0,True
+81,David Montgomery,RB,HOU,DET,29,28,9.59,6.82,11.34,13.7,131.0,0.0,9.82,-0.23,17,0.31,83.0,,,,1,True
+82,Mike Evans,WR,SF,TB,33,27,11.78,6.55,14.05,12.4,146.0,0.0,10.6,1.18,8,0.21,,,,,1,True
+83,Dalton Schultz,TE,HOU,HOU,30,14,8.91,6.9,10.86,14.7,131.0,-0.02,10.45,-1.54,17,0.1,26.0,,,,0,True
+84,Patrick Mahomes,QB,KC,KC,31,14,17.17,14.82,21.53,14.7,252.0,-0.04,20.41,-3.24,14,0.41,32.0,,recovered,"NOT PREVIOUSLY ON THIS FILE, and it is precisely the Kittle failure mode this file exists to catch: he tore his ACL **and LCL** in Wk15 2025, late enough that the season logs look nearly full and the model applied no penalty whatsoever. Surgery followed. He has since been FULLY CLEARED to participate in training camp (Andy Reid) and is reported on track for Wk1 vs Denver, ~9 months post-op. Numerically this row is near-neutral -- his 2025 games sit above the injury-season threshold, so `recovered` has little to discount -- and that is the point: the VALUE IS THE FLAG, and it carries to every KC pass catcher on the board (Rice ADP 11, Kelce 100, Worthy 104)",0,True
+85,Jaylen Warren,RB,PIT,PIT,28,29,9.52,7.09,12.36,15.6,149.0,-0.07,13.57,-4.04,16,0.22,55.0,,,,0,True
+86,Stefon Diggs,WR,,NE,33,29,11.7,8.63,13.99,14.3,167.0,-0.08,12.37,-0.67,17,0.11,39.0,,,,0,False
+87,Rico Dowdle,RB,PIT,CAR,28,30,9.49,5.2,11.54,15.6,148.0,-0.11,12.72,-3.24,17,0.19,47.0,,,,1,True
+88,Alec Pierce,WR,IND,IND,26,30,11.62,8.02,12.99,15.1,175.0,-0.17,12.22,-0.6,15,0.2,69.0,,,,0,True
+89,Oronde Gadsden II,TE,LAC,LAC,23,15,8.62,5.12,11.85,13.8,119.0,-0.32,8.76,-0.14,15,0.14,32.0,,,,0,True
+90,DK Metcalf,WR,PIT,PIT,29,31,11.3,8.16,13.63,12.6,142.0,-0.49,12.48,-1.18,15,0.22,83.0,,,,0,True
+91,Chuba Hubbard,RB,CAR,CAR,27,31,9.05,5.57,12.27,14.2,129.0,-0.54,8.36,0.69,15,0.19,45.0,,,,0,True
+92,Caleb Williams,QB,CHI,CHI,25,15,16.66,13.84,19.62,16.6,277.0,-0.55,18.72,-2.06,17,0.41,35.0,,,,0,True
+93,Jake Ferguson,TE,DAL,DAL,27,16,8.38,6.77,10.8,16.0,134.0,-0.56,11.06,-2.69,17,0.26,77.0,,,,0,True
+94,Terry McLaurin,WR,WAS,WAS,31,32,11.12,6.79,13.44,15.3,170.0,-0.66,11.42,-0.3,10,0.16,51.0,,recovered,"RE-VERIFIED Aug 12 2026. Described Aug 3 as 'hold-in and injury free' -- full participation, and NO contract dispute this year, unlike 2025. Now in his third straight season with Jayden Daniels, which he called a first for him. The 2025 absence (7 games, the most of his career) traced to the camp holdout rather than a chronic issue",0,True
+95,Quentin Johnston,WR,LAC,LAC,25,33,11.09,7.28,13.89,14.6,162.0,-0.69,13.17,-2.08,13,0.28,91.0,p91 (-0.5 PPG hist),,,0,True
+96,Tony Pollard,RB,TEN,TEN,29,32,8.89,6.74,12.27,15.3,136.0,-0.7,10.93,-2.04,17,0.16,36.0,,,,0,True
+97,Michael Pittman,WR,PIT,IND,29,34,11.07,7.48,11.55,14.3,158.0,-0.71,11.91,-0.83,17,0.21,77.0,,,,1,True
+98,Rhamondre Stevenson,RB,NE,NE,28,33,8.87,7.11,12.23,13.5,120.0,-0.72,12.77,-3.91,14,0.3,81.0,,,,0,True
+99,Garrett Wilson,WR,NYJ,NYJ,26,35,11.03,7.9,15.47,15.2,168.0,-0.75,14.21,-3.18,7,0.24,,,recovered,RE-VERIFIED Aug 12 2026. Full practice participation with no restrictions; HC Aaron Glenn: 'Garrett's feeling good. He looks good.' In the Aug 6-7 sessions not a single ball thrown his way hit the ground. The knee (IR after Wk10 2025) is behind him,0,True
+100,Matthew Stafford,QB,LA,LA,38,16,16.4,14.3,17.95,16.2,266.0,-0.81,20.61,-4.21,17,0.53,97.0,p97 (-1.6 PPG hist),,,0,True
+101,Mason Taylor,TE,NYJ,NYJ,22,17,8.1,4.17,10.88,12.7,103.0,-0.84,6.84,1.26,13,0.07,18.0,,,,0,True
+102,Troy Franklin,WR,DEN,DEN,23,36,10.84,5.55,13.17,14.8,160.0,-0.95,10.42,0.42,17,0.2,74.0,,,,0,True
+103,Marvin Harrison Jr.,WR,ARI,ARI,24,37,10.79,5.57,14.27,13.9,150.0,-0.99,10.65,0.14,12,0.19,64.0,,,,0,True
+104,Zach Ertz,TE,,WAS,36,18,7.9,5.32,9.55,11.1,88.0,-1.04,9.72,-1.82,13,0.19,47.0,,,,0,False
+105,AJ Barner,TE,SEA,SEA,24,19,7.89,4.94,11.55,15.4,122.0,-1.04,8.66,-0.77,17,0.29,82.0,,,,0,True
+106,Brenton Strange,TE,JAX,JAX,26,20,7.83,4.2,9.74,12.9,101.0,-1.11,9.83,-2.0,12,0.15,36.0,,,,0,True
+107,Dalton Kincaid,TE,BUF,BUF,27,21,7.77,6.38,10.43,14.0,109.0,-1.17,10.51,-2.74,12,0.24,65.0,,,,0,True
+108,DJ Moore,WR,BUF,CHI,29,38,10.61,7.24,12.51,16.0,170.0,-1.17,10.13,0.48,17,0.27,88.0,p88 (-0.5 PPG hist),,,1,True
+109,Dak Prescott,QB,DAL,DAL,33,17,16.0,13.66,18.42,14.9,238.0,-1.2,18.46,-2.45,17,0.42,42.0,,,,0,True
+110,Parker Washington,WR,JAX,JAX,24,39,10.53,7.77,13.38,14.6,154.0,-1.25,11.54,-1.01,16,0.16,53.0,,,,0,True
+111,Deebo Samuel Sr.,WR,,WAS,30,40,10.49,7.87,12.48,13.8,145.0,-1.29,11.76,-1.27,16,0.19,68.0,,,,0,False
+112,Keenan Allen,WR,,LAC,34,41,10.48,8.39,13.57,13.9,146.0,-1.3,10.75,-0.27,17,0.13,44.0,,,,0,False
+113,Theo Johnson,TE,NYG,NYG,25,22,7.54,4.81,10.38,13.8,104.0,-1.39,8.52,-0.98,15,0.23,62.0,,,,0,True
+114,Kyle Monangai,RB,CHI,CHI,24,34,8.18,4.34,13.4,15.0,123.0,-1.41,8.63,-0.45,17,0.2,51.0,,,,0,True
+115,Courtland Sutton,WR,DEN,DEN,31,42,10.38,8.23,12.62,15.2,158.0,-1.41,12.92,-2.55,17,0.19,67.0,,,,0,True
+116,Dylan Sampson,RB,CLE,CLE,22,35,8.16,3.82,10.99,13.3,109.0,-1.43,5.84,2.32,15,0.14,28.0,,,,0,True
+117,Jakobi Meyers,WR,JAX,JAX,30,43,10.3,8.06,12.33,12.5,129.0,-1.48,10.99,-0.68,16,0.1,35.0,,,,0,True
+118,Kenneth Gainwell,RB,TB,PIT,27,36,8.05,5.22,11.27,16.3,131.0,-1.54,13.02,-4.96,17,0.22,54.0,,,,1,True
+119,Woody Marks,RB,HOU,HOU,26,37,8.0,4.45,12.12,12.8,102.0,-1.59,9.07,-1.07,16,0.21,52.0,,,,0,True
+120,Rachaad White,RB,WAS,TB,27,38,7.89,3.9,10.03,15.7,124.0,-1.7,8.41,-0.52,17,0.17,39.0,,,,1,True
+121,Jaylen Waddle,WR,DEN,MIA,28,44,10.05,5.83,13.34,14.6,147.0,-1.73,12.13,-2.08,16,0.19,61.0,,,,1,True
+122,Jordan Addison,WR,MIN,MIN,24,45,10.01,5.18,13.35,15.3,153.0,-1.78,9.65,0.36,14,0.18,57.0,,,,0,True
+123,Jacory Croskey-Merritt,RB,WAS,WAS,25,39,7.76,3.12,12.3,13.7,106.0,-1.83,8.25,-0.49,17,0.34,88.0,p88 (-2.1 PPG hist),,,0,True
+124,Bhayshul Tuten,RB,JAX,JAX,24,40,7.74,3.15,10.19,11.7,91.0,-1.85,5.91,1.83,15,0.47,98.0,p98 (-2.1 PPG hist),,,0,True
+125,Khalil Shakir,WR,BUF,BUF,26,46,9.93,6.71,12.14,15.2,151.0,-1.86,10.4,-0.47,16,0.14,49.0,,,,0,True
+126,Cade Otton,TE,TB,TB,27,23,7.08,4.3,10.57,15.2,108.0,-1.86,8.15,-1.07,15,0.05,15.0,,,,0,True
+127,Darren Waller,TE,,MIA,34,24,7.06,3.68,10.14,11.6,82.0,-1.88,9.86,-2.79,9,0.41,,,,,0,False
+128,Luther Burden III,WR,CHI,CHI,23,47,9.78,4.73,13.51,13.4,131.0,-2.0,8.53,1.25,15,0.09,33.0,,,,0,True
+129,Gunnar Helm,TE,TEN,TEN,24,25,6.83,3.84,9.84,14.8,101.0,-2.11,5.73,1.1,16,0.13,30.0,,,,0,True
+130,Daniel Jones,QB,IND,IND,29,18,14.9,9.62,15.84,11.2,167.0,-2.3,17.42,-2.52,13,0.47,74.0,,,,0,True
+131,Audric Estimé,RB,NO,NO,23,41,7.25,2.75,9.88,10.7,78.0,-2.34,9.62,-2.37,5,0.12,,,,,0,True
+132,Pat Freiermuth,TE,PIT,PIT,28,26,6.59,3.81,8.83,14.0,92.0,-2.35,7.57,-0.98,15,0.21,55.0,,,,0,True
+133,Isiah Pacheco,RB,DET,KC,27,42,7.22,3.55,9.5,9.0,65.0,-2.37,6.72,0.5,13,0.14,29.0,,,,1,True
+134,Blake Corum,RB,LA,LA,26,43,7.2,3.66,9.5,14.3,103.0,-2.39,7.19,0.01,17,0.29,76.0,,,,0,True
+135,Tre Tucker,WR,LV,LV,25,48,9.31,5.05,12.25,15.3,143.0,-2.47,9.51,-0.2,17,0.19,62.0,,,,0,True
+136,Tyjae Spears,RB,TEN,TEN,25,44,7.11,3.65,11.23,12.5,89.0,-2.48,8.59,-1.48,13,0.11,26.0,,,,0,True
+137,Mark Andrews,TE,BAL,BAL,31,27,6.45,4.9,9.11,15.0,97.0,-2.49,7.71,-1.25,17,0.27,80.0,,,,0,True
+138,Jacoby Brissett,QB,ARI,ARI,34,19,14.67,11.62,15.27,9.5,139.0,-2.54,16.25,-1.58,14,0.43,52.0,,,,0,True
+139,Christian Watson,WR,GB,GB,27,49,9.22,6.38,12.49,14.9,137.0,-2.56,13.24,-4.02,10,0.27,88.0,p88 (-0.5 PPG hist),recovered,"RE-VERIFIED Aug 12 2026. Healthy and practising in full, catching passes from Jordan Love; he was the only available starting WR through a stretch when the rest of the Green Bay room was banged up, which is itself evidence of availability",0,True
+140,Xavier Worthy,WR,KC,KC,23,50,9.21,4.44,13.04,14.2,131.0,-2.57,7.85,1.36,14,0.05,24.0,,,,0,True
+141,Chris Rodriguez Jr.,RB,JAX,WAS,27,45,6.99,2.5,8.56,7.9,55.0,-2.6,7.67,-0.68,12,0.39,94.0,p94 (-2.1 PPG hist),,,1,True
+142,Colby Parkinson,TE,LA,LA,27,28,6.3,4.42,8.4,13.8,87.0,-2.64,9.27,-2.98,14,0.37,93.0,p93 (-0.9 PPG hist),,,0,True
+143,Kyler Murray,QB,MIN,ARI,29,20,14.55,9.35,16.91,8.4,122.0,-2.65,15.56,-1.0,5,0.39,,,,,1,True
+144,Evan Engram,TE,DEN,DEN,32,29,6.21,3.43,9.17,14.1,88.0,-2.73,6.42,-0.21,16,0.06,16.0,,,,0,True
+145,Cole Kmet,TE,CHI,CHI,27,30,6.19,3.59,9.27,14.3,88.0,-2.75,4.92,1.27,16,0.15,35.0,,,,0,True
+146,Jordan Love,QB,GB,GB,28,21,14.42,10.15,16.43,14.2,205.0,-2.79,15.68,-1.26,15,0.39,13.0,,,,0,True
+147,Aaron Jones,RB,MIN,MIN,32,46,6.79,2.97,10.08,11.7,79.0,-2.8,9.89,-3.11,12,0.15,31.0,,,,0,True
+148,Jordan Mason,RB,MIN,MIN,27,47,6.78,2.53,8.97,12.8,87.0,-2.81,8.06,-1.27,16,0.28,72.0,,,,0,True
+149,Chig Okonkwo,TE,WAS,TEN,27,31,6.1,3.15,9.69,15.6,95.0,-2.84,7.29,-1.2,17,0.1,22.0,,,,1,True
+150,T.J. Hockenson,TE,MIN,MIN,29,32,6.08,3.85,9.25,11.0,67.0,-2.85,7.52,-1.44,15,0.16,41.0,,,,0,True
+151,Kimani Vidal,RB,LAC,LAC,25,48,6.72,2.44,10.72,10.9,73.0,-2.87,9.07,-2.35,13,0.2,48.0,,,,0,True
+152,Jayden Reed,WR,GB,GB,26,51,8.89,4.69,12.05,16.2,144.0,-2.89,9.7,-0.81,5,0.12,,,recovered,"RE-VERIFIED Aug 12 2026, and the sweep caught something the old note missed: he sprained an ANKLE in 2026 camp and lost practice time, returning to the field Aug 11 ahead of the preseason opener vs Pittsburgh. The 2025 collarbone is behind him. Fresh issue is minor, but he gave up camp reps in a crowded GB room",0,True
+153,C.J. Stroud,QB,HOU,HOU,25,22,14.28,8.61,16.89,13.9,199.0,-2.92,14.9,-0.61,14,0.39,16.0,,,,0,True
+154,Jerry Jeudy,WR,CLE,CLE,27,52,8.83,4.86,11.92,15.6,138.0,-2.95,7.1,1.73,17,0.1,34.0,,,,0,True
+155,Jake Tonges,TE,SF,SF,27,33,5.95,3.46,10.1,10.4,62.0,-2.99,9.33,-3.38,10,0.32,85.0,p85 (-0.9 PPG hist),,,0,True
+156,Keon Coleman,WR,BUF,BUF,23,53,8.76,3.99,11.27,12.4,109.0,-3.02,8.53,0.23,12,0.23,83.0,,,,0,True
+157,Josh Downs,WR,IND,IND,25,54,8.69,5.19,11.73,15.1,131.0,-3.1,8.65,0.04,16,0.17,55.0,,,,0,True
+158,Ricky Pearsall,WR,SF,SF,26,55,8.63,4.49,13.61,1.0,9.0,-3.15,9.84,-1.21,9,0.0,,,out,"OUT FOR THE 2026 SEASON -- placed on season-ending IR, PCL surgery on the right knee, announced ~Aug 1 2026. He hurt it during 2025 and chose to rehab rather than operate; the swelling returned within days of camp opening. GM Lynch: six-to-twelve month recovery. ⚠️ THIS IS THE ROW THAT PAYS FOR THE SWEEP -- FFC still prices him at ADP 118 in the Aug 1-8 window, a stale price on a man who will not play a snap. SF signed Deebo Samuel to take the roster spot, which is itself an unmodelled change to the 49ers' WR room",0,True
+159,Tyler Shough,QB,NO,NO,27,23,14.01,6.11,17.08,9.7,136.0,-3.19,14.36,-0.35,11,0.37,6.0,,,,0,True
+160,Terrance Ferguson,TE,LA,LA,23,34,5.71,2.96,7.41,12.0,68.0,-3.23,4.74,0.97,11,0.35,91.0,p91 (-0.9 PPG hist),,,0,True
+161,Greg Dulcich,TE,MIA,MIA,26,35,5.71,3.22,7.8,9.8,56.0,-3.23,6.98,-1.27,9,0.1,,,,,0,True
+162,Devin Singletary,RB,NYG,NYG,29,49,6.34,3.02,8.69,14.5,92.0,-3.25,6.4,-0.06,17,0.28,69.0,,,,0,True
+163,Kareem Hunt,RB,,KC,31,50,6.33,3.46,9.4,12.9,82.0,-3.26,8.55,-2.22,17,0.37,92.0,p92 (-2.1 PPG hist),,,0,False
+164,Nick Chubb,RB,,HOU,31,51,6.32,2.12,8.44,9.2,58.0,-3.27,5.89,0.43,15,0.2,49.0,,,,0,False
+165,Brian Robinson,RB,ATL,SF,27,52,6.29,2.94,8.8,13.2,83.0,-3.3,3.68,2.61,17,0.19,46.0,,,,1,True
+166,Romeo Doubs,WR,NE,GB,26,56,8.46,5.47,11.34,14.9,126.0,-3.32,10.34,-1.88,16,0.22,80.0,,,,1,True
+167,Michael Mayer,TE,LV,LV,25,36,5.59,2.85,7.86,12.9,72.0,-3.35,5.68,-0.09,13,0.08,19.0,,,,0,True
+168,Travis Hunter,WR,JAX,JAX,23,57,8.42,4.13,11.46,10.2,86.0,-3.36,9.11,-0.69,7,0.09,,,,,0,True
+169,Tank Bigsby,RB,PHI,PHI,24,53,6.23,2.03,6.6,9.8,61.0,-3.36,3.59,2.64,15,0.22,57.0,,,,0,True
+170,Jauan Jennings,WR,MIN,SF,29,58,8.41,6.1,10.01,13.9,117.0,-3.37,11.55,-3.14,15,0.31,92.0,p92 (-0.5 PPG hist),,,1,True
+171,Joe Flacco,QB,CIN,CIN,41,24,13.81,7.1,15.1,5.9,82.0,-3.39,11.28,2.53,13,0.45,68.0,,,,0,True
+172,David Njoku,TE,LAC,CLE,30,37,5.51,3.72,7.61,11.3,62.0,-3.43,7.85,-2.34,11,0.28,81.0,,,,1,True
+173,Taysom Hill,TE,,NO,36,38,5.48,1.89,8.39,9.6,53.0,-3.45,3.21,2.27,13,0.24,69.0,,,,0,False
+174,Ja'Tavion Sanders,TE,CAR,CAR,23,39,5.46,2.23,6.89,12.7,69.0,-3.47,4.5,0.96,12,0.11,27.0,,,,0,True
+175,Jaydon Blue,RB,DAL,DAL,22,54,6.12,2.32,10.36,4.5,28.0,-3.47,4.08,2.04,5,0.29,,,,,0,True
+176,Sean Tucker,RB,TB,TB,25,55,6.1,1.29,6.96,15.3,93.0,-3.49,5.38,0.73,17,0.53,100.0,p100 (-2.1 PPG hist),,,0,True
+177,Mike Gesicki,TE,CIN,CIN,31,40,5.39,3.18,6.75,10.3,55.0,-3.55,5.89,-0.51,12,0.17,43.0,,,,0,True
+178,Mitchell Evans,TE,CAR,CAR,23,41,5.37,1.96,5.37,13.4,72.0,-3.57,3.44,1.93,14,0.25,72.0,,,,0,True
+179,Braelon Allen,RB,NYJ,NYJ,22,56,6.01,2.05,8.09,4.2,25.0,-3.58,3.82,2.18,4,0.39,,,,,0,True
+180,Ray Davis,RB,BUF,BUF,27,57,6.0,2.76,8.15,14.2,85.0,-3.59,3.77,2.23,17,0.19,43.0,,,,0,True
+181,Jonnu Smith,TE,,PIT,31,42,5.34,2.65,7.7,15.4,82.0,-3.6,5.01,0.33,17,0.21,55.0,,,,0,False
+182,Trey Benson,RB,ARI,ARI,24,58,5.98,2.3,10.15,10.4,62.0,-3.61,8.85,-2.87,4,0.0,,,,,0,True
+183,Emari Demercado,RB,KC,ARI,27,59,5.95,2.21,8.43,8.3,49.0,-3.64,4.86,1.09,12,0.1,25.0,,,,1,True
+184,Jaylen Wright,RB,MIA,MIA,23,60,5.95,1.51,7.19,9.4,56.0,-3.64,5.36,0.59,9,0.25,,,,,0,True
+185,Brashard Smith,RB,KC,KC,23,61,5.9,2.17,9.08,14.7,87.0,-3.69,3.72,2.17,17,0.09,24.0,,,,0,True
+186,Tyler Allgeier,RB,ARI,ATL,26,62,5.89,2.2,9.28,15.4,91.0,-3.7,7.24,-1.34,17,0.39,93.0,p93 (-2.1 PPG hist),,,1,True
+187,Ollie Gordon II,RB,MIA,MIA,22,63,5.85,1.45,7.69,14.4,84.0,-3.74,3.18,2.67,17,0.44,97.0,p97 (-2.1 PPG hist),,,0,True
+188,Aaron Rodgers,QB,PIT,PIT,43,25,13.45,9.74,14.76,14.6,196.0,-3.75,14.19,-0.74,16,0.45,65.0,,,,0,True
+189,Emanuel Wilson,RB,SEA,GB,27,64,5.8,1.82,7.39,14.7,85.0,-3.79,5.56,0.24,17,0.19,44.0,,,,1,True
+190,Bam Knight,RB,ARI,ARI,25,65,5.76,2.16,9.52,11.1,64.0,-3.83,7.74,-1.98,12,0.32,85.0,p85 (-2.1 PPG hist),,,0,True
+191,Elijah Arroyo,TE,SEA,SEA,23,43,5.1,1.88,6.02,12.7,65.0,-3.84,2.84,2.26,13,0.16,42.0,,,,0,True
+192,Dawson Knox,TE,BUF,BUF,30,44,5.06,3.36,7.3,12.5,63.0,-3.87,6.48,-1.42,16,0.23,61.0,,,,0,True
+193,Luke Musgrave,TE,GB,GB,26,45,4.9,2.63,7.3,9.7,48.0,-4.03,3.78,1.12,13,0.0,7.0,,,,0,True
+194,Tommy Tremble,TE,CAR,CAR,26,46,4.85,2.52,6.45,12.0,58.0,-4.08,4.26,0.59,15,0.19,45.0,,,,0,True
+195,Darnell Washington,TE,PIT,PIT,25,47,4.84,2.71,6.08,12.8,62.0,-4.1,5.65,-0.81,13,0.08,20.0,,,,0,True
+196,Sam Darnold,QB,SEA,SEA,29,26,13.1,8.92,14.92,14.0,183.0,-4.11,13.85,-0.75,17,0.42,45.0,,,,0,True
+197,Jalen Coker,WR,CAR,CAR,25,59,7.64,3.87,10.95,11.4,87.0,-4.14,8.22,-0.57,11,0.2,71.0,,,,0,True
+198,Matthew Golden,WR,GB,GB,23,60,7.57,2.31,9.86,10.8,82.0,-4.22,5.0,2.57,14,0.0,12.0,,,,0,True
+199,Jayden Higgins,WR,HOU,HOU,24,61,7.55,3.68,11.72,15.4,116.0,-4.23,7.62,-0.06,17,0.28,89.0,p89 (-0.5 PPG hist),,,0,True
+200,Tua Tagovailoa,QB,ATL,MIA,28,27,12.96,8.26,14.39,11.1,144.0,-4.24,11.48,1.48,14,0.5,87.0,p87 (-1.6 PPG hist),,,1,True
+201,Tyler Higbee,TE,LA,LA,33,49,4.69,2.98,6.83,8.2,38.0,-4.25,7.11,-2.42,10,0.25,76.0,,,,0,True
+202,Isaiah Likely,TE,NYG,BAL,26,48,4.69,2.72,7.74,13.4,63.0,-4.25,5.14,-0.45,12,0.1,23.0,,,,1,True
+203,Noah Fant,TE,NO,CIN,29,50,4.64,2.34,6.82,10.5,49.0,-4.29,5.75,-1.11,13,0.24,70.0,,,,1,True
+204,Kendre Miller,RB,NO,NO,24,66,5.27,1.96,7.79,5.0,26.0,-4.32,4.76,0.51,7,0.18,,,,,0,True
+205,Elic Ayomanor,WR,TEN,TEN,23,62,7.47,3.25,10.72,15.3,114.0,-4.32,7.28,0.18,16,0.21,76.0,,,,0,True
+206,Samaje Perine,RB,CIN,CIN,31,67,5.25,2.19,7.16,11.5,60.0,-4.34,5.19,0.06,15,0.23,58.0,,,,0,True
+207,Carson Wentz,QB,MIN,MIN,34,28,12.83,7.5,15.85,3.9,50.0,-4.38,14.07,-1.24,5,0.34,,,,,0,True
+208,Tanner Hudson,TE,CIN,CIN,32,51,4.44,2.54,6.62,8.3,37.0,-4.5,4.78,-0.34,10,0.25,74.0,,,,0,True
+209,Rashid Shaheed,WR,SEA,SEA,28,63,7.28,4.87,10.34,13.6,99.0,-4.51,8.7,-1.42,18,0.08,28.0,,,,0,True
+210,Justin Fields,QB,KC,NYJ,27,29,12.67,7.06,14.13,8.7,110.0,-4.54,15.85,-3.18,9,0.36,,,,,1,True
+211,Michael Carter,RB,TEN,ARI,27,68,5.04,2.56,9.04,8.8,44.0,-4.56,7.62,-2.58,13,0.06,20.0,,,,1,True
+212,Adonai Mitchell,WR,NYJ,NYJ,24,64,7.14,2.96,9.24,14.4,103.0,-4.64,5.49,1.65,16,0.14,46.0,,,,0,True
+213,Kayshon Boutte,WR,NE,NE,24,65,7.09,2.25,9.89,13.2,94.0,-4.7,8.86,-1.78,14,0.29,91.0,p91 (-0.5 PPG hist),,,0,True
+214,Raheim Sanders,RB,CLE,CLE,24,69,4.88,1.97,8.36,4.4,21.0,-4.71,5.08,-0.19,4,0.3,,,,,0,True
+215,Keaton Mitchell,RB,LAC,BAL,24,70,4.86,1.77,8.22,7.3,35.0,-4.73,4.26,0.6,13,0.11,27.0,,,,1,True
+216,Jawhar Jordan,RB,HOU,HOU,27,71,4.86,2.03,9.17,7.2,35.0,-4.74,7.42,-2.57,4,0.0,,,,,0,True
+217,Jalen McMillan,WR,TB,TB,25,66,7.03,3.49,11.78,9.4,66.0,-4.76,7.48,-0.45,4,0.0,,,,,0,True
+218,Malik Davis,RB,DAL,DAL,28,72,4.74,1.75,6.66,7.5,36.0,-4.85,4.06,0.68,10,0.3,78.0,,,,0,True
+219,Roschon Johnson,RB,CHI,CHI,25,73,4.7,0.84,5.6,4.2,20.0,-4.89,0.28,4.42,6,0.0,,,,,0,True
+220,Raheem Mostert,RB,,LV,34,74,4.69,2.2,8.41,6.4,30.0,-4.9,2.45,2.24,12,0.0,10.0,,,,0,False
+221,Austin Hooper,TE,ATL,NE,32,52,4.01,1.99,5.37,12.0,48.0,-4.93,4.56,-0.55,13,0.2,51.0,,,,1,True
+222,Davis Allen,TE,LA,LA,25,53,3.97,2.44,5.54,11.1,44.0,-4.97,4.19,-0.21,15,0.29,84.0,,,,0,True
+223,Josh Oliver,TE,MIN,MIN,29,54,3.95,2.09,5.12,9.9,39.0,-4.99,4.58,-0.63,12,0.44,96.0,p96 (-0.9 PPG hist),,,0,True
+224,Ty Johnson,RB,BUF,BUF,29,75,4.59,2.08,7.29,15.2,70.0,-5.0,5.9,-1.31,17,0.3,80.0,,,,0,True
+225,Justice Hill,RB,BAL,BAL,29,76,4.57,1.85,7.87,9.4,43.0,-5.02,6.52,-1.95,10,0.28,70.0,,,,0,True
+226,Noah Gray,TE,KC,KC,27,55,3.91,2.42,5.69,11.4,45.0,-5.03,2.77,1.14,14,0.0,7.0,,,,0,True
+227,Isaiah Davis,RB,NYJ,NYJ,24,77,4.53,1.6,7.76,13.3,60.0,-5.06,4.45,0.08,16,0.08,22.0,,,,0,True
+228,Jackson Hawes,TE,BUF,BUF,26,56,3.88,2.36,5.68,12.0,47.0,-5.06,4.05,-0.17,13,0.34,88.0,p88 (-0.9 PPG hist),,,0,True
+229,Tez Johnson,WR,TB,TB,24,67,6.69,2.81,9.94,13.3,89.0,-5.09,6.16,0.53,15,0.32,94.0,p94 (-0.5 PPG hist),,,0,True
+230,Isaiah Bond,WR,CLE,CLE,22,68,6.69,2.3,8.54,11.3,76.0,-5.1,3.65,3.04,15,0.0,12.0,,,,0,True
+231,Chimere Dike,WR,TEN,TEN,25,69,6.66,3.59,10.94,15.4,103.0,-5.12,7.54,-0.88,17,0.19,63.0,,,,0,True
+232,Cam Ward,QB,TEN,TEN,24,30,12.05,7.47,15.57,14.5,175.0,-5.16,10.98,1.07,17,0.39,10.0,,,,0,True
+233,DeMario Douglas,WR,NE,NE,26,70,6.6,2.74,9.58,14.3,94.0,-5.18,5.99,0.61,16,0.19,64.0,,,,0,True
+234,Xavier Legette,WR,CAR,CAR,25,71,6.57,2.84,9.22,13.4,88.0,-5.22,5.95,0.61,15,0.2,73.0,,,,0,True
+235,Daniel Bellinger,TE,TEN,NYG,26,57,3.68,2.36,6.13,12.4,46.0,-5.26,4.58,-0.91,13,0.2,50.0,,,,1,True
+236,Ryan Flournoy,WR,DAL,DAL,27,72,6.48,2.78,9.44,11.6,75.0,-5.3,7.6,-1.12,15,0.21,79.0,,,,0,True
+237,Devin Neal,RB,NO,NO,23,78,4.28,1.95,9.63,9.8,42.0,-5.31,6.67,-2.39,9,0.2,,,,,0,True
+238,Cam Akers,RB,,SEA,27,79,4.26,0.48,10.26,3.7,16.0,-5.33,1.8,2.47,4,0.56,,,,,0,False
+239,Malik Washington,WR,MIA,MIA,26,73,6.45,2.7,9.09,15.1,97.0,-5.34,6.86,-0.42,17,0.21,75.0,,,,0,True
+240,Tyler Conklin,TE,DET,LAC,31,58,3.59,1.43,4.91,4.8,17.0,-5.35,2.88,0.7,6,0.0,,,,,1,True
+241,Bryce Young,QB,CAR,CAR,25,31,11.85,5.37,13.95,14.1,167.0,-5.35,13.63,-1.77,16,0.48,81.0,,,,0,True
+242,Jaleel McLaughlin,RB,DEN,DEN,26,80,4.23,1.92,7.17,6.1,26.0,-5.36,3.92,0.31,8,0.19,,,,,0,True
+243,Jerome Ford,RB,WAS,CLE,27,81,4.21,2.07,7.23,10.0,42.0,-5.38,3.35,0.86,13,0.0,10.0,,,,1,True
+244,Cooper Kupp,WR,SEA,SEA,33,74,6.4,3.55,8.99,12.8,82.0,-5.38,7.27,-0.86,16,0.1,36.0,,,,0,True
+245,Will Dissly,TE,,LAC,30,59,3.54,2.01,4.26,4.0,14.0,-5.4,2.59,0.95,8,0.0,,,,,0,False
+246,Ameer Abdullah,RB,JAX,IND,33,82,4.19,1.76,5.03,7.6,32.0,-5.4,2.92,1.28,13,0.16,35.0,,,,1,True
+247,Ben Sinnott,TE,WAS,WAS,24,60,3.51,1.48,5.1,9.6,34.0,-5.43,3.16,0.35,9,0.21,,,,,0,True
+248,Marvin Mims Jr.,WR,DEN,DEN,24,75,6.3,2.55,8.85,14.5,91.0,-5.48,6.33,-0.03,15,0.13,42.0,,,,0,True
+249,Antonio Gibson,RB,,NE,28,83,4.08,1.71,7.04,4.9,20.0,-5.51,4.64,-0.56,5,0.26,,,,,0,False
+250,Hunter Long,TE,JAX,JAX,28,61,3.4,2.15,4.59,7.0,24.0,-5.53,4.64,-1.24,7,0.37,,,,,0,True
+251,Dameon Pierce,RB,PHI,KC,26,84,4.04,1.05,5.44,4.7,19.0,-5.55,0.72,3.32,5,0.0,,,,,1,True
+252,Miles Sanders,RB,,DAL,29,86,4.04,1.71,7.22,4.6,19.0,-5.55,6.68,-2.64,4,0.22,,,,,0,False
+253,Jaret Patterson,RB,LAC,LAC,27,85,4.04,1.94,6.85,5.0,20.0,-5.55,4.28,-0.24,6,0.23,,,,,0,True
+254,Jeremy Ruckert,TE,NYJ,NYJ,26,62,3.38,1.91,4.95,12.4,42.0,-5.56,3.35,0.03,14,0.13,28.0,,,,0,True
+255,AJ Dillon,RB,CAR,PHI,28,87,4.02,1.13,5.69,4.0,16.0,-5.57,1.52,2.51,6,0.0,,,,,1,True
+256,Elijah Higgins,TE,ARI,ARI,26,63,3.36,1.72,4.84,13.8,46.0,-5.58,3.42,-0.06,17,0.0,7.0,,,,0,True
+257,Andrei Iosivas,WR,CIN,CIN,27,76,6.15,2.79,8.48,13.8,85.0,-5.63,5.99,0.16,15,0.13,46.0,,,,0,True
+258,Brock Wright,TE,DET,DET,28,64,3.28,2.01,3.97,7.0,23.0,-5.66,4.6,-1.32,8,0.33,,,,,0,True
+259,Isaac TeSlaa,WR,DET,DET,24,77,6.07,2.69,9.7,11.7,71.0,-5.71,5.42,0.65,14,0.47,100.0,p100 (-0.5 PPG hist),,,0,True
+260,Darnell Mooney,WR,NYG,ATL,29,78,6.07,2.24,8.28,12.0,73.0,-5.72,5.49,0.58,15,0.07,26.0,,,,1,True
+261,Devaughn Vele,WR,NO,NO,29,79,5.99,2.78,8.81,9.7,58.0,-5.79,7.37,-1.38,9,0.18,,,,,0,True
+262,Trevor Etienne,RB,CAR,CAR,22,88,3.77,0.94,6.15,13.4,51.0,-5.82,0.81,2.97,17,0.0,10.0,,,,0,True
+263,Geno Smith,QB,NYJ,LV,36,32,11.38,7.48,13.03,11.4,130.0,-5.83,11.59,-0.22,15,0.44,55.0,,,,1,True
+264,Jeremy McNichols,RB,WAS,WAS,31,89,3.75,1.46,6.62,11.5,43.0,-5.84,4.54,-0.79,16,0.08,21.0,,,,0,True
+265,Christian Kirk,WR,SF,HOU,30,80,5.86,2.58,7.72,7.1,42.0,-5.93,5.26,0.59,11,0.1,37.0,,,,1,True
+266,Marquise Brown,WR,PHI,KC,29,81,5.83,3.43,8.86,11.3,66.0,-5.95,8.61,-2.77,16,0.22,81.0,,,,1,True
+267,Tre Harris,WR,LAC,LAC,24,82,5.82,2.36,8.72,12.9,75.0,-5.96,4.34,1.49,16,0.09,30.0,,,,0,True
+268,Adam Trautman,TE,DEN,DEN,29,67,2.95,1.61,4.35,12.3,36.0,-5.98,3.5,-0.55,13,0.13,31.0,,,,0,True
+269,Foster Moreau,TE,HOU,NO,29,66,2.95,1.39,3.3,3.8,11.0,-5.98,1.84,1.11,7,0.0,,,,,1,True
+270,Luke Farrell,TE,SF,SF,29,65,2.96,0.96,3.23,9.6,28.0,-5.98,2.27,0.69,13,0.41,95.0,p95 (-0.9 PPG hist),,,0,True
+271,Tyrell Shavers,WR,BUF,BUF,27,83,5.78,2.9,9.47,6.6,38.0,-6.01,4.14,1.64,11,0.13,45.0,,,,0,True
+272,Tanner Conner,TE,NYG,MIA,28,68,2.9,1.13,4.35,4.0,12.0,-6.04,2.26,0.64,8,0.0,,,,,1,True
+273,Julian Hill,TE,NE,MIA,26,69,2.88,1.43,3.57,9.7,28.0,-6.06,2.82,0.06,11,0.0,7.0,,,,1,True
+274,Dontayvion Wicks,WR,PHI,GB,25,84,5.7,2.29,9.12,12.6,72.0,-6.08,5.83,-0.13,13,0.16,52.0,,,,1,True
+275,LeQuint Allen Jr.,RB,JAX,JAX,22,90,3.5,1.72,6.49,12.4,43.0,-6.09,1.55,1.95,16,0.0,10.0,,,,0,True
+276,John Bates,TE,WAS,WAS,29,70,2.83,1.26,3.64,8.8,25.0,-6.11,2.73,0.1,10,0.22,58.0,,,,0,True
+277,Drew Sample,TE,CIN,CIN,30,71,2.82,1.75,3.3,9.2,26.0,-6.12,2.66,0.16,12,0.19,46.0,,,,0,True
+278,Jalen Tolbert,WR,MIA,DAL,27,85,5.67,1.82,7.84,9.5,54.0,-6.12,3.86,1.81,12,0.13,43.0,,,,1,True
+279,Brandin Cooks,WR,,BUF,33,86,5.66,2.08,7.69,7.5,42.0,-6.13,3.99,1.66,13,0.0,12.0,,,,0,False
+280,John FitzPatrick,TE,,GB,26,72,2.77,1.02,3.39,8.3,23.0,-6.16,2.29,0.48,11,0.24,66.0,,,,0,False
+281,DJ Giddens,RB,IND,IND,23,91,3.42,1.3,7.31,3.5,12.0,-6.17,1.92,1.5,5,0.0,,,,,0,True
+282,Grant Calcaterra,TE,PHI,PHI,28,74,2.74,1.56,3.76,7.5,21.0,-6.19,2.51,0.23,9,0.27,,,,,0,True
+283,Josh Whyle,TE,GB,GB,27,73,2.74,1.65,3.15,5.0,14.0,-6.19,2.43,0.31,6,0.41,,,,,0,True
+284,Tyquan Thornton,WR,KC,KC,26,87,5.58,2.37,7.12,9.6,54.0,-6.2,6.73,-1.15,12,0.22,82.0,,,,0,True
+285,Pat Bryant,WR,DEN,DEN,24,88,5.57,2.68,8.53,12.1,67.0,-6.22,5.75,-0.19,13,0.08,28.0,,,,0,True
+286,Zavier Scott,RB,MIN,MIN,27,92,3.38,1.51,5.94,9.1,31.0,-6.22,3.56,-0.19,11,0.15,33.0,,,,0,True
+287,Calvin Austin III,WR,NYG,PIT,27,89,5.49,2.21,7.52,13.4,74.0,-6.29,6.16,-0.66,14,0.21,78.0,,,,1,True
+288,Nate Adkins,TE,DEN,DEN,27,75,2.65,1.25,3.65,4.9,13.0,-6.29,2.8,-0.15,6,0.36,,,,,0,True
+289,Devin Culp,TE,TB,TB,26,76,2.59,0.82,4.74,4.3,11.0,-6.34,1.9,0.69,4,0.79,,,,,0,True
+290,Cedric Tillman,WR,CLE,CLE,26,90,5.45,2.43,6.92,7.9,43.0,-6.34,5.0,0.45,12,0.2,72.0,,,,0,True
+291,Zamir White,RB,,LV,27,93,3.25,1.11,5.36,3.5,11.0,-6.34,1.92,1.33,5,0.0,,,,,0,False
+292,J.J. McCarthy,QB,MIN,MIN,23,33,10.85,3.62,14.72,9.2,100.0,-6.36,12.54,-1.69,10,0.54,100.0,p100 (-1.6 PPG hist),,,0,True
+293,Mo Alie-Cox,TE,IND,IND,33,77,2.58,1.47,3.49,7.3,19.0,-6.36,2.79,-0.21,11,0.2,49.0,,,,0,True
+294,Darius Slayton,WR,NYG,NYG,29,91,5.4,2.52,8.41,11.1,60.0,-6.38,7.06,-1.65,14,0.06,25.0,,,,0,True
+295,Cade Stover,TE,HOU,HOU,26,78,2.55,0.81,4.41,7.7,20.0,-6.38,3.32,-0.76,6,0.0,,,,,0,True
+296,Tutu Atwell,WR,MIA,LA,27,92,5.38,1.65,7.54,5.0,27.0,-6.4,3.9,1.48,8,0.19,,,,,1,True
+297,Charlie Kolar,TE,LAC,BAL,27,79,2.54,1.16,3.68,10.0,25.0,-6.4,2.78,-0.24,13,0.33,86.0,p86 (-0.9 PPG hist),,,1,True
+298,Terrell Jennings,RB,NE,NE,25,94,3.17,0.81,6.58,3.4,11.0,-6.42,2.53,0.64,6,0.39,,,,,0,True
+299,Khalil Herbert,RB,,NYJ,28,95,3.14,1.07,5.58,3.6,11.0,-6.45,1.32,1.82,5,0.0,,,,,0,False
+300,Kirk Cousins,QB,LV,ATL,38,34,10.75,3.71,12.52,6.7,72.0,-6.45,10.35,0.4,10,0.44,58.0,,,,1,True
+301,George Holani,RB,SEA,SEA,27,96,3.12,1.17,5.97,6.0,19.0,-6.47,2.08,1.04,10,0.29,73.0,,,,0,True
+302,Shedeur Sanders,QB,CLE,CLE,24,35,10.72,3.86,14.54,6.8,73.0,-6.48,10.61,0.11,8,0.4,,,,,0,True
+303,Luke Schoonmaker,TE,DAL,DAL,28,80,2.46,1.18,4.14,9.8,24.0,-6.48,1.94,0.52,14,0.0,7.0,,,,0,True
+304,Stone Smartt,TE,PHI,NYJ,28,81,2.44,1.18,3.26,4.5,11.0,-6.49,2.03,0.41,6,0.0,,,,,1,True
+305,Ian Thomas,TE,LV,LV,30,82,2.44,1.02,3.76,7.8,19.0,-6.5,2.71,-0.27,9,0.0,,,,,0,True
+306,Brenden Bates,TE,CLE,CLE,27,83,2.41,1.13,4.1,4.1,10.0,-6.53,1.76,0.65,5,0.0,,,,,0,True
+307,Josh Palmer,WR,BUF,BUF,27,93,5.24,2.22,8.41,8.1,42.0,-6.55,4.36,0.88,12,0.0,12.0,,,,0,True
+308,Marcus Mariota,QB,WAS,WAS,33,36,10.63,4.41,13.38,4.3,46.0,-6.58,12.55,-1.92,10,0.37,3.0,,,,0,True
+309,Anthony Firkser,TE,WAS,DET,31,84,2.36,1.18,3.8,4.0,9.0,-6.58,2.66,-0.3,5,0.0,,,,,1,True
+310,Calvin Ridley,WR,TEN,TEN,32,94,5.18,2.75,8.11,15.3,79.0,-6.6,6.76,-1.57,7,0.0,,,recovered,"RE-VERIFIED Aug 12 2026. Full participant, ~9 months clear of the Wk11 fibula, and he restructured his deal to stay on the roster. ⚠️ The FADE stands and is now BETTER supported than when it was written: availability was never his problem (6.8 PPG when playing, age 32), and Tennessee has since added Carnell Tate and Wan'Dale Robinson -- he is competing to retain a role, not guaranteed one",0,True
+311,Jalen Nailor,WR,LV,MIN,27,95,5.17,1.85,7.54,14.1,73.0,-6.61,5.92,-0.75,17,0.24,86.0,p86 (-0.5 PPG hist),,,1,True
+312,Corey Kiner,RB,ARI,ARI,24,97,2.95,1.5,5.86,3.1,9.0,-6.64,2.33,0.63,4,0.0,,,,,0,True
+313,Jahdae Walker,WR,CHI,CHI,24,96,5.12,1.85,7.58,5.4,28.0,-6.66,4.45,0.67,6,0.45,,,,,0,True
+314,Luke McCaffrey,WR,WAS,WAS,25,97,5.11,2.26,6.96,10.1,52.0,-6.67,5.7,-0.59,9,0.35,,,,,0,True
+315,Gabe Davis,WR,,BUF,27,98,5.1,2.62,7.46,5.2,27.0,-6.68,5.15,-0.05,6,0.19,,,,,0,False
+316,Demarcus Robinson,WR,SF,SF,32,99,5.1,2.45,8.23,8.7,44.0,-6.69,4.16,0.94,14,0.1,36.0,,,,0,True
+317,Rashod Bateman,WR,BAL,BAL,27,100,5.09,2.63,8.54,9.9,50.0,-6.7,4.26,0.83,13,0.22,80.0,,,,0,True
+318,Connor Heyward,TE,LV,PIT,27,85,2.16,0.34,4.52,9.0,19.0,-6.77,1.96,0.21,14,0.66,100.0,p100 (-0.9 PPG hist),,,1,True
+319,Elijah Moore,WR,PHI,BUF,26,101,5.0,1.46,7.32,8.0,40.0,-6.78,3.18,1.82,9,0.21,,,,,1,True
+320,Jaylin Lane,WR,WAS,WAS,24,102,4.99,1.28,6.68,10.2,51.0,-6.79,3.41,1.58,15,0.0,12.0,,,,0,True
+321,Jaylin Noel,WR,HOU,HOU,24,103,4.98,1.85,7.66,13.9,69.0,-6.81,4.02,0.95,17,0.18,56.0,,,,0,True
+322,KaVontae Turpin,WR,DAL,DAL,30,104,4.95,2.29,7.38,12.9,64.0,-6.84,5.63,-0.69,15,0.14,48.0,,,,0,True
+323,Xavier Hutchinson,WR,HOU,HOU,26,105,4.91,1.71,6.61,14.0,69.0,-6.88,6.12,-1.22,16,0.18,59.0,,,,0,True
+324,Tyler Lockett,WR,,LV,34,106,4.88,2.05,7.62,13.5,66.0,-6.9,3.95,0.94,17,0.09,31.0,,,,0,False
+325,Isaiah Williams,WR,NYJ,NYJ,25,107,4.83,1.74,7.07,9.8,47.0,-6.95,4.05,0.78,15,0.0,12.0,,,,0,True
+326,Tory Horton,WR,SEA,SEA,24,108,4.81,2.24,9.04,7.3,35.0,-6.97,8.14,-3.32,8,0.46,,,,,0,True
+327,Kendrick Bourne,WR,ARI,SF,31,109,4.73,1.74,6.85,10.0,47.0,-7.05,6.58,-1.85,14,0.0,12.0,,,,1,True
+328,Jack Stoll,TE,CLE,NO,28,86,1.87,1.02,3.19,7.7,14.0,-7.07,1.84,0.02,9,0.36,,,,,1,True
+329,Michael Penix Jr.,QB,ATL,ATL,26,37,10.13,4.36,13.95,5.8,59.0,-7.07,13.36,-3.23,9,0.35,,,,,0,True
+330,Jake Browning,QB,TB,CIN,30,38,10.11,2.29,14.32,3.4,34.0,-7.1,9.75,0.36,5,0.62,,,,,1,True
+331,Adam Thielen,WR,MIN,PIT,36,110,4.68,2.29,6.85,6.7,31.0,-7.1,2.83,1.85,14,0.0,12.0,,,,1,True
+332,Hunter Luepke,RB,DAL,DAL,26,98,2.48,0.49,3.94,7.4,18.0,-7.11,2.64,-0.16,14,0.16,37.0,,,,0,True
+333,Ben Yurosek,TE,MIN,MIN,24,87,1.83,0.44,2.84,4.0,7.0,-7.11,0.57,1.26,6,0.0,,,,,0,True
+334,Charlie Woerner,TE,ATL,ATL,29,88,1.81,0.85,2.28,5.0,9.0,-7.13,1.83,-0.02,7,0.0,,,,,0,True
+335,Sterling Shepard,WR,,TB,33,111,4.64,1.81,6.4,8.8,41.0,-7.14,6.31,-1.67,13,0.07,27.0,,,,0,False
+336,Mack Hollins,WR,NE,NE,33,112,4.62,2.87,8.43,11.3,52.0,-7.17,8.1,-3.48,14,0.11,38.0,,,,0,True
+337,Tyler Badie,RB,DEN,DEN,27,99,2.42,0.75,4.07,10.6,26.0,-7.17,2.21,0.21,16,0.0,10.0,,,,0,True
+338,Olamide Zaccheaus,WR,ATL,CHI,29,113,4.61,1.81,6.66,10.4,48.0,-7.18,6.06,-1.45,14,0.14,47.0,,,,1,True
+339,Chris Brooks,RB,GB,GB,26,100,2.4,0.72,4.19,12.7,30.0,-7.19,1.92,0.47,17,0.0,10.0,,,,0,True
+340,Noah Brown,WR,,WAS,30,114,4.58,2.11,6.4,2.9,13.0,-7.21,3.32,1.25,4,0.0,,,,,0,False
+341,Kevin Austin Jr.,WR,NO,NO,26,115,4.57,2.28,6.86,8.3,38.0,-7.22,6.6,-2.03,5,0.18,,,,,0,True
+342,Dont'e Thornton Jr.,WR,LV,LV,24,116,4.56,0.98,6.29,8.0,37.0,-7.22,2.14,2.43,11,0.0,12.0,,,,0,True
+343,Kalif Raymond,WR,CHI,DET,32,117,4.54,2.11,6.44,9.2,42.0,-7.24,4.45,0.09,15,0.09,33.0,,,,1,True
+344,DeAndre Hopkins,WR,,BAL,34,118,4.53,2.63,7.97,13.9,63.0,-7.25,3.94,0.59,17,0.18,58.0,,,,0,False
+345,Zay Jones,WR,,ARI,31,119,4.47,1.84,6.52,2.8,13.0,-7.32,5.05,-0.58,6,0.0,,,,,0,False
+346,Josh Reynolds,WR,,NYJ,31,120,4.44,2.18,7.08,3.7,16.0,-7.35,4.62,-0.18,5,0.0,,,,,0,False
+347,Tahj Brooks,RB,CIN,CIN,24,101,2.2,0.15,5.14,5.4,12.0,-7.39,0.53,1.67,12,0.0,10.0,,,,0,True
+348,Mac Jones,QB,SF,SF,28,39,9.81,3.92,13.36,6.4,63.0,-7.4,11.82,-2.02,11,0.4,23.0,,,,0,True
+349,Jahan Dotson,WR,ATL,PHI,26,121,4.38,1.33,6.19,10.1,44.0,-7.41,3.35,1.03,15,0.12,41.0,,,,1,True
+350,Brevyn Spann-Ford,TE,DAL,DAL,27,90,1.52,0.69,4.49,11.1,17.0,-7.42,1.5,0.02,16,0.25,73.0,,,,0,True
+351,Kylen Granson,TE,TEN,PHI,28,89,1.52,0.84,3.21,8.9,14.0,-7.42,0.92,0.6,12,0.0,7.0,,,,1,True
+352,Jack Bech,WR,LV,LV,24,122,4.32,1.13,5.94,9.1,39.0,-7.46,3.03,1.3,14,0.0,12.0,,,,0,True
+353,Andrew Beck,RB,NYJ,NYJ,30,102,2.13,0.62,3.26,5.3,11.0,-7.46,2.09,0.04,11,0.52,99.0,p99 (-2.1 PPG hist),,,0,True
+354,Van Jefferson,WR,WAS,TEN,30,123,4.31,1.74,5.09,9.2,40.0,-7.48,5.0,-0.69,14,0.09,30.0,,,,1,True
+355,Kyle Williams,WR,NE,NE,24,124,4.29,1.49,5.67,9.9,42.0,-7.49,3.51,0.77,14,0.37,97.0,p97 (-0.5 PPG hist),,,0,True
+356,Russell Wilson,QB,,NYG,38,40,9.72,5.4,13.89,4.4,43.0,-7.49,8.31,1.41,6,0.24,,,,,0,False
+357,Blake Whiteheart,TE,CLE,CLE,26,91,1.43,0.69,3.27,5.5,8.0,-7.51,0.27,1.16,9,0.0,,,,,0,True
+358,Quintin Morris,TE,JAX,JAX,27,92,1.39,1.1,3.57,6.2,9.0,-7.54,1.59,-0.2,11,0.34,89.0,p89 (-0.9 PPG hist),,,0,True
+359,Will Shipley,RB,PHI,PHI,24,103,2.04,0.37,4.67,7.8,16.0,-7.55,1.39,0.65,14,0.0,10.0,,,,0,True
+360,Spencer Rattler,QB,NO,NO,26,41,9.66,3.42,13.27,5.7,55.0,-7.55,11.02,-1.36,9,0.32,,,,,0,True
+361,Dyami Brown,WR,WAS,JAX,27,125,4.21,1.67,5.69,9.3,39.0,-7.58,4.52,-0.31,11,0.12,41.0,,,,1,True
+362,Greg Dortch,WR,DET,ARI,28,126,4.2,1.83,6.08,10.9,46.0,-7.58,6.26,-2.06,12,0.32,93.0,p93 (-0.5 PPG hist),,,1,True
+363,Harrison Bryant,TE,SEA,HOU,28,93,1.31,0.73,2.21,3.5,5.0,-7.62,0.54,0.77,5,0.0,,,,,1,True
+364,David Martin-Robinson,TE,TEN,TEN,27,94,1.3,0.55,3.12,5.7,7.0,-7.64,1.18,0.12,11,0.46,97.0,p97 (-0.9 PPG hist),,,0,True
+365,Colson Yankoff,TE,WAS,WAS,26,95,1.3,0.13,3.01,4.9,6.0,-7.64,0.38,0.92,10,0.0,7.0,,,,0,True
+366,Johnny Mundt,TE,PHI,JAX,32,96,1.27,0.93,3.13,8.7,11.0,-7.67,1.68,-0.4,12,0.0,7.0,,,,1,True
+367,John Metchie III,WR,CAR,NYJ,26,127,4.12,1.9,5.95,10.8,44.0,-7.67,5.53,-1.41,13,0.17,54.0,,,,1,True
+368,Rasheen Ali,RB,BAL,BAL,25,104,1.92,0.7,3.89,6.7,13.0,-7.67,1.61,0.3,15,0.25,65.0,,,,0,True
+369,Allen Lazard,WR,,NYJ,31,128,4.12,1.76,5.16,3.9,16.0,-7.67,2.56,1.56,9,0.26,,,,,0,False
+370,Tyler Huntley,QB,BAL,BAL,28,42,9.51,2.28,12.84,3.1,29.0,-7.69,8.03,1.48,5,0.2,,,,,0,True
+371,Trayveon Williams,RB,,CLE,29,105,1.9,0.48,4.02,2.6,5.0,-7.69,2.85,-0.95,6,0.0,,,,,0,False
+372,Curtis Samuel,WR,,BUF,30,129,4.07,1.86,5.59,3.4,14.0,-7.71,3.52,0.56,6,0.28,,,,,0,False
+373,Kaleb Johnson,RB,PIT,PIT,23,106,1.87,0.64,5.94,8.0,15.0,-7.72,0.88,0.99,10,0.0,10.0,,,,0,True
+374,Andrew Ogletree,TE,IND,IND,28,97,1.18,0.34,2.38,6.8,8.0,-7.76,1.15,0.02,11,0.47,99.0,p99 (-0.9 PPG hist),,,0,True
+375,Devontez Walker,WR,BAL,BAL,25,130,4.02,1.4,6.31,4.0,16.0,-7.77,4.7,-0.68,8,0.48,,,,,0,True
+376,Payne Durham,TE,TB,TB,26,98,1.15,0.55,2.48,5.4,6.0,-7.78,0.26,0.89,8,0.0,,,,,0,True
+377,Tucker Fisk,TE,,LAC,27,99,1.12,0.82,2.16,2.5,3.0,-7.82,0.98,0.14,4,0.0,,,,,0,False
+378,Roman Wilson,WR,PIT,PIT,25,131,3.97,1.95,6.44,8.8,35.0,-7.82,4.29,-0.32,9,0.31,,,,,0,True
+379,JuJu Smith-Schuster,WR,NYG,KC,30,132,3.95,1.9,5.64,12.4,49.0,-7.83,4.32,-0.37,17,0.08,29.0,,,,1,True
+380,Darius Cooper,WR,PHI,PHI,25,134,3.93,1.28,5.18,4.0,16.0,-7.85,3.03,0.9,6,0.0,,,,,0,True
+381,Tim Patrick,WR,NYJ,JAX,33,133,3.93,1.51,6.26,8.0,31.0,-7.85,3.98,-0.04,13,0.35,96.0,p96 (-0.5 PPG hist),,,1,True
+382,Nick Kallerup,TE,SEA,SEA,25,101,1.08,0.26,3.08,4.2,5.0,-7.85,0.0,1.08,4,0.0,,,,,0,True
+383,Durham Smythe,TE,BAL,CHI,31,100,1.09,0.75,2.59,3.2,3.0,-7.85,0.93,0.16,7,0.0,,,,,1,True
+384,Eric Saubert,TE,SEA,SEA,32,102,1.04,0.71,1.92,5.0,5.0,-7.9,1.01,0.03,9,0.0,,,,,0,True
+385,Jack Westover,TE,NE,NE,27,103,1.02,0.23,2.82,4.4,4.0,-7.92,0.25,0.77,4,0.0,,,,,0,True
+386,Cameron Latu,TE,PHI,PHI,26,104,1.0,0.07,3.48,7.5,8.0,-7.94,0.0,1.0,10,0.0,7.0,,,,0,True
+387,Konata Mumpfield,WR,LA,LA,24,135,3.83,1.58,5.47,8.2,31.0,-7.95,2.52,1.31,10,0.24,85.0,,,,0,True
+388,David Sills,WR,TB,ATL,31,136,3.83,1.52,5.44,8.9,34.0,-7.95,4.09,-0.26,12,0.24,86.0,p86 (-0.5 PPG hist),,,1,True
+389,Tyler Johnson,WR,DAL,NYJ,28,137,3.82,1.63,5.94,7.2,28.0,-7.96,4.19,-0.37,9,0.16,,,,,1,True
+390,Ross Dwelley,TE,,DET,31,105,0.97,0.89,1.77,2.9,3.0,-7.97,0.68,0.3,4,0.0,,,,,0,False
+391,Dillon Gabriel,QB,CLE,CLE,26,43,9.23,2.05,12.96,7.6,70.0,-7.98,7.01,2.22,10,0.4,19.0,,,,0,True
+392,Pharaoh Brown,TE,,ARI,32,106,0.95,0.4,2.08,3.0,3.0,-7.99,0.42,0.53,5,0.0,,,,,0,False
+393,Lil'Jordan Humphrey,WR,DEN,DEN,28,138,3.78,2.16,5.23,4.9,19.0,-8.0,4.94,-1.16,7,0.17,,,,,0,True
+394,Hassan Haskins,RB,,LAC,27,107,1.58,0.38,4.15,6.6,10.0,-8.01,0.91,0.67,11,0.0,10.0,,,,0,False
+395,Xavier Smith,WR,LA,LA,29,139,3.76,1.09,5.2,11.6,44.0,-8.02,3.02,0.74,16,0.0,12.0,,,,0,True
+396,Dare Ogunbowale,RB,,HOU,32,108,1.56,0.43,3.3,7.0,11.0,-8.03,1.72,-0.16,14,0.25,66.0,,,,0,False
+397,Ray-Ray McCloud,WR,,NYG,30,140,3.73,1.43,4.86,2.2,8.0,-8.06,2.32,1.41,6,0.0,,,,,0,False
+398,Isaac Guerendo,RB,SF,SF,26,109,1.41,0.68,3.61,4.3,6.0,-8.18,0.0,1.41,7,0.0,,,,,0,True
+399,Mitchell Tinsley,WR,CIN,CIN,27,141,3.6,1.6,5.64,5.4,19.0,-8.18,3.95,-0.35,8,0.38,,,,,0,True
+400,Josiah Deguara,TE,,ARI,29,107,0.74,0.4,2.31,4.0,3.0,-8.19,1.59,-0.84,7,0.54,,,,,0,False
+401,Nick Westbrook-Ikhine,WR,IND,MIA,29,142,3.5,0.43,5.07,7.3,26.0,-8.28,1.53,1.97,13,0.0,12.0,,,,1,True
+402,Ronnie Rivers,RB,LA,LA,27,110,1.3,0.25,3.23,5.1,7.0,-8.29,0.77,0.54,6,0.0,,,,,0,True
+403,Dylan Laube,RB,LV,LV,27,111,1.28,0.18,3.33,11.4,15.0,-8.31,0.34,0.94,17,0.0,10.0,,,,0,True
+404,DeeJay Dallas,RB,JAX,JAX,28,112,1.27,0.46,2.36,3.1,4.0,-8.32,0.42,0.85,5,0.0,,,,,0,True
+405,Chris Moore,WR,,WAS,33,143,3.47,1.93,5.6,8.0,28.0,-8.32,3.86,-0.39,10,0.16,51.0,,,,0,False
+406,Chris Manhertz,TE,NYG,NYG,34,108,0.6,0.35,0.95,3.3,2.0,-8.33,0.43,0.18,4,0.0,,,,,0,True
+407,Tyler Goodson,RB,ATL,IND,26,113,1.25,0.29,3.02,6.0,7.0,-8.34,0.52,0.73,10,0.0,10.0,,,,1,True
+408,Davis Mills,QB,HOU,HOU,28,44,8.84,2.41,12.82,2.3,20.0,-8.37,11.43,-2.6,6,0.38,,,,,0,True
+409,Isaiah Hodgins,WR,NYG,NYG,28,144,3.41,2.0,4.46,2.5,9.0,-8.37,4.58,-1.17,6,0.22,,,,,0,True
+410,British Brooks,RB,HOU,HOU,27,114,1.22,0.15,4.34,4.4,5.0,-8.37,0.98,0.25,8,0.0,,,,,0,True
+411,Savion Williams,WR,GB,GB,25,145,3.4,0.87,5.51,8.2,28.0,-8.38,2.13,1.28,12,0.24,84.0,,,,0,True
+412,Jordan Whittington,WR,LA,LA,26,146,3.39,1.04,5.16,8.3,28.0,-8.39,2.42,0.97,15,0.0,12.0,,,,0,True
+413,Feleipe Franks,TE,CAR,ATL,29,109,0.51,-0.04,2.49,5.7,3.0,-8.43,0.04,0.47,10,0.0,7.0,,,,1,True
+414,Robbie Ouzts,RB,SEA,SEA,24,115,1.15,0.25,4.08,2.6,3.0,-8.44,0.0,1.15,4,0.0,,,,,0,True
+415,D'Ernest Johnson,RB,,NE,30,116,1.13,0.51,3.66,2.2,2.0,-8.46,0.5,0.63,5,0.0,,,,,0,False
+416,Casey Washington,WR,ATL,ATL,25,147,3.3,1.33,5.35,2.3,8.0,-8.48,3.08,0.22,5,0.0,,,,,0,True
+417,Brayden Willis,TE,SF,SF,27,110,0.44,0.01,2.5,4.5,2.0,-8.5,0.0,0.44,6,0.0,,,,,0,True
+418,Sione Vaki,RB,DET,DET,25,117,1.04,0.11,3.26,3.8,4.0,-8.55,0.05,0.99,8,0.0,,,,,0,True
+419,Jimmy Horn Jr.,WR,CAR,CAR,24,148,3.24,0.98,5.7,8.8,28.0,-8.55,2.87,0.37,10,0.0,12.0,,,,0,True
+420,Evan Hull,RB,HOU,NO,26,118,1.02,0.36,4.45,4.1,4.0,-8.57,1.07,-0.05,6,0.0,,,,,1,True
+421,Tyrod Taylor,QB,GB,NYJ,37,45,8.62,2.1,11.73,2.0,17.0,-8.58,9.91,-1.29,6,0.44,,,,,1,True
+422,Michael Bandy,WR,DEN,DEN,29,149,3.17,0.75,4.83,5.0,16.0,-8.61,3.75,-0.58,4,0.4,,,,,0,True
+423,Joe Milton III,QB,DAL,DAL,26,46,8.6,3.49,13.18,2.5,21.0,-8.61,2.58,6.02,4,0.39,,,,,0,True
+424,Gage Larvadain,WR,CLE,CLE,23,150,3.12,0.69,4.82,7.3,23.0,-8.66,1.11,2.01,13,0.0,12.0,,,,0,True
+425,Scott Miller,WR,CHI,PIT,29,151,3.11,1.22,3.83,2.8,9.0,-8.67,3.04,0.07,5,0.0,,,,,1,True
+426,Julius Chestnut,RB,TEN,TEN,26,120,0.89,0.06,2.46,9.4,8.0,-8.7,0.25,0.64,16,0.0,10.0,,,,0,True
+427,Adam Prentice,RB,DEN,DEN,29,119,0.89,0.02,2.81,7.0,6.0,-8.7,1.21,-0.32,13,0.0,10.0,,,,0,True
+428,Kene Nwangwu,RB,NYJ,NYJ,28,121,0.89,0.22,3.38,7.5,7.0,-8.71,1.09,-0.2,10,0.0,10.0,,,,0,True
+429,Hunter Renfrow,WR,,CAR,31,152,3.07,1.62,4.94,7.3,22.0,-8.71,5.98,-2.91,6,0.33,,,,,0,False
+430,Treylon Burks,WR,WAS,WAS,26,153,3.01,1.6,4.2,3.4,10.0,-8.77,3.62,-0.61,8,0.21,,,,,0,True
+431,Arian Smith,WR,NYJ,NYJ,25,154,3.01,0.85,5.18,7.2,22.0,-8.77,1.04,1.97,13,0.0,12.0,,,,0,True
+432,Brycen Tremayne,WR,CAR,CAR,27,155,3.0,0.61,5.52,6.0,18.0,-8.78,2.0,1.0,15,0.0,12.0,,,,0,True
+433,Jacob Saylors,RB,DET,DET,26,122,0.81,-0.04,3.44,7.2,6.0,-8.78,0.1,0.71,11,0.0,10.0,,,,0,True
+434,Malachi Corley,WR,CLE,CLE,24,156,3.0,0.77,5.13,7.1,21.0,-8.79,2.63,0.36,12,0.0,12.0,,,,0,True
+435,Craig Reynolds,RB,,DET,30,123,0.77,-0.03,2.19,3.0,2.0,-8.82,0.08,0.69,5,0.0,,,,,0,False
+436,Gunner Olszewski,WR,NYG,NYG,30,157,2.92,0.27,3.65,11.5,34.0,-8.86,2.24,0.69,16,0.28,90.0,p90 (-0.5 PPG hist),,,0,True
+437,Kalel Mullings,RB,TEN,TEN,24,124,0.72,0.1,3.53,2.6,2.0,-8.87,0.18,0.55,4,0.0,,,,,0,True
+438,Mason Rudolph,QB,PIT,PIT,31,47,8.3,1.33,13.33,2.8,23.0,-8.91,3.0,5.3,5,0.53,,,,,0,True
+439,Velus Jones Jr.,RB,SEA,SEA,29,125,0.68,0.27,2.33,4.3,3.0,-8.91,0.64,0.04,5,0.0,,,,,0,True
+440,Dylan Drummond,WR,ATL,ATL,26,158,2.86,0.9,5.68,3.8,11.0,-8.92,1.87,0.99,6,0.0,,,,,0,True
+441,Xavier Weaver,WR,ARI,ARI,26,159,2.84,0.87,5.02,2.1,6.0,-8.94,1.96,0.89,7,0.0,,,,,0,True
+442,Marquez Valdes-Scantling,WR,DAL,PIT,32,160,2.84,1.39,4.11,6.8,19.0,-8.95,3.56,-0.72,9,0.19,,,,,1,True
+443,Joshua Dobbs,QB,,NE,31,48,8.25,1.82,12.86,3.1,26.0,-8.96,0.52,7.72,4,0.0,,,,,0,False
+444,Nyheim Hines,RB,,NO,30,126,0.56,0.06,3.14,2.7,2.0,-9.03,-0.05,0.61,4,0.0,,,,,0,False
+445,Jamari Thrash,WR,CLE,CLE,26,161,2.72,0.91,4.59,3.1,8.0,-9.06,2.59,0.14,8,0.0,,,,,0,True
+446,Malik Willis,QB,MIA,GB,27,49,8.15,2.17,12.93,3.8,31.0,-9.06,12.79,-4.65,4,0.47,,,,,1,True
+447,KeAndre Lambert-Smith,WR,LAC,LAC,25,162,2.64,1.11,4.89,6.9,18.0,-9.14,1.61,1.03,10,0.37,98.0,p98 (-0.5 PPG hist),,,0,True
+448,Travis Homer,RB,PIT,CHI,28,127,0.44,0.05,1.27,5.5,2.0,-9.15,-0.02,0.47,8,0.0,,,,,1,True
+449,Efton Chism III,WR,NE,NE,25,163,2.61,0.45,3.6,4.0,10.0,-9.18,2.06,0.54,8,0.36,,,,,0,True
+450,Cody White,WR,SEA,SEA,28,164,2.59,0.66,3.99,3.3,9.0,-9.19,2.25,0.34,8,0.33,,,,,0,True
+451,Andy Dalton,QB,PHI,CAR,39,50,8.01,1.11,11.69,2.7,22.0,-9.2,2.38,5.63,4,0.42,,,,,1,True
+452,Cedrick Wilson Jr.,WR,DET,MIA,31,165,2.54,0.32,3.97,2.3,6.0,-9.25,1.57,0.97,6,0.0,,,,,1,True
+453,Malik Heath,WR,,GB,26,166,2.53,0.75,3.67,3.3,8.0,-9.25,2.09,0.44,7,0.0,,,,,0,False
+454,Mitchell Trubisky,QB,TEN,BUF,32,51,7.92,1.1,13.27,2.5,20.0,-9.28,7.78,0.14,4,0.51,,,,,1,True
+455,Tanner McKee,QB,PHI,PHI,26,52,7.91,2.02,13.7,2.1,17.0,-9.29,3.44,4.47,4,0.29,,,,,0,True
+456,Mason Tipton,WR,NO,NO,26,167,2.47,0.8,4.56,4.0,10.0,-9.31,2.55,-0.08,8,0.0,,,,,0,True
+457,Kameron Johnson,WR,TB,TB,24,168,2.41,0.53,3.93,11.4,28.0,-9.37,1.04,1.37,17,0.34,95.0,p95 (-0.5 PPG hist),,,0,True
+458,Dante Pettis,WR,,NO,31,169,2.4,0.82,4.08,3.2,8.0,-9.39,2.46,-0.07,8,0.0,,,,,0,False
+459,James Proche,WR,,TEN,30,170,2.3,0.66,3.37,3.8,9.0,-9.48,2.08,0.22,6,0.0,,,,,0,False
+460,Beaux Collins,WR,NYG,NYG,24,171,2.27,0.93,4.4,2.2,5.0,-9.51,1.12,1.15,4,0.0,,,,,0,True
+461,Braxton Berrios,WR,NYG,HOU,31,172,2.07,0.98,2.58,1.5,3.0,-9.72,2.43,-0.36,4,0.0,,,,,1,True
+462,Quinn Ewers,QB,MIA,MIA,23,53,7.44,2.43,13.31,4.0,30.0,-9.77,8.3,-0.86,4,0.36,,,,,0,True
+463,LaJohntay Wester,WR,BAL,BAL,24,173,2.0,0.11,4.5,7.7,15.0,-9.78,0.0,2.0,14,0.0,12.0,,,,0,True
+464,Austin Trammell,WR,JAX,JAX,28,174,1.94,0.61,3.4,3.1,6.0,-9.84,1.27,0.67,6,0.0,,,,,0,True
+465,Tai Felton,WR,MIN,MIN,23,175,1.94,0.25,3.54,5.9,11.0,-9.84,0.46,1.48,12,0.0,12.0,,,,0,True
+466,Brady Cook,QB,NYJ,NYJ,25,54,7.32,0.44,11.46,3.5,26.0,-9.88,5.69,1.63,5,0.28,,,,,0,True
+467,Jonathan Mingo,WR,DAL,DAL,25,176,1.87,0.89,4.11,3.6,7.0,-9.92,0.7,1.17,5,0.0,,,,,0,True
+468,Anthony Gould,WR,IND,IND,25,177,1.75,0.07,3.95,6.9,12.0,-10.03,0.24,1.52,11,0.0,12.0,,,,0,True
+469,Ke'Shawn Williams,WR,CIN,CIN,25,178,1.71,0.14,4.08,6.9,12.0,-10.07,0.23,1.49,11,0.0,12.0,,,,0,True
+470,Jalin Hyatt,WR,NYG,NYG,25,179,1.69,0.69,3.85,3.6,6.0,-10.09,1.42,0.28,6,0.0,,,,,0,True
+471,Gardner Minshew,QB,ARI,KC,30,55,7.0,1.38,10.92,2.4,17.0,-10.21,-0.08,7.08,4,0.0,,,,,1,True
+472,Skyy Moore,WR,GB,SF,26,180,1.4,0.5,2.67,11.9,17.0,-10.38,0.87,0.53,17,0.0,12.0,,,,1,True
+473,Nikko Remigio,WR,KC,KC,27,181,1.35,0.29,3.5,5.0,7.0,-10.43,0.3,1.05,14,0.0,12.0,,,,0,True
+474,Jalen Brooks,WR,ARI,ARI,26,182,1.32,0.6,3.46,3.7,5.0,-10.46,1.62,-0.3,5,0.0,,,,,0,True
+475,Tylan Wallace,WR,CLE,BAL,27,183,1.32,0.41,2.98,6.3,8.0,-10.47,1.32,0.0,11,0.41,99.0,p99 (-0.5 PPG hist),,,1,True
+476,Ryan Miller,WR,NYG,TB,26,184,1.29,0.52,3.25,5.8,7.0,-10.5,1.27,0.02,9,0.53,,,,,1,True
+477,Riley Leonard,QB,IND,IND,24,56,6.68,1.35,12.77,4.3,29.0,-10.52,6.2,0.48,5,0.65,,,,,0,True
+478,Ashton Dulin,WR,IND,IND,29,185,1.25,0.38,3.87,6.3,8.0,-10.53,1.67,-0.42,12,0.0,12.0,,,,0,True
+479,Dareke Young,WR,LV,SEA,27,186,1.2,0.19,2.51,5.2,6.0,-10.58,0.85,0.35,8,0.0,,,,,1,True
+480,Jake Bobo,WR,SEA,SEA,28,187,1.19,0.54,2.33,3.6,4.0,-10.6,0.8,0.39,5,0.0,,,,,0,True
+481,Mason Kinsey,WR,TEN,TEN,28,188,1.17,0.27,1.64,5.6,7.0,-10.61,1.13,0.04,6,0.0,,,,,0,True
+482,Charlie Jones,WR,CIN,CIN,28,189,1.16,0.27,2.33,5.8,7.0,-10.62,0.43,0.73,14,0.0,12.0,,,,0,True
+483,Zach Wilson,QB,NO,MIA,27,57,6.57,0.98,10.45,5.0,33.0,-10.63,0.34,6.23,4,0.0,,,,,1,True
+484,Ben Skowronek,WR,PIT,PIT,29,190,1.11,0.32,2.97,10.5,12.0,-10.67,1.06,0.05,16,0.36,96.0,p96 (-0.5 PPG hist),,,0,True
+485,Tom Kennedy,WR,DET,DET,30,191,1.11,0.05,2.69,3.3,4.0,-10.68,1.27,-0.16,6,0.0,,,,,0,True
+486,KhaDarel Hodge,WR,,ATL,32,192,1.1,0.63,2.35,2.1,2.0,-10.68,0.76,0.34,8,0.0,,,,,0,False
+487,Dee Eskridge,WR,,MIA,29,193,1.09,0.3,2.19,5.9,6.0,-10.7,0.93,0.16,11,0.0,12.0,,,,0,False
+488,Deven Thompkins,WR,,ATL,27,194,1.04,0.35,1.8,4.2,4.0,-10.74,0.89,0.16,7,0.0,,,,,0,False
+489,Alex Bachman,WR,,LV,30,195,1.01,0.17,2.26,4.3,4.0,-10.78,0.29,0.72,11,0.0,12.0,,,,0,False
+490,Devin Duvernay,WR,ARI,CHI,29,196,0.97,0.38,1.99,11.2,11.0,-10.81,0.27,0.7,17,0.0,12.0,,,,1,True
+491,Trent Sherfield,WR,BUF,ARI,30,197,0.96,0.24,1.96,1.4,1.0,-10.83,1.27,-0.32,4,0.0,,,,,1,True
+492,Derius Davis,WR,LAC,LAC,26,198,0.95,0.46,2.73,6.6,6.0,-10.83,0.32,0.63,11,0.0,12.0,,,,0,True
+493,Myles Price,WR,MIN,MIN,25,199,0.94,0.1,3.5,11.8,11.0,-10.84,0.0,0.94,16,0.0,12.0,,,,0,True
+494,Britain Covey,WR,PHI,PHI,29,200,0.88,0.42,1.58,4.2,4.0,-10.9,0.67,0.22,6,0.0,,,,,0,True
+495,Andre Baccellia,WR,,ARI,29,201,0.84,0.24,1.73,2.3,2.0,-10.94,0.7,0.14,4,0.0,,,,,0,False
+496,Xavier Gipson,WR,NYG,PHI,25,202,0.83,0.19,2.32,3.2,3.0,-10.96,0.43,0.39,6,0.0,,,,,1,True
+497,Jamal Agnew,WR,,ATL,31,203,0.81,0.19,2.42,6.7,5.0,-10.97,0.0,0.81,11,0.0,12.0,,,,0,False
+498,Simi Fehoko,WR,ARI,ARI,29,204,0.78,0.2,2.77,3.2,2.0,-11.0,0.0,0.78,7,0.0,,,,,0,True
+499,DeAndre Carter,WR,,CLE,33,205,0.6,0.14,1.48,2.1,1.0,-11.18,0.0,0.6,4,0.0,,,,,0,False
+500,Laquon Treadwell,WR,IND,IND,31,206,0.52,-0.04,2.07,5.3,3.0,-11.26,0.0,0.52,6,0.0,,,,,0,True
+501,Kenny Pickett,QB,CAR,LV,28,58,5.49,0.18,9.47,4.3,24.0,-11.71,1.29,4.21,6,0.52,,,,,1,True
+502,Nick Mullens,QB,JAX,JAX,31,59,5.09,1.15,10.13,3.9,20.0,-12.11,-0.01,5.1,4,0.0,,,,,0,True
+503,Cooper Rush,QB,,BAL,33,60,4.64,0.46,7.79,2.0,9.0,-12.56,0.43,4.21,4,0.0,,,,,0,False
+504,Trey Lance,QB,LAC,LAC,26,61,3.67,0.76,7.96,2.5,9.0,-13.53,3.38,0.29,4,0.0,,,,,0,True
+505,Max Brosmer,QB,MIN,MIN,25,62,1.39,0.23,6.19,2.5,3.0,-15.82,0.6,0.78,7,0.0,,,,,0,True

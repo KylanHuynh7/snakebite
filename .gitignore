@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.DS_Store
+.playwright-mcp/
+# built from the board at build time; regenerate with build_draft_app.py
+output/draft_day.html
+output/espn_extension/
+output/draft_state.json
+# personal / private
+data/watchlist_private.csv
+AGENDA.md
+output/demo_state.json
+data/stances_private.py
+output/demo_panel.html
+output/archive_10team/

@@ -1,0 +1,50 @@
+# Playcaller table, transcribed from Joel Smyth's 2026 Draft Guide, page 15,
+# read from the rendered PDF on 2026-08-09. HAND-ENTERED FROM AN IMAGE.
+#
+# Each row is the 2026 playcaller and what his OFFENCES have produced over his
+# last 1-5 seasons -- the man, not the team. `team_2025_ppg` is how the team he
+# is joining did last year, which is the other half of the comparison.
+#
+# seasons        how many seasons of his own playcalling history exist
+# fantasy_ppg    avg team fantasy PPG across those seasons (+ league rank)
+# rb_ppg/wr_ppg  his offences' RB and WR fantasy PPG (+ rank) -- the columns
+#                that actually matter for a draft board
+# new_team       1 = he is calling plays for a different team in 2026
+# first_time     1 = first time as a playcaller, so NO history exists. These
+#                four carry blanks, not zeros: "no data" and "bad" are
+#                different claims and imputing one as the other is exactly the
+#                corruption the user asked to avoid. `lineage` records who he
+#                comes from, which is the only signal available for them.
+team,playcaller,seasons,fantasy_ppg,fantasy_rank,team_2025_ppg,team_2025_rank,rb_ppg,rb_rank,wr_ppg,wr_rank,new_team,first_time,lineage
+CHI,Ben Johnson,4,106.9,1,98.3,8,29.3,1,37.2,7,0,0,
+JAX,Liam Coen,2,105.0,2,97.4,9,26.0,5,37.0,8,0,0,
+DAL,Brian Schottenheimer,4,104.1,3,109.1,2,24.1,10,39.9,4,0,0,
+CIN,Zac Taylor,5,103.6,4,98.6,7,22.5,15,42.5,3,0,0,
+KC,Andy Reid,5,101.9,5,89.6,19,22.0,19,33.2,16,0,0,
+SF,Kyle Shanahan,5,99.4,6,100.9,6,26.4,4,32.9,17,0,0,
+PIT,Mike McCarthy,5,99.3,7,90.1,17,18.0,27,46.2,1,1,0,
+CLE,Todd Monken,4,98.8,8,70.9,32,24.1,10,32.8,18,1,0,
+NO,Kellen Moore,5,97.6,9,85.7,23,22.1,18,35.8,10,0,0,
+LA,Sean McVay,5,97.1,10,113.3,1,19.8,24,42.8,2,0,0,
+GB,Matt LaFleur,5,95.7,11,90.5,16,23.0,13,36.3,9,0,0,
+LAC,Mike McDaniel,4,94.9,12,91.9,15,26.7,3,35.4,11,1,0,
+BUF,Joe Brady,5,94.8,13,101.1,5,24.4,8,30.1,25,0,0,
+LV,Klint Kubiak,3,94.8,14,70.9,31,22.8,14,34.5,14,1,0,
+MIN,Kevin O'Connell,4,94.1,15,76.2,28,18.9,26,37.4,5,0,0,
+HOU,Nick Caley,1,94.1,16,94.1,14,17.9,28,35.3,12,0,0,
+IND,Shane Steichen,5,93.0,17,97.4,10,22.2,17,32.7,19,0,0,
+MIA,Bobby Slowik,2,92.6,18,81.6,25,20.3,22,37.3,6,1,0,
+DEN,Sean Payton/Webb,5,92.2,19,94.5,13,24.2,9,32.6,21,0,0,
+TEN,Brian Daboll,5,92.0,20,74.1,29,19.9,23,32.6,21,1,0,
+DET,Drew Petzing,3,91.8,21,107.7,3,21.4,20,26.1,27,1,0,
+NYJ,Frank Reich,5,91.7,22,71.1,30,24.9,6,29.8,26,1,0,
+NE,Josh McDaniels,5,91.6,23,104.9,4,24.9,6,34.6,13,0,0,
+TB,Zac Robinson,2,90.3,24,89.8,18,27.9,2,30.4,24,1,0,
+NYG,Matt Nagy,2.5,88.2,25,89.6,19,24.1,12,32.6,21,1,0,
+CAR,Dave Canales/Idzik,3,82.9,26,78.7,27,19.8,24,33.6,15,0,0,
+ATL,Kevin Stefanski/Rees,5,82.8,27,86.4,21,22.4,16,25.7,28,1,0,
+ARI,Mike LaFleur,2,82.1,28,95.6,12,20.8,21,32.7,19,1,0,
+PHI,Sean Mannion,0,,,85.2,,,,,,1,1,Matt LaFleur
+SEA,Brian Fleury,0,,,96.6,,,,,,1,1,Kyle Shanahan
+WAS,David Blough,0,,,80.9,,,,,,1,1,Kliff/Johnson
+BAL,Declan Doyle,0,,,86.1,,,,,,1,1,Ben Johnson

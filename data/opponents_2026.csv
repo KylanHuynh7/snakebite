@@ -1,0 +1,53 @@
+# Opponent profiles for the draft -- the human half of the draft room.
+# (SYNTHETIC: the 12 managers below are invented. The archetypes are real
+# patterns the tool has to handle; the identities are not.)
+#
+# WHY THIS EXISTS. Opponent behaviour has failed THREE separate attempts to
+# earn a place in the availability probabilities (scripts/need_redesign.py has
+# the full verdict): full-strength, strength-scanned, and estimand-redesigned.
+# Managers deviate from roster need constantly, so encoding "he'll take what he
+# needs" suppresses exactly the picks that actually happen.
+#
+# So this file feeds a DISPLAY, never a number. Everything shown next to a
+# manager is either a fact about the live draft (his roster right now) or a
+# fact about his history with the sample size attached. There are deliberately
+# no invented percentages -- "70% to take a TE at pick 47" is per-manager x
+# position x round, which is ~5 picks per cell, i.e. noise.
+#
+# COLUMNS
+#   espn_team_id  the JOIN KEY. ESPN team names change the moment a manager
+#                 renames his team, so keying on the name silently drops
+#                 profiles; the id is stable across renames.
+#   team          the label you want to see on screen
+#   manager       synthetic manager handle
+#   slot          draft position 1-12. Lets the tool say WHO picks between your
+#                 turns. Blank until the order is set; the tool degrades to
+#                 "unknown seat".
+#   experience    vet | new | beginner
+#                   vet      -- has history in league_tendencies.json
+#                   new      -- no history here, but has played fantasy
+#                   beginner -- has never played fantasy at all
+#                 `beginner` is not cosmetic: a first-timer drafts close to
+#                 whatever default list is in front of him, and on ESPN that is
+#                 ESPN's published queue rank -- the ONE seat where ESPN's
+#                 ordering is probably a better predictor than FFC's (see
+#                 scripts/replay_market.py for why it is worse league-wide).
+#                 Untestable at n=0, so labelled an assumption, not a number.
+#   note          anything known that the data cannot see
+#
+# THREE of the twelve seats have NO history, 25% of the room.
+# league_tendencies.json was fitted on the returning managers, so treat the
+# draft as looser than the 2023-25 calibration implies.
+espn_team_id,team,manager,slot,experience,note
+8,Pocket Presence,mgr_08,1,vet,holds picks 24 AND 25 -- the other two picks inside the user's 22/27 turn
+11,Late Round Legends,mgr_11,2,beginner,"BEGINNER PICKING DIRECTLY AHEAD OF THE USER. Never played fantasy. Expect ESPN published queue rank. Picks 2/23/26/47/50/71/74/95 -- TWO of the four picks inside the 22/27 turn."
+6,Demo Drafter,you,3,vet,the user's own seat
+9,Red Zone Rascals,mgr_09,4,vet,
+7,Sack Exchange,mgr_07,5,vet,
+12,Flex Appeal,mgr_12,6,new,"LOOSE CANNON: ""may reach early sometimes but also reach far below."" That is a VARIANCE report, not a direction -- it does not move any expected board, it widens this seat and cancels in the mean. Per need_redesign.py it stays a DISPLAY note: do NOT widen sigma for it (sigma is the one Brier-validated component). Has no league history."
+1,Gridiron Ghosts,mgr_01,7,vet,
+2,Blitz Brigade,mgr_02,8,vet,"takes his first QB early -- around R3 in his one season on record"
+5,Hail Mary Hustlers,mgr_05,9,vet,
+10,Waiver Wire Wolves,mgr_10,10,vet,reaches ~0.6 sigma ahead of market rank
+4,Fourth and Long,mgr_04,11,new,no history here but reported as a good player (secondhand)
+3,End Zone Eagles,mgr_03,12,vet,
