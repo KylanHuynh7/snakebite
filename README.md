@@ -50,6 +50,33 @@ actually drafted on that platform.
 
 ---
 
+## Use your own league
+
+The bundled league is synthetic. To calibrate against a real one, import its draft
+history. Sleeper is supported because its draft data is public and needs no login:
+
+```bash
+python scripts/league_import.py sleeper <league_id>
+export SNAKEBITE_LEAGUE=data/leagues/<league_id>
+python scripts/phase3_draft_board.py <your draft slot>
+python scripts/build_draft_app.py
+```
+
+That walks the league's previous seasons, reads its teams / rounds / lineup /
+scoring from its own settings, fits the spread and chalk-drift curves on **its**
+picks, and writes opponent profiles (managers with history are `vet`, the rest
+`new`). Imported leagues live in `data/leagues/` and are gitignored. ESPN and
+Yahoo drafts sit behind a login, so those leagues stay manual.
+
+Limits, stated plainly: Sleeper does not flag autopicks, so every pick counts as
+a human one; keeper picks are dropped; auction drafts are skipped; under ~150
+picks of history the fit is thin (per-manager numbers shrink toward the league
+mean, and the model's own checks may flag it). Superflex and non-PPR scoring are
+read but only partly modelled: availability comes from ADP and is unaffected, but
+projections and VOR assume 1QB full-PPR, and `build_draft_app.py` warns.
+
+---
+
 ## The idea
 
 Every player carries a conditional availability curve: `avail_pk3` … `avail_pk171`,

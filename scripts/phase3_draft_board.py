@@ -42,18 +42,21 @@ OUT = ROOT / "output"
 # of the draft -- slot 4 would price the board against pick 189 of 180. It is
 # currently masked here because every caller slices to [:8], which is exactly
 # how it survived the last sweep. FFC's own metadata independently says 15.
-TEAMS, ROUNDS = 12, 15
+import league
+
+_L = league.settings()
+TEAMS, ROUNDS = _L["teams"], _L["rounds"]
 POSITIONS = ["QB", "RB", "WR", "TE"]
 # 2026 league: 1QB / 2RB / 2WR / 1TE / 2FLEX (+ DST, K, 3 IR).
 # Two flex spots put 12 * 7 = 84 skill players in starting lineups league-wide,
 # which is far deeper than the 10-team QB11/RB24/WR24/TE11 baseline this used to
 # hard-code. Rather than guess how the flex splits across RB/WR/TE, fill the
 # lineups from the projections and read the replacement level back off.
-STARTERS = {"QB": 1, "RB": 2, "WR": 2, "TE": 1}
-FLEX_SLOTS = 2
+STARTERS = _L["lineup"]
+FLEX_SLOTS = _L["flex"]
 FLEX_POS = ["RB", "WR", "TE"]
-ADP_URL = ("https://fantasyfootballcalculator.com/api/v1/adp/ppr"
-           "?teams=12&year=2026&position=all")
+ADP_URL = (f"https://fantasyfootballcalculator.com/api/v1/adp/{_L['scoring']}"
+           f"?teams={_L['teams']}&year={_L['season']}&position=all")
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
 # Optional per-player annotations carried onto the board ("FADE -- ...",
@@ -128,7 +131,7 @@ def fetch_adp() -> pd.DataFrame:
     market ranking, and the 12-team effects that matter (where your picks land,
     where replacement level sits) are handled elsewhere.
     """
-    cache = DATA / "adp_ffc_ppr_2026.json"
+    cache = league.adp_cache()
     if not cache.exists():
         cache.write_text(requests.get(ADP_URL, headers=UA, timeout=30).text)
     d = json.loads(cache.read_text())
@@ -157,7 +160,7 @@ def fetch_adp() -> pd.DataFrame:
     # 1.32x). Every availability number downstream (board columns, panel
     # availAt, draft_advise) inherits adp_sigma, so this is the single
     # integration point. No tendencies file -> exactly the old behaviour.
-    tend = DATA / "league_tendencies.json"
+    tend = league.tendencies_path()
     t["adp_shift"] = 0.0
     if tend.exists():
         c = json.loads(tend.read_text())["sigma_curve"]

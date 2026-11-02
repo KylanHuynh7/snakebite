@@ -21,6 +21,8 @@ import numpy as np
 import pandas as pd
 from scipy.stats import norm
 
+import league  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 BOARD = ROOT / "output" / "draft_board_2026.csv"
 
@@ -92,7 +94,7 @@ def main() -> int:
     # the board rather than re-ranking: re-ranking the 205 priced rows would
     # be a THIRD rank space, agreeing with neither training nor phase3.
     floor = 0.5 + 0.04 * priced["adp"]
-    tend = ROOT / "data" / "league_tendencies.json"
+    tend = league.tendencies_path()
     floor_label = "0.5 + 0.04*ADP"
     if tend.exists() and "mrank" in priced:
         c = json.loads(tend.read_text())["sigma_curve"]

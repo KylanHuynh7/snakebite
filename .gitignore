@@ -16,3 +16,5 @@ output/archive_10team/
 # user-imported platform ADP (site data; not redistributed)
 data/adp_import/*.csv
 !data/adp_import/TEMPLATE.csv
+# imported leagues: real people's draft behaviour, private to the user
+data/leagues/

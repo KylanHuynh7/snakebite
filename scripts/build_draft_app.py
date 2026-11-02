@@ -40,6 +40,7 @@ from pathlib import Path
 
 import pandas as pd
 
+import league
 import platforms
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -476,9 +477,9 @@ const PLATFORMS = __PLATFORMS__;
    made myPicks() emit a 16th pick beyond the end of the draft (slot 4 -> pick
    189 in a 180-pick draft), so late on, horizon() compared the board against a
    pick that does not exist. */
-const TEAMS = 12, ROUNDS = 15;
-const LINEUP = {QB:1, RB:2, WR:2, TE:1};   // + 2 FLEX (RB/WR/TE)
-const FLEX = 2;
+const TEAMS = __TEAMS__, ROUNDS = __ROUNDS__;
+const LINEUP = __LINEUP__;   // + FLEX (RB/WR/TE)
+const FLEX = __FLEX__;
 const KEY = "draftday2026";
 /* Bump whenever a fix changes what counts as a valid pick. Saved state from an
    older schema is DISCARDED rather than migrated, because the reason to bump is
@@ -1147,7 +1148,7 @@ document.getElementById("reset").onclick = () => {
   }
 };
 document.getElementById("slot").onchange = e => {
-  state.slot = Math.min(12, Math.max(1, +e.target.value || 3));
+  state.slot = Math.min(TEAMS, Math.max(1, +e.target.value || 3));
   save(); render();
 };
 
@@ -1201,6 +1202,7 @@ if (STALE)
   setSync(`discarded ${STALE} picks saved by an older version — starting clean`,
           "warn");
 document.getElementById("slot").value = state.slot;
+document.getElementById("slot").max = TEAMS;
 document.querySelectorAll("#bar button[data-f]").forEach(b =>
   b.classList.toggle("on", b.dataset.f === state.filter));
 setPlatform(state.platform);   // also renders
@@ -1637,8 +1639,8 @@ def load_opponents() -> dict:
     with no history -- the two new members -- gets a name and no lean, which
     is the correct output, not a gap to be filled in.
     """
-    hist = ROOT / "data" / "league_history" / "teams_2026.json"
-    tend = ROOT / "data" / "league_tendencies.json"
+    hist = league.teams_path()
+    tend = league.tendencies_path()
     if not hist.exists():
         print("no teams_2026.json -- opponent view will show team ids only")
         return {}
@@ -1650,7 +1652,7 @@ def load_opponents() -> dict:
         share = t.get("league_pos_share", {})
 
     prof = {}
-    pf = ROOT / "data" / "opponents_2026.csv"
+    pf = league.opponents_csv()
     if pf.exists():
         import csv as _csv
         txt = "\n".join(l for l in pf.read_text().splitlines()
@@ -1725,15 +1727,22 @@ def load_opponents() -> dict:
     return out
 
 
-ROUNDS_N = 15
+ROUNDS_N = league.settings()["rounds"]
 
 
 def main() -> None:
+    _L = league.settings()
+    for w in league.warnings():
+        print("  !!", w)
     data, platform_meta = load_board()
     app_js = (APP_JS.replace("__DATA__", json.dumps(data, separators=(",", ":")))
                     .replace("__OPPONENTS__",
                              json.dumps(load_opponents(), separators=(",", ":")))
                     .replace("__PORT__", str(STATE_PORT))
+                    .replace("__TEAMS__", str(_L["teams"]))
+                    .replace("__ROUNDS__", str(_L["rounds"]))
+                    .replace("__LINEUP__", json.dumps(_L["lineup"]))
+                    .replace("__FLEX__", str(_L["flex"]))
                     .replace("__PLATFORMS__",
                              json.dumps(platform_meta, separators=(",", ":"))))
 

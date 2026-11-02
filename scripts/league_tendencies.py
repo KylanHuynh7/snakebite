@@ -45,12 +45,17 @@ import numpy as np
 import pandas as pd
 import requests
 
+import league
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-HIST = DATA / "league_history"
-OUT = DATA / "league_tendencies.json"
+# the active league (SNAKEBITE_LEAGUE, else the bundled demo league)
+HIST = league.history_dir()
+OUT = league.tendencies_path()
+_L = league.settings()
 
-SEASONS = [2023, 2024, 2025]
+# every season_YYYY.json in the league's history -- 3 for the demo league
+SEASONS = sorted(int(p.stem.split("_")[1]) for p in HIST.glob("season_*.json"))
 FFC_SLOTS = 180                      # FFC consensus is a 12-team, 15-round market
 POS = {1: "QB", 2: "RB", 3: "WR", 4: "TE", 5: "K"}
 SKILL = ["QB", "RB", "WR", "TE"]     # leans are estimated over these only
@@ -76,9 +81,10 @@ def norm_name(s: str) -> str:
 def fetch_adp(year: int) -> pd.DataFrame:
     """FFC final pre-season PPR market for `year` (the last ~days before
     Labor Day weekend -- exactly the market the league drafted against)."""
-    cache = HIST / f"adp_ffc_ppr_{year}.json"
+    fmt = _L["scoring"]
+    cache = HIST / f"adp_ffc_{fmt.replace('-', '_')}_{year}.json"
     if not cache.exists():
-        url = f"https://fantasyfootballcalculator.com/api/v1/adp/ppr?year={year}"
+        url = f"https://fantasyfootballcalculator.com/api/v1/adp/{fmt}?year={year}"
         cache.write_text(requests.get(url, headers=UA, timeout=30).text)
     d = json.loads(cache.read_text())
     t = pd.DataFrame(d["players"])
@@ -109,7 +115,7 @@ def build_picks() -> pd.DataFrame:
         team_owner = {t["id"]: (t["owners"][0] if t["owners"] else None)
                       for t in s["teams"]}
         adp = fetch_adp(year)
-        total = s["size"] * 15          # slots incl. the D/ST picks we dropped
+        total = s["size"] * s.get("rounds", _L["rounds"])   # incl. D/ST picks we dropped
         for p in s["picks"]:
             pl = s["players"][str(p["pid"])]
             key = norm_name(pl["n"])
@@ -266,7 +272,7 @@ def main() -> None:
     league_qb_frac = float(
         human[human["pos"] == "QB"].groupby(["year", "owner"])["frac"].min().median())
 
-    teams_2026 = json.loads((HIST / "teams_2026.json").read_text())
+    teams_2026 = json.loads(league.teams_path().read_text())
     label = {}
     for t in teams_2026["teams"]:
         for o in t["owners"]:

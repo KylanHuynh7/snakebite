@@ -36,9 +36,12 @@ OUT = ROOT / "output"
 # 15, not 16 -- same off-by-one as the extension (bug #3) and phase3. A 16th
 # round in a 15-round league puts a pick past the end of the draft, which
 # corrupts every horizon calculation that reads from it.
-TEAMS, ROUNDS = 12, 15
-LINEUP = {"QB": 1, "RB": 2, "WR": 2, "TE": 1}
-FLEX = 2
+import league                                   # noqa: E402
+
+_L = league.settings()
+TEAMS, ROUNDS = _L["teams"], _L["rounds"]
+LINEUP = _L["lineup"]
+FLEX = _L["flex"]
 TIER_BREAK = 0.8
 NEGATIVE = ("AVOID", "FADE", "RISK", "IR STASH")
 
@@ -183,7 +186,7 @@ def print_watchlist(board, live, gone, nxt, later, now) -> None:
 
 def load_opponents() -> dict:
     """Profiles from data/opponents_2026.csv, keyed by team name."""
-    path = OUT.parent / "data" / "opponents_2026.csv"
+    path = league.opponents_csv()
     if not path.exists():
         return {}
     t = pd.read_csv(path, comment="#")
@@ -238,8 +241,8 @@ def print_opponents(board, picks, nxt, now, slot, live=None) -> None:
     checkable and lets you weigh it yourself; "70% to take a QB" would be a
     number invented from ~5 picks per cell.
     """
-    tend_path = OUT.parent / "data" / "league_tendencies.json"
-    teams_path = OUT.parent / "data" / "league_history" / "teams_2026.json"
+    tend_path = league.tendencies_path()
+    teams_path = league.teams_path()
     if not (tend_path.exists() and teams_path.exists() and nxt):
         return
     td = json.loads(tend_path.read_text())
