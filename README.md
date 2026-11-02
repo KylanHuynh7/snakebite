@@ -27,6 +27,29 @@ real pick history and updated as picks land.
 
 ---
 
+## Platforms
+
+The panel has one tab per platform, and the tab picks whose ADP prices every
+player. Switching re-sorts the board and recomputes every availability number.
+
+| tab | source | status |
+|---|---|---|
+| Consensus | FantasyFootballCalculator, pooled across sites | built in; the only one with a measured per-player spread, and the one the league calibration was validated on |
+| ESPN | ESPN public ADP | built in |
+| Sleeper | Sleeper projections API (`adp_ppr`) | built in; refresh with `python scripts/platforms.py fetch sleeper` |
+| Yahoo, NFL.com, CBS, Underdog | no public ADP endpoint | drop a CSV (`name,adp`) in `data/adp_import/<site>.csv` and the tab lights up — see `TEMPLATE.csv` |
+
+Any other site: add a row to `PLATFORMS` in `scripts/platforms.py`.
+
+**Calibration caveat.** The spread and chalk-drift curves were fitted on a
+league's FFC-space draft history. For Consensus that is the validated model; on
+every other tab the same curve is applied in that platform's own rank space
+(borrowing Consensus's measured per-player stdev), which is an approximation.
+The tab says so. To do better, run `league_tendencies.py` on a league that
+actually drafted on that platform.
+
+---
+
 ## The idea
 
 Every player carries a conditional availability curve: `avail_pk3` … `avail_pk171`,

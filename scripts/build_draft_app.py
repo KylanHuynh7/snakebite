@@ -40,6 +40,8 @@ from pathlib import Path
 
 import pandas as pd
 
+import platforms
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "output"
 EXT = OUT / "espn_extension"
@@ -54,7 +56,7 @@ NEGATIVE = ("AVOID", "FADE", "RISK", "IR STASH")
 POSITIVE = ("TARGET", "BOUNCE-BACK")
 
 
-def load_board() -> list[dict]:
+def load_board() -> tuple[list[dict], list[dict]]:
     b = pd.read_csv(OUT / "draft_board_2026.csv")
     for c in ("note", "rookie_info", "team_2026", "td_dep", "status",
               "status_note"):
@@ -174,8 +176,15 @@ def load_board() -> list[dict]:
             "stat": "stat", "status_note": "stn",
             "watch": "watch", "wnote": "wnote", "gap": "gap", "qbd": "qbd",
             "rookie_info": "rook", "tier": "tier", "flag": "flag"}
+    # one [adp, sig, shift] triple per ready platform; the panel swaps these in
+    # when a platform tab is picked, so every availability number follows it
+    per_platform, platform_meta = platforms.for_board(b)
+    names = b["player"].tolist()
     b = b[list(cols)].rename(columns=cols)
-    return json.loads(b.to_json(orient="records"))
+    rows = json.loads(b.to_json(orient="records"))
+    for name, r in zip(names, rows):
+        r["pl"] = per_platform.get(name, {})
+    return rows, platform_meta
 
 
 # --------------------------------------------------------------------- markup
@@ -222,6 +231,13 @@ input[type=number]{width:44px;background:#0b0d11;color:var(--ink);
 .need{border-color:var(--warn);color:var(--warn)}
 .done{border-color:var(--pos);color:var(--pos)}
 #bar{display:flex;gap:4px;align-items:center;margin-bottom:6px}
+#plat{display:flex;gap:2px;flex-wrap:wrap;margin:2px 0 4px;
+  border-bottom:1px solid var(--line)}
+#plat button{background:none;border:0;border-bottom:2px solid transparent;
+  border-radius:0;color:var(--dim);padding:5px 9px;cursor:pointer;font-size:12px}
+#plat button.on{color:var(--ink);border-bottom-color:var(--acc)}
+#plat button:disabled{opacity:.4;cursor:not-allowed}
+#platnote{font-size:11px;color:var(--dim);margin:0 0 6px}
 table{width:100%;border-collapse:collapse}
 th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.05em;
   color:var(--dim);font-weight:600;padding:3px 4px;
@@ -288,6 +304,8 @@ kbd{background:#0b0d11;border:1px solid var(--line);border-radius:3px;
   <div id="sync" class="small" style="margin-bottom:6px">manual mode</div>
   <div id="log"></div>
 
+  <div id="plat" title="whose ADP drives every availability number"></div>
+  <div id="platnote"></div>
   <div id="rec"></div>
   <div id="ctx"></div>
   <div id="opp"></div>
@@ -318,6 +336,9 @@ const BOARD = __DATA__;
    see renderOpponents. */
 const OPPONENTS = __OPPONENTS__;
 const STATE_PORT = __PORT__;
+/* ADP platforms: [{id,label,ready,n,calibrated,src}], tab order. Each BOARD row
+   carries `pl[id] = [adp, sig, shift]` for the platforms that price him. */
+const PLATFORMS = __PLATFORMS__;
 /* ROUNDS must match the actual roster size -- ESPN's own header reads
    "RND 11 OF 15" and the roster panel reads "10/15 Players". It was 16, which
    made myPicks() emit a 16th pick beyond the end of the draft (slot 4 -> pick
@@ -855,7 +876,7 @@ function setSlot(n){
   save(); render();
 }
 window.DRAFTAPP = {take, takeByName, resolveName, undo, setSync, showDiag,
-                   setSlot, setPickNo, setMyTeam,
+                   setSlot, setPickNo, setMyTeam, setPlatform,
                    rosterOf, needsOf, teamAtPick,
                    names: () => BOARD.map(p => p.name),
                    state: () => state};
@@ -914,14 +935,59 @@ document.getElementById("slot").onchange = e => {
   save(); render();
 };
 
+/* ---------- platform tabs -------------------------------------------------
+   Each platform publishes its own market, and they disagree (ESPN drafters take
+   TE/QB early and let mid-round RB/WR slide). The tab picks whose ADP prices
+   every player: swap adp/sig/shift from the baked triple, re-sort, redraw.
+   Unpriced players get adp = null, which the panel already renders as "-". */
+function setPlatform(id){
+  const meta = PLATFORMS.find(x => x.id === id);
+  if (!meta || !meta.ready) return;
+  state.platform = id;
+  for (const p of BOARD){
+    const v = p.pl && p.pl[id];
+    p.adp = v ? v[0] : null;
+    p.sig = v ? v[1] : null;
+    p.shift = v ? v[2] : 0;
+  }
+  BOARD.sort((a, b) => (a.adp == null) - (b.adp == null)
+                       || (a.adp - b.adp) || (a.rank - b.rank));
+  renderPlatforms();
+  save(); render();
+}
+function renderPlatforms(){
+  const el = document.getElementById("plat");
+  el.innerHTML = "";
+  for (const m of PLATFORMS){
+    const b = document.createElement("button");
+    b.textContent = m.label;
+    b.className = m.id === state.platform ? "on" : "";
+    b.disabled = !m.ready;
+    b.title = m.ready ? `${m.src} · ${m.n} players on the board`
+                      : `${m.src} (data/adp_import/${m.id}.csv)`;
+    b.onclick = () => setPlatform(m.id);
+    el.appendChild(b);
+  }
+  const cur = PLATFORMS.find(x => x.id === state.platform);
+  document.getElementById("platnote").textContent = !cur ? "" :
+    cur.calibrated
+      ? `${cur.src} · spread calibrated on league history`
+      : `${cur.src} · spread borrowed from consensus history — approximate`;
+}
+
 load();
+if (!PLATFORMS.some(m => m.id === state.platform && m.ready))
+  /* the extension panel is an iframe, so the page it sits on is the ancestor */
+  state.platform = (typeof location !== "undefined"
+    && ((location.ancestorOrigins && location.ancestorOrigins[0])
+        || location.hostname || "").includes("espn.com")) ? "espn" : "ffc";
 if (STALE)
   setSync(`discarded ${STALE} picks saved by an older version — starting clean`,
           "warn");
 document.getElementById("slot").value = state.slot;
 document.querySelectorAll("#bar button[data-f]").forEach(b =>
   b.classList.toggle("on", b.dataset.f === state.filter));
-render();
+setPlatform(state.platform);   // also renders
 search.focus();
 """
 
@@ -1447,11 +1513,13 @@ ROUNDS_N = 15
 
 
 def main() -> None:
-    data = load_board()
+    data, platform_meta = load_board()
     app_js = (APP_JS.replace("__DATA__", json.dumps(data, separators=(",", ":")))
                     .replace("__OPPONENTS__",
                              json.dumps(load_opponents(), separators=(",", ":")))
-                    .replace("__PORT__", str(STATE_PORT)))
+                    .replace("__PORT__", str(STATE_PORT))
+                    .replace("__PLATFORMS__",
+                             json.dumps(platform_meta, separators=(",", ":"))))
 
     dest = OUT / "draft_day.html"
     dest.write_text(MARKUP + "<script>\n" + app_js + "\n</script>\n")

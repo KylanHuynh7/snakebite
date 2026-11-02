@@ -13,3 +13,6 @@ output/demo_state.json
 data/stances_private.py
 output/demo_panel.html
 output/archive_10team/
+# user-imported platform ADP (site data; not redistributed)
+data/adp_import/*.csv
+!data/adp_import/TEMPLATE.csv

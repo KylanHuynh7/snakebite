@@ -1,0 +1,8 @@
+# Copy to yahoo.csv / nfl.csv / cbs.csv / underdog.csv (the file name is the tab).
+# Two columns are required: the player name and the platform's average draft
+# position. Paste from the site's ADP page or export it. Names are matched
+# loosely (case, punctuation and Jr./III are ignored). Unmatched players are
+# simply unpriced on that tab.
+name,adp
+Bijan Robinson,1.8
+Jahmyr Gibbs,2.4

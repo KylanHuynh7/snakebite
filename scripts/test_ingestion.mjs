@@ -525,6 +525,27 @@ await test("a first run with no saved state is clean", () => {
   eq(r.stale, 0, "nothing to discard");
 });
 
+await test("switching platform swaps adp/sig/shift and re-sorts the board", () => {
+  const b = bootPanel(null);
+  const first = (id) => b.read(`(window.DRAFTAPP.setPlatform(${JSON.stringify(id)}),
+    BOARD[0].name + "|" + BOARD[0].adp)`);
+  const espn = b.read("PLATFORMS.find(m => m.id === 'espn' && m.ready) ? 1 : 0");
+  const sleeper = b.read("PLATFORMS.find(m => m.id === 'sleeper' && m.ready) ? 1 : 0");
+  ok(espn && sleeper, "espn and sleeper must be ready in the committed data");
+  const a = first("espn"), c = first("sleeper");
+  ok(a !== c, "different markets must price the top player differently");
+  eq(b.read("BOARD.every((p, i) => i === 0 || p.adp == null "
+          + "|| BOARD[i-1].adp == null || BOARD[i-1].adp <= p.adp)"),
+     true, "board must be sorted by the active platform's ADP");
+});
+
+await test("an import platform with no CSV is disabled and cannot be selected", () => {
+  const b = bootPanel(null);
+  const before = b.read("state.platform");
+  b.read("PLATFORMS.filter(m => !m.ready).forEach(m => window.DRAFTAPP.setPlatform(m.id))");
+  eq(b.read("state.platform"), before, "an unready tab must be ignored");
+});
+
 const total = pass + failures.length;
 console.log(`\n${pass}/${total} passed`);
 if (failures.length) {

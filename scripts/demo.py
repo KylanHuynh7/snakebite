@@ -18,7 +18,7 @@ is `replay_brier.py`, which scores the same probabilities against real drafts.
 State goes to output/demo_state.json, never output/draft_state.json, so this
 cannot clobber a live draft.
 
-usage:  demo.py [--through 27] [--slot 3] [--seed 7] [--platform espn|ffc]
+usage:  demo.py [--through 27] [--slot 3] [--seed 7] [--platform espn|sleeper|ffc|...]
                 [--quiet] [--panel]
 
 --panel also opens the browser panel and replays the same picks into it, one
@@ -43,7 +43,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import draft_state_server as server          # noqa: E402
-from draft_advise import TEAMS, ROUNDS, norm, seat_of_pick  # noqa: E402
+import platforms                              # noqa: E402
+from draft_advise import TEAMS, ROUNDS, seat_of_pick  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "output"
@@ -62,12 +63,11 @@ def seat_to_team() -> dict:
 
 def platform_adp(platform: str, board: pd.DataFrame) -> pd.DataFrame:
     """name / adp of every player on the board that the platform prices."""
-    f = ROOT / "data" / f"adp_{platform}_ppr_2026.json"
-    rows = json.loads(f.read_text())["players"]
-    t = pd.DataFrame({"key": [norm(r["name"]) for r in rows],
-                      "padp": [r.get("adp") for r in rows]})
-    t = t.dropna().drop_duplicates("key")
-    b = board.assign(key=board["player"].map(norm))
+    t = platforms.load(platform)
+    if t is None:
+        sys.exit(f"no ADP loaded for {platform!r} -- see `platforms.py status`")
+    t = t.rename(columns={"adp": "padp"})
+    b = board.assign(key=board["player"].map(platforms.norm))
     return b.merge(t, on="key")[["player", "key", "padp"]]
 
 
@@ -99,12 +99,13 @@ PANEL_JS = """<script>
 /* demo replay: feeds the simulated picks through the same call the ESPN feed
    uses, one at a time, so the panel reacts as it would live */
 (function(){
-  const PICKS = __PICKS__, SLOT = __SLOT__;
+  const PICKS = __PICKS__, SLOT = __SLOT__, PLATFORM = "__PLATFORM__";
   const go = () => {
     const A = window.DRAFTAPP;
     if (!A) return setTimeout(go, 100);
     const st = A.state(); st.picks.length = 0; st.seats = {}; st.apiPick = null;
     A.setSlot(SLOT);
+    A.setPlatform(PLATFORM);
     let i = 0;
     const tick = () => {
       if (i >= PICKS.length) return;
@@ -120,13 +121,14 @@ PANEL_JS = """<script>
 """
 
 
-def open_panel(picks: list, slot: int) -> Path:
+def open_panel(picks: list, slot: int, platform: str) -> Path:
     html = OUT / "draft_day.html"
     if not html.exists():
         import build_draft_app
         build_draft_app.main()
     page = html.read_text() + PANEL_JS.replace(
-        "__PICKS__", json.dumps(picks)).replace("__SLOT__", str(slot))
+        "__PICKS__", json.dumps(picks)).replace(
+            "__SLOT__", str(slot)).replace("__PLATFORM__", platform)
     dest = OUT / "demo_panel.html"
     dest.write_text(page)
     webbrowser.open(dest.as_uri())
@@ -147,8 +149,10 @@ def main() -> None:
                          "27->46 gap surfaces nine opponents)")
     ap.add_argument("--slot", type=int, default=3)
     ap.add_argument("--seed", type=int, default=7)
-    ap.add_argument("--platform", choices=("espn", "ffc"), default="espn",
-                    help="whose ADP drives the simulated picks (default espn)")
+    ap.add_argument("--platform", choices=list(platforms.PLATFORMS),
+                    default="espn",
+                    help="whose ADP drives the simulated picks (default espn; "
+                         "yahoo/nfl/cbs/underdog need a CSV in data/adp_import/)")
     ap.add_argument("--panel", action="store_true",
                     help="also open the browser panel and replay into it")
     ap.add_argument("--quiet", action="store_true", help="skip the briefing")
@@ -179,7 +183,7 @@ def main() -> None:
     print(f"picks drafted off {a.platform.upper()} ADP, seed {a.seed}")
     print(f"your simulated picks (slot {a.slot}): {', '.join(mine) or '—'}")
     if a.panel:
-        print(f"panel: {open_panel(picks, a.slot).relative_to(ROOT)} "
+        print(f"panel: {open_panel(picks, a.slot, a.platform).relative_to(ROOT)} "
               f"(replaying {a.through} picks)")
     if a.quiet:
         return
