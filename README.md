@@ -20,6 +20,9 @@ ADP (`--platform espn|ffc`), so it shows the mechanics, not the model's accuracy
 — the accuracy evidence is `scripts/replay_brier.py`, which scores the same
 probabilities against real drafts.
 
+The evidence — including the four things I tested and killed — is in
+[`RESULTS.md`](RESULTS.md).
+
 What makes it different from a ranking: the project's own model ranking *lost*
 to platform ADP in backtests, so ADP is the prior and the model's job is the
 thing ADP cannot do — conditional availability, calibrated against a league's
