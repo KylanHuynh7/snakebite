@@ -180,6 +180,29 @@ for your own pick.
 
 ---
 
+## After the draft: the report
+
+The panel writes down what it claimed — after every pick, for the 40 best players
+left, "will he last to *your* next pick?" — and scores those claims once the picks
+they were about have happened. Press **Report** in the panel, or run it headless
+(with `draft_state_server.py` listening during the draft):
+
+```bash
+python scripts/draft_report.py --csv events.csv --plot reliability.png
+```
+
+It shows whether the numbers were calibrated this draft (said 70% → did ~70%
+last?), whether they beat simply guessing the average, what it said about each
+player you took one turn earlier ("if I wait on him, does he last?"), and where it
+was most wrong. The two views are tested to agree to the last digit.
+
+Honest framing: this is a **receipt, not evidence**. One draft is ~4,000 correlated
+predictions from about a dozen independent decisions. The evidence is
+`replay_brier.py` over real drafts; `--csv` writes the raw events so a league can
+accumulate its own.
+
+---
+
 ## How picks get ingested
 
 Three tiers, in order:

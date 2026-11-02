@@ -11,7 +11,7 @@
  * Testing the shipped file rather than a copy is the point -- a copy drifts,
  * and every one of these tests corresponds to a bug that actually shipped.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
@@ -578,6 +578,67 @@ await test("targets persist, and state saved before targets existed loads clean"
   eq(saved.targets, ["Drake London"], "targets are saved");
   const old = bootPanel({ picks: [], slot: 3, schema: CURRENT_SCHEMA });
   eq(old.read("state.targets.length"), 0, "missing targets default to none");
+});
+
+/* A whole draft through the real take() path, picks drawn from the board's own
+   market (seeded noise), then the report. Self-consistent by construction, so
+   it proves the plumbing and the scoring -- not that the model is right. */
+function simulateDraft(b, n) {
+  b.read(`(() => {
+    let seed = 12345;
+    const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+    const gauss = () => Math.sqrt(-2 * Math.log(rnd() + 1e-12)) * Math.cos(2 * Math.PI * rnd());
+    const pool = BOARD.filter(p => p.adp != null && p.sig != null)
+      .map(p => ({name: p.name, v: p.adp + (p.shift || 0) + p.sig * gauss()}))
+      .sort((a, b) => a.v - b.v);
+    for (let i = 0; i < ${n}; i++) {
+      const slot = seatOfPick(i + 1);
+      window.DRAFTAPP.take(pool[i].name, slot === state.slot, true, slot, i + 1);
+    }
+  })()`);
+}
+
+await test("every pick is logged, and the report scores the log against the picks", () => {
+  const b = bootPanel(null);
+  simulateDraft(b, 120);
+  const log = JSON.parse(b.read("JSON.stringify(state.log)"));
+  ok(log.length >= 100, `a snapshot per pick, got ${log.length}`);
+  ok(log.every(e => e.length === 3 && e[2].length <= 40), "snapshots are [now, next, <=40 rows]");
+  const r = b.read("window.DRAFTAPP.report()");
+  ok(r.n > 1000, `many predictions scored, got ${r.n}`);
+  ok(r.brier > 0 && r.brier < 0.25, `Brier in range, got ${r.brier}`);
+  eq(r.bins.reduce((a, x) => a + x.n, 0), r.n, "every prediction lands in exactly one bin");
+  ok(r.skill > 0, `beats guessing the average on its own market, skill ${r.skill}`);
+  ok(r.calls.every(c => c.pick >= 1) && r.calls.length > 0, "your picks are listed");
+  if (process.env.SB_DUMP) {          // lets test_draft_report.py cross-check Python against this
+    const last = b.posted[b.posted.length - 1];
+    writeFileSync(join(process.env.SB_DUMP, "state.json"), JSON.stringify(last));
+    writeFileSync(join(process.env.SB_DUMP, "report.json"), JSON.stringify(r));
+  }
+});
+
+await test("predictions about the future are not scored, and undo forgets them", () => {
+  const b = bootPanel(null);
+  simulateDraft(b, 30);
+  const before = b.read("window.DRAFTAPP.report().n");
+  b.read("window.DRAFTAPP.undo(); window.DRAFTAPP.undo()");
+  ok(b.read("state.log.every(e => e[0] <= curPick())"), "no snapshot from an undone pick survives");
+  ok(b.read("window.DRAFTAPP.report().n") <= before, "fewer picks, no more scored events");
+  // a snapshot about a pick that has not happened yet must not be scored
+  const want = b.read(`state.log.filter(e => e[1] - 1 <= state.picks.length)
+                         .reduce((a, e) => a + e[2].length, 0)`);
+  eq(b.read("window.DRAFTAPP.report().n"), want, "only resolved snapshots are scored");
+});
+
+await test("a report whose outcomes are all the same has no skill score, and does not blow up", () => {
+  const b = bootPanel(null);
+  b.read("window.DRAFTAPP.setSlot(1)");
+  // one resolved snapshot, every row survived
+  b.read(`state.log = [[1, 3, [[${0}, 90], [${1}, 80]]]];
+          state.picks = [{name:'x'},{name:'y'}]`);
+  const r = b.read("window.DRAFTAPP.report()");
+  eq(r.skill, null, "undefined baseline gives no skill number");
+  ok(Number.isFinite(r.brier), "Brier is still finite");
 });
 
 const total = pass + failures.length;

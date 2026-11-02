@@ -193,7 +193,8 @@ def load_board() -> tuple[list[dict], list[dict]]:
 
 # --------------------------------------------------------------------- markup
 
-MARKUP = """<meta charset="utf-8">
+MARKUP = """<!doctype html>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Snakebite</title>
 <style>
@@ -408,6 +409,35 @@ kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
 #targets .tn{margin-top:10px;font-size:10.5px;color:var(--faint)}
 .tgt{color:var(--acc);margin-right:4px;font-size:12px}
 
+/* post-draft report */
+#report{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:16px;margin-top:12px;font-size:12px;color:var(--dim)}
+#report .rh{font-size:15px;font-weight:800;color:var(--ink);display:flex;
+  justify-content:space-between;align-items:baseline;margin-bottom:10px}
+#report .rh span{font-size:11px;font-weight:500;color:var(--faint)}
+#report .rk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+#report .rk div{background:var(--sunk);border-radius:12px;padding:9px 10px}
+#report .rk b{display:block;font-size:20px;letter-spacing:-.02em;color:var(--ink)}
+#report .rk b.pos-n{color:var(--good)} #report .rk b.neg{color:var(--low)}
+#report .rk span{font-size:10.5px}
+#report .rs{margin:14px 0 6px;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;font-weight:750;color:var(--faint)}
+.rbar{display:grid;grid-template-columns:78px 1fr 86px;gap:8px;align-items:center;
+  margin:4px 0}
+.rbar .rl i{font-style:normal;color:var(--faint);margin-left:4px}
+.rbar .rt{position:relative;height:12px;background:var(--sunk);border-radius:6px;
+  overflow:hidden}
+.rbar .rt u{position:absolute;inset:0 auto 0 0;background:var(--line);
+  border-right:2px solid var(--faint)}
+.rbar .rt s{position:absolute;inset:3px auto 3px 0;background:var(--acc);
+  border-radius:3px}
+.rbar .rv{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+#report table{width:100%;border-collapse:collapse}
+#report th{text-align:left;font-size:10px;color:var(--faint);font-weight:600;
+  padding:2px 4px}
+#report td{padding:5px 4px;border-top:1px solid var(--line)}
+#report ul{margin:0;padding-left:18px} #report li{margin:3px 0}
+
 /* expanded detail */
 .detail{display:none;padding:2px 16px 14px 70px;font-size:12px;color:var(--dim)}
 .row.open .detail{display:block}
@@ -449,6 +479,7 @@ kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
     <span class="sp"></span>
     <button id="undo">Undo</button>
     <button id="more" title="shortcuts and pick log">···</button>
+    <button id="reportbtn" title="score the panel's predictions against what happened">Report</button>
     <button id="diag" title="run ESPN sync diagnostics">Diag</button>
   </div>
   <div id="sync">manual mode</div>
@@ -458,6 +489,7 @@ kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
   <div id="platnote"></div>
   <div id="rec"></div>
   <div id="targets"></div>
+  <div id="report"></div>
   <div id="ctx"></div>
   <div id="opp"></div>
 
@@ -511,8 +543,13 @@ const KEY = "draftday2026";
 const SCHEMA = 3;
 
 let state = {picks:[], slot:3, filter:"ALL", apiPick:null, schema:SCHEMA,
-             seats:{}, targets:[]};
+             seats:{}, targets:[], log:[]};
 const byName = Object.fromEntries(BOARD.map(p => [p.name, p]));
+/* Board order as built, before any platform tab re-sorts BOARD. The prediction
+   log stores indexes into THIS list, so it stays small and stays meaningful
+   whichever tab was active when each prediction was made. */
+const ORDER0 = BOARD.map(p => p.name);
+const IDX0 = new Map(ORDER0.map((n, i) => [n, i]));
 
 /* ---------- who sits where ----------------------------------------------
    A snake draft's seat for pick `o` is fixed by arithmetic, so one observed
@@ -566,7 +603,8 @@ function mirror(){
       /* curPick(), not picks.length + 1 -- otherwise draft_state.json (and so
          draft_advise.py) reports a different pick number than the panel. */
       body: JSON.stringify({pick: curPick(), slot: state.slot,
-                            picks: state.picks, ts: Date.now()})
+                            picks: state.picks, ts: Date.now(),
+                            log: state.log, names: ORDER0})
     }).catch(() => { mirrorOff = true; });
   }catch(e){ mirrorOff = true; }
 }
@@ -585,6 +623,7 @@ function load(){
     }
     state = Object.assign(state, s);
     if (!Array.isArray(state.targets)) state.targets = [];
+    if (!Array.isArray(state.log)) state.log = [];
   }catch(e){}
 }
 let STALE = 0;
@@ -781,7 +820,7 @@ function gauge(v, label, onDark){
     + `<circle cx="25" cy="25" r="${R}" stroke="${col}" `
     + `stroke-dasharray="${(C * v).toFixed(1)} ${C.toFixed(1)}" `
     + `transform="rotate(-90 25 25)"/>`
-    + `<text x="25" y="26">${label}</text></svg>`;
+    + `<text x="25" y="26"${label.length > 3 ? ' style="font-size:10.5px"' : ""}>${label}</text></svg>`;
 }
 const initials = n => n.replace(/\b(jr|sr|ii|iii|iv)\.?$/i, "").trim()
   .split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
@@ -992,6 +1031,7 @@ function render(){
   }
 
   renderTargets(now, nxt);
+  renderReport();
 
   /* context: needs + what the room has been doing */
   const c = rosterCounts();
@@ -1091,6 +1131,121 @@ function bumpPick(d){
   if (typeof state.apiPick === "number")
     state.apiPick = Math.max(1, state.apiPick + d);
 }
+/* ---------- prediction log + post-draft report -----------------------------
+   A probability can only be judged against what happened, so the panel writes
+   down what it claimed. After every pick it records, for the 40 best players
+   still on the board, "will he last to YOUR next pick?" -- the exact number the
+   rows show. [pick now, your next pick, [[board index, percent], ...]].
+   buildReport() later scores those claims against the real pick order. */
+const LOG_N = 40;
+function snap(){
+  const now = curPick(), nxt = horizon();
+  if (!nxt) return;
+  const L = state.log;
+  if (L.length && L[L.length - 1][0] === now) L.pop();     // re-snap, no duplicates
+  const gone = goneSet(), rows = [];
+  for (const p of BOARD){
+    if (gone.has(p.name)) continue;
+    const a = availAt(p, nxt, now);
+    if (a) rows.push([IDX0.get(p.name), Math.round(a.v * 100)]);
+    if (rows.length >= LOG_N) break;
+  }
+  L.push([now, nxt, rows]);
+}
+
+function buildReport(){
+  const total = state.picks.length;
+  const pickOf = new Map(state.picks.map((p, i) => [p.name, i + 1]));
+  const ev = [];
+  for (const [now, nxt, rows] of state.log){
+    if (nxt - 1 > total) continue;               // his fate is not known yet
+    for (const [i, pct] of rows){
+      const name = ORDER0[i], at = pickOf.get(name);
+      ev.push({name, p: pct / 100, y: (at == null || at >= nxt) ? 1 : 0, now, nxt});
+    }
+  }
+  if (!ev.length) return {n: 0};
+  const n = ev.length, mean = f => ev.reduce((a, e) => a + f(e), 0) / n;
+  const brier = mean(e => (e.p - e.y) ** 2), base = mean(e => e.y);
+  const baseline = base * (1 - base);            // always guessing the base rate
+  const binOf = e => Math.min(4, Math.floor(Math.round(e.p * 100) / 20));  // integer maths: no 0.6+0.2 float seams
+  const bins = [0, 1, 2, 3, 4].map(k => {
+    const lo = k * .2, g = ev.filter(e => binOf(e) === k);
+    return {lo, n: g.length,
+            pred: g.length ? g.reduce((a, e) => a + e.p, 0) / g.length : null,
+            act: g.length ? g.reduce((a, e) => a + e.y, 0) / g.length : null};
+  });
+  /* your calls: what the tool said about each player you took, at the turn
+     before -- i.e. "if I wait on him, does he last?" */
+  const calls = [];
+  state.picks.forEach((pk, i) => {
+    if (!pk.mine) return;
+    const k = i + 1;
+    const snapAt = state.log.find(([now, nxt, rows]) => nxt === k
+      && rows.some(([j]) => ORDER0[j] === pk.name));
+    const row = snapAt && snapAt[2].find(([j]) => ORDER0[j] === pk.name);
+    const pl = byName[pk.name];
+    calls.push({pick: k, name: pk.name, pos: pl ? pl.pos : "",
+                waited: row ? row[1] / 100 : null,
+                adp: pl && pl.adp != null ? pl.adp : null});
+  });
+  const worst = new Map();
+  for (const e of ev) if (e.y === 0 && e.p >= .7
+      && (!worst.has(e.name) || e.p > worst.get(e.name).p)) worst.set(e.name, e);
+  const lucky = new Map();
+  for (const e of ev) if (e.y === 1 && e.p <= .3
+      && (!lucky.has(e.name) || e.p < lucky.get(e.name).p)) lucky.set(e.name, e);
+  return {n, brier, baseline, skill: baseline > 0 ? 1 - brier / baseline : null,
+          meanPred: mean(e => e.p), meanAct: base, bins, calls,
+          misses: [...worst.values()].sort((a, b) => b.p - a.p).slice(0, 5),
+          lucky: [...lucky.values()].sort((a, b) => a.p - b.p).slice(0, 3)};
+}
+let REPORT_OPEN = false;
+function renderReport(){
+  const el = document.getElementById("report");
+  if (!el) return;
+  if (!REPORT_OPEN){ el.style.display = "none"; return; }
+  el.style.display = "";
+  const r = buildReport();
+  if (!r.n){
+    el.innerHTML = `<div class="rh">Draft report</div><div class="ts">Nothing to score yet. `
+      + `Predictions are logged after every pick and scored once the picks they `
+      + `were about have happened.</div>`;
+    return;
+  }
+  const pct = v => Math.min(99, Math.round(v * 100)) + "%";   // never claim 100%
+  const bars = r.bins.filter(b => b.n).map(b => `
+    <div class="rbar"><span class="rl">${Math.round(b.lo * 100)}–${Math.round((b.lo + .2) * 100)}%
+      <i>${b.n}</i></span>
+      <span class="rt"><u style="width:${b.pred * 100}%"></u><s style="width:${b.act * 100}%"></s></span>
+      <span class="rv">${pct(b.pred)} → ${pct(b.act)}</span></div>`).join("");
+  const calls = r.calls.map(c => `<tr><td class="num">${c.pick}</td>
+    <td><b>${esc(c.name)}</b> <span class="pos ${c.pos}">${c.pos}</span></td>
+    <td class="num">${c.waited == null ? "—" : pct(c.waited)}</td>
+    <td class="num">${c.adp == null ? "—" : (c.adp - c.pick >= 0 ? "+" : "") + Math.round(c.adp - c.pick)}</td></tr>`).join("");
+  const li = (arr, f) => arr.map(e => `<li>${f(e)}</li>`).join("");
+  el.innerHTML = `
+    <div class="rh">Draft report <span>${r.n} predictions scored</span></div>
+    <div class="rk">
+      <div><b>${r.brier.toFixed(3)}</b><span>Brier</span></div>
+      <div><b>${r.baseline.toFixed(3)}</b><span>always-guess-the-average</span></div>
+      <div><b class="${r.skill == null ? "" : r.skill >= 0 ? "pos-n" : "neg"}">${r.skill == null ? "n/a" : (r.skill >= 0 ? "+" : "") + (r.skill * 100).toFixed(0) + "%"}</b><span>vs that guess</span></div>
+    </div>
+    <div class="ts">The panel said ${pct(r.meanPred)} on average; ${pct(r.meanAct)} actually lasted.
+      ${r.meanPred < r.meanAct - .03 ? "It ran cautious, as it does in replay."
+        : r.meanPred > r.meanAct + .03 ? "It ran optimistic this draft." : "Well calibrated this draft."}</div>
+    <div class="rs">Said → actually lasted</div>${bars}
+    ${r.calls.length ? `<div class="rs">Your picks</div>
+      <table class="rc"><tr><th>#</th><th>Player</th><th title="what the panel said at your previous turn: odds he lasts to this pick">Waited?</th>
+      <th title="his ADP minus the pick you took him at">vs ADP</th></tr>${calls}</table>` : ""}
+    ${r.misses.length ? `<div class="rs">Biggest misses (said 70%+, gone)</div><ul>${li(r.misses,
+      e => `${esc(e.name)} — ${pct(e.p)} at pick ${e.now}, gone before ${e.nxt}`)}</ul>` : ""}
+    ${r.lucky.length ? `<div class="rs">Lucky survivors (said 30% or less, lasted)</div><ul>${li(r.lucky,
+      e => `${esc(e.name)} — ${pct(e.p)} at pick ${e.now}, still there at ${e.nxt}`)}</ul>` : ""}
+    <div class="tn">Scored on the 40 best available at every pick. One draft is a small sample;
+      the project's replay over 343 real turns is the evidence, this is your receipt.</div>`;
+}
+
 function take(name, mine, auto, team, at){
   if (!name || goneSet().has(name)) return false;
   /* `team` is ESPN's teamId and `at` the overall pick number. Both are free
@@ -1103,12 +1258,15 @@ function take(name, mine, auto, team, at){
   if (team != null && at != null) learnSeat(team, at);
   if (!auto) bumpPick(+1);            // API picks carry their own numbering
   document.getElementById("search").value = "";
+  snap();
   save(); render();
   return true;
 }
 function undo(){
   const p = state.picks.pop();
   if (p && !p.auto) bumpPick(-1);
+  state.log = state.log.filter(e => e[0] <= curPick());   // forget the undone future
+  snap();
   save(); render();
 }
 function takeByName(raw, mine, auto, team, at){
@@ -1158,7 +1316,7 @@ function setSlot(n){
 }
 window.DRAFTAPP = {take, takeByName, resolveName, undo, setSync, showDiag,
                    setSlot, setPickNo, setMyTeam, setPlatform,
-                   toggleTarget, shortlist,
+                   toggleTarget, shortlist, report: buildReport,
                    rosterOf, needsOf, teamAtPick,
                    names: () => BOARD.map(p => p.name),
                    state: () => state};
@@ -1188,6 +1346,7 @@ document.querySelectorAll("#bar button[data-f]").forEach(b => {
     save(); render(); search.focus();
   };
 });
+document.getElementById("reportbtn").onclick = () => { REPORT_OPEN = !REPORT_OPEN; render(); };
 document.getElementById("undo").onclick = () => { undo(); search.focus(); };
 document.getElementById("more").onclick = () => {
   for (const id of ["hints","log"]){
@@ -1271,6 +1430,7 @@ document.getElementById("slot").max = TEAMS;
 document.querySelectorAll("#bar button[data-f]").forEach(b =>
   b.classList.toggle("on", b.dataset.f === state.filter));
 setPlatform(state.platform);   // also renders
+if (!state.log.length){ snap(); save(); render(); }   // opening prediction, on the active platform
 search.focus();
 """
 

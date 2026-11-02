@@ -7,11 +7,12 @@ real `draft_state_server.py` handler in the exact payload the panel sends
 real `draft_advise.py` over the file that handler wrote.
 
 ⚠️ THE PICKS ARE SIMULATED, NOT OBSERVED. Every seat -- yours included --
-takes the player with the lowest `platform ADP + noise`. ADP is the platform's
-published market (--platform espn|ffc), NOT this project's model ranking: the
-backtest (board_backtest.py) found platform ADP beats the model's ordering in
-the top 120, so the simulator drafts the way the market does. Noise is a
-rank-dependent spread fitted to the board's own sigma. That makes the briefing
+takes the player with the lowest `platform ADP + drift + noise`. ADP is the
+platform's published market (--platform espn|sleeper|ffc), NOT this project's
+model ranking: the backtest (board_backtest.py) found platform ADP beats the
+model's ordering in the top 120, so the simulator drafts the way the market
+does. Drift and noise are the panel's own per-player values for that platform,
+which makes the simulated room agree with the model by construction. That makes the briefing
 a demonstration of the mechanics, not evidence the model is right. The evidence
 is `replay_brier.py`, which scores the same probabilities against real drafts.
 
@@ -62,24 +63,26 @@ def seat_to_team() -> dict:
 
 
 def platform_adp(platform: str, board: pd.DataFrame) -> pd.DataFrame:
-    """name / adp of every player on the board that the platform prices."""
-    t = platforms.load(platform)
-    if t is None:
+    """player / padp / sig / shift for every board player the platform prices.
+
+    sig and shift are the panel's own per-player spread and chalk drift for that
+    platform (platforms.for_board), so the simulated room drifts the way the
+    model says rooms drift and the report on it is self-consistent.
+    """
+    per_player, _ = platforms.for_board(board)
+    rows = [(n, v[platform][0], v[platform][1], v[platform][2])
+            for n, v in per_player.items() if platform in v]
+    if not rows:
         sys.exit(f"no ADP loaded for {platform!r} -- see `platforms.py status`")
-    t = t.rename(columns={"adp": "padp"})
-    b = board.assign(key=board["player"].map(platforms.norm))
-    return b.merge(t, on="key")[["player", "key", "padp"]]
+    return pd.DataFrame(rows, columns=["player", "padp", "sig", "shift"])
 
 
 def simulate(board: pd.DataFrame, through: int, slot: int, seed: int,
              platform: str) -> list:
     rng = np.random.default_rng(seed)
     pool = platform_adp(platform, board)
-    # spread: fitted to the board's own (league-calibrated) adp_sigma vs adp
-    fit = board.dropna(subset=["adp", "adp_sigma"])
-    co = np.polyfit(np.sqrt(fit["adp"]), fit["adp_sigma"], 1)
-    sd = np.clip(np.polyval(co, np.sqrt(pool["padp"])), 0.5, None)
-    mu = pool["padp"].to_numpy()
+    mu = (pool["padp"] + pool["shift"]).to_numpy()
+    sd = pool["sig"].to_numpy()
     names = pool["player"].to_numpy()
     seat_team = seat_to_team()
     taken = np.zeros(len(pool), dtype=bool)
@@ -100,21 +103,32 @@ PANEL_JS = """<script>
    uses, one at a time, so the panel reacts as it would live */
 (function(){
   const PICKS = __PICKS__, SLOT = __SLOT__, PLATFORM = "__PLATFORM__",
-        TARGETS = __TARGETS__;
+        TARGETS = __TARGETS__, REPORT = __REPORT__;
   const go = () => {
     const A = window.DRAFTAPP;
     if (!A) return setTimeout(go, 100);
     const st = A.state(); st.picks.length = 0; st.seats = {}; st.apiPick = null;
+    const bn = document.createElement("div");
+    bn.style.cssText = "position:sticky;top:0;z-index:9;text-align:center;font:600 11px/1.4 system-ui;"
+      + "padding:6px 10px;background:#f2c14e;color:#3d2e05";
+    bn.textContent = "SIMULATED DRAFT — picks are drawn from ADP, so this shows the mechanics, not how accurate the model is";
+    document.body.prepend(bn);
     A.setSlot(SLOT);
     A.setPlatform(PLATFORM);
     const me = PICKS.find(p => p.mine);
     if (me) A.setMyTeam(me.team);
     let i = 0;
+    /* ~12 s however long the draft is, never slower than half a second a pick */
+    const DELAY = Math.max(15, Math.min(500, 12000 / PICKS.length));
     const tick = () => {
-      if (i >= PICKS.length){ TARGETS.forEach(t => A.toggleTarget(t)); return; }
+      if (i >= PICKS.length){
+        TARGETS.forEach(t => A.toggleTarget(t));
+        if (REPORT) document.getElementById("reportbtn").click();
+        return;
+      }
       const p = PICKS[i++];
       A.take(p.name, p.mine, true, p.team, p.at);
-      setTimeout(tick, 500);
+      setTimeout(tick, DELAY);
     };
     setTimeout(tick, 800);
   };
@@ -124,7 +138,8 @@ PANEL_JS = """<script>
 """
 
 
-def open_panel(picks: list, slot: int, platform: str, targets: list) -> Path:
+def open_panel(picks: list, slot: int, platform: str, targets: list,
+               report: bool = False) -> Path:
     html = OUT / "draft_day.html"
     if not html.exists():
         import build_draft_app
@@ -132,7 +147,8 @@ def open_panel(picks: list, slot: int, platform: str, targets: list) -> Path:
     page = html.read_text() + PANEL_JS.replace(
         "__PICKS__", json.dumps(picks)).replace(
             "__SLOT__", str(slot)).replace("__PLATFORM__", platform).replace(
-            "__TARGETS__", json.dumps(targets))
+            "__TARGETS__", json.dumps(targets)).replace(
+            "__REPORT__", "true" if report else "false")
     dest = OUT / "demo_panel.html"
     dest.write_text(page)
     webbrowser.open(dest.as_uri())
@@ -166,6 +182,8 @@ def main() -> None:
                          "yahoo/nfl/cbs/underdog need a CSV in data/adp_import/)")
     ap.add_argument("--panel", action="store_true",
                     help="also open the browser panel and replay into it")
+    ap.add_argument("--report", action="store_true",
+                    help="with --panel: open the post-draft report when the replay ends")
     ap.add_argument("--quiet", action="store_true", help="skip the briefing")
     a = ap.parse_args()
     if not 1 <= a.through < TEAMS * ROUNDS:
@@ -194,7 +212,8 @@ def main() -> None:
     print(f"picks drafted off {a.platform.upper()} ADP, seed {a.seed}")
     print(f"your simulated picks (slot {a.slot}): {', '.join(mine) or '—'}")
     if a.panel:
-        print(f"panel: {open_panel(picks, a.slot, a.platform, demo_targets(board, picks, a.platform)).relative_to(ROOT)} "
+        print(f"panel: {open_panel(picks, a.slot, a.platform, demo_targets(board, picks, a.platform),
+                         a.report).relative_to(ROOT)} "
               f"(replaying {a.through} picks)")
     if a.quiet:
         return
