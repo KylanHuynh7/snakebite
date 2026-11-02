@@ -116,6 +116,15 @@ def ffc_stdev() -> dict:
             for r in json.loads(f.read_text())["players"] if r.get("stdev")}
 
 
+def espn_ids() -> dict:
+    """key -> ESPN player id, used only to look up a headshot."""
+    f = _cache_path("espn")
+    if not f.exists():
+        return {}
+    return {norm(r["name"]): r["espn_id"]
+            for r in json.loads(f.read_text())["players"] if r.get("espn_id")}
+
+
 def spread(adp: pd.Series, keys: pd.Series) -> tuple[pd.Series, pd.Series]:
     """(sig, shift) for a platform's ADP, using the league calibration.
 

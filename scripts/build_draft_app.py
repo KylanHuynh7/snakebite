@@ -182,8 +182,11 @@ def load_board() -> tuple[list[dict], list[dict]]:
     names = b["player"].tolist()
     b = b[list(cols)].rename(columns=cols)
     rows = json.loads(b.to_json(orient="records"))
+    eid = platforms.espn_ids()
     for name, r in zip(names, rows):
         r["pl"] = per_platform.get(name, {})
+        if platforms.norm(name) in eid:
+            r["eid"] = eid[platforms.norm(name)]   # headshot lookup
     return rows, platform_meta
 
 
@@ -195,194 +198,228 @@ MARKUP = """<meta charset="utf-8">
 <style>
 :root{
   color-scheme:light dark;
-  --bg:#f5f4ef; --card:#ffffff; --sunk:#efeee8; --line:#e4e1d8;
-  --ink:#1c2420; --dim:#69736c; --faint:#97a09a;
-  --acc:#1f7a4d; --acc-ink:#ffffff; --acc-soft:#e3f1e9;
-  --good:#2f9461; --mid:#d99a1c; --low:#d4584a;
-  --good-soft:#e3f1e9; --mid-soft:#fbf0d9; --low-soft:#f9e4e1;
-  --QB:#c4622e; --RB:#2f8458; --WR:#3b62bd; --TE:#8250b0;
-  --shadow:0 1px 2px rgba(28,36,32,.05),0 4px 14px rgba(28,36,32,.05);
+  --bg:#edf0ea; --card:#ffffff; --sunk:#e6eae3; --line:#dde2d9;
+  --ink:#172019; --dim:#5f6b62; --faint:#929d94;
+  --acc:#1d7a4b; --acc-ink:#ffffff; --gold:#f2c14e; --gold-ink:#3d2e05;
+  --good:#23a05f; --mid:#e0a21b; --low:#e0564a;
+  --good-soft:#dff1e7; --mid-soft:#faf0d6; --low-soft:#f9e2df;
+  --hero-a:#0e3b27; --hero-b:#1b6b45; --hero-ink:#ffffff;
+  --QB:#d2662d; --RB:#2f9460; --WR:#3f66c8; --TE:#8b55bf;
+  --shadow:0 1px 2px rgba(23,32,25,.06),0 6px 18px rgba(23,32,25,.06);
+  --round:"SF Pro Rounded",ui-rounded,"Nunito","Quicksand",
+          ui-sans-serif,-apple-system,system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#101412; --card:#171c19; --sunk:#1d2320; --line:#2a312d;
-    --ink:#e7ece8; --dim:#98a39b; --faint:#6e7872;
-    --acc:#4fb784; --acc-ink:#07140d; --acc-soft:#1a2c23;
-    --good:#57bd8a; --mid:#e3ab3a; --low:#e5766a;
-    --good-soft:#18281f; --mid-soft:#2c2616; --low-soft:#2f1b19;
-    --QB:#e08a5a; --RB:#58bd8a; --WR:#7c9ce6; --TE:#b48ae0;
-    --shadow:0 1px 2px rgba(0,0,0,.3);
+    --bg:#0d130f; --card:#151c17; --sunk:#1b231d; --line:#26302a;
+    --ink:#e8efe9; --dim:#9aa89e; --faint:#6b7a70;
+    --acc:#4dbb83; --acc-ink:#06130b;
+    --good:#4fc386; --mid:#e8b043; --low:#ec7a6e;
+    --good-soft:#15291d; --mid-soft:#2b2514; --low-soft:#2e1b19;
+    --hero-a:#0a2a1b; --hero-b:#14583a;
+    --QB:#e88e5c; --RB:#5cc590; --WR:#82a1ec; --TE:#b88fe3;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.25);
   }
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font:13px/1.45 ui-sans-serif,-apple-system,"SF Pro Text","Inter",system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased}
-#wrap{padding:14px 14px 40px;max-width:640px;margin:0 auto}
+  font:13px/1.45 var(--round);-webkit-font-smoothing:antialiased}
+#wrap{padding:16px 14px 48px;max-width:560px;margin:0 auto}
 button{font:inherit;color:inherit;background:var(--card);
-  border:1px solid var(--line);border-radius:8px;padding:5px 10px;
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px;
   font-size:12px;cursor:pointer;transition:border-color .12s,background .12s}
 button:hover{border-color:var(--acc)}
-button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .num{font-variant-numeric:tabular-nums}
 .dim{color:var(--dim)} .small{font-size:11px;color:var(--dim)}
 .neg{color:var(--low)} .pos-n{color:var(--good)} .warn{color:var(--mid)}
 
-/* header */
-#top{display:flex;align-items:baseline;justify-content:space-between;
-  margin-bottom:10px}
-.brand{font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--acc)}
-.brand i{font-style:normal;color:var(--ink);font-weight:500;opacity:.55;
-  margin-left:6px;font-size:12px;letter-spacing:0}
-#turn{font-size:12px;color:var(--dim);text-align:right}
+/* header + pick tape */
+#top{display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;
+  font-size:18px;letter-spacing:-.03em}
+.brand .logo{width:26px;height:26px;border-radius:9px;display:grid;
+  place-items:center;background:var(--acc);color:var(--acc-ink);font-size:14px}
+#turn{text-align:right;font-size:12px;color:var(--dim);line-height:1.25}
 #turn b{color:var(--ink)}
-#turn .up{color:var(--acc-ink);background:var(--acc);padding:2px 9px;
-  border-radius:20px;font-weight:700;font-size:11px;letter-spacing:.02em}
+#turn .up{background:var(--gold);color:var(--gold-ink);padding:3px 11px;
+  border-radius:999px;font-weight:800;font-size:11px;letter-spacing:.04em}
+#tape{display:flex;align-items:center;gap:4px;margin:0 2px 14px;
+  overflow:hidden}
+#tape i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--line)}
+#tape i.me{width:11px;height:11px;background:var(--gold);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 30%,transparent)}
+#tape i.now{background:var(--acc)}
+#tape span{margin-left:auto;padding-left:8px;font-size:11px;color:var(--faint);
+  white-space:nowrap}
 
-#search{width:100%;padding:11px 14px;font-size:14px;color:var(--ink);
-  background:var(--card);border:1px solid var(--line);border-radius:12px;
-  outline:none;box-shadow:var(--shadow)}
+#search{width:100%;padding:12px 16px;font:inherit;font-size:14px;
+  color:var(--ink);background:var(--card);border:1px solid var(--line);
+  border-radius:999px;outline:none;box-shadow:var(--shadow)}
 #search:focus{border-color:var(--acc)}
 #search::placeholder{color:var(--faint)}
-#hints{display:none;font-size:11px;color:var(--dim);margin:8px 2px 0}
+#hints{display:none;font-size:11px;color:var(--dim);margin:8px 8px 0}
 kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
   padding:0 5px;font-size:10px;font-family:ui-monospace,monospace}
-
-#meta{display:flex;gap:8px;align-items:center;margin:10px 2px;
+#meta{display:flex;gap:8px;align-items:center;margin:12px 4px 4px;
   font-size:12px;color:var(--dim)}
 #meta .sp{flex:1}
 #meta input{width:44px;background:var(--card);color:var(--ink);
-  border:1px solid var(--line);border-radius:6px;padding:2px 6px;font-size:12px}
-#meta button{padding:3px 9px}
-#sync{font-size:11px;color:var(--faint);margin:0 2px 8px}
+  border:1px solid var(--line);border-radius:8px;padding:2px 6px;font-size:12px}
+#meta button{padding:3px 11px}
+#sync{font-size:11px;color:var(--faint);margin:0 4px 10px}
 #log{display:none;max-height:240px;overflow:auto;font-size:10.5px;
   margin:0 0 10px;color:var(--dim);white-space:pre-wrap;word-break:break-all;
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--sunk);
-  border:1px solid var(--line);border-radius:10px;padding:8px;user-select:all}
+  border-radius:12px;padding:10px;user-select:all}
 
-/* segmented controls: platform + position filter */
-.seg{display:flex;gap:2px;background:var(--sunk);border-radius:10px;padding:3px;
-  flex-wrap:wrap}
-.seg button{border:0;background:none;border-radius:8px;padding:5px 11px;
-  color:var(--dim);font-weight:500}
+/* chip rows: platform + position filter */
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+#plat{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+#plat::-webkit-scrollbar{display:none}
+#plat button{flex:none}
+.seg button{background:var(--card);color:var(--dim);font-weight:600}
 .seg button:hover{color:var(--ink)}
-.seg button.on{background:var(--card);color:var(--ink);font-weight:650;
-  box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.seg button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .seg button:disabled{opacity:.35;cursor:not-allowed}
-#platnote{font-size:11px;color:var(--faint);margin:5px 3px 12px}
-#bar{display:flex;align-items:center;gap:8px;margin:14px 0 8px}
+#platnote{font-size:11px;color:var(--faint);margin:7px 4px 14px}
+#bar{display:flex;align-items:center;gap:8px;margin:18px 0 10px}
 #bar .seg{flex:1}
 #bar .reset{border:0;background:none;color:var(--faint);padding:4px 6px}
 #bar .reset:hover{color:var(--low)}
 
-/* the recommendation */
-#rec{background:var(--card);border:1px solid var(--line);border-radius:16px;
-  padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-#rec::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
-  background:var(--acc)}
-#rec.thin::before{background:var(--line)}
-.rlab{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--acc);font-weight:750;margin-bottom:6px}
+/* hero: the one decision that matters right now */
+#rec{position:relative;overflow:hidden;color:var(--hero-ink);
+  background:radial-gradient(120% 140% at 100% 0%,var(--hero-b),var(--hero-a) 62%);
+  border-radius:22px;padding:18px 18px 16px;box-shadow:var(--shadow)}
+#rec.thin{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+#rec .rlab{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:800;color:var(--gold);margin-bottom:10px}
 #rec.thin .rlab{color:var(--faint)}
-.rmain{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.rname{font-size:21px;font-weight:750;letter-spacing:-.02em;line-height:1.15}
-.rsub{margin-top:5px;color:var(--dim);font-size:12px;display:flex;
-  gap:6px;align-items:center}
-.rav{text-align:right;flex:none}
-.rav b{display:block;font-size:30px;font-weight:750;letter-spacing:-.03em;
-  line-height:1}
-.rav span{font-size:11px;color:var(--dim)}
-.rwhy{margin-top:12px;padding-top:11px;border-top:1px solid var(--line);
-  color:var(--dim);font-size:12.5px}
-.rwhy b{color:var(--ink)}
-.rnote{margin-top:8px;font-size:12px}
-.alt{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
-  font-size:11px;color:var(--faint)}
-.alt span.c{background:var(--sunk);border-radius:20px;padding:2px 9px;
-  color:var(--dim)}
+.rmain{display:flex;align-items:center;gap:14px}
+.rmain .hs{width:78px;height:78px;border-width:3px}
+.rbody{flex:1;min-width:0}
+.rname{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.rsub{margin-top:6px;display:flex;gap:8px;align-items:center;font-size:12px;
+  opacity:.85}
+#rec .pos{background:rgba(255,255,255,.16);color:#fff}
+#rec.thin .pos.QB{color:var(--QB)} #rec.thin .pos.RB{color:var(--RB)}
+#rec.thin .pos.WR{color:var(--WR)} #rec.thin .pos.TE{color:var(--TE)}
+#rec.thin .pos{background:var(--sunk)}
+.rav{flex:none;text-align:center}
+.rav .g{width:72px;height:72px}
+.rav .g text{font-size:11.5px}
+.rav small{display:block;font-size:10.5px;opacity:.75;margin-top:2px}
+.rwhy{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16);
+  font-size:12.5px;opacity:.92}
+#rec.thin .rwhy{border-color:var(--line);color:var(--dim)}
+.rnote{margin-top:8px;font-size:12px;color:var(--gold)}
+#rec.thin .rnote{color:var(--mid)}
+.alt{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  font-size:11px;opacity:.9}
+.alt .c{background:rgba(255,255,255,.12);border-radius:999px;padding:3px 10px}
+#rec.thin .alt .c{background:var(--sunk)}
 
-/* roster slots */
-#ctx{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+/* gauge ring */
+.g{display:block}
+.g circle{fill:none;stroke-width:5;stroke-linecap:round}
+.g .tr{stroke:currentColor;opacity:.14}
+.g text{fill:currentColor;font-weight:800;text-anchor:middle;
+  dominant-baseline:central;font-family:var(--round)}
+
+/* roster chips */
+#ctx{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 12px}
 .pill{display:inline-flex;align-items:center;gap:5px;background:var(--card);
-  border:1px solid var(--line);border-radius:20px;padding:3px 10px;
+  border:1px solid var(--line);border-radius:999px;padding:3px 11px;
   font-size:11.5px;color:var(--dim)}
-.pill b{color:var(--ink);font-weight:650}
+.pill b{color:var(--ink);font-weight:700}
 .need{border-color:var(--mid);background:var(--mid-soft)}
 .done{border-color:var(--good);background:var(--good-soft)}
 .pill.run{border-style:dashed;background:none}
 
 /* opponents */
-#opp{background:var(--card);border:1px solid var(--line);border-radius:14px;
+#opp{background:var(--card);border:1px solid var(--line);border-radius:18px;
   margin-bottom:12px;overflow:hidden}
-#opp .hd{display:flex;justify-content:space-between;padding:10px 14px;
-  font-size:12px;font-weight:650;cursor:pointer;color:var(--ink)}
+#opp .hd{display:flex;justify-content:space-between;padding:11px 16px;
+  font-size:12px;font-weight:700;cursor:pointer}
 #opp .hd span{color:var(--faint);font-weight:500}
 .orow{display:grid;grid-template-columns:34px 1fr;gap:6px 8px;
-  padding:9px 14px;border-top:1px solid var(--line);align-items:start}
+  padding:10px 16px;border-top:1px solid var(--line);align-items:start}
 .orow .pk{font-size:11px;color:var(--faint);padding-top:2px}
-.orow .tm{font-weight:650;font-size:12.5px}
+.orow .tm{font-weight:700;font-size:12.5px}
 .orow .ln{font-size:11px;color:var(--dim);margin-top:2px}
-.chip{display:inline-block;font-size:10px;font-weight:600;border-radius:5px;
-  padding:1px 6px;margin-left:5px;background:var(--sunk);color:var(--dim);
+.chip{display:inline-block;font-size:10px;font-weight:700;border-radius:999px;
+  padding:1px 7px;margin-left:5px;background:var(--sunk);color:var(--dim);
   vertical-align:1px}
 .chip.beginner{background:var(--mid-soft);color:var(--mid)}
-.nothing{padding:4px 14px 12px;font-size:12px;color:var(--dim)}
+.nothing{padding:4px 16px 14px;font-size:12px;color:var(--dim)}
 
-/* board */
-#rows{background:var(--card);border:1px solid var(--line);border-radius:16px;
-  overflow:hidden;box-shadow:var(--shadow)}
-.row{border-top:1px solid var(--line);cursor:pointer}
-.row:first-child{border-top:0}
-.row:hover{background:var(--sunk)}
-.row .main{display:grid;grid-template-columns:34px 1fr 108px;gap:10px;
-  align-items:center;padding:10px 14px}
-.row .mk{font-size:11.5px;color:var(--faint);text-align:center}
-.gap{font-weight:700;font-size:11px;padding:1px 5px;border-radius:5px}
-.gap.up{color:var(--good);background:var(--good-soft)}
-.gap.dn{color:var(--low);background:var(--low-soft)}
-.nm{font-weight:650;font-size:14px;letter-spacing:-.01em}
-.star{color:var(--mid);margin-right:4px;font-size:12px}
-.sub{display:flex;gap:6px;align-items:center;margin-top:2px;font-size:11.5px;
+/* headshots: initials underneath, photo on top, ring in position colour */
+.hs{position:relative;flex:none;width:46px;height:46px;border-radius:50%;
+  overflow:hidden;background:var(--sunk);border:2px solid var(--line);
+  display:grid;place-items:end center}
+.hs b{position:absolute;inset:0;display:grid;place-items:center;
+  font-size:13px;font-weight:800;color:var(--dim)}
+.hs img{position:relative;width:100%;height:100%;object-fit:cover;
+  object-position:50% 12%;display:block}
+.hs.QB{border-color:var(--QB)} .hs.RB{border-color:var(--RB)}
+.hs.WR{border-color:var(--WR)} .hs.TE{border-color:var(--TE)}
+#rec .hs{background:rgba(255,255,255,.12)} #rec .hs b{color:#fff}
+
+/* board: one card per player */
+#rows{display:flex;flex-direction:column;gap:8px}
+.row{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  cursor:pointer;transition:transform .1s,border-color .12s;overflow:hidden}
+.row:hover{border-color:var(--acc)}
+.row .main{display:grid;grid-template-columns:46px 1fr 48px;gap:12px;
+  align-items:center;padding:10px 14px 10px 10px}
+.nm{font-weight:750;font-size:14.5px;letter-spacing:-.015em}
+.star{color:var(--gold);margin-right:4px;font-size:12px}
+.sub{display:flex;gap:6px;align-items:center;margin-top:3px;font-size:11.5px;
   color:var(--dim);min-width:0}
 .sub .sig{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.pos{display:inline-block;border-radius:5px;padding:0 6px;font-size:10px;
-  font-weight:750;letter-spacing:.03em;line-height:16px}
-.QB{color:var(--QB);background:color-mix(in srgb,var(--QB) 14%,transparent)}
-.RB{color:var(--RB);background:color-mix(in srgb,var(--RB) 14%,transparent)}
-.WR{color:var(--WR);background:color-mix(in srgb,var(--WR) 14%,transparent)}
-.TE{color:var(--TE);background:color-mix(in srgb,var(--TE) 14%,transparent)}
-.av{display:flex;align-items:center;gap:8px;justify-content:flex-end}
-.av .bar{flex:1;height:5px;border-radius:5px;background:var(--sunk);
-  overflow:hidden;max-width:56px}
-.av .bar i{display:block;height:100%;border-radius:5px}
-.av b{font-size:12.5px;font-weight:700;min-width:36px;text-align:right}
-.tierbreak{box-shadow:inset 0 2px 0 var(--sunk)}
+.pos{display:inline-block;border-radius:999px;padding:0 7px;font-size:10px;
+  font-weight:800;letter-spacing:.04em;line-height:17px}
+.QB{color:var(--QB);background:color-mix(in srgb,var(--QB) 15%,transparent)}
+.RB{color:var(--RB);background:color-mix(in srgb,var(--RB) 15%,transparent)}
+.WR{color:var(--WR);background:color-mix(in srgb,var(--WR) 15%,transparent)}
+.TE{color:var(--TE);background:color-mix(in srgb,var(--TE) 15%,transparent)}
+.adp{font-size:11px;color:var(--faint);white-space:nowrap}
+.gap{font-weight:800;font-size:10.5px;padding:0 6px;border-radius:999px}
+.gap.up{color:var(--good);background:var(--good-soft)}
+.gap.dn{color:var(--low);background:var(--low-soft)}
+.av{width:48px;height:48px}
+.av .g text{font-size:13px}
+.tierbreak{margin-top:6px}
 
 /* expanded detail */
-.detail{display:none;padding:0 14px 14px 58px;font-size:12px;color:var(--dim)}
+.detail{display:none;padding:2px 16px 14px 70px;font-size:12px;color:var(--dim)}
 .row.open .detail{display:block}
-.row.open{background:var(--sunk)}
+.row.open{border-color:var(--acc)}
 .detail p{margin:0 0 6px}
 .detail .tags{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
-.detail .tags span{background:var(--card);border:1px solid var(--line);
-  border-radius:20px;padding:1px 9px;font-size:11px}
+.detail .tags span{background:var(--sunk);border-radius:999px;
+  padding:2px 10px;font-size:11px}
 .detail .acts{display:flex;gap:6px;margin-top:10px}
-.detail .acts .go{background:var(--acc);color:var(--acc-ink);border-color:var(--acc);
-  font-weight:650}
+.detail .acts .go{background:var(--acc);color:var(--acc-ink);
+  border-color:var(--acc);font-weight:700}
 .empty{padding:26px;text-align:center;color:var(--faint)}
 @media (max-width:420px){
-  #wrap{padding:10px 10px 40px}
-  .rname{font-size:18px} .rav b{font-size:25px}
-  .row .main{grid-template-columns:28px 1fr 92px;gap:8px;padding:9px 10px}
-  .detail{padding-left:46px}
+  #wrap{padding:12px 10px 48px}
+  .rname{font-size:19px} .rmain .hs{width:62px;height:62px}
+  .rav .g{width:60px;height:60px}
+  .row .main{gap:10px;padding:9px 10px 9px 8px}
+  .detail{padding-left:62px}
 }
 </style>
 
 <div id="wrap">
   <div id="top">
-    <div class="brand">snakebite<i>draft assistant</i></div>
+    <div class="brand"><span class="logo">S</span>snakebite</div>
     <div id="turn"></div>
   </div>
+  <div id="tape"></div>
   <input id="search" placeholder="Search a player — Enter marks gone, Shift+Enter marks yours"
          autocomplete="off" spellcheck="false">
   <div id="hints">
@@ -714,6 +751,42 @@ const esc = s => String(s == null ? "" : s)
 /* one colour per band, used for the bar and the number alike */
 const availCol = v => v >= .7 ? "var(--good)" : v >= .35 ? "var(--mid)"
                                                           : "var(--low)";
+/* ring gauge: the availability number as a share of a circle */
+function gauge(v, label, onDark){
+  const R = 20, C = 2 * Math.PI * R;
+  /* on the dark hero the ring and number switch to brighter tones of the same
+     three bands so the colour still means good / borderline / gone */
+  const col = onDark ? (v >= .7 ? "#7fe3b0" : v >= .35 ? "#ffd166" : "#ff8f80")
+                     : availCol(v);
+  const ink = onDark ? "#ffffff" : col;
+  return `<svg class="g" viewBox="0 0 50 50" style="color:${ink}">`
+    + `<circle class="tr" cx="25" cy="25" r="${R}"/>`
+    + `<circle cx="25" cy="25" r="${R}" stroke="${col}" `
+    + `stroke-dasharray="${(C * v).toFixed(1)} ${C.toFixed(1)}" `
+    + `transform="rotate(-90 25 25)"/>`
+    + `<text x="25" y="26">${label}</text></svg>`;
+}
+const initials = n => n.replace(/\b(jr|sr|ii|iii|iv)\.?$/i, "").trim()
+  .split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+/* Photo from ESPN's image CDN, resized server-side (~7 KB). Initials sit
+   underneath and stay if there is no id or the request fails -- offline, or a
+   rookie ESPN has no photo for, still reads as a person, not a broken image.
+   Built in JS rather than with an onerror attribute: MV3 extension pages block
+   inline handlers. */
+function headshot(p, size){
+  const d = document.createElement("div");
+  d.className = "hs " + p.pos;
+  d.innerHTML = `<b>${esc(initials(p.name))}</b>`;
+  if (p.eid && typeof Image !== "undefined"){
+    const img = new Image();
+    img.alt = "";
+    img.onerror = () => img.remove();
+    img.src = "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/"
+      + p.eid + ".png&w=" + size * 2 + "&h=" + Math.round(size * 1.45 );
+    d.appendChild(img);
+  }
+  return d;
+}
 let OPEN_ROW = null;               // the player whose detail is expanded
 
 function renderOpponents(now, nxt){
@@ -807,9 +880,17 @@ function render(){
   document.getElementById("turn").innerHTML = !mine ? `<b>Draft complete</b>`
     : onClock
       ? `<span class="up">YOU'RE UP</span>`
-        + (nxt ? `<div class="small" style="margin-top:3px">back at ${nxt}</div>` : "")
+        + (nxt ? `<div class="small" style="margin-top:4px">back at ${nxt}</div>` : "")
       : `Your pick <b class="num">${mine}</b>`
         + `<div class="small" style="margin-top:2px">${mine - now} away</div>`;
+  /* pick tape: one dot per pick until you are back on the clock */
+  const tape = document.getElementById("tape");
+  const endAt = onClock ? (nxt || now) : (mine || now);
+  let dots = "";
+  for (let o = now; o <= endAt && o < now + 40; o++)
+    dots += `<i class="${o === now ? "now" : ""} ${o === endAt && mine ? "me" : ""}"></i>`;
+  tape.innerHTML = (mine ? dots : "")
+    + (mine ? `<span>${onClock ? "your pick" : (mine - now) + " until you"}</span>` : "");
 
   /* recommendation */
   const rec = document.getElementById("rec");
@@ -824,16 +905,17 @@ function render(){
     const rnote = t.best.note
       ? `<div class="rnote ${t.best.flag==="neg"?"neg":t.best.flag==="pos"?"pos-n":"warn"}">${
           t.best.flag==="neg"?"! ":""}${esc(t.best.note)}</div>` : "";
+    const av = a == null ? "" : `<div class="rav">${gauge(a.v, (a.est ? "~" : "")
+      + Math.round(a.v * 100) + "%", !thin)}<small>to last to ${nxt}${a.est ? " · sliding" : ""}</small></div>`;
     rec.innerHTML = `
       <div class="rlab">${thin ? "No urgency · best available" : "Take now"}</div>
       <div class="rmain">
-        <div>
+        <div class="hsw"></div>
+        <div class="rbody">
           <div class="rname">${esc(t.best.name)}</div>
           <div class="rsub"><span class="pos ${t.best.pos}">${t.best.pos}</span>${esc(t.best.team)}</div>
         </div>
-        ${a == null ? "" : `<div class="rav"><b style="color:${availCol(a.v)}">${
-          a.est ? "~" : ""}${Math.round(a.v*100)}%</b>
-          <span>to last to ${nxt}${a.est ? " · sliding" : ""}</span></div>`}
+        ${av}
       </div>
       <div class="rwhy">${
         thin
@@ -844,6 +926,7 @@ function render(){
       ${rows.length > 1 ? `<div class="alt">Then ${rows.slice(1,4).map(r =>
         `<span class="c"><b>${r.pos}</b> ${esc(r.best.name.split(" ").slice(-1)[0])} −${
           r.cost.toFixed(1)}</span>`).join("")}</div>` : ""}`;
+    rec.querySelector(".hsw").replaceWith(headshot(t.best, 78));
   }
 
   /* context: needs + what the room has been doing */
@@ -895,24 +978,25 @@ predicted more of that position in this league (lift 0.90-1.08 over 391 picks)"
     const h = headline(p);
     row.innerHTML = `
       <div class="main">
-        <div class="mk num">${p.gap ? `<span class="gap ${p.gap>0?"up":"dn"}"
-          title="model disagrees with the market by ${Math.abs(p.gap)} ranks -- only gaps of 24+ beat their price in the backtest">${
-          p.gap>0?"+":""}${p.gap}</span>`
-          : (p.adp ? Math.round(p.adp) : "—")}</div>
+        <div class="hsw"></div>
         <div style="min-width:0">
           <div><span class="nm">${p.watch ? '<span class="star">★</span>' : ""}${esc(p.name)}</span></div>
           <div class="sub"><span class="pos ${p.pos}">${p.pos}</span>
             <span>${esc(p.team)}</span>
-            ${h ? `<span class="sig ${h.c}">· ${esc(h.t)}</span>` : ""}</div>
+            ${p.gap ? `<span class="gap ${p.gap>0?"up":"dn"}"
+              title="model disagrees with the market by ${Math.abs(p.gap)} ranks -- only gaps of 24+ beat their price in the backtest">${
+              p.gap>0?"+":""}${p.gap}</span>`
+              : (p.adp ? `<span class="adp">ADP ${Math.round(p.adp)}</span>` : "")}
+          </div>
+          ${h ? `<div class="sub"><span class="sig ${h.c}">${esc(h.t)}</span></div>` : ""}
         </div>
         <div class="av" title="${a && a.est ? "re-estimated: he has already fallen past his ADP" : "chance he is still there at your next pick"}">
-          ${a == null ? `<b class="dim">–</b>`
-            : `<span class="bar"><i style="width:${Math.round(a.v*100)}%;background:${
-                availCol(a.v)}"></i></span><b style="color:${availCol(a.v)}">${
-                a.est ? "~" : ""}${Math.round(a.v*100)}%</b>`}
+          ${a == null ? `<span class="dim">–</span>` : gauge(a.v, (a.est ? "~" : "")
+            + Math.round(a.v * 100))}
         </div>
       </div>
       <div class="detail">${detailOf(p)}</div>`;
+    row.querySelector(".hsw").replaceWith(headshot(p, 46));
     row.querySelector(".main").onclick = () => {
       OPEN_ROW = OPEN_ROW === p.name ? null : p.name;
       render();
