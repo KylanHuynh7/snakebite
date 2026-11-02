@@ -106,6 +106,8 @@ PANEL_JS = """<script>
     const st = A.state(); st.picks.length = 0; st.seats = {}; st.apiPick = null;
     A.setSlot(SLOT);
     A.setPlatform(PLATFORM);
+    const me = PICKS.find(p => p.mine);
+    if (me) A.setMyTeam(me.team);
     let i = 0;
     const tick = () => {
       if (i >= PICKS.length) return;

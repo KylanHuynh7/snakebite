@@ -191,138 +191,233 @@ def load_board() -> tuple[list[dict], list[dict]]:
 
 MARKUP = """<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Draft Day 2026</title>
+<title>Snakebite</title>
 <style>
 :root{
-  --bg:#0f1115; --panel:#171a21; --line:#252a34; --ink:#e6e9ef; --dim:#8b93a3;
-  --pos:#3fb950; --neg:#f85149; --warn:#d29922; --acc:#58a6ff;
-  --qb:#c2410c; --rb:#15803d; --wr:#1d4ed8; --te:#7e22ce;
+  color-scheme:light dark;
+  --bg:#f5f4ef; --card:#ffffff; --sunk:#efeee8; --line:#e4e1d8;
+  --ink:#1c2420; --dim:#69736c; --faint:#97a09a;
+  --acc:#1f7a4d; --acc-ink:#ffffff; --acc-soft:#e3f1e9;
+  --good:#2f9461; --mid:#d99a1c; --low:#d4584a;
+  --good-soft:#e3f1e9; --mid-soft:#fbf0d9; --low-soft:#f9e4e1;
+  --QB:#c4622e; --RB:#2f8458; --WR:#3b62bd; --TE:#8250b0;
+  --shadow:0 1px 2px rgba(28,36,32,.05),0 4px 14px rgba(28,36,32,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#101412; --card:#171c19; --sunk:#1d2320; --line:#2a312d;
+    --ink:#e7ece8; --dim:#98a39b; --faint:#6e7872;
+    --acc:#4fb784; --acc-ink:#07140d; --acc-soft:#1a2c23;
+    --good:#57bd8a; --mid:#e3ab3a; --low:#e5766a;
+    --good-soft:#18281f; --mid-soft:#2c2616; --low-soft:#2f1b19;
+    --QB:#e08a5a; --RB:#58bd8a; --WR:#7c9ce6; --TE:#b48ae0;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font:13px/1.4 ui-sans-serif,-apple-system,"SF Pro Text",system-ui,sans-serif}
-#wrap{padding:8px;max-width:1100px;margin:0 auto}
-#search{width:100%;padding:9px 10px;font-size:15px;background:#0b0d11;
-  color:var(--ink);border:1px solid var(--line);border-radius:7px;outline:none}
-#search:focus{border-color:var(--acc)}
-#meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;
-  margin:7px 0;font-size:12px;color:var(--dim)}
-#meta b{color:var(--ink)}
-button{background:#20242e;color:var(--ink);border:1px solid var(--line);
-  border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer}
+  font:13px/1.45 ui-sans-serif,-apple-system,"SF Pro Text","Inter",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+#wrap{padding:14px 14px 40px;max-width:640px;margin:0 auto}
+button{font:inherit;color:inherit;background:var(--card);
+  border:1px solid var(--line);border-radius:8px;padding:5px 10px;
+  font-size:12px;cursor:pointer;transition:border-color .12s,background .12s}
 button:hover{border-color:var(--acc)}
-button.on{background:var(--acc);border-color:var(--acc);color:#04121f;
-  font-weight:600}
-input[type=number]{width:44px;background:#0b0d11;color:var(--ink);
-  border:1px solid var(--line);border-radius:6px;padding:3px 5px;font-size:12px}
-#rec{background:linear-gradient(180deg,#16241a,#141821);
-  border:1px solid #2b4133;border-radius:9px;padding:9px 10px;margin-bottom:8px}
-#rec.thin{background:#171a21;border-color:var(--line)}
-.rlab{font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--pos);font-weight:700;margin-bottom:3px}
-#rec.thin .rlab{color:var(--dim)}
-.rname{font-size:16px;font-weight:700}
-.rwhy{font-size:11.5px;color:var(--dim);margin-top:3px}
-.alt{font-size:11.5px;color:var(--dim);margin-top:5px;
-  border-top:1px solid var(--line);padding-top:5px}
-#ctx{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:7px}
-.pill{display:inline-block;background:#20242e;border:1px solid var(--line);
-  border-radius:20px;padding:1px 7px;font-size:11px;color:var(--dim)}
-.need{border-color:var(--warn);color:var(--warn)}
-.done{border-color:var(--pos);color:var(--pos)}
-#bar{display:flex;gap:4px;align-items:center;margin-bottom:6px}
-#plat{display:flex;gap:2px;flex-wrap:wrap;margin:2px 0 4px;
-  border-bottom:1px solid var(--line)}
-#plat button{background:none;border:0;border-bottom:2px solid transparent;
-  border-radius:0;color:var(--dim);padding:5px 9px;cursor:pointer;font-size:12px}
-#plat button.on{color:var(--ink);border-bottom-color:var(--acc)}
-#plat button:disabled{opacity:.4;cursor:not-allowed}
-#platnote{font-size:11px;color:var(--dim);margin:0 0 6px}
-table{width:100%;border-collapse:collapse}
-th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.05em;
-  color:var(--dim);font-weight:600;padding:3px 4px;
-  border-bottom:1px solid var(--line)}
-td{padding:4px;border-bottom:1px solid #1c202a;vertical-align:top}
-tr.row:hover{background:#1c2029;cursor:pointer}
-.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-.nm{font-weight:600}
-.pos{display:inline-block;min-width:22px;text-align:center;border-radius:3px;
-  padding:0 4px;font-size:10px;font-weight:700;color:#fff}
-.QB{background:var(--qb)}.RB{background:var(--rb)}
-.WR{background:var(--wr)}.TE{background:var(--te)}
-.note{font-size:11px;margin-top:1px}
-/* team scoring-environment forecast -- deliberately small and inline, it is
-   context on the offence, never a reason to move a player by itself */
-.offtag{font-size:10px;opacity:.75;white-space:nowrap}
-.gap{font-weight:600;padding:0 4px;border-radius:3px}
-.gap.up{color:var(--pos);background:rgba(63,185,80,.12)}
-.gap.dn{color:var(--neg);background:rgba(248,81,73,.12)}
-.mkt{color:var(--dim)}
-.exp{font-size:10px;padding:1px 4px;border-radius:3px;margin-left:4px;
-  background:var(--line);color:var(--dim)}
-.exp.beginner{background:rgba(210,153,34,.18);color:var(--warn)}
-/* opponent view: who picks before you do, and what they still need */
-#opp{margin-bottom:7px;font-size:11px}
-#opp .hd{font-size:10px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--dim);font-weight:700;margin-bottom:3px;cursor:pointer}
-#opp table{width:100%}
-#opp td{padding:2px 4px;border-bottom:1px solid #1c202a;font-size:11px}
-#opp .tm{font-weight:600}
-#opp .lean{color:var(--dim);font-size:10px}
-#opp .cnt{font-variant-numeric:tabular-nums;color:var(--dim);white-space:nowrap}
-.neg{color:var(--neg)}.pos-n{color:var(--pos)}.warn{color:var(--warn)}
-.dim{color:var(--dim)}
-.small{font-size:11px;color:var(--dim)}
-.tierbreak td{border-top:2px solid #313847}
-#hints{display:none;font-size:11px;color:var(--dim);margin:4px 0}
-#log{display:none;max-height:260px;overflow:auto;font-size:10.5px;
-  margin-top:6px;color:var(--dim);white-space:pre-wrap;word-break:break-all;
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  background:#0b0d11;border:1px solid var(--line);border-radius:6px;padding:6px;
-  user-select:all}
-kbd{background:#0b0d11;border:1px solid var(--line);border-radius:3px;
-  padding:0 4px;font-size:10px;font-family:ui-monospace,monospace}
+button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+.num{font-variant-numeric:tabular-nums}
+.dim{color:var(--dim)} .small{font-size:11px;color:var(--dim)}
+.neg{color:var(--low)} .pos-n{color:var(--good)} .warn{color:var(--mid)}
+
+/* header */
+#top{display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:10px}
+.brand{font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--acc)}
+.brand i{font-style:normal;color:var(--ink);font-weight:500;opacity:.55;
+  margin-left:6px;font-size:12px;letter-spacing:0}
+#turn{font-size:12px;color:var(--dim);text-align:right}
+#turn b{color:var(--ink)}
+#turn .up{color:var(--acc-ink);background:var(--acc);padding:2px 9px;
+  border-radius:20px;font-weight:700;font-size:11px;letter-spacing:.02em}
+
+#search{width:100%;padding:11px 14px;font-size:14px;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  outline:none;box-shadow:var(--shadow)}
+#search:focus{border-color:var(--acc)}
+#search::placeholder{color:var(--faint)}
+#hints{display:none;font-size:11px;color:var(--dim);margin:8px 2px 0}
+kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
+  padding:0 5px;font-size:10px;font-family:ui-monospace,monospace}
+
+#meta{display:flex;gap:8px;align-items:center;margin:10px 2px;
+  font-size:12px;color:var(--dim)}
+#meta .sp{flex:1}
+#meta input{width:44px;background:var(--card);color:var(--ink);
+  border:1px solid var(--line);border-radius:6px;padding:2px 6px;font-size:12px}
+#meta button{padding:3px 9px}
+#sync{font-size:11px;color:var(--faint);margin:0 2px 8px}
+#log{display:none;max-height:240px;overflow:auto;font-size:10.5px;
+  margin:0 0 10px;color:var(--dim);white-space:pre-wrap;word-break:break-all;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--sunk);
+  border:1px solid var(--line);border-radius:10px;padding:8px;user-select:all}
+
+/* segmented controls: platform + position filter */
+.seg{display:flex;gap:2px;background:var(--sunk);border-radius:10px;padding:3px;
+  flex-wrap:wrap}
+.seg button{border:0;background:none;border-radius:8px;padding:5px 11px;
+  color:var(--dim);font-weight:500}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:var(--card);color:var(--ink);font-weight:650;
+  box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.seg button:disabled{opacity:.35;cursor:not-allowed}
+#platnote{font-size:11px;color:var(--faint);margin:5px 3px 12px}
+#bar{display:flex;align-items:center;gap:8px;margin:14px 0 8px}
+#bar .seg{flex:1}
+#bar .reset{border:0;background:none;color:var(--faint);padding:4px 6px}
+#bar .reset:hover{color:var(--low)}
+
+/* the recommendation */
+#rec{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+#rec::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:var(--acc)}
+#rec.thin::before{background:var(--line)}
+.rlab{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--acc);font-weight:750;margin-bottom:6px}
+#rec.thin .rlab{color:var(--faint)}
+.rmain{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.rname{font-size:21px;font-weight:750;letter-spacing:-.02em;line-height:1.15}
+.rsub{margin-top:5px;color:var(--dim);font-size:12px;display:flex;
+  gap:6px;align-items:center}
+.rav{text-align:right;flex:none}
+.rav b{display:block;font-size:30px;font-weight:750;letter-spacing:-.03em;
+  line-height:1}
+.rav span{font-size:11px;color:var(--dim)}
+.rwhy{margin-top:12px;padding-top:11px;border-top:1px solid var(--line);
+  color:var(--dim);font-size:12.5px}
+.rwhy b{color:var(--ink)}
+.rnote{margin-top:8px;font-size:12px}
+.alt{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  font-size:11px;color:var(--faint)}
+.alt span.c{background:var(--sunk);border-radius:20px;padding:2px 9px;
+  color:var(--dim)}
+
+/* roster slots */
+#ctx{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.pill{display:inline-flex;align-items:center;gap:5px;background:var(--card);
+  border:1px solid var(--line);border-radius:20px;padding:3px 10px;
+  font-size:11.5px;color:var(--dim)}
+.pill b{color:var(--ink);font-weight:650}
+.need{border-color:var(--mid);background:var(--mid-soft)}
+.done{border-color:var(--good);background:var(--good-soft)}
+.pill.run{border-style:dashed;background:none}
+
+/* opponents */
+#opp{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  margin-bottom:12px;overflow:hidden}
+#opp .hd{display:flex;justify-content:space-between;padding:10px 14px;
+  font-size:12px;font-weight:650;cursor:pointer;color:var(--ink)}
+#opp .hd span{color:var(--faint);font-weight:500}
+.orow{display:grid;grid-template-columns:34px 1fr;gap:6px 8px;
+  padding:9px 14px;border-top:1px solid var(--line);align-items:start}
+.orow .pk{font-size:11px;color:var(--faint);padding-top:2px}
+.orow .tm{font-weight:650;font-size:12.5px}
+.orow .ln{font-size:11px;color:var(--dim);margin-top:2px}
+.chip{display:inline-block;font-size:10px;font-weight:600;border-radius:5px;
+  padding:1px 6px;margin-left:5px;background:var(--sunk);color:var(--dim);
+  vertical-align:1px}
+.chip.beginner{background:var(--mid-soft);color:var(--mid)}
+.nothing{padding:4px 14px 12px;font-size:12px;color:var(--dim)}
+
+/* board */
+#rows{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  overflow:hidden;box-shadow:var(--shadow)}
+.row{border-top:1px solid var(--line);cursor:pointer}
+.row:first-child{border-top:0}
+.row:hover{background:var(--sunk)}
+.row .main{display:grid;grid-template-columns:34px 1fr 108px;gap:10px;
+  align-items:center;padding:10px 14px}
+.row .mk{font-size:11.5px;color:var(--faint);text-align:center}
+.gap{font-weight:700;font-size:11px;padding:1px 5px;border-radius:5px}
+.gap.up{color:var(--good);background:var(--good-soft)}
+.gap.dn{color:var(--low);background:var(--low-soft)}
+.nm{font-weight:650;font-size:14px;letter-spacing:-.01em}
+.star{color:var(--mid);margin-right:4px;font-size:12px}
+.sub{display:flex;gap:6px;align-items:center;margin-top:2px;font-size:11.5px;
+  color:var(--dim);min-width:0}
+.sub .sig{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.pos{display:inline-block;border-radius:5px;padding:0 6px;font-size:10px;
+  font-weight:750;letter-spacing:.03em;line-height:16px}
+.QB{color:var(--QB);background:color-mix(in srgb,var(--QB) 14%,transparent)}
+.RB{color:var(--RB);background:color-mix(in srgb,var(--RB) 14%,transparent)}
+.WR{color:var(--WR);background:color-mix(in srgb,var(--WR) 14%,transparent)}
+.TE{color:var(--TE);background:color-mix(in srgb,var(--TE) 14%,transparent)}
+.av{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.av .bar{flex:1;height:5px;border-radius:5px;background:var(--sunk);
+  overflow:hidden;max-width:56px}
+.av .bar i{display:block;height:100%;border-radius:5px}
+.av b{font-size:12.5px;font-weight:700;min-width:36px;text-align:right}
+.tierbreak{box-shadow:inset 0 2px 0 var(--sunk)}
+
+/* expanded detail */
+.detail{display:none;padding:0 14px 14px 58px;font-size:12px;color:var(--dim)}
+.row.open .detail{display:block}
+.row.open{background:var(--sunk)}
+.detail p{margin:0 0 6px}
+.detail .tags{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
+.detail .tags span{background:var(--card);border:1px solid var(--line);
+  border-radius:20px;padding:1px 9px;font-size:11px}
+.detail .acts{display:flex;gap:6px;margin-top:10px}
+.detail .acts .go{background:var(--acc);color:var(--acc-ink);border-color:var(--acc);
+  font-weight:650}
+.empty{padding:26px;text-align:center;color:var(--faint)}
+@media (max-width:420px){
+  #wrap{padding:10px 10px 40px}
+  .rname{font-size:18px} .rav b{font-size:25px}
+  .row .main{grid-template-columns:28px 1fr 92px;gap:8px;padding:9px 10px}
+  .detail{padding-left:46px}
+}
 </style>
 
 <div id="wrap">
-  <input id="search" placeholder="name → Enter = gone · Shift+Enter = mine"
+  <div id="top">
+    <div class="brand">snakebite<i>draft assistant</i></div>
+    <div id="turn"></div>
+  </div>
+  <input id="search" placeholder="Search a player — Enter marks gone, Shift+Enter marks yours"
          autocomplete="off" spellcheck="false">
   <div id="hints">
     <kbd>Enter</kbd> mark top match gone · <kbd>Shift</kbd>+<kbd>Enter</kbd>
-    my pick · <kbd>Esc</kbd> clear · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo ·
-    click a row to mark it gone
+    your pick · <kbd>Esc</kbd> clear · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo ·
+    click a row for detail
   </div>
   <div id="meta">
-    <span>pick <b id="pick">1</b></span>
-    <span>· slot <input type="number" id="slot" min="1" max="12" value="3"></span>
+    <span>Pick <b id="pick" class="num">1</b></span>
+    <span>· Slot <input type="number" id="slot" min="1" max="12" value="3"></span>
     <span id="nextpk"></span>
-    <span style="flex:1"></span>
-    <button id="undo">undo</button>
-    <button id="more">···</button>
-    <button id="diag" title="run ESPN sync diagnostics">diag</button>
+    <span class="sp"></span>
+    <button id="undo">Undo</button>
+    <button id="more" title="shortcuts and pick log">···</button>
+    <button id="diag" title="run ESPN sync diagnostics">Diag</button>
   </div>
-  <div id="sync" class="small" style="margin-bottom:6px">manual mode</div>
+  <div id="sync">manual mode</div>
   <div id="log"></div>
 
-  <div id="plat" title="whose ADP drives every availability number"></div>
+  <div id="plat" class="seg" title="whose ADP drives every availability number"></div>
   <div id="platnote"></div>
   <div id="rec"></div>
   <div id="ctx"></div>
   <div id="opp"></div>
 
   <div id="bar">
-    <button data-f="ALL" class="on">All</button>
-    <button data-f="QB">QB</button><button data-f="RB">RB</button>
-    <button data-f="WR">WR</button><button data-f="TE">TE</button>
-    <button data-f="WATCH" title="only my watchlist">★ mine</button>
-    <span style="flex:1"></span>
-    <button id="reset">reset</button>
+    <div class="seg">
+      <button data-f="ALL" class="on">All</button>
+      <button data-f="QB">QB</button><button data-f="RB">RB</button>
+      <button data-f="WR">WR</button><button data-f="TE">TE</button>
+      <button data-f="WATCH" title="only my watchlist">★ Mine</button>
+    </div>
+    <button id="reset" class="reset">Reset</button>
   </div>
-  <table><thead><tr>
-    <th class="num">#</th><th>Player</th><th></th>
-    <th class="num">VOR</th>
-    <th class="num" title="Odds he is still there at your next pick, given he is here now">→nxt</th>
-  </tr></thead><tbody id="rows"></tbody></table>
+  <div id="rows"></div>
 </div>
 """
 
@@ -612,15 +707,23 @@ function resolveName(raw){
    manager lean scored WORSE than ignoring them. Three seasons is enough to
    describe a drafter, not to out-predict the market on a specific player.
    So this informs you; it does not move a number. */
-let OPP_OPEN = true;
+let OPP_OPEN = false;   // collapsed: the board is what you are scanning
+const esc = s => String(s == null ? "" : s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;");
+/* one colour per band, used for the bar and the number alike */
+const availCol = v => v >= .7 ? "var(--good)" : v >= .35 ? "var(--mid)"
+                                                          : "var(--low)";
+let OPEN_ROW = null;               // the player whose detail is expanded
+
 function renderOpponents(now, nxt){
   const el = document.getElementById("opp");
   if (!el) return;
   const known = state.picks.filter(p => p.team != null).length;
   if (!known){
-    el.innerHTML = `<div class="hd">opponents</div><div class="dim">waiting `
-      + `for the ESPN feed — manual picks carry no team, so rosters cannot `
-      + `be attributed</div>`;
+    el.innerHTML = `<div class="hd">Opponents<span>waiting for the feed</span></div>`
+      + `<div class="nothing">Manual picks carry no team, so rosters cannot be `
+      + `attributed. Connect the ESPN feed to see who picks before you.</div>`;
     return;
   }
   const upto = nxt || (now + TEAMS);
@@ -635,29 +738,61 @@ function renderOpponents(now, nxt){
     const c = rosterOf(b.team);
     const info = OPPONENTS[b.team] || {};
     const need = needsOf(c);
-    const nd = need.length ? need.join(" · ") : "starters full";
     /* An "assumed" lean is reasoning from a profile, not from picks -- it must
        never look like the measured ones sitting next to it. */
     const lean = info.lean
-      ? `<span class="lean${info.assumed ? " dim" : ""}"> ${info.lean}`
-        + `${info.assumed ? " (assumed)" : ""}</span>` : "";
+      ? esc(info.lean) + (info.assumed ? " (assumed)" : "") : "";
     const exp = (info.exp && info.exp !== "vet")
-      ? `<span class="exp ${info.exp}">${info.exp}</span>` : "";
-    const note = info.note
-      ? `<div class="lean dim">${info.note}</div>` : "";
-    return `<tr><td class="cnt">${b.picks.join(",")}</td>`
-         + `<td><span class="tm">${info.name || ("team " + b.team)}</span>${exp}${lean}`
-         + `<div class="lean">${c.n} picked · needs ${nd}</div>${note}</td></tr>`;
+      ? `<span class="chip ${esc(info.exp)}">${esc(info.exp)}</span>` : "";
+    const needTxt = need.length ? "needs " + need.join(", ") : "starters full";
+    return `<div class="orow" title="${esc(info.note || "")}">`
+      + `<div class="pk num">${b.picks.join(",")}</div><div>`
+      + `<div class="tm">${esc(info.name || ("Team " + b.team))}${exp}</div>`
+      + `<div class="ln">${c.n} picked · ${esc(needTxt)}</div>`
+      + (lean ? `<div class="ln">${lean}</div>` : "")
+      + `</div></div>`;
   }).join("");
-  el.innerHTML = `<div class="hd" id="opphd">opponents before your pick`
-    + `${nxt ? " " + nxt : ""} — ${between.length} manager`
-    + `${between.length === 1 ? "" : "s"} ${OPP_OPEN ? "▾" : "▸"}</div>`
+  el.innerHTML = `<div class="hd" id="opphd">Before your pick${nxt ? " " + nxt : ""}`
+    + `<span>${between.length} manager${between.length === 1 ? "" : "s"} `
+    + `${OPP_OPEN ? "▾" : "▸"}</span></div>`
     + (OPP_OPEN
-        ? (rows ? `<table>${rows}</table>`
-                : `<div class="dim">nobody picks before you</div>`)
-        : "");
+        ? (rows || `<div class="nothing">Nobody picks before you.</div>`) : "");
   const hd = document.getElementById("opphd");
   if (hd) hd.onclick = () => { OPP_OPEN = !OPP_OPEN; render(); };
+}
+
+/* The one line a row earns on the board: the single most decision-relevant
+   fact, picked by priority. Everything else waits in the expanded detail so a
+   row never shows more than a glance can hold. */
+function headline(p){
+  if (p.note) return {t: (p.flag === "neg" ? "! " : "") + p.note,
+    c: p.flag === "neg" ? "neg" : p.flag === "pos" ? "pos-n" : "warn"};
+  if (p.stat) return {t: p.stat.toLowerCase()
+    + (p.stn ? " — " + p.stn.split(/(?<=[.;])\s/)[0] : ""),
+    c: ["REHAB","OUT","LEGAL"].includes(p.stat) ? "warn" : "dim"};
+  if (p.watch && p.wnote) return {t: p.wnote, c: "dim"};
+  if (p.qbd && /high|unknown/.test(p.qbd)) return {t: p.qbd, c: "warn"};
+  return null;
+}
+
+function detailOf(p){
+  const parts = [];
+  if (p.note) parts.push(`<p class="${p.flag==="neg"?"neg":p.flag==="pos"?"pos-n":"warn"}">${esc(p.note)}</p>`);
+  if (p.stat) parts.push(`<p><b>${esc(p.stat)}</b>${p.stn ? " — " + esc(p.stn) : ""}</p>`);
+  if (p.watch && p.wnote) parts.push(`<p>${esc(p.wnote)}</p>`);
+  if (p.ctx) parts.push(`<p>${esc(p.ctx)}</p>`);
+  if (p.qbd) parts.push(`<p title="41% of team-seasons lose 3+ starts from their week-1 QB; that costs a true #1 target about 1.3 PPG. A variance label, not a projection adjustment.">${esc(p.qbd)}</p>`);
+  const tags = [];
+  if (p.vor != null) tags.push(`VOR ${p.vor.toFixed(1)}`);
+  if (p.ppg != null) tags.push(`${p.ppg.toFixed(1)} PPG proj`);
+  if (p.bye) tags.push(`bye ${p.bye}`);
+  if (p.off) tags.push(esc(p.off));
+  if (p.tdd) tags.push(esc(p.tdd));
+  if (p.gap) tags.push(`model ${p.gap > 0 ? "likes" : "fades"} him ${Math.abs(p.gap)} ranks vs market`);
+  if (tags.length) parts.push(`<div class="tags">${tags.map(t => `<span>${t}</span>`).join("")}</div>`);
+  parts.push(`<div class="acts"><button class="go" data-a="gone">Mark gone</button>`
+    + `<button data-a="mine">Mine</button></div>`);
+  return parts.join("");
 }
 
 function render(){
@@ -668,67 +803,73 @@ function render(){
   const live = BOARD.filter(p => !gone.has(p.name));
 
   document.getElementById("pick").textContent = now;
-  document.getElementById("nextpk").innerHTML = !mine ? "· done"
+  document.getElementById("nextpk").textContent = "";
+  document.getElementById("turn").innerHTML = !mine ? `<b>Draft complete</b>`
     : onClock
-      ? `· <b style="color:var(--pos)">YOU ARE UP</b>` +
-        (nxt ? ` <span class="dim">· back at ${nxt}</span>` : "")
-      : `· yours <b>${mine}</b> <span class="dim">(${mine - now} away)</span>`;
+      ? `<span class="up">YOU'RE UP</span>`
+        + (nxt ? `<div class="small" style="margin-top:3px">back at ${nxt}</div>` : "")
+      : `Your pick <b class="num">${mine}</b>`
+        + `<div class="small" style="margin-top:2px">${mine - now} away</div>`;
 
   /* recommendation */
   const rec = document.getElementById("rec");
   const rows = recommend(live, nxt, now);
-  if (!rows.length){ rec.innerHTML = ""; }
+  if (!rows.length){ rec.innerHTML = ""; rec.style.display = "none"; }
   else {
+    rec.style.display = "";
     const t = rows[0];
     const a = nxt ? availAt(t.best, nxt, now) : null;
-    const aTxt = !nxt || a == null ? ""
-      : `${a.est ? "~" : ""}${Math.round(a.v*100)}% to last to ${nxt}` +
-        (a.est ? " (already sliding past ADP)" : "");
     const thin = t.cost < 0.35;
     rec.className = thin ? "thin" : "";
+    const rnote = t.best.note
+      ? `<div class="rnote ${t.best.flag==="neg"?"neg":t.best.flag==="pos"?"pos-n":"warn"}">${
+          t.best.flag==="neg"?"! ":""}${esc(t.best.note)}</div>` : "";
     rec.innerHTML = `
-      <div class="rlab">${thin ? "no urgency — best available" : "take now"}</div>
-      <div class="rname">${t.best.name}
-        <span class="pos ${t.best.pos}">${t.best.pos}</span>
-        <span class="dim" style="font-size:12px">${t.best.team}</span></div>
-      ${t.best.note ? `<div class="note ${
-          t.best.flag==="neg"?"neg":t.best.flag==="pos"?"pos-n":"warn"}">${
-          t.best.flag==="neg"?"! ":""}${t.best.note}</div>` : ""}
+      <div class="rlab">${thin ? "No urgency · best available" : "Take now"}</div>
+      <div class="rmain">
+        <div>
+          <div class="rname">${esc(t.best.name)}</div>
+          <div class="rsub"><span class="pos ${t.best.pos}">${t.best.pos}</span>${esc(t.best.team)}</div>
+        </div>
+        ${a == null ? "" : `<div class="rav"><b style="color:${availCol(a.v)}">${
+          a.est ? "~" : ""}${Math.round(a.v*100)}%</b>
+          <span>to last to ${nxt}${a.est ? " · sliding" : ""}</span></div>`}
+      </div>
       <div class="rwhy">${
         thin
-        ? `${t.pos} holds up — expect ~${t.exp.toFixed(1)} VOR still there at ${nxt||"?"}. ${aTxt}`
-        : `waiting costs <b>${t.cost.toFixed(1)} VOR</b> at ${t.pos}: ${
-            t.best.vor.toFixed(1)} now vs ~${t.exp.toFixed(1)} expected at ${nxt}. ${aTxt}`}
-      </div>
-      <div class="alt">then: ${rows.slice(1,4).map(r =>
-        `<b>${r.pos}</b> ${r.best.name.split(" ").slice(-1)[0]} (−${
-          r.cost.toFixed(1)})`).join(" · ")}</div>`;
+        ? `${t.pos} holds up — expect about <b>${t.exp.toFixed(1)} VOR</b> still there at ${nxt||"your next pick"}.`
+        : `Waiting costs <b>${t.cost.toFixed(1)} VOR</b> at ${t.pos}: ${
+            t.best.vor.toFixed(1)} now vs about ${t.exp.toFixed(1)} at ${nxt}.`}</div>
+      ${rnote}
+      ${rows.length > 1 ? `<div class="alt">Then ${rows.slice(1,4).map(r =>
+        `<span class="c"><b>${r.pos}</b> ${esc(r.best.name.split(" ").slice(-1)[0])} −${
+          r.cost.toFixed(1)}</span>`).join("")}</div>` : ""}`;
   }
 
   /* context: needs + what the room has been doing */
   const c = rosterCounts();
   let pills = "";
   for (const [pos, n] of Object.entries(LINEUP))
-    pills += `<span class="pill ${c[pos]>=n?"done":"need"}">${pos} ${c[pos]}/${n}</span>`;
+    pills += `<span class="pill ${c[pos]>=n?"done":"need"}">${pos} <b class="num">${c[pos]}/${n}</b></span>`;
   const flexHave = ["RB","WR","TE"].reduce(
     (a,k) => a + Math.max(0, c[k] - LINEUP[k]), 0);
-  pills += `<span class="pill ${flexHave>=FLEX?"done":"need"}">FLX ${
-    Math.min(flexHave,FLEX)}/${FLEX}</span>`;
+  pills += `<span class="pill ${flexHave>=FLEX?"done":"need"}">Flex <b class="num">${
+    Math.min(flexHave,FLEX)}/${FLEX}</b></span>`;
   const recent = state.picks.slice(-12);
   const tally = {};
   recent.forEach(p => { const pl = byName[p.name];
                         if (pl) tally[pl.pos] = (tally[pl.pos]||0)+1; });
   const runTxt = Object.entries(tally).sort((a,b)=>b[1]-a[1])
-    .map(([k,v]) => `${k} ${v}`).join(" ");
+    .map(([k,v]) => `${k} ${v}`).join(" · ");
   /* Counts, NOT momentum. Over this league's 391 historical picks a run does
      not predict more of that position: 2-of-last-3 RB is followed by an RB at
      lift 0.92, 4-of-last-5 WR at 0.90 -- both inside noise of 1.0 and if
      anything negative. A WR run looks like a signal only because WR is 42% of
      every skill pick here. A pill that implies "get ahead of the run" is the
      tool talking you into a reach. */
-  if (runTxt) pills += `<span class="pill" title="counts only -- runs have not
+  if (runTxt) pills += `<span class="pill run" title="counts only -- runs have not
 predicted more of that position in this league (lift 0.90-1.08 over 391 picks)"
->last 12: ${runTxt}</span>`;
+>last 12 · ${runTxt}</span>`;
   document.getElementById("ctx").innerHTML = pills;
   renderOpponents(now, nxt);
 
@@ -741,62 +882,53 @@ predicted more of that position in this league (lift 0.90-1.08 over 391 picks)"
 
   const body = document.getElementById("rows");
   body.innerHTML = "";
+  if (!list.length)
+    body.innerHTML = `<div class="empty">No players match.</div>`;
   let lastTier = null, lastPos = null;
   for (const p of list){
-    const tr = document.createElement("tr");
-    tr.className = "row";
+    const row = document.createElement("div");
+    row.className = "row" + (OPEN_ROW === p.name ? " open" : "");
     if (state.filter !== "ALL" && lastTier !== null
-        && p.tier !== lastTier && p.pos === lastPos) tr.className += " tierbreak";
+        && p.tier !== lastTier && p.pos === lastPos) row.className += " tierbreak";
     lastTier = p.tier; lastPos = p.pos;
     const a = nxt ? availAt(p, nxt, now) : null;
-    const noteCls = p.flag === "neg" ? "neg" : p.flag === "pos" ? "pos-n"
-                  : p.flag === "warn" ? "warn" : "dim";
-    tr.innerHTML = `
-      <td class="num dim">${p.gap ? `<span class="gap ${p.gap>0?"up":"dn"}"
-        title="model disagrees with the market by ${Math.abs(p.gap)} ranks -- only
-gaps of 24+ beat their price in the backtest">${p.gap>0?"+":""}${p.gap}</span>`
-        : `<span class="mkt">${p.adp?Math.round(p.adp):"—"}</span>`}</td>
-      <td>${p.watch ? '<span style="color:var(--acc)">★ </span>' : ""}<span class="nm">${p.name}</span>
-          <span class="dim"> ${p.team}</span>
-          ${p.off ? `<span class="offtag ${
-            p.off.startsWith("OFF--") ? "neg" :
-            p.off.startsWith("OFF-") ? "warn" :
-            p.off.startsWith("OFF+") ? "pos-n" : "dim"}"> ${p.off}</span>` : ""}
-          ${p.tdd ? `<span class="offtag ${
-            parseFloat(p.tdd.split(" ")[2]) <= -1 ? "warn" : "dim"
-            }"> ${p.tdd}</span>` : ""}
-          ${p.stat ? `<div class="note ${
-            ["REHAB","OUT","LEGAL"].includes(p.stat) ? "warn" : "dim"
-            }" title="${(p.stn || "").replace(/"/g, "&quot;")}">${p.stat}${
-            /* The status notes are dated, sourced paragraphs by design -- that
-               is what makes them re-verifiable. But five of them on screen at
-               once is why the panel needed constant scrolling, so the row shows
-               the first sentence and the whole note lives in the tooltip. */
-            p.stn ? " — " + (p.stn.length > 110
-              ? p.stn.slice(0, 110).replace(/\s+\S*$/, "") + "…"
-              : p.stn) : ""}</div>` : ""}
-          ${p.watch && p.wnote ? `<div class="note" style="color:var(--acc)">${p.wnote}</div>` : ""}
-          ${p.ctx ? `<div class="note dim">${p.ctx}</div>` : ""}
-          ${p.qbd ? `<div class="note ${/high|unknown/.test(p.qbd)
-            ? "warn" : "dim"}" title="41% of team-seasons lose 3+ starts from
-their week-1 QB; that costs a true #1 target about 1.3 PPG. A variance label,
-not a projection adjustment -- the model averages over whoever was throwing."
-            >${p.qbd}</div>` : ""}
-          ${p.note ? `<div class="note ${noteCls}">${
-            p.flag==="neg"?"! ":""}${p.note}</div>` : ""}</td>
-      <td><span class="pos ${p.pos}">${p.pos}</span></td>
-      <td class="num">${p.vor == null ? "–" : p.vor.toFixed(1)}</td>
-      <td class="num" title="${a && a.est ? "re-estimated: he has already fallen past his ADP" : ""}"
-          style="color:${
-        a == null ? "var(--dim)"
-        : a.v >= .7 ? "var(--pos)" : a.v >= .35 ? "var(--warn)" : "var(--neg)"}">${
-        a == null ? "–" : (a.est ? "~" : "") + Math.round(a.v*100)+"%"}</td>`;
-    tr.onclick = () => take(p.name, false);
-    body.appendChild(tr);
+    const h = headline(p);
+    row.innerHTML = `
+      <div class="main">
+        <div class="mk num">${p.gap ? `<span class="gap ${p.gap>0?"up":"dn"}"
+          title="model disagrees with the market by ${Math.abs(p.gap)} ranks -- only gaps of 24+ beat their price in the backtest">${
+          p.gap>0?"+":""}${p.gap}</span>`
+          : (p.adp ? Math.round(p.adp) : "—")}</div>
+        <div style="min-width:0">
+          <div><span class="nm">${p.watch ? '<span class="star">★</span>' : ""}${esc(p.name)}</span></div>
+          <div class="sub"><span class="pos ${p.pos}">${p.pos}</span>
+            <span>${esc(p.team)}</span>
+            ${h ? `<span class="sig ${h.c}">· ${esc(h.t)}</span>` : ""}</div>
+        </div>
+        <div class="av" title="${a && a.est ? "re-estimated: he has already fallen past his ADP" : "chance he is still there at your next pick"}">
+          ${a == null ? `<b class="dim">–</b>`
+            : `<span class="bar"><i style="width:${Math.round(a.v*100)}%;background:${
+                availCol(a.v)}"></i></span><b style="color:${availCol(a.v)}">${
+                a.est ? "~" : ""}${Math.round(a.v*100)}%</b>`}
+        </div>
+      </div>
+      <div class="detail">${detailOf(p)}</div>`;
+    row.querySelector(".main").onclick = () => {
+      OPEN_ROW = OPEN_ROW === p.name ? null : p.name;
+      render();
+    };
+    row.querySelectorAll(".acts button").forEach(btn => {
+      btn.onclick = e => {
+        e.stopPropagation();
+        OPEN_ROW = null;
+        take(p.name, btn.dataset.a === "mine");
+      };
+    });
+    body.appendChild(row);
   }
 
   document.getElementById("log").innerHTML = state.picks.slice().reverse()
-    .map((p,i) => `${state.picks.length-i}. ${p.name}${p.mine?" ← me":""}`)
+    .map((p,i) => `${state.picks.length-i}. ${esc(p.name)}${p.mine?" ← me":""}`)
     .join("<br>");
 }
 
@@ -887,8 +1019,8 @@ search.addEventListener("input", render);
 search.addEventListener("keydown", e => {
   if (e.key === "Escape"){ search.value = ""; render(); return; }
   if (e.key === "Enter"){
-    const first = document.querySelector("#rows tr .nm");
-    if (first) take(first.textContent, e.shiftKey);
+    const first = document.querySelector("#rows .row .nm");
+    if (first) take(first.textContent.replace(/^★/, "").trim(), e.shiftKey);
   }
 });
 document.addEventListener("keydown", e => {
