@@ -60,9 +60,10 @@ steps = [("A  raw market spread", .1200, SLATE),
          ("B  league spread multiplier", .1003, GREEN),
          ("B2  rank-dependent curve", .1008, GREEN),
          ("B3  curve + chalk drift  (shipped)", .0998, GREEN),
+         ("L  re-estimate the drift live (K=40)", .1001, RED),
          ("Cm  simulate the picks between", .1011, RED),
          ("C  + roster need and manager leans", .1033, RED)]
-fig, ax = plt.subplots(figsize=(6.4, 3.0))
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
 ys = list(range(len(steps)))[::-1]
 for y, (lab, v, c) in zip(ys, steps):
     ax.barh(y, v, color=c, height=.62)

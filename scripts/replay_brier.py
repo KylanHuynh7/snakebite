@@ -23,6 +23,14 @@ The simulation never beat the plain conditional normal at next-turn
 horizons, and personalisation (leans + need) made it slightly WORSE -- three
 seasons is not enough to out-predict the market prior, so manager
 tendencies are displayed in draft_advise, not folded into probabilities.
+LIVE DRIFT (Nov 1, 2026): model L re-estimates the chalk drift from the draft in
+progress, shrunk toward the league's fitted drift with K picks of prior. It
+LOSES to the static B3 in every season at every K tried (pooled 0.1001-0.1007
+vs 0.0998) and improves monotonically as K grows, i.e. as it is allowed to
+move less. Not shipped. Likely reason: the room's drift barely varies between
+drafts (+0.29 / +0.28 / +0.28 by season in league_tendencies.py), so a few
+dozen noisy picks add more variance than information.
+
 Re-run this after the 2026 draft lands (~165 more picks) before promoting
 anything new into the availability math.
 
@@ -46,6 +54,9 @@ from league_tendencies import (SEASONS, SKILL, K_PRIOR, build_picks,
 CONSIDER = 50          # score players within this many ranks of the current pick
 STARTERS = {"QB": 1, "RB": 2, "WR": 2, "TE": 1}
 POS_ALL = ["QB", "RB", "WR", "TE", "PK", "DEF"]
+# model L: B3, but the chalk drift is re-estimated from THIS draft's picks so
+# far, shrunk toward the league's fitted drift with K picks of prior strength
+LIVE_K = (5, 10, 20, 40)
 
 
 # ---------- model A/B: the panel's availAt(), in rank space ----------------
@@ -196,6 +207,14 @@ def replay(year: int, df) -> dict:
         team_turns.setdefault(p["team"], []).append(p["o"])
 
     briers = {"A": [], "B": [], "B2": [], "B3": [], "Cm": [], "C": []}
+    briers.update({f"L{k}": [] for k in LIVE_K})
+    # this draft's own deviation from the market, pick by pick (ranks inside the
+    # drift window only -- beyond it the estimate is selection-biased)
+    z_seen = []                        # (overall, z), in pick order
+    for q in sorted(s["picks"], key=lambda x: x["o"]):
+        kq = norm_name(s["players"][str(q["pid"])]["n"])
+        if kq in uni and uni[kq][0] <= curve["drift_full"]:
+            z_seen.append((q["o"], (q["o"] - uni[kq][0]) / uni[kq][1]))
     events = 0
     for p in s["picks"]:
         if p["auto"]:
@@ -229,6 +248,16 @@ def replay(year: int, df) -> dict:
             pb2 = avail_at(mu, sig * float(curve_mult(curve, mu)), k2, k)
             mu3 = mu + float(curve_shift(curve, mu, sig))
             pb3 = avail_at(mu3, sig * float(curve_mult(curve, mu)), k2, k)
+            # live drift: only picks already made (o < k) are visible
+            zs = [z for o, z in z_seen if o < k]
+            for kk in LIVE_K:
+                d_live = (kk * curve["drift"] + sum(zs)) / (kk + len(zs))
+                taper = float(np.clip(np.interp(
+                    mu, [curve["drift_full"], curve["drift_zero"]], [1.0, 0.0]),
+                    0.0, 1.0))
+                pl = avail_at(mu + d_live * taper * sig,
+                              sig * float(curve_mult(curve, mu)), k2, k)
+                briers[f"L{kk}"].append((pl - y) ** 2)
             briers["A"].append((pa - y) ** 2)
             briers["B"].append((pb - y) ** 2)
             briers["B2"].append((pb2 - y) ** 2)
@@ -263,6 +292,7 @@ def main() -> None:
     print(f"{'year':<6}{'events':>7}  {'mult':>5}  "
           f"{'A base':>8}{'B mult':>8}{'B2 crv':>8}{'B3 c+s':>8}{'Cm mkt':>8}{'C sim':>8}   conservation@41")
     allb = {"A": [], "B": [], "B2": [], "B3": [], "Cm": [], "C": []}
+    allb.update({f"L{k}": [] for k in LIVE_K})
     for year in SEASONS:
         r = replay(year, df)
         c = r["conservation"]
@@ -278,6 +308,15 @@ def main() -> None:
           f"B2 {pooled['B2']:.4f}   B3 {pooled['B3']:.4f}   Cm {pooled['Cm']:.4f}   C {pooled['C']:.4f}")
     print("lower is better; B<A means the sigma multiplier is real signal, "
           "C<B means the simulation earns its complexity")
+    print("\nlive drift (B3 with the drift re-estimated from this draft's own picks;"
+          " K = prior strength in picks)")
+    print(f"{'year':<6}" + "".join(f"{'L'+str(k):>9}" for k in LIVE_K)
+          + f"{'B3':>9}")
+    for i, year in enumerate(SEASONS):
+        print(f"{year:<6}" + "".join(f"{allb['L'+str(k)][i][0]:>9}" for k in LIVE_K)
+              + f"{allb['B3'][i][0]:>9}")
+    print(f"{'pooled':<6}" + "".join(f"{pooled['L'+str(k)]:>9.4f}" for k in LIVE_K)
+          + f"{pooled['B3']:>9.4f}")
 
 
 if __name__ == "__main__":

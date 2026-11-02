@@ -3,6 +3,7 @@
 Snakebite answers one question: *will this player still be there at my next
 pick?* Most of the work was deciding what **not** to put in the answer. This page
 is the evidence — including the things that failed, which is most of it.
+Four were rejected on the original data and a fifth, live drift, was tested last.
 
 **Ground truth.** The only labelled data for this question is what actually
 happened in a real league's drafts: **391 picks over 2023–25** (361 human, 30
@@ -145,6 +146,31 @@ the one range it was measured on.
 
 ---
 
+## A fifth, tested last: updating the drift live
+
+Every room runs a little early or late against ADP, and the model treats that as
+one fixed number (+0.285 σ, from three seasons). The natural upgrade is to
+re-estimate it *during* the draft from the picks already made, shrunk toward the
+league value. It is the one idea in this project that is cheap, plausible and
+testable on exactly the data above, so it was tested the same way.
+
+| year | live, K=5 | K=10 | K=20 | K=40 | static (shipped) |
+|---|---|---|---|---|---|
+| 2023 | 0.0807 | 0.0805 | 0.0803 | 0.0801 | **0.0799** |
+| 2024 | 0.1155 | 0.1154 | 0.1151 | 0.1148 | **0.1144** |
+| 2025 | 0.1030 | 0.1028 | 0.1027 | 0.1024 | **0.1021** |
+| pooled | 0.1007 | 0.1005 | 0.1003 | 0.1001 | **0.0998** |
+
+It loses in every season at every prior strength, and it gets monotonically
+*better* as it is allowed to move *less*. The likely reason is in the data
+rather than the method: the drift is stable across seasons (+0.29, +0.28, +0.28
+at 8, 10 and 10 teams), so there is almost no room-to-room variation to learn,
+and a few dozen noisy picks add more variance than information. Not shipped.
+
+*Reproduce:* `python scripts/replay_brier.py` (the live-drift table prints last).
+
+---
+
 ## A calibration bug I found in my own output
 
 The board labels one projection a "floor" (the 20th percentile) and another a
@@ -185,7 +211,7 @@ were considered and rejected: four parameters on ~350 rows each.
 
 | claim | command |
 |---|---|
-| Brier ladder (A → B3, C) | `python scripts/replay_brier.py` |
+| Brier ladder (A → B3, C) and live drift | `python scripts/replay_brier.py` |
 | ESPN vs consensus | `python scripts/replay_market.py` |
 | Opponent weight / runs | `python scripts/need_redesign.py`, `scripts/scan_opponent_weight.py` |
 | Board vs ADP backtest | `python scripts/board_backtest.py` |
