@@ -23,6 +23,9 @@ probabilities against real drafts.
 The evidence — including the four things I tested and killed — is in
 [`RESULTS.md`](RESULTS.md).
 
+Mark a few players as **targets** and it tells you the odds that *at least one*
+of them lasts — the number a drafter actually acts on — and the chance they all go.
+
 What makes it different from a ranking: the project's own model ranking *lost*
 to platform ADP in backtests, so ADP is the prior and the model's job is the
 thing ADP cannot do — conditional availability, calibrated against a league's

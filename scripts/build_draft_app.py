@@ -394,6 +394,20 @@ kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
 .av .g text{font-size:13px}
 .tierbreak{margin-top:6px}
 
+/* targets: will at least one of them last? */
+#targets{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:14px 16px;margin-top:12px}
+#targets .th{display:flex;align-items:center;gap:14px}
+#targets .tg{width:56px;height:56px;flex:none}
+#targets .tq{font-size:15px;font-weight:750;letter-spacing:-.01em}
+#targets .ts{font-size:11.5px;color:var(--dim);margin-top:2px}
+#targets .tl{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+#targets .tl span{background:var(--sunk);border-radius:999px;padding:3px 10px;
+  font-size:11.5px;color:var(--dim)}
+#targets .tl b{color:var(--ink)}
+#targets .tn{margin-top:10px;font-size:10.5px;color:var(--faint)}
+.tgt{color:var(--acc);margin-right:4px;font-size:12px}
+
 /* expanded detail */
 .detail{display:none;padding:2px 16px 14px 70px;font-size:12px;color:var(--dim)}
 .row.open .detail{display:block}
@@ -443,6 +457,7 @@ kbd{background:var(--sunk);border:1px solid var(--line);border-radius:4px;
   <div id="plat" class="seg" title="whose ADP drives every availability number"></div>
   <div id="platnote"></div>
   <div id="rec"></div>
+  <div id="targets"></div>
   <div id="ctx"></div>
   <div id="opp"></div>
 
@@ -496,7 +511,7 @@ const KEY = "draftday2026";
 const SCHEMA = 3;
 
 let state = {picks:[], slot:3, filter:"ALL", apiPick:null, schema:SCHEMA,
-             seats:{}};
+             seats:{}, targets:[]};
 const byName = Object.fromEntries(BOARD.map(p => [p.name, p]));
 
 /* ---------- who sits where ----------------------------------------------
@@ -569,6 +584,7 @@ function load(){
       return;
     }
     state = Object.assign(state, s);
+    if (!Array.isArray(state.targets)) state.targets = [];
   }catch(e){}
 }
 let STALE = 0;
@@ -790,6 +806,50 @@ function headshot(p, size){
 }
 let OPEN_ROW = null;               // the player whose detail is expanded
 
+/* Targets: "will at least one of my guys last?" is the question a drafter
+   actually has, and per-player odds do not answer it. Q = 1 - prod(1 - p_i).
+   Replayed on 343 real turns (replay_shortlist.py) this beats reporting only
+   the likeliest target by a wide margin (Brier 0.092 vs 0.166 for the best three
+   available) but runs 6-7 points LOW, because the picks between your turns are
+   fixed in number and independent coin flips ignore that. A correction factor
+   was tried and did NOT survive leave-one-season-out, so none is applied: the
+   number is the conservative one, and says so. */
+function shortlist(now, nxt){
+  if (!nxt) return null;
+  const gone = goneSet();
+  const items = (state.targets || []).map(n => byName[n])
+    .filter(p => p && !gone.has(p.name))
+    .map(p => ({p, a: availAt(p, nxt, now)})).filter(x => x.a);
+  if (!items.length) return null;
+  const none = items.reduce((m, x) => m * (1 - x.a.v), 1);
+  return {items, q: 1 - none, none};
+}
+function toggleTarget(name){
+  const i = state.targets.indexOf(name);
+  if (i >= 0) state.targets.splice(i, 1); else state.targets.push(name);
+  save(); render();
+}
+function renderTargets(now, nxt){
+  const el = document.getElementById("targets");
+  const sl = shortlist(now, nxt);
+  if (!sl){ el.style.display = "none"; el.innerHTML = ""; return; }
+  el.style.display = "";
+  const many = sl.items.length > 1;
+  el.innerHTML = `
+    <div class="th">
+      <div class="tg">${gauge(sl.q, Math.round(sl.q * 100) + "%")}</div>
+      <div>
+        <div class="tq">${many ? "At least one of your " + sl.items.length
+          + " targets lasts" : esc(sl.items[0].p.name) + " lasts"} to ${nxt}</div>
+        <div class="ts">${many ? `${Math.round(sl.none * 100)}% chance none of them do`
+          : "pick two or more targets to see the combined odds"}</div>
+      </div>
+    </div>
+    <div class="tl">${sl.items.map(x => `<span><b>${esc(x.p.name.replace(/\s+(jr\.?|sr\.?|ii|iii|iv)$/i, "").split(" ").slice(-1)[0])}</b> ${
+      x.a.est ? "~" : ""}${Math.round(x.a.v * 100)}%</span>`).join("")}</div>
+    ${many ? `<div class="tn" title="Replayed on 343 real turns, this independent combination ran 6-7 points below what actually happened. A correction factor did not hold up out of sample, so none is applied.">Treats targets as independent · ran 6–7 points low in replay (the cautious side)</div>` : ""}`;
+}
+
 function renderOpponents(now, nxt){
   const el = document.getElementById("opp");
   if (!el) return;
@@ -865,7 +925,8 @@ function detailOf(p){
   if (p.gap) tags.push(`model ${p.gap > 0 ? "likes" : "fades"} him ${Math.abs(p.gap)} ranks vs market`);
   if (tags.length) parts.push(`<div class="tags">${tags.map(t => `<span>${t}</span>`).join("")}</div>`);
   parts.push(`<div class="acts"><button class="go" data-a="gone">Mark gone</button>`
-    + `<button data-a="mine">Mine</button></div>`);
+    + `<button data-a="mine">Mine</button>`
+    + `<button data-a="target">${state.targets.includes(p.name) ? "Untarget" : "◎ Target"}</button></div>`);
   return parts.join("");
 }
 
@@ -930,6 +991,8 @@ function render(){
     rec.querySelector(".hsw").replaceWith(headshot(t.best, 78));
   }
 
+  renderTargets(now, nxt);
+
   /* context: needs + what the room has been doing */
   const c = rosterCounts();
   let pills = "";
@@ -981,7 +1044,7 @@ predicted more of that position in this league (lift 0.90-1.08 over 391 picks)"
       <div class="main">
         <div class="hsw"></div>
         <div style="min-width:0">
-          <div><span class="nm">${p.watch ? '<span class="star">★</span>' : ""}${esc(p.name)}</span></div>
+          <div><span class="nm">${state.targets.includes(p.name) ? '<span class="tgt">◎</span>' : ""}${p.watch ? '<span class="star">★</span>' : ""}${esc(p.name)}</span></div>
           <div class="sub"><span class="pos ${p.pos}">${p.pos}</span>
             <span>${esc(p.team)}</span>
             ${p.gap ? `<span class="gap ${p.gap>0?"up":"dn"}"
@@ -1005,6 +1068,7 @@ predicted more of that position in this league (lift 0.90-1.08 over 391 picks)"
     row.querySelectorAll(".acts button").forEach(btn => {
       btn.onclick = e => {
         e.stopPropagation();
+        if (btn.dataset.a === "target"){ toggleTarget(p.name); return; }
         OPEN_ROW = null;
         take(p.name, btn.dataset.a === "mine");
       };
@@ -1094,6 +1158,7 @@ function setSlot(n){
 }
 window.DRAFTAPP = {take, takeByName, resolveName, undo, setSync, showDiag,
                    setSlot, setPickNo, setMyTeam, setPlatform,
+                   toggleTarget, shortlist,
                    rosterOf, needsOf, teamAtPick,
                    names: () => BOARD.map(p => p.name),
                    state: () => state};

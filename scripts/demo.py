@@ -99,7 +99,8 @@ PANEL_JS = """<script>
 /* demo replay: feeds the simulated picks through the same call the ESPN feed
    uses, one at a time, so the panel reacts as it would live */
 (function(){
-  const PICKS = __PICKS__, SLOT = __SLOT__, PLATFORM = "__PLATFORM__";
+  const PICKS = __PICKS__, SLOT = __SLOT__, PLATFORM = "__PLATFORM__",
+        TARGETS = __TARGETS__;
   const go = () => {
     const A = window.DRAFTAPP;
     if (!A) return setTimeout(go, 100);
@@ -110,7 +111,7 @@ PANEL_JS = """<script>
     if (me) A.setMyTeam(me.team);
     let i = 0;
     const tick = () => {
-      if (i >= PICKS.length) return;
+      if (i >= PICKS.length){ TARGETS.forEach(t => A.toggleTarget(t)); return; }
       const p = PICKS[i++];
       A.take(p.name, p.mine, true, p.team, p.at);
       setTimeout(tick, 500);
@@ -123,18 +124,26 @@ PANEL_JS = """<script>
 """
 
 
-def open_panel(picks: list, slot: int, platform: str) -> Path:
+def open_panel(picks: list, slot: int, platform: str, targets: list) -> Path:
     html = OUT / "draft_day.html"
     if not html.exists():
         import build_draft_app
         build_draft_app.main()
     page = html.read_text() + PANEL_JS.replace(
         "__PICKS__", json.dumps(picks)).replace(
-            "__SLOT__", str(slot)).replace("__PLATFORM__", platform)
+            "__SLOT__", str(slot)).replace("__PLATFORM__", platform).replace(
+            "__TARGETS__", json.dumps(targets))
     dest = OUT / "demo_panel.html"
     dest.write_text(page)
     webbrowser.open(dest.as_uri())
     return dest
+
+
+def demo_targets(board: pd.DataFrame, picks: list, platform: str, n: int = 3) -> list:
+    """Three players still on the board, the ones a drafter would be eyeing."""
+    gone = {p["name"] for p in picks}
+    pool = platform_adp(platform, board).sort_values("padp")
+    return [x for x in pool["player"] if x not in gone][:n]
 
 
 def post(port: int, payload: dict) -> None:
@@ -185,7 +194,7 @@ def main() -> None:
     print(f"picks drafted off {a.platform.upper()} ADP, seed {a.seed}")
     print(f"your simulated picks (slot {a.slot}): {', '.join(mine) or '—'}")
     if a.panel:
-        print(f"panel: {open_panel(picks, a.slot, a.platform).relative_to(ROOT)} "
+        print(f"panel: {open_panel(picks, a.slot, a.platform, demo_targets(board, picks, a.platform)).relative_to(ROOT)} "
               f"(replaying {a.through} picks)")
     if a.quiet:
         return

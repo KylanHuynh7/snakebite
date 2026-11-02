@@ -171,6 +171,41 @@ and a few dozen noisy picks add more variance than information. Not shipped.
 
 ---
 
+## Shortlist survival: the one thing that shipped from this round
+
+Per-player odds do not answer the question a drafter actually has: *will at
+least one of my three targets still be there?* The natural answer,
+Q = 1 − ∏(1 − pᵢ), assumes the targets survive independently — and they do not,
+because a fixed number of picks happens between your turns. So it was tested the
+same way as everything else, on 343 real turns, with shortlists chosen *without*
+looking at the model's own probabilities (the best N available; N drawn from the
+best 3N; and the N nearest the coming pick, which is the easy case and is shown
+only to explain why it is not the test).
+
+| shortlist (N=3) | Brier, best single target | Brier, independent Q | mean predicted | actually survived |
+|---|---|---|---|---|
+| the best three available | 0.1659 | **0.0921** | 0.718 | 0.781 |
+| three of the best nine | 0.1284 | **0.0651** | 0.815 | 0.886 |
+
+Combining the targets is a large improvement over reporting only the likeliest
+one — roughly half the error. But it is **systematically 6–7 points low**:
+predicted 0.72 where 0.78 survive, and the same direction in every shortlist,
+every N and every gap length. That is what the conservation argument predicts
+(a fixed number of departures makes "every target gone" rarer than independent
+coin flips say).
+
+The obvious repair, Q = 1 − ∏(1 − pᵢ)^γ with γ > 1, improves the in-sample
+score by ~5% — and then **fails the project's own standard**: the γ chosen on two
+seasons swings between 1.0 and 3.0 when applied to the third, and the held-out
+Brier for the best-three shortlist is 0.0961, *worse* than plain independence
+(0.0921). So no correction is shipped. The panel shows the plain number and says
+on the card that it ran 6–7 points low in replay: the cautious side, with the
+direction stated. Select targets with **◎ Target** in any player's detail view.
+
+*Reproduce:* `python scripts/replay_shortlist.py`
+
+---
+
 ## A calibration bug I found in my own output
 
 The board labels one projection a "floor" (the 20th percentile) and another a
@@ -215,6 +250,7 @@ were considered and rejected: four parameters on ~350 rows each.
 | ESPN vs consensus | `python scripts/replay_market.py` |
 | Opponent weight / runs | `python scripts/need_redesign.py`, `scripts/scan_opponent_weight.py` |
 | Board vs ADP backtest | `python scripts/board_backtest.py` |
+| Shortlist survival | `python scripts/replay_shortlist.py` |
 | Floor / ceiling coverage | `python scripts/calibrate_quantiles.py` |
 | These figures | `python scripts/results_figures.py` (needs `requirements-docs.txt`) |
 

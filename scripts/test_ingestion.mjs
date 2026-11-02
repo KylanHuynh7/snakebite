@@ -546,6 +546,40 @@ await test("an import platform with no CSV is disabled and cannot be selected", 
   eq(b.read("state.platform"), before, "an unready tab must be ignored");
 });
 
+await test("shortlist odds are 1 - prod(1 - p) over the live targets", () => {
+  const b = bootPanel(null);
+  b.read("window.DRAFTAPP.setSlot(5); window.DRAFTAPP.setPickNo(1)");
+  b.read("window.DRAFTAPP.toggleTarget('Jonathan Taylor')");
+  b.read("window.DRAFTAPP.toggleTarget('Drake London')");
+  const q = b.read("window.DRAFTAPP.shortlist(curPick(), horizon()).q");
+  const want = b.read(`(() => { const n = horizon(), now = curPick();
+    const f = nm => availAt(byName[nm], n, now).v;
+    return 1 - (1 - f('Jonathan Taylor')) * (1 - f('Drake London')); })()`);
+  ok(Math.abs(q - want) < 1e-12, `got ${q}, want ${want}`);
+  ok(q > b.read("Math.max(availAt(byName['Jonathan Taylor'], horizon(), curPick()).v, "
+              + "availAt(byName['Drake London'], horizon(), curPick()).v) - 1e-12"),
+     "at-least-one must be at least as likely as the likeliest single target");
+});
+
+await test("a target that has been taken drops out of the shortlist", () => {
+  const b = bootPanel(null);
+  b.read("window.DRAFTAPP.setSlot(5); window.DRAFTAPP.setPickNo(1)");
+  b.read("window.DRAFTAPP.toggleTarget('Jonathan Taylor')");
+  b.read("window.DRAFTAPP.toggleTarget('Drake London')");
+  b.read("window.DRAFTAPP.take('Jonathan Taylor', false, false)");
+  eq(b.read("window.DRAFTAPP.shortlist(curPick(), horizon()).items.length"), 1,
+     "only the live target remains");
+});
+
+await test("targets persist, and state saved before targets existed loads clean", () => {
+  const b = bootPanel(null);
+  b.read("window.DRAFTAPP.toggleTarget('Drake London')");
+  const saved = JSON.parse(b.read("localStorage.getItem('draftday2026')"));
+  eq(saved.targets, ["Drake London"], "targets are saved");
+  const old = bootPanel({ picks: [], slot: 3, schema: CURRENT_SCHEMA });
+  eq(old.read("state.targets.length"), 0, "missing targets default to none");
+});
+
 const total = pass + failures.length;
 console.log(`\n${pass}/${total} passed`);
 if (failures.length) {
